@@ -6,9 +6,9 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title: Jekyll Documentation Theme
-homepage_title: Jekyll doc theme for designers
-site_title: Jekyll theme for designers
+topnav_title: Data Analysis Tutorials
+homepage_title: Manuals
+site_title: Manuals
 project_folder: mydoc
 company_name: Your company
 footer_image_location: ../common_images/company_logo.png

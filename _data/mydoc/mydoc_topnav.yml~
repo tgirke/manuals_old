@@ -12,7 +12,7 @@ topnav:
       output: web
 
     - title: Github Repo
-      external_url: https://github.com/tomjohnson1492/documentation-theme-jekyll
+      external_url: https://github.com/tgirke/manuals
       audience: writers, designers
       platform: all
       product: all

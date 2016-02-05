@@ -6,44 +6,24 @@ type: first_page
 homepage: true
 ---
 
-## Overview 
+## Manuals 
 
-This site provides documentation, training, and other notes for the Jekyll Documentation theme. There's a lot of information about how to do a variety of things here, and it's not all unique to this theme. But by and large, understanding how to do things in Jekyll depends on how your theme is coded. As a result, these additional details are provided.
+This site will be the new home for several data analysis manuals I am maintaining. 
+During this development period please continue to use the current verions listed
+here:
 
-The instructions here are geared towards technical writers working on documentation. You may have a team of one or more technical writers working on documentation for multiple projects. You can use this same theme to author all of your documentation for each of your products. The theme is set up to push out documentation for multiple projects all from the same source. You can also share content across projects.
+* [R Basics Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual){:target="_blank"}
+* [Bioconductor Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#BIOCONPROGRAMS){:target="_blank"}
+* [NGS Analysis Workflows with systemPipeR](https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html){:target="_blank"}
+* [NGS Analysis with R/Bioconductor](http://manuals.bioinformatics.ucr.edu/home/ht-seq){:target="_blank"}
+* [Programming in R](http://manuals.bioinformatics.ucr.edu/home/programming-in-r){:target="_blank"}
+* [ChemmineR](http://www.bioconductor.org/packages/devel/bioc/vignettes/ChemmineR/inst/doc/ChemmineR.html){:target="_blank"}
+* [bioassayR](http://master.bioconductor.org/packages/devel/bioc/vignettes/bioassayR/inst/doc/bioassayR.html){:target="_blank"}
+* [Vim-R-Tmux: Command-Line IDE for R](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r){:target="_blank"}
+* [NGS Analysis with Galaxy and IGV](http://manuals.bioinformatics.ucr.edu/home/gui-ngs-analysis){:target="_blank"}
+* [EMBOSS](http://manuals.bioinformatics.ucr.edu/home/emboss){:target="_blank"}
+* [Linux Essentials](http://manuals.bioinformatics.ucr.edu/home/linux-basics){:target="_blank"}
+* [IIGB's Linux Cluster Manual](http://manuals.bioinformatics.ucr.edu/home/hpc){:target="_blank"}
 
-## Survey of features
 
-Some of the more prominent features of this theme include the following:
 
-* Bootstrap framework
-* Sidebar for table of contents
-* Top navigation bar with drop-down menus
-* PDF generation (through Prince XML utility)
-* Build scripts to automate the workflow
-* Notes, tips, and warning information notes
-* A nifty system for creating links to different pages
-* Tags for alternative nativation
-* Content sharing across projects
-* Emphasis on pages, not posts
-* Relative (rather than absolute) link structure, so you can push the outputs anywhere and easily view them
-
-I'm using this theme for my documentation projects, building about 20 different outputs for various products, versions, languages, and audiences from the same set of files. This single sourcing requirement has influenced how I constructed this theme.
-
-For more discussion about the available features, see {{site.data.mydoc.mydoc_urls.mydoc_supported_features.link}}.
-
-## Getting started
-
-To get started, see these three topics:
-
-1. {{site.data.mydoc.mydoc_urls.mydoc_getting_started.link}}
-2. {{site.data.mydoc.mydoc_urls.mydoc_configuration_settings.link}}
-3. {{site.data.mydoc.mydoc_urls.mydoc_adding_new_projects.link}}
-
-## PDF Download Option for Help Material
-
-If you would like to download this help file as a PDF, you can do so here. The PDF is comprehensive of all the content in the online help.   
-
-<a target="_blank" class="noCrossRef" href="files/{{site.pdf_file_name}}"><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> PDF Download</button></a>
-
-The PDF contains a timestamp in the header indicating when it was last generated. 
