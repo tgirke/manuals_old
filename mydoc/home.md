@@ -9,7 +9,7 @@ homepage: true
 ## Manuals 
 
 This site will be the new home for several data analysis manuals I am maintaining. 
-During this development period please continue to use the current verions listed
+During this development period please continue to use their current verions listed
 here:
 
 * [R Basics Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual){:target="_blank"}
@@ -26,4 +26,7 @@ here:
 * [IIGB's Linux Cluster Manual](http://manuals.bioinformatics.ucr.edu/home/hpc){:target="_blank"}
 
 
+## Courses
+
+Teaching material for [graduate courses](http://girke.bioinformatics.ucr.edu/teaching/) will be inluded here as well.
 

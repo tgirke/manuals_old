@@ -6,14 +6,14 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title: Manuals 
+topnav_title: Data Analysis Tutorials 
 homepage_title: Manuals
 site_title: Manuals
 project_folder: mydoc
 company_name: Thomas Girke
 footer_image_location: ../common_images/company_logo.png
 github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
-disqus_shortname: idrbwjekyll
+disqus_shortname: 
 # variables
 
 markdown: kramdown
