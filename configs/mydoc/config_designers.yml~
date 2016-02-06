@@ -7,7 +7,7 @@ version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
 topnav_title: Data Analysis Tutorials 
-homepage_title: Manuals
+homepage_title: Introduction
 site_title: Manuals
 project_folder: mydoc
 company_name: Thomas Girke

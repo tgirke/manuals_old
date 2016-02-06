@@ -45,6 +45,7 @@ biocLite("tgirke/longevityTools", build_vignettes=TRUE, dependencies=TRUE) # Ins
 
 ## Loading package and documentation
 
+{% gist c26daac0f647f1732a58 %} 
 
 {% highlight s %}
 library("longevityTools") # Loads the package

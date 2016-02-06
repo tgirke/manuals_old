@@ -5,7 +5,7 @@ var subject= "{{site.site_title}} feedback";
 var body = "I have some feedback about the {{page.title}} page: ";
 body += window.location.href;
 body += "";
-var uri = "mailto:{{thomas.girke@ucr.edu}}?subject=";
+var uri = "mailto:{{site.feedback_email}}?subject=";
 uri += encodeURIComponent(subject);
 uri += "&body=";
 uri += encodeURIComponent(body);

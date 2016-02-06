@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 # Introduction 
-zzzThis vignette provides general information about the `longevityTools` package.
+This vignette provides general information about the `longevityTools` package.
 This includes an introduction into the objects, data structures, methods and
 functions defined by `longevityTools`. The development of `longevityTools` is part of the 
 [Longevity Genomics](http://www.longevitygenomics.org/) project. 
@@ -44,6 +44,7 @@ biocLite("tgirke/longevityTools", build_vignettes=TRUE, dependencies=TRUE) # Ins
 {% endhighlight %}
 
 ## Loading package and documentation
+
 
 
 {% highlight s %}
