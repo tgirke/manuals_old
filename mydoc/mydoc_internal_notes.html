@@ -928,7 +928,7 @@ $('#toc').on('click', 'a', function() {
 <ol>
   <li>
     <p>Create a new project repository on GitHub and give it any name. For instance, the project 
-described here was named <code>manuals</code>. This will be the project’s <code>master</code> branch. After this is done, clone the new repostitory to your 
+described here was named <code>manuals</code>. This initial setup will be the project’s <code>master</code> branch. After this is done, clone the new repostitory to your 
 local computer. If you are new to GitHub <a href="https://guides.github.com/activities/hello-world/">here</a> are some basic instructions for creating 
 and managing GitHub repositories</p>
   </li>
@@ -975,12 +975,15 @@ git commit -am <span class="s2">"some edits"</span>; git push -u origin master</
 <p>Currently, the changes to <code>../doc_outputs/mydoc/designers</code> need to be synced into the 
 <a href="https://github.com/tgirke/manuals/tree/gh-pages">gh-pages</a> branch of the project repository. The following accomplishes this with
 <code>rsync</code>. The last two lines add, commit and push all changes to the <code>gh-pages</code> branch.
-After this the changes should show up in the life version of the web site.</p>
+After this the changes should show up in the life version of the web site. Note, prior to
+the syncing, one usually wants to shut down the locally running Jekyell server with
+<code>Ctrl-c</code> in its terminal window.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
 git add .
-git commit -am <span class="s2">"some edits"</span>; git push -u origin master gh-pages</code></pre></div>
+git commit -am <span class="s2">"some edits"</span>; git push -u origin gh-pages
+git checkout master</code></pre></div>
 
 <h2 id="adding-a-new-page">Adding a new page</h2>
 
@@ -1009,7 +1012,8 @@ git commit -am <span class="s2">"some edits"</span>; git push -u origin master
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
 git add .
-git commit -am <span class="s2">"some edits"</span>; git push -u origin master gh-pages</code></pre></div>
+git commit -am <span class="s2">"some edits"</span>; git push -u origin gh-pages
+git checkout master</code></pre></div>
 
 <h2 id="useful-utilities">Useful utilities</h2>
 
