@@ -37,7 +37,6 @@ _data/mydoc/mydoc_urls.yml
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
 git add .
-git commit -am "some edits"; git push -u origin master
 {% endhighlight %}
 
 ## Commit to GitHub
