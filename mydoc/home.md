@@ -6,11 +6,13 @@ type: first_page
 homepage: true
 ---
 
-## Manuals 
+{{site.data.alerts.note}} 
+This site will be the new home for several data analysis manuals I am
+maintaining. During this development period please continue to use their
+current versions linked below.
+{{site.data.alerts.end}}
 
-This site will be the new home for several data analysis manuals I am maintaining. 
-During this development period please continue to use their current versions linked
-below.
+## Manuals 
 
 * [R Basics Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual){:target="_blank"}
 * [Bioconductor Manual](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#BIOCONPROGRAMS){:target="_blank"}

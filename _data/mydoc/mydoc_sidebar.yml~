@@ -601,7 +601,7 @@ entries:
     items:
 
     - title: Site administration
-      url: /mydoc/mydoc_tag_archives_overview.html
+      url: /mydoc/mydoc_internal_notes.html
       audience: writers, designers
       platform: all
       product: all

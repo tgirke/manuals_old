@@ -12,7 +12,7 @@ site_title: Manuals
 project_folder: mydoc
 company_name: Thomas Girke
 footer_image_location: ../common_images/company_logo.png
-github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
+github_editme_path: tgirke/manuals/edit/reviews
 disqus_shortname: 
 # variables
 
@@ -22,7 +22,7 @@ kramdown:
 
 
 sidebar_tagline: Manuals
-sidebar_version: Version 1.0.1
+sidebar_version: !!Under Construction!!
 theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf
 

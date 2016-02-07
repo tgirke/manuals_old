@@ -600,7 +600,7 @@ entries:
     output: web
     items:
 
-    - title: Site administration
+    - title: Administration of site
       url: /mydoc/mydoc_internal_notes.html
       audience: writers, designers
       platform: all
