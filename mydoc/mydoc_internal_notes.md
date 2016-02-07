@@ -9,7 +9,7 @@ summary: "Internal notes to maintain this site."
 ## Create a new instance of this site
 
 1. Create a new project repository on GitHub and give it any name. For instance, the project 
-described here was named `manuals`. This will be the project's `master` branch. After this is done, clone the new repostitory to your 
+described here was named `manuals`. This initial setup will be the project's `master` branch. After this is done, clone the new repostitory to your 
 local computer. If you are new to GitHub [here](https://guides.github.com/activities/hello-world/) are some basic instructions for creating 
 and managing GitHub repositories
 
@@ -56,13 +56,16 @@ git commit -am "some edits"; git push -u origin master
 Currently, the changes to `../doc_outputs/mydoc/designers` need to be synced into the 
 [gh-pages](https://github.com/tgirke/manuals/tree/gh-pages) branch of the project repository. The following accomplishes this with
 `rsync`. The last two lines add, commit and push all changes to the `gh-pages` branch.
-After this the changes should show up in the life version of the web site.
+After this the changes should show up in the life version of the web site. Note, prior to
+the syncing, one usually wants to shut down the locally running Jekyell server with
+`Ctrl-c` in its terminal window.
 
 {% highlight bash %}
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
 git add .
-git commit -am "some edits"; git push -u origin master gh-pages
+git commit -am "some edits"; git push -u origin gh-pages
+git checkout master
 {% endhighlight %}
 
 
@@ -98,7 +101,8 @@ git commit -am "some edits"; git push -u origin master
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
 git add .
-git commit -am "some edits"; git push -u origin master gh-pages
+git commit -am "some edits"; git push -u origin gh-pages
+git checkout master
 {% endhighlight %}
 
 ## Useful utilities
