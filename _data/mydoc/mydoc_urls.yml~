@@ -362,7 +362,7 @@ tag_special_layouts:
 mydoc_Rbasics:
   title: "About this theme"
   url: "../mydoc_Rbasics.html"
-  link: "<a href='../mydoc_about.html'>About this theme</a>"
+  link: "<a href='../mydoc_about.html'>R Basics</a>"
 
 
 
@@ -372,6 +372,10 @@ mydoc_Rbasics:
   link: "<a href='../mydoc_support.html'>Support</a>"
 
 
+mydoc_internal_notes:
+  title: "Internal Notes"
+  url: "../mydoc_internal_notes.html"
+  link: "<a href='../mydoc_internal_notes.html'>Internal Notes</a>"
 
 
 
