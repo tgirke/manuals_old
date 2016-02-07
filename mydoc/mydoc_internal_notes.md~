@@ -1,0 +1,122 @@
+---
+title: Administration of site
+tags: [formatting]
+keywords: navigation tabs, hide sections, tabbers, interface tabs
+last_updated: February 06, 2016
+summary: "Internal notes to maintain this site."
+---
+
+## Create a new instance of this site
+
+1. Create a new project repository on GitHub and give it any name. For instance, the project 
+described here was named `manuals`. This will be the project's `master` branch. After this is done, clone the new repostitory to your 
+local computer. If you are new to GitHub [here](https://guides.github.com/activities/hello-world/) are some basic instructions for creating 
+and managing GitHub repositories
+
+2. Download or clone the [Jekyll Documentation Theme](https://github.com/tomjohnson1492/documentation-theme-jekyll)
+from Tom Johnson. Then copy the directory's content to your new project repository (here `manuals` directory).
+Subsequently, commit and push its entire content to the `master` branch on GitHub.
+
+3. Add a `gh-pages` branch to your newly created GitHub project repository.
+By adding a `gh-pages` branch to a GitHub project, one can host from this branch 
+a web site (here Jekyll site) for a GitHub project repository. The `master` branch of this
+project contains the source code of the site and its `gh-pages` branch the pre-built web 
+site components. Instruction for setting up a `gh-pages` branch for an existing project 
+are available [here](https://help.github.com/articles/creating-project-pages-manually/).
+
+## Edit a page
+
+### Built and test site locally
+Run following command within the root directory of the project's git repository
+(here `~/Dropbox/Websites/manuals`) and then preview the site at the URL
+printed to the terminal. Note, all paths are given here relative to this
+directory.
+
+{% highlight bash %}
+jekyll serve --config configs/mydoc/config_designers.yml
+{% endhighlight %}
+
+{{site.data.alerts.note}} 
+The built directory of the site is '../doc_outputs/mydoc/designers'. The changes are 
+committed automatically when previewing the site with 'jekyll serve' or by executing the 'mydoc_*.sh' bash 
+script(s) located in the root directory of the project.
+{{site.data.alerts.end}}
+
+### Edit site in `master` branch
+Edits should be made in the project's [master](https://github.com/tgirke/manuals/tree/master) 
+branch and then committed from there to the corresponding branch on GitHub.
+
+{% highlight bash %}
+git checkout master
+vim ./mydoc/mydoc_some_page.md # Make changes to *.md pages in ./mydoc/
+git commit -am "some edits"; git push -u origin master
+{% endhighlight %}
+
+### Sync changes to `gh-pages` branch
+Currently, the changes to `../doc_outputs/mydoc/designers` need to be synced into the 
+[gh-pages](https://github.com/tgirke/manuals/tree/gh-pages) branch of the project repository. The following accomplishes this with
+`rsync`. The last two lines add, commit and push all changes to the `gh-pages` branch.
+After this the changes should show up in the life version of the web site.
+
+{% highlight bash %}
+git checkout gh-pages
+rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
+git add .
+git commit -am "some edits"; git push -u origin master gh-pages
+{% endhighlight %}
+
+
+## Adding a new page
+
+### Create page
+The easiest is usually to copy and existing page and them make the necessary changes
+to its Jekyll front matter section and content.
+
+{% highlight bash %}
+cd ./mydoc
+cp mydoc_some_existing_page.md mydoc_some_new_page.md
+git add mydoc_some_new_page.md 
+vim ./mydoc/mydoc_some_new_page.md # Make necessary content changes
+{% endhighlight %}
+
+### Sidebar and URL configuration
+Next, the new page needs to be registered properly in the sidebar and URL configuration 
+files. After this the new page should be viewable in the local preview of your browser.
+
+{% highlight bash %}
+vim _data/mydoc/mydoc_sidebar.yml
+vim _data/mydoc/mydoc_urls.yml
+{% endhighlight %}
+
+### Commit to GitHub
+Similar as above add, commit and push changes to the `master` and `gh-pages` branches 
+of the local and remote repositories.
+
+{% highlight bash %}
+git checkout master
+git commit -am "some edits"; git push -u origin master
+git checkout gh-pages
+rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
+git add .
+git commit -am "some edits"; git push -u origin master gh-pages
+{% endhighlight %}
+
+## Useful utilities
+
+### Site-wide configurations
+Edit this file accordingly.
+
+{% highlight bash %}
+configs/mydoc/config_designers.yml
+{% endhighlight %}
+
+### Check differences in directories
+One can also double-check by downloading the changes from GitHub and then run `diff`
+
+{% highlight bash %}
+diff -r ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
+{% endhighlight %}
+
+
+
+
