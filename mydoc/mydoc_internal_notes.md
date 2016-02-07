@@ -43,7 +43,7 @@ git commit -am "some edits"; git push -u origin master
 ## Commit to GitHub
 {% highlight bash %}
 git checkout gh-pages
-git commit -am "some edits"; git push -u origin master
+git commit -am "some edits"; git push -u origin master gh-pages
 git checkout master
 git commit -am "some edits"; git push -u origin master
 {% endhighlight %}
