@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Internal notes to maintain this site.">
 <meta name="keywords" content="formatting,  navigation tabs, hide sections, tabbers, interface tabs">
-<title>Internal Notes  | Manuals</title>
+<title>Administration of site  | Manuals</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -161,7 +161,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Manuals feedback";
-var body = "I have some feedback about the Internal Notes page: ";
+var body = "I have some feedback about the Administration of site page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:?subject=";
@@ -188,7 +188,7 @@ window.location.href = uri;
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: '../search.json',
-                            searchResultTemplate: '<li><a href="{url}" title="Internal Notes">{title}</a></li>',
+                            searchResultTemplate: '<li><a href="{url}" title="Administration of site">{title}</a></li>',
                         noResultsText: 'No results found.',
                                 limit: 10,
                                 fuzzy: true,
@@ -270,7 +270,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Manuals</span>
-            <span class="versionTagline">Version 1.0.1</span>
+            <span class="versionTagline">Under Construction!</span>
 
             
             
@@ -859,7 +859,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li class="active"><a href="../mydoc/mydoc_internal_notes.html">Site administration</a></li>
+                    <li class="active"><a href="../mydoc/mydoc_internal_notes.html">Administration of site</a></li>
                     
 
                     
@@ -888,7 +888,7 @@ window.location.href = uri;
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main">Internal Notes</h1>
+   <h1 class="post-title-main">Administration of site</h1>
 </div>
 
 <div class="post-content">
@@ -923,44 +923,102 @@ $('#toc').on('click', 'a', function() {
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <h2 id="built-and-test-site-locally">Built and test site locally</h2>
-<p>Run following command within <code>~/Dropbox/Websites/manuals</code> directory and then preview the site at the preview URL shown.</p>
+  <h2 id="create-a-new-instance-of-this-site">Create a new instance of this site</h2>
+
+<ol>
+  <li>
+    <p>Create a new project repository on GitHub and give it any name. For instance, the project 
+described here was named <code>manuals</code>. This will be the project’s <code>master</code> branch. After this is done, clone the new repostitory to your 
+local computer. If you are new to GitHub <a href="https://guides.github.com/activities/hello-world/">here</a> are some basic instructions for creating 
+and managing GitHub repositories</p>
+  </li>
+  <li>
+    <p>Download or clone the <a href="https://github.com/tomjohnson1492/documentation-theme-jekyll">Jekyll Documentation Theme</a>
+from Tom Johnson. Then copy the directory’s content to your new project repository (here <code>manuals</code> directory).
+Subsequently, commit and push its entire content to the <code>master</code> branch on GitHub.</p>
+  </li>
+  <li>
+    <p>Add a <code>gh-pages</code> branch to your newly created GitHub project repository.
+By adding a <code>gh-pages</code> branch to a GitHub project, one can host from this branch 
+a web site (here Jekyll site) for a GitHub project repository. The <code>master</code> branch of this
+project contains the source code of the site and its <code>gh-pages</code> branch the pre-built web 
+site components. Instruction for setting up a <code>gh-pages</code> branch for an existing project 
+are available <a href="https://help.github.com/articles/creating-project-pages-manually/">here</a>.</p>
+  </li>
+</ol>
+
+<h2 id="edit-a-page">Edit a page</h2>
+
+<h3 id="built-and-test-site-locally">Built and test site locally</h3>
+<p>Run following command within the root directory of the project’s git repository
+(here <code>~/Dropbox/Websites/manuals</code>) and then preview the site at the URL
+printed to the terminal. Note, all paths are given here relative to this
+directory.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll serve --config configs/mydoc/config_designers.yml</code></pre></div>
 
-<h2 id="site-configuration">Site configuration</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note: </b> 
+The built directory of the site is '../doc_outputs/mydoc/designers'. The changes are 
+committed automatically when previewing the site with 'jekyll serve' or by executing the 'mydoc_*.sh' bash 
+script(s) located in the root directory of the project.
+</div>
+
+<h3 id="edit-site-in-master-branch">Edit site in <code>master</code> branch</h3>
+<p>Edits should be made in the project’s <a href="https://github.com/tgirke/manuals/tree/master">master</a> 
+branch and then committed from there to the corresponding branch on GitHub.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout master
+vim ./mydoc/mydoc_some_page.md <span class="c"># Make changes to *.md pages in ./mydoc/</span>
+git commit -am <span class="s2">"some edits"</span>; git push -u origin master</code></pre></div>
+
+<h3 id="sync-changes-to-gh-pages-branch">Sync changes to <code>gh-pages</code> branch</h3>
+<p>Currently, the changes to <code>../doc_outputs/mydoc/designers</code> need to be synced into the 
+<a href="https://github.com/tgirke/manuals/tree/gh-pages">gh-pages</a> branch of the project repository. The following accomplishes this with
+<code>rsync</code>. The last two lines add, commit and push all changes to the <code>gh-pages</code> branch.
+After this the changes should show up in the life version of the web site.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout gh-pages
+rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
+git add .
+git commit -am <span class="s2">"some edits"</span>; git push -u origin master gh-pages</code></pre></div>
+
+<h2 id="adding-a-new-page">Adding a new page</h2>
+
+<h3 id="create-page">Create page</h3>
+<p>The easiest is usually to copy and existing page and them make the necessary changes
+to its Jekyll front matter section and content.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ./mydoc
+cp mydoc_some_existing_page.md mydoc_some_new_page.md
+git add mydoc_some_new_page.md 
+vim ./mydoc/mydoc_some_new_page.md <span class="c"># Make necessary content changes</span></code></pre></div>
+
+<h3 id="sidebar-and-url-configuration">Sidebar and URL configuration</h3>
+<p>Next, the new page needs to be registered properly in the sidebar and URL configuration 
+files. After this the new page should be viewable in the local preview of your browser.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vim _data/mydoc/mydoc_sidebar.yml
+vim _data/mydoc/mydoc_urls.yml</code></pre></div>
+
+<h3 id="commit-to-github">Commit to GitHub</h3>
+<p>Similar as above add, commit and push changes to the <code>master</code> and <code>gh-pages</code> branches 
+of the local and remote repositories.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout master
+git commit -am <span class="s2">"some edits"</span>; git push -u origin master
+git checkout gh-pages
+rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
+git add .
+git commit -am <span class="s2">"some edits"</span>; git push -u origin master gh-pages</code></pre></div>
+
+<h2 id="useful-utilities">Useful utilities</h2>
+
+<h3 id="site-wide-configurations">Site-wide configurations</h3>
 <p>Edit this file accordingly.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">configs/mydoc/config_designers.yml</code></pre></div>
 
-<h2 id="how-to-add-a-new-page">How to add a new page</h2>
-
-<ol>
-  <li>
-    <p>Add page to <code>mydoc</code> <em>e.g.</em> <code>mydoc/mydoc_mypage.md</code></p>
-  </li>
-  <li>
-    <p>Change sidebar and URL configuration files accordingly</p>
-  </li>
-</ol>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">_data/mydoc/mydoc_sidebar.yml
-_data/mydoc/mydoc_urls.yml</code></pre></div>
-
-<h2 id="sync-changes-with-gh-pages-branch-using-rsync">Sync changes with <code>gh-pages</code> branch using <code>rsync</code></h2>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout gh-pages
-rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
-git add .</code></pre></div>
-
-<h2 id="commit-to-github">Commit to GitHub</h2>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout gh-pages
-git commit -am <span class="s2">"some edits"</span>; git push -u origin master gh-pages
-git checkout master
-git commit -am <span class="s2">"some edits"</span>; git push -u origin master</code></pre></div>
-
-<h2 id="check-differences-in-directories">Check differences in directories</h2>
+<h3 id="check-differences-in-directories">Check differences in directories</h3>
 <p>One can also double-check by downloading the changes from GitHub and then run <code>diff</code></p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">diff -r ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/</code></pre></div>
@@ -1007,7 +1065,7 @@ git commit -am <span class="s2">"some edits"</span>; git push -u origin master</
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> February 06, 2016<br/> Site last generated: Feb 6, 2016 <br />
+<p>Page last updated:</span> February 06, 2016<br/> Site last generated: Feb 7, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>
