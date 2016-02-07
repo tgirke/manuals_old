@@ -35,20 +35,6 @@ home:
 
 
  
-mydoc_supported_features:
-  title: "Supported features"
-  url: "../mydoc/mydoc_supported_features.html"
-  link: "<a href='../mydoc/mydoc_supported_features.html'>Supported features</a>"
-
-
- 
-mydoc_about:
-  title: "About the theme author"
-  url: "../mydoc/mydoc_about.html"
-  link: "<a href='../mydoc/mydoc_about.html'>About the theme author</a>"
-
-
- 
 mydoc_support:
   title: "Support"
   url: "../mydoc/mydoc_support.html"
@@ -58,73 +44,80 @@ mydoc_support:
 
 
  
+mydoc_Rbasics:
+  title: "1. R Basics"
+  url: "../mydoc/mydoc_Rbasics.html"
+  link: "<a href='../mydoc/mydoc_Rbasics.html'>1. R Basics</a>"
+
+
+ 
 mydoc_getting_started:
-  title: "1. Build the default project"
+  title: "2. Build the default project"
   url: "../mydoc/mydoc_getting_started.html"
-  link: "<a href='../mydoc/mydoc_getting_started.html'>1. Build the default project</a>"
+  link: "<a href='../mydoc/mydoc_getting_started.html'>2. Build the default project</a>"
 
 
  
 mydoc_adding_new_projects:
-  title: "2. Add a new project"
+  title: "3. Add a new project"
   url: "../mydoc/mydoc_adding_new_projects.html"
-  link: "<a href='../mydoc/mydoc_adding_new_projects.html'>2. Add a new project</a>"
+  link: "<a href='../mydoc/mydoc_adding_new_projects.html'>3. Add a new project</a>"
 
 
  
 mydoc_decide_on_attributes:
-  title: "3. Decide on your project's attributes"
+  title: "4. Decide on your project's attributes"
   url: "../mydoc/mydoc_decide_on_attributes.html"
-  link: "<a href='../mydoc/mydoc_decide_on_attributes.html'>3. Decide on your project's attributes</a>"
+  link: "<a href='../mydoc/mydoc_decide_on_attributes.html'>4. Decide on your project's attributes</a>"
 
 
  
 mydoc_configuration_settings:
-  title: "4. Set the configuration options"
+  title: "5. Set the configuration options"
   url: "../mydoc/mydoc_configuration_settings.html"
-  link: "<a href='../mydoc/mydoc_configuration_settings.html'>4. Set the configuration options</a>"
+  link: "<a href='../mydoc/mydoc_configuration_settings.html'>5. Set the configuration options</a>"
 
 
  
 mydoc_conditions_file_customization:
-  title: "5. Customize the conditions file"
+  title: "6. Customize the conditions file"
   url: "../mydoc/mydoc_conditions_file_customization.html"
-  link: "<a href='../mydoc/mydoc_conditions_file_customization.html'>5. Customize the conditions file</a>"
+  link: "<a href='../mydoc/mydoc_conditions_file_customization.html'>6. Customize the conditions file</a>"
 
 
  
 mydoc_configure_sidebar:
-  title: "6. Configure the sidebar"
+  title: "7. Configure the sidebar"
   url: "../mydoc/mydoc_configure_sidebar.html"
-  link: "<a href='../mydoc/mydoc_configure_sidebar.html'>6. Configure the sidebar</a>"
+  link: "<a href='../mydoc/mydoc_configure_sidebar.html'>7. Configure the sidebar</a>"
 
 
  
 mydoc_top_navigation:
-  title: "7. Configure the top navigation"
+  title: "8. Configure the top navigation"
   url: "../mydoc/mydoc_top_navigation.html"
-  link: "<a href='../mydoc/mydoc_top_navigation.html'>7. Configure the top navigation</a>"
+  link: "<a href='../mydoc/mydoc_top_navigation.html'>8. Configure the top navigation</a>"
 
 
  
 mydoc_url_generator_customization:
-  title: "8. Customize the URL generator"
+  title: "9. Customize the URL generator"
   url: "../mydoc/mydoc_url_generator_customization.html"
-  link: "<a href='../mydoc/mydoc_url_generator_customization.html'>8. Customize the URL generator</a>"
+  link: "<a href='../mydoc/mydoc_url_generator_customization.html'>9. Customize the URL generator</a>"
 
 
  
 mydoc_princexml_setup:
-  title: "9. Set up Prince XML"
+  title: "10. Set up Prince XML"
   url: "../mydoc/mydoc_princexml_setup.html"
-  link: "<a href='../mydoc/mydoc_princexml_setup.html'>9. Set up Prince XML</a>"
+  link: "<a href='../mydoc/mydoc_princexml_setup.html'>10. Set up Prince XML</a>"
 
 
  
 mydoc_build_scripts:
-  title: "10. Configure the build scripts"
+  title: "11. Configure the build scripts"
   url: "../mydoc/mydoc_build_scripts.html"
-  link: "<a href='../mydoc/mydoc_build_scripts.html'>10. Configure the build scripts</a>"
+  link: "<a href='../mydoc/mydoc_build_scripts.html'>11. Configure the build scripts</a>"
 
 
 

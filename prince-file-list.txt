@@ -42,18 +42,13 @@
                         
                      
                          
-                            /mydoc/mydoc_supported_features.html
-                                  
-                        
-                     
-                         
-                     
-                         
                      
               
           
               
                       
+                         
+                     
                          
                             /mydoc/mydoc_getting_started.html
                                   
