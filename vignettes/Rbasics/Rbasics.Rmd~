@@ -43,7 +43,7 @@ suppressPackageStartupMessages({
     library(ggplot2) }) 
 ```
 [ [View R markdown](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html) ] 
-[ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]
+[ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]  
 [ [Download *.R](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R) ]
 
 # Introduction 

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
+date: "Last update: 07 February, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -29,19 +29,21 @@ git commit -am "some edits"; git push -u origin master
     css: style.css
 -->
 
-```{r style, echo = FALSE, results = 'asis'}
-BiocStyle::markdown()
-options(width=100, max.print=1000)
-knitr::opts_chunk$set(
-    eval=as.logical(Sys.getenv("KNITR_EVAL", "TRUE")),
-    cache=as.logical(Sys.getenv("KNITR_CACHE", "TRUE")))
-```
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("h1").className = "title";
+});
+</script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.links;  
+  for (var i = 0, linksLength = links.length; i < linksLength; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = '_blank';
+});
+</script>
 
-```{r setup, echo=FALSE, messages=FALSE, warnings=FALSE}
-suppressPackageStartupMessages({
-    library(limma) 
-    library(ggplot2) }) 
-```
+
 [ [View R markdown](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html) ] 
 [ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]
 [ [Download *.R](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R) ]
@@ -112,14 +114,16 @@ Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinforma
 
 3. Install CRAN Packages from R console like this:
 
-    ```{r install_cran, eval=FALSE}
+    
+    ```r
     install.packages(c("pkg1", "pkg2")) 
     install.packages("pkg.zip", repos=NULL)
     ```
 
 4. Install Bioconductor packages as follows:
 
-    ```{r install_bioc, eval=FALSE}
+    
+    ```r
     source("http://www.bioconductor.org/biocLite.R")
     library(BiocInstaller)
     BiocVersion()
@@ -131,13 +135,41 @@ Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinforma
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
 
 Plotting example
-```{r plot_example, eval=TRUE}
+
+```r
 barplot(1:10, col="green")
 ```
 
+![](Rbasics_files/figure-html/plot_example-1.png)\
 
 
-```{r sessionInfo}
+
+
+```r
 sessionInfo()
+```
+
+```
+## R version 3.2.3 (2015-12-10)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 14.04.3 LTS
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8       
+##  [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C              
+## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  utils     datasets  grDevices methods   base     
+## 
+## other attached packages:
+## [1] ggplot2_2.0.0   limma_3.26.3    BiocStyle_1.8.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.3      codetools_0.2-14 digest_0.6.9     plyr_1.8.3       grid_3.2.3      
+##  [6] gtable_0.1.2     formatR_1.2.1    magrittr_1.5     evaluate_0.8     scales_0.3.0    
+## [11] stringi_1.0-1    rmarkdown_0.9.2  tools_3.2.3      stringr_1.0.0    munsell_0.4.2   
+## [16] yaml_2.1.13      colorspace_1.2-6 htmltools_0.3    knitr_1.12
 ```
 
