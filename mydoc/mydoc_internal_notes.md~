@@ -6,7 +6,7 @@ last_updated: February 06, 2016
 summary: "Internal notes for maintaining this site."
 ---
 
-## 1. Create a new instance of this site
+## Create a new instance of this site
 
 1. Create a new project repository on GitHub and give it any name. For instance, the project 
 described here was named `manuals`. This initial setup will be the project's `master` branch. After this is done, clone the new repostitory to your 
@@ -24,7 +24,7 @@ project contains the source code of the site and its `gh-pages` branch the pre-b
 site components. Instruction for setting up a `gh-pages` branch for an existing project 
 are available [here](https://help.github.com/articles/creating-project-pages-manually/).
 
-## 2. Edit a page
+## Edit a page
 
 ### Built and test site locally
 Run following command within the root directory of the project's git repository
@@ -69,7 +69,7 @@ git checkout master
 {% endhighlight %}
 
 
-## 3. Adding a new page
+## Adding a new page
 
 ### Create page
 The easiest is usually to copy and existing page and them make the necessary changes
@@ -105,7 +105,34 @@ git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
 
-## 4. Useful utilities
+## R markdown integration
+
+(1) Write R markdown vignette (`*.Rmd` file) in `./vignettes` directory (*e.g.* `./vignettes/Rbasics`).
+
+(2) Render vignette to `.md` and `.html` files with:
+
+{% highlight bash %}
+echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd
+{% endhighlight %}
+
+(3) Append `.md` file (here `Rbasics.knit.md`) to corresponding `.md` file in `./mydoc` directory.
+
+(4) Remove front matter genereted by R markdown, but leave the one required for Jekyll
+
+(5) Replace chode chunk tags to the ones required by Jekyll
+
+{% highlight bash %}
+%s/```r/\{\% highlight s \%\}/cg
+%s/```r/\{\% highlight sh \%\}/cg
+%s/```/\{\% endhighlight \%\}/cg
+{% endhighlight %}
+
+(6) Move images into proper directory and adjust their path in the `.md` file
+
+Task
+: Write script that automates steps (2)-(6)
+
+## Useful utilities
 
 ### Site-wide configurations
 Edit this file accordingly.

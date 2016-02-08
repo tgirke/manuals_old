@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function() {
 # Introduction 
 
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
-programming language for data analysis and visualization. The associated
-[Bioconductor](http://bioconductor.org/) and CRAN package repositories provide
-many additional R packages for statistical data analysis for a wide array of 
-research areas, such as tools for big data and genome analysis. The R software 
-is free and runs on all common operating systems. 
+programming language for the analysis and visualization of any type of data.
+The associated [Bioconductor](http://bioconductor.org/) and CRAN package
+repositories provide many additional R packages for statistical data analysis
+for a wide array of research areas, such as tools for big data and genome
+analysis. The R software is free and runs on all common operating systems. 
 
-## Look and Feel of the R Environment
+## Look and Feel of R Environment
 
 ### Why Using R?
 * Complete statistical environment and programming language
@@ -90,17 +90,20 @@ to the R console:
 
 New integrated development environment (IDE) for [R](http://www.rstudio.com/ide/download/). Highly functional for both beginners and 
 advanced.
+
 <center><img title="RStudio" src="images/rstudio.png"/></center>
 <center> RStudio IDE</center>
+
 Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomment), `Ctrl+1/2` (switch window focus)
 
-#### Example: Vim-R-Tmux: Command-Line IDE for R
+#### Example: Vim-R-Tmux
 
 Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r)
-<center><img title="Vim-R-Tmux" src="images/screenshot.png" width="65%" height="65%" ></center>
+
+<center><img title="Vim-R-Tmux" src="images/screenshot.png" ></center>
 <center>Vim-R-Tmux IDE for R</center>
 
-### Package Repositories
+## R Package Repositories
 
 * CRAN (>8,000 packages) general data analysis \href{http://cran.at.r-project.org/}{{\beamerbutton{Link}}}
 * Bioconductor (>1,100 packages) bioscience data analysis \href{http://www.bioconductor.org/}{{\beamerbutton{Link}}}
@@ -114,25 +117,379 @@ Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinforma
 
 3. Install CRAN Packages from R console like this:
 
-    
-    ```r
-    install.packages(c("pkg1", "pkg2")) 
-    install.packages("pkg.zip", repos=NULL)
-    ```
+
+```r
+install.packages(c("pkg1", "pkg2")) 
+install.packages("pkg.zip", repos=NULL)
+```
 
 4. Install Bioconductor packages as follows:
 
-    
-    ```r
-    source("http://www.bioconductor.org/biocLite.R")
-    library(BiocInstaller)
-    BiocVersion()
-    biocLite()
-    biocLite(c("pkg1", "pkg2"))
-    ```
+
+```r
+source("http://www.bioconductor.org/biocLite.R")
+library(BiocInstaller)
+BiocVersion()
+biocLite()
+biocLite(c("pkg1", "pkg2"))
+```
 
 5. For more details consult the [Bioc Install page](\href{http://www.bioconductor.org/install/)
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
+
+## Getting Around
+
+### Startup and Closing Behavior
+
+* __Starting R__:
+    The R GUI versions, including RStudio, under Windows and Mac OS X can be
+    opened by double-clicking their icons. Alternatively, one can start it by
+    typing `R` in a terminal (default under Linux). 
+
+* __Startup/Closing Behavior__:
+    The R environment is controlled by hidden files in the startup directory:
+    `.RData`, `.Rhistory` and `.Rprofile` (optional). 
+	
+    
+* __Closing R__:
+
+    
+    ```r
+    q()  
+    Save workspace image? [y/n/c]:
+    ```
+        
+* __Note__:
+    When responding with `y`, then the entire R workspace will be written to
+    the `.RData` file which can become very large. Often it is sufficient to just
+    save an analysis protocol in an R source file. This way one can quickly
+    regenerate all data sets and objects. 
+
+
+### Navigating directories
+
+Create an object with the assignment operator `<-` or `=`
+
+```r
+object <- ...
+```
+
+List objects in current R session
+
+```r
+ls()
+```
+
+Return content of current working directory
+
+```r
+dir()
+```
+
+Return path of current working directory
+
+```r
+getwd()
+```
+
+Change current working directory
+
+```r
+setwd("/home/user")
+```
+
+## Basic Syntax
+
+General R command syntax
+
+
+```r
+object <- function_name(arguments) 
+object <- object[arguments] 
+```
+
+Finding help
+
+
+```r
+?function_name
+```
+
+Load a library/package
+
+
+```r
+library("my_library") 
+```
+
+List functions defined by a library
+
+
+```r
+library(help="my_library")
+```
+
+Load library manual (PDF or HTML file)
+
+
+```r
+vignette("my_library") 
+```
+
+Execute an R script from within R
+
+
+```r
+source("my_script.R")
+```
+
+Execute an R script from command-line (the first of the three options is preferred)
+
+
+```sh
+$ Rscript my_script.R
+$ R CMD BATCH my_script.R 
+$ R --slave < my_script.R 
+```
+
+## Data Types 
+
+__Numeric data__: `1, 2, 3, ...`
+
+
+```r
+x <- c(1, 2, 3); x
+is.numeric(x)
+as.character(x)
+```
+
+__Character data__: `"a", "b", "c", ...`
+
+
+```r
+x <- c("1", "2", "3"); x
+is.character(x)
+as.numeric(x)
+```
+
+__Complex data__: mix of both
+
+
+```r
+c(1, "b", 3)
+```
+
+__Logical data__: `TRUE` of `FALSE`
+
+
+```r
+x <- 1:10 < 5
+x  
+```
+
+```
+##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+```
+
+```r
+!x
+```
+
+```
+##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+```
+
+```r
+which(x) # Returns index for the 'TRUE' values in logical vector
+```
+
+```
+## [1] 1 2 3 4
+```
+
+## Data Objects
+
+__Vectors (1D)__: `numeric` or `character`
+
+
+```r
+myVec <- 1:10; names(myVec) <- letters[1:10]  
+myVec[1:5]
+```
+
+```
+## a b c d e 
+## 1 2 3 4 5
+```
+
+```r
+myVec[c(2,4,6,8)]
+```
+
+```
+## b d f h 
+## 2 4 6 8
+```
+
+```r
+myVec[c("b", "d", "f")]
+```
+
+```
+## b d f 
+## 2 4 6
+```
+
+__Factors (1D)__: vectors with grouping information
+
+
+```r
+factor(c("dog", "cat", "mouse", "dog", "dog", "cat"))
+```
+
+```
+## [1] dog   cat   mouse dog   dog   cat  
+## Levels: cat dog mouse
+```
+
+__Matrices (2D)__: two dimensional structures with data of same type
+
+
+```r
+myMA <- matrix(1:30, 3, 10, byrow = TRUE) 
+class(myMA)
+```
+
+```
+## [1] "matrix"
+```
+
+```r
+myMA[1:2,]
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+## [1,]    1    2    3    4    5    6    7    8    9    10
+## [2,]   11   12   13   14   15   16   17   18   19    20
+```
+
+```r
+myMA[1, , drop=FALSE]
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+## [1,]    1    2    3    4    5    6    7    8    9    10
+```
+
+__Data Frames (2D)__: two dimensional objects with data of variable types
+
+
+```r
+myDF <- data.frame(Col1=1:10, Col2=10:1) 
+myDF[1:2, ]
+```
+
+```
+##   Col1 Col2
+## 1    1   10
+## 2    2    9
+```
+
+__Arrays__: data structure with one, two or more dimensions
+
+
+__Lists__: containers for any object type
+
+
+```r
+myL <- list(name="Fred", wife="Mary", no.children=3, child.ages=c(4,7,9)) 
+myL
+```
+
+```
+## $name
+## [1] "Fred"
+## 
+## $wife
+## [1] "Mary"
+## 
+## $no.children
+## [1] 3
+## 
+## $child.ages
+## [1] 4 7 9
+```
+
+```r
+myL[[4]][1:2] 
+```
+
+```
+## [1] 4 7
+```
+
+__Functions__: piece of code
+
+
+```r
+myfct <- function(arg1, arg2, ...) { 
+	function_body 
+}
+```
+
+## Subsetting of data objects
+
+__Subsetting by positive or negative index/position numbers__
+
+
+```r
+myVec <- 1:26; names(myVec) <- LETTERS 
+myVec[1:4]
+```
+
+```
+## A B C D 
+## 1 2 3 4
+```
+
+__Subsetting by same length logical vectors__
+
+
+```r
+myLog <- myVec > 10
+myVec[myLog] 
+```
+
+```
+##  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z 
+## 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+```
+
+__Subsetting by field names__
+
+
+```r
+myVec[c("B", "K", "M")]
+```
+
+```
+##  B  K  M 
+##  2 11 13
+```
+
+__Subset with `$` sign__: references a single column or list component by its name 
+
+
+```r
+iris$Species[1:8]
+```
+
+```
+## [1] setosa setosa setosa setosa setosa setosa setosa setosa
+## Levels: setosa versicolor virginica
+```
 
 Plotting example
 

@@ -105,6 +105,33 @@ git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
 
+## R markdown integration
+
+(1) Write R markdown vignette (`*.Rmd` file) in `./vignettes` directory (*e.g.* `./vignettes/Rbasics`).
+
+(2) Render vignette to `.md` and `.html` files with:
+
+{% highlight bash %}
+echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd
+{% endhighlight %}
+
+(3) Append `.md` file (here `Rbasics.knit.md`) to corresponding `.md` file in `./mydoc` directory.
+
+(4) Remove front matter genereted by R markdown, but leave the one required for Jekyll
+
+(5) Replace chode chunk tags to the ones required by Jekyll
+
+{% highlight bash %}
+%s/```r/\{\% highlight s \%\}/cg
+%s/```sh/\{\% highlight sh \%\}/cg
+%s/```/\{\% endhighlight \%\}/cg
+{% endhighlight %}
+
+(6) Move images into proper directory and adjust their path in the `.md` file
+
+Task
+: Write script that automates steps (2)-(6)
+
 ## Useful utilities
 
 ### Site-wide configurations
