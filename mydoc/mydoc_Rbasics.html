@@ -923,15 +923,7 @@ $('#toc').on('click', 'a', function() {
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <h2 id="general-overview">General Overview</h2>
-<p><a href="http://cran.at.r-project.org">R</a> is a comprehensive statistical environment
-and programming language for professional data analysis and graphical display.
-The associated <a href="http://bioconductor.org/">Bioconductor</a> project provides many additional R packages for
-statistical data analysis in different life science areas, such as tools for
-microarray, next generation sequence and genome analysis. The R software is
-free and runs on all common operating systems.</p>
-
-<h2 id="scope-of-this-manual">Scope of this Manual</h2>
+  <h2 id="scope-of-this-manual">Scope of this Manual</h2>
 <p>This tutorial provides a condensed introduction into the usage of the R
 environment and its utilities for general data analysis and clustering. It also
 introduces a subset of packages from the
@@ -978,6 +970,135 @@ utilities to send code to the R console:</p>
 
 <center><img title="R_Interfaces" src="images/r_interfaces.png" /></center>
 <center> R Projects and Interfaces</center>
+
+<h1 id="introduction">Introduction</h1>
+
+<p><a href="http://cran.at.r-project.org">R</a> is a powerful statistical environment and
+programming language for data analysis and visualization. The associated
+<a href="http://bioconductor.org/">Bioconductor</a> and CRAN package repositories provide
+many additional R packages for statistical data analysis for a wide array of 
+research areas, such as tools for big data and genome analysis. The R software 
+is free and runs on all common operating systems.</p>
+
+<h2 id="look-and-feel-of-the-r-environment">Look and Feel of the R Environment</h2>
+
+<h3 id="why-using-r">Why Using R?</h3>
+<ul>
+  <li>Complete statistical environment and programming language</li>
+  <li>Efficient functions and data structures for data analysis</li>
+  <li>Powerful graphics</li>
+  <li>Access to fast growing number of analysis packages</li>
+  <li>Most widely used language in bioinformatics</li>
+  <li>Is standard for data mining and biostatistical analysis</li>
+  <li>Technical advantages: free, open-source, available for all OSs</li>
+</ul>
+
+<h3 id="books-and-documentation">Books and Documentation</h3>
+<ul>
+  <li>simpleR - Using R for Introductory Statistics (John Verzani, 2004) \href{http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf}}</li>
+  <li>Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) \href{http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/}}</li>
+  <li>More on this see “Finding Help” section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Finding-Help}}</li>
+</ul>
+
+<h3 id="working-environments-ides-for-r">Working environments (IDEs) for R</h3>
+<center><img title="R_Interfaces" src="images/vignette_Rbasics/rinterface.png" /></center>
+<center> R Projects and Interfaces</center>
+
+<p>Some R working environments with support for syntax highlighting and utilities to send code 
+to the R console:</p>
+
+<ul>
+  <li><a href="https://www.rstudio.com/products/rstudio/features">RStudio</a>: excellent choice for beginners (<a href="http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf">Cheat Sheet</a>)</li>
+  <li>Basic R code editors provided by Rguis</li>
+  <li><a href="https://wiki.gnome.org/Apps/Gedit">gedit</a>, <a href="http://rgedit.sourceforge.net/">Rgedit</a>, <a href="https://rkward.kde.org/">RKWard</a>, <a href="http://www.walware.de/goto/statet">Eclipse</a>, <a href="http://www.sciviews.org/Tinn-R/">Tinn-R</a>, <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="http://sourceforge.net/projects/npptor/">NppToR</a></li>
+  <li><a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r">Vim-R-Tmux</a>: R working environment based on vim and tmux</li>
+  <li><a href="http://www.xemacs.org/Download/index.html">Emacs</a> (<a href="http://ess.r-project.org/">ESS add-on package</a>)</li>
+</ul>
+
+<h4 id="example-rstudio">Example: RStudio</h4>
+
+<p>New integrated development environment (IDE) for <a href="http://www.rstudio.com/ide/download/">R</a>. Highly functional for both beginners and 
+advanced.</p>
+<center><img title="RStudio" src="images/vignette_Rbasics/rstudio.png" /></center>
+<center> RStudio IDE</center>
+<p>Some userful shortcuts: <code>Ctrl+Enter</code> (send code), <code>Ctrl+Shift+C</code> (comment/uncomment), <code>Ctrl+1/2</code> (switch window focus)</p>
+
+<h4 id="example-vim-r-tmux-command-line-ide-for-r">Example: Vim-R-Tmux: Command-Line IDE for R</h4>
+
+<p>Terminal-based Working Environment for R: <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r">Vim-R-Tmux</a></p>
+<center><img title="Vim-R-Tmux" src="images/vignette_Rbasics/screenshot.png" width="50%" height="50%" /></center>
+<center>Vim-R-Tmux IDE for R</center>
+
+<h3 id="package-repositories">Package Repositories</h3>
+
+<ul>
+  <li>CRAN ($&gt;$6,000 packages) general data analysis \href{http://cran.at.r-project.org/}}</li>
+  <li>Bioconductor ($&gt;$900 packages) bioscience data analysis \href{http://www.bioconductor.org/}}</li>
+  <li>Omegahat ($&gt;$90 packages) programming interfaces \href{http://www.omegahat.org/}}</li>
+</ul>
+
+<h2 id="installation-of-r-and-add-on-packages">Installation of R and Add-on Packages</h2>
+
+<ol>
+  <li>
+    <p>Install R for your operating system from <a href="http://cran.at.r-project.org/">CRAN</a>.</p>
+  </li>
+  <li>
+    <p>Install RStudio from <a href="http://www.rstudio.com/ide/download">RStudio</a>.</p>
+  </li>
+  <li>
+    <p>Install CRAN Packages from R console like this:</p>
+  </li>
+</ol>
+
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">install.packages</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"pkg1"</span><span class="p">,</span> <span class="s2">"pkg2"</span><span class="p">))</span> 
+<span class="n">install.packages</span><span class="p">(</span><span class="s2">"pkg.zip"</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span></code></pre></div>
+
+<ol>
+  <li>Install Bioconductor packages as follows:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">source</span><span class="p">(</span><span class="s2">"http://www.bioconductor.org/biocLite.R"</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">BiocInstaller</span><span class="p">)</span>
+<span class="n">BiocVersion</span><span class="p">()</span>
+<span class="n">biocLite</span><span class="p">()</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"pkg1"</span><span class="p">,</span> <span class="s2">"pkg2"</span><span class="p">))</span></code></pre></div>
+
+<ol>
+  <li>For more details consult the <a href="\href{http://www.bioconductor.org/install/">Bioc Install page</a>
+and <a href="http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html">BiocInstaller</a> package.</li>
+</ol>
+
+<p>Plotting example</p>
+
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">barplot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">"green"</span><span class="p">)</span></code></pre></div>
+
+<p><img src="images/vignette_Rbasics/plot_example-1.png" alt="" />\</p>
+
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">sessionInfo</span><span class="p">()</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="c1">## R version 3.2.3 (2015-12-10)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 14.04.3 LTS
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8       
+##  [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C              
+## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  utils     datasets  grDevices methods   base     
+## 
+## other attached packages:
+## [1] ggplot2_2.0.0   limma_3.26.3    BiocStyle_1.8.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.3      codetools_0.2-14 digest_0.6.9     plyr_1.8.3       grid_3.2.3      
+##  [6] gtable_0.1.2     formatR_1.2.1    magrittr_1.5     evaluate_0.8     scales_0.3.0    
+## [11] stringi_1.0-1    rmarkdown_0.9.2  tools_3.2.3      stringr_1.0.0    munsell_0.4.2   
+</span><span class="err">##</span> <span class="p">[</span><span class="m">16</span><span class="p">]</span> <span class="n">yaml_2.1.13</span>      <span class="n">colorspace_1.2</span><span class="m">-6</span> <span class="n">htmltools_0.3</span>    <span class="n">knitr_1.12</span></code></pre></div>
+
 
 
 <div class="tags">
