@@ -7,21 +7,6 @@ summary: "longevity main vignette."
 ---
 
 
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector("h1").className = "title";
-});
-</script>
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  var links = document.links;  
-  for (var i = 0, linksLength = links.length; i < linksLength; i++)
-    if (links[i].hostname != window.location.hostname)
-      links[i].target = '_blank';
-});
-</script>
-
-
 # Introduction 
 This vignette provides general information about the `longevityTools` package.
 This includes an introduction into the objects, data structures, methods and

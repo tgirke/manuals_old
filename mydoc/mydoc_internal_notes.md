@@ -3,7 +3,7 @@ title: Administration of site
 tags: [formatting]
 keywords: navigation tabs, hide sections, tabbers, interface tabs
 last_updated: February 06, 2016
-summary: "Internal notes to maintain this site."
+summary: "Internal notes for maintaining this site."
 ---
 
 ## Create a new instance of this site
