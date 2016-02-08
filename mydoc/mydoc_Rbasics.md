@@ -10,8 +10,6 @@ summary: "Introduction to the statistical programming environment R."
 [ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]
 [ [Download *.R](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R) ]
 
-# Introduction 
-
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
 programming language for the analysis and visualization of any type of data.
 The associated [Bioconductor](http://bioconductor.org/) and CRAN package

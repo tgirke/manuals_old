@@ -10,8 +10,6 @@ summary: "Introduction to the statistical programming environment R."
 [ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]
 [ [Download *.R](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R) ]
 
-# Introduction 
-
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
 programming language for the analysis and visualization of any type of data.
 The associated [Bioconductor](http://bioconductor.org/) and CRAN package
@@ -257,7 +255,7 @@ x
 !x
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 {% endhighlight %}
 
@@ -265,7 +263,7 @@ x
 which(x) # Returns index for the 'TRUE' values in logical vector
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## [1] 1 2 3 4
 {% endhighlight %}
 
@@ -279,7 +277,7 @@ myVec <- 1:10; names(myVec) <- letters[1:10]
 myVec[1:5]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## a b c d e 
 ## 1 2 3 4 5
 {% endhighlight %}
@@ -288,7 +286,7 @@ myVec[1:5]
 myVec[c(2,4,6,8)]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## b d f h 
 ## 2 4 6 8
 {% endhighlight %}
@@ -297,7 +295,7 @@ myVec[c(2,4,6,8)]
 myVec[c("b", "d", "f")]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## b d f 
 ## 2 4 6
 {% endhighlight %}
@@ -309,7 +307,7 @@ __Factors (1D)__: vectors with grouping information
 factor(c("dog", "cat", "mouse", "dog", "dog", "cat"))
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## [1] dog   cat   mouse dog   dog   cat  
 ## Levels: cat dog mouse
 {% endhighlight %}
@@ -322,7 +320,7 @@ myMA <- matrix(1:30, 3, 10, byrow = TRUE)
 class(myMA)
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## [1] "matrix"
 {% endhighlight %}
 
@@ -330,7 +328,7 @@ class(myMA)
 myMA[1:2,]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ## [1,]    1    2    3    4    5    6    7    8    9    10
 ## [2,]   11   12   13   14   15   16   17   18   19    20
@@ -340,7 +338,7 @@ myMA[1:2,]
 myMA[1, , drop=FALSE]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ## [1,]    1    2    3    4    5    6    7    8    9    10
 {% endhighlight %}
@@ -353,7 +351,7 @@ myDF <- data.frame(Col1=1:10, Col2=10:1)
 myDF[1:2, ]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ##   Col1 Col2
 ## 1    1   10
 ## 2    2    9
@@ -370,7 +368,7 @@ myL <- list(name="Fred", wife="Mary", no.children=3, child.ages=c(4,7,9))
 myL
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## $name
 ## [1] "Fred"
 ## 
@@ -388,7 +386,7 @@ myL
 myL[[4]][1:2] 
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## [1] 4 7
 {% endhighlight %}
 
@@ -411,7 +409,7 @@ myVec <- 1:26; names(myVec) <- LETTERS
 myVec[1:4]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## A B C D 
 ## 1 2 3 4
 {% endhighlight %}
@@ -424,7 +422,7 @@ myLog <- myVec > 10
 myVec[myLog] 
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ##  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z 
 ## 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
 {% endhighlight %}
@@ -436,7 +434,7 @@ __Subsetting by field names__
 myVec[c("B", "K", "M")]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ##  B  K  M 
 ##  2 11 13
 {% endhighlight %}
@@ -448,7 +446,7 @@ __Subset with `$` sign__: references a single column or list component by its na
 iris$Species[1:8]
 {% endhighlight %}
 
-{% highlight r %}
+{% highlight s %}
 ## [1] setosa setosa setosa setosa setosa setosa setosa setosa
 ## Levels: setosa versicolor virginica
 {% endhighlight %}
