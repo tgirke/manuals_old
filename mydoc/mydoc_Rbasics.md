@@ -6,16 +6,21 @@ tags: [getting_started]
 summary: "Introduction to the statistical programming environment R."
 ---
 
-[ [View R markdown](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html) ] 
-[ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]
-[ [Download *.R](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R) ]
+Alternative formats of this tutorial:
+[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html), 
+[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd), 
+[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R), 
+[`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf)
+
+## R Basics
 
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
-programming language for the analysis and visualization of any type of data.
-The associated [Bioconductor](http://bioconductor.org/) and CRAN package
+programming language for the analysis and visualization of data.  The
+associated [Bioconductor](http://bioconductor.org/) and CRAN package
 repositories provide many additional R packages for statistical data analysis
-for a wide array of research areas, such as tools for big data and genome
-analysis. The R software is free and runs on all common operating systems. 
+for a wide array of research areas. The R software is free and runs on all
+common operating systems. 
+
 
 ## Look and Feel of R Environment
 
@@ -114,10 +119,10 @@ and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocI
 * __Closing R__:
 
     
-    {% highlight s %}
-    q()  
-    Save workspace image? [y/n/c]:
-    {% endhighlight %}
+{% highlight s %}
+q()  
+Save workspace image? [y/n/c]:
+{% endhighlight %}
         
 * __Note__:
     When responding with `y`, then the entire R workspace will be written to
