@@ -1015,6 +1015,31 @@ git add .
 git commit -am <span class="s2">"some edits"</span>; git push -u origin gh-pages
 git checkout master</code></pre></div>
 
+<h2 id="r-markdown-integration">R markdown integration</h2>
+
+<p>(1) Write R markdown vignette (<code>*.Rmd</code> file) in <code>./vignettes</code> directory (<em>e.g.</em> <code>./vignettes/Rbasics</code>).</p>
+
+<p>(2) Render vignette to <code>.md</code> and <code>.html</code> files with:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"rmarkdown::render('Rbasics.Rmd', clean=FALSE)"</span> | R --slave; R CMD Stangle Rbasics.Rmd</code></pre></div>
+
+<p>(3) Append <code>.md</code> file (here <code>Rbasics.knit.md</code>) to corresponding <code>.md</code> file in <code>./mydoc</code> directory.</p>
+
+<p>(4) Remove front matter genereted by R markdown, but leave the one required for Jekyll</p>
+
+<p>(5) Replace chode chunk tags to the ones required by Jekyll</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">%s/```r/\{\% </span>highlight s <span class="se">\%\}</span>/cg
+<span class="gp">%s/```sh/\{\% </span>highlight sh <span class="se">\%\}</span>/cg
+<span class="gp">%s/```/\{\% </span>endhighlight <span class="se">\%\}</span>/cg</code></pre></div>
+
+<p>(6) Move images into proper directory and adjust their path in the <code>.md</code> file</p>
+
+<dl>
+  <dt>Task</dt>
+  <dd>Write script that automates steps (2)-(6)</dd>
+</dl>
+
 <h2 id="useful-utilities">Useful utilities</h2>
 
 <h3 id="site-wide-configurations">Site-wide configurations</h3>
