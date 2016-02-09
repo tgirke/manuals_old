@@ -8,6 +8,7 @@
 git checkout master  
 
 ## (2) Edit existing pages and/or add new ones, usually in ./mydoc
+## No automation for this one ... :).
 
 ## (3) Commit edits made in master branch (assumes you have added/deleted files as needed)
 git add -A :/
