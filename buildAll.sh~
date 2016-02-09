@@ -16,7 +16,7 @@ git push -u origin master
 echo "Committed/pushed changes to master branch on GitHub"
 
 ## Build site with changes you made
-kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
+kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}') # assures that no other jekyll process are running
 clear
 echo "Building Mydoc Designers website..."
 jekyll build --config configs/mydoc/config_designers.yml
