@@ -67,7 +67,9 @@ git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
 
-### Bash script to automate the above commands
+### Bash script for automation
+To automate the above workflow, run the following `buildAll.sh` bash script
+from the root directory of the master branch of the repository.
 {% highlight bash %}
 ./buildAll.sh
 {% endhighlight %}
