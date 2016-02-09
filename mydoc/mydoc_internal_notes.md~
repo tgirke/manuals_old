@@ -123,7 +123,7 @@ echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle 
 
 {% highlight bash %}
 %s/```r/\{\% highlight s \%\}/cg
-%s/```r/\{\% highlight sh \%\}/cg
+%s/```sh/\{\% highlight sh \%\}/cg
 %s/```/\{\% endhighlight \%\}/cg
 {% endhighlight %}
 

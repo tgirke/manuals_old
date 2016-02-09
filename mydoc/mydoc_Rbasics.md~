@@ -15,11 +15,12 @@ Alternative formats of this tutorial:
 ## R Basics
 
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
-programming language for the analysis and visualization of any type of data.
-The associated [Bioconductor](http://bioconductor.org/) and CRAN package
+programming language for the analysis and visualization of data.  The
+associated [Bioconductor](http://bioconductor.org/) and CRAN package
 repositories provide many additional R packages for statistical data analysis
-for a wide array of research areas, such as tools for big data and genome
-analysis. The R software is free and runs on all common operating systems. 
+for a wide array of research areas. The R software is free and runs on all
+common operating systems. 
+
 
 ## Look and Feel of R Environment
 
@@ -82,7 +83,7 @@ Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinforma
 3. Install CRAN Packages from R console like this:
 
 
-{% highlight s %}
+{% highlight java %}
 install.packages(c("pkg1", "pkg2")) 
 install.packages("pkg.zip", repos=NULL)
 {% endhighlight %}
@@ -90,7 +91,7 @@ install.packages("pkg.zip", repos=NULL)
 4. Install Bioconductor packages as follows:
 
 
-{% highlight s %}
+{% highlight py %}
 source("http://www.bioconductor.org/biocLite.R")
 library(BiocInstaller)
 BiocVersion()
@@ -118,7 +119,7 @@ and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocI
 * __Closing R__:
 
     
-{% highlight s %}
+{% highlight py %}
 q()  
 Save workspace image? [y/n/c]:
 {% endhighlight %}
@@ -134,31 +135,31 @@ Save workspace image? [y/n/c]:
 
 Create an object with the assignment operator `<-` or `=`
 
-{% highlight s %}
+{% highlight py %}
 object <- ...
 {% endhighlight %}
 
 List objects in current R session
 
-{% highlight s %}
+{% highlight py %}
 ls()
 {% endhighlight %}
 
 Return content of current working directory
 
-{% highlight s %}
+{% highlight py %}
 dir()
 {% endhighlight %}
 
 Return path of current working directory
 
-{% highlight s %}
+{% highlight py %}
 getwd()
 {% endhighlight %}
 
 Change current working directory
 
-{% highlight s %}
+{% highlight py %}
 setwd("/home/user")
 {% endhighlight %}
 
@@ -167,7 +168,7 @@ setwd("/home/user")
 General R command syntax
 
 
-{% highlight s %}
+{% highlight py %}
 object <- function_name(arguments) 
 object <- object[arguments] 
 {% endhighlight %}
@@ -175,42 +176,42 @@ object <- object[arguments]
 Finding help
 
 
-{% highlight s %}
+{% highlight py %}
 ?function_name
 {% endhighlight %}
 
 Load a library/package
 
 
-{% highlight s %}
+{% highlight py %}
 library("my_library") 
 {% endhighlight %}
 
 List functions defined by a library
 
 
-{% highlight s %}
+{% highlight py %}
 library(help="my_library")
 {% endhighlight %}
 
 Load library manual (PDF or HTML file)
 
 
-{% highlight s %}
+{% highlight py %}
 vignette("my_library") 
 {% endhighlight %}
 
 Execute an R script from within R
 
 
-{% highlight s %}
+{% highlight py %}
 source("my_script.R")
 {% endhighlight %}
 
 Execute an R script from command-line (the first of the three options is preferred)
 
 
-{% highlight sh %}
+{% highlight pyh %}
 $ Rscript my_script.R
 $ R CMD BATCH my_script.R 
 $ R --slave < my_script.R 
@@ -221,7 +222,7 @@ $ R --slave < my_script.R
 __Numeric data__: `1, 2, 3, ...`
 
 
-{% highlight s %}
+{% highlight py %}
 x <- c(1, 2, 3); x
 is.numeric(x)
 as.character(x)
@@ -230,7 +231,7 @@ as.character(x)
 __Character data__: `"a", "b", "c", ...`
 
 
-{% highlight s %}
+{% highlight py %}
 x <- c("1", "2", "3"); x
 is.character(x)
 as.numeric(x)
@@ -239,35 +240,35 @@ as.numeric(x)
 __Complex data__: mix of both
 
 
-{% highlight s %}
+{% highlight py %}
 c(1, "b", 3)
 {% endhighlight %}
 
 __Logical data__: `TRUE` of `FALSE`
 
 
-{% highlight s %}
+{% highlight py %}
 x <- 1:10 < 5
 x  
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 !x
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 which(x) # Returns index for the 'TRUE' values in logical vector
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## [1] 1 2 3 4
 {% endhighlight %}
 
@@ -276,30 +277,30 @@ which(x) # Returns index for the 'TRUE' values in logical vector
 __Vectors (1D)__: `numeric` or `character`
 
 
-{% highlight s %}
+{% highlight py %}
 myVec <- 1:10; names(myVec) <- letters[1:10]  
 myVec[1:5]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## a b c d e 
 ## 1 2 3 4 5
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 myVec[c(2,4,6,8)]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## b d f h 
 ## 2 4 6 8
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 myVec[c("b", "d", "f")]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## b d f 
 ## 2 4 6
 {% endhighlight %}
@@ -307,11 +308,11 @@ myVec[c("b", "d", "f")]
 __Factors (1D)__: vectors with grouping information
 
 
-{% highlight s %}
+{% highlight py %}
 factor(c("dog", "cat", "mouse", "dog", "dog", "cat"))
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## [1] dog   cat   mouse dog   dog   cat  
 ## Levels: cat dog mouse
 {% endhighlight %}
@@ -319,30 +320,30 @@ factor(c("dog", "cat", "mouse", "dog", "dog", "cat"))
 __Matrices (2D)__: two dimensional structures with data of same type
 
 
-{% highlight s %}
+{% highlight py %}
 myMA <- matrix(1:30, 3, 10, byrow = TRUE) 
 class(myMA)
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## [1] "matrix"
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 myMA[1:2,]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ## [1,]    1    2    3    4    5    6    7    8    9    10
 ## [2,]   11   12   13   14   15   16   17   18   19    20
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 myMA[1, , drop=FALSE]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ## [1,]    1    2    3    4    5    6    7    8    9    10
 {% endhighlight %}
@@ -350,12 +351,12 @@ myMA[1, , drop=FALSE]
 __Data Frames (2D)__: two dimensional objects with data of variable types
 
 
-{% highlight s %}
+{% highlight py %}
 myDF <- data.frame(Col1=1:10, Col2=10:1) 
 myDF[1:2, ]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##   Col1 Col2
 ## 1    1   10
 ## 2    2    9
@@ -367,12 +368,12 @@ __Arrays__: data structure with one, two or more dimensions
 __Lists__: containers for any object type
 
 
-{% highlight s %}
+{% highlight py %}
 myL <- list(name="Fred", wife="Mary", no.children=3, child.ages=c(4,7,9)) 
 myL
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## $name
 ## [1] "Fred"
 ## 
@@ -386,18 +387,18 @@ myL
 ## [1] 4 7 9
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 myL[[4]][1:2] 
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## [1] 4 7
 {% endhighlight %}
 
 __Functions__: piece of code
 
 
-{% highlight s %}
+{% highlight py %}
 myfct <- function(arg1, arg2, ...) { 
 	function_body 
 }
@@ -408,12 +409,12 @@ myfct <- function(arg1, arg2, ...) {
 __Subsetting by positive or negative index/position numbers__
 
 
-{% highlight s %}
+{% highlight py %}
 myVec <- 1:26; names(myVec) <- LETTERS 
 myVec[1:4]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## A B C D 
 ## 1 2 3 4
 {% endhighlight %}
@@ -421,12 +422,12 @@ myVec[1:4]
 __Subsetting by same length logical vectors__
 
 
-{% highlight s %}
+{% highlight py %}
 myLog <- myVec > 10
 myVec[myLog] 
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z 
 ## 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
 {% endhighlight %}
@@ -434,11 +435,11 @@ myVec[myLog]
 __Subsetting by field names__
 
 
-{% highlight s %}
+{% highlight py %}
 myVec[c("B", "K", "M")]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ##  B  K  M 
 ##  2 11 13
 {% endhighlight %}
@@ -446,18 +447,18 @@ myVec[c("B", "K", "M")]
 __Subset with `$` sign__: references a single column or list component by its name 
 
 
-{% highlight s %}
+{% highlight py %}
 iris$Species[1:8]
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## [1] setosa setosa setosa setosa setosa setosa setosa setosa
 ## Levels: setosa versicolor virginica
 {% endhighlight %}
 
 Plotting example
 
-{% highlight s %}
+{% highlight py %}
 barplot(1:10, col="green")
 {% endhighlight %}
 
@@ -465,11 +466,11 @@ barplot(1:10, col="green")
 
 
 
-{% highlight sh %}
+{% highlight pyh %}
 sessionInfo()
 {% endhighlight %}
 
-{% highlight s %}
+{% highlight py %}
 ## R version 3.2.3 (2015-12-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.3 LTS
