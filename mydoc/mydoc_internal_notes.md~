@@ -5,7 +5,7 @@ last_updated: February 06, 2016
 summary: "Internal notes for maintaining this site."
 ---
 
-## this is a test...How to create a new instance of this site
+## How to create a new instance of this site
 
 1. Create a new project repository on GitHub and give it any name. For instance, the project 
 described here was named `manuals`. This initial setup will be the project's `master` branch. After this is done, clone the new repostitory to your 
@@ -67,6 +67,10 @@ git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
 
+### Bash script to automate the above commands
+{% highlight bash %}
+./buildAll.sh
+{% endhighlight %}
 
 ## Adding a new page
 

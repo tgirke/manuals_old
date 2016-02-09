@@ -67,6 +67,10 @@ git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
 
+### Bash script to automate the above commands
+{% highlight bash %}
+./buildAll.sh
+{% endhighlight %}
 
 ## Adding a new page
 
