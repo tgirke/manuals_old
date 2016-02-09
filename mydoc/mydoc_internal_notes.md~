@@ -69,7 +69,7 @@ git checkout master
 
 ### Bash script for automation
 To automate the above workflow, run the following `buildAll.sh` bash script
-from the root directory of the master branch of the repository.
+from the root directory of the repository's master branch.
 {% highlight bash %}
 ./buildAll.sh
 {% endhighlight %}
