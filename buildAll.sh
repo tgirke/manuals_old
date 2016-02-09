@@ -26,8 +26,7 @@ echo "Now the builds are pushed to github."
 
 ## Sync changes to gh-pages branch
 git checkout gh-pages
-#rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/t add .
-rsync -avh --stats  ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/t add .
+rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/t add .
 clear
 git commit -am "some edits"; git push -u origin gh-pages
 echo "Committed/pushed changes to gh-pages branch on GitHub"
