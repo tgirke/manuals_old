@@ -77,8 +77,8 @@ from the root directory of the repository's master branch.
 ## Adding a new page
 
 ### Create page
-The easiest is usually to copy and existing page in `\mydoc` and then make the necessary 
-changesto its Jekyll front matter section and content.
+The easiest is usually to copy an existing page in `\mydoc` and then make the necessary 
+changes to its Jekyll front matter section and content.
 
 ### Sidebar and URL configuration
 Next, the new page needs to be registered properly in the sidebar and URL configuration 
