@@ -987,7 +987,7 @@ the syncing, one usually wants to shut down the locally running Jekyell server w
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
-git add .
+git add -A :/
 git commit -am <span class="s2">"some edits"</span>; git push -u origin gh-pages
 git checkout master</code></pre></div>
 
@@ -1022,7 +1022,7 @@ of the local and remote repositories or just run <code>buildAll.sh</code>.</p>
 git commit -am <span class="s2">"some edits"</span>; git push -u origin master
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
-git add .
+git add -A :/
 git commit -am <span class="s2">"some edits"</span>; git push -u origin gh-pages
 git checkout master</code></pre></div>
 
