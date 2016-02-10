@@ -23,7 +23,7 @@ kramdown:
 
 sidebar_tagline: Manuals
 sidebar_version: Under Construction!
-theme_file: theme-blue.css
+theme_file: theme-gray.css
 pdf_file_name: mydoc_designers_pdf.pdf
 
 # the algolia entries here are experimental only.
