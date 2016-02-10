@@ -83,7 +83,7 @@ Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinforma
 3. Install CRAN Packages from R console like this:
 
 
-{% highlight java %}
+{% highlight py %}
 install.packages(c("pkg1", "pkg2")) 
 install.packages("pkg.zip", repos=NULL)
 {% endhighlight %}

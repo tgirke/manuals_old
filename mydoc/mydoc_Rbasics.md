@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: R Basics
 keywords: documentation theme, jekyll, technical writers, help authoring tools, hat replacements
 last_updated: February 06, 2016
 tags: [getting_started]
