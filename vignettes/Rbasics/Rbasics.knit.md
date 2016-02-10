@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 07 February, 2016" 
+date: "Last update: 09 February, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -44,22 +44,25 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-[ [View R markdown](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html) ] 
-[ [Download *.Rmd](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd) ]
-[ [Download *.R](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R) ]
 
-# Introduction 
+Alternative formats of this tutorial:
+[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html), 
+[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd), 
+[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R), 
+[`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf)
+
+# Overview
 
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
-programming language for the analysis and visualization of any type of data.
-The associated [Bioconductor](http://bioconductor.org/) and CRAN package
+programming language for the analysis and visualization of data.  The
+associated [Bioconductor](http://bioconductor.org/) and CRAN package
 repositories provide many additional R packages for statistical data analysis
-for a wide array of research areas, such as tools for big data and genome
-analysis. The R software is free and runs on all common operating systems. 
+for a wide array of research areas. The R software is free and runs on all
+common operating systems. 
 
-## Look and Feel of R Environment
+# Look and Feel of R Environment
 
-### Why Using R?
+## Why Using R?
 * Complete statistical environment and programming language
 * Efficient functions and data structures for data analysis
 * Powerful graphics
@@ -68,12 +71,12 @@ analysis. The R software is free and runs on all common operating systems.
 * Is standard for data mining and biostatistical analysis
 * Technical advantages: free, open-source, available for all OSs
 
-### Books and Documentation
+## Books and Documentation
 * simpleR - Using R for Introductory Statistics (John Verzani, 2004) \href{http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf}{{\beamerbutton{Link}}}
 * Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) \href{http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/}{{\beamerbutton{Link}}}
 * More on this see "Finding Help" section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R\_BioCondManual\#TOC-Finding-Help}{{\beamerbutton{Link}}}
 
-### Working environments (IDEs) for R
+## Working environments (IDEs) for R
 <center><img title="R_Interfaces" src="images/rinterface.png"/></center>
 <center> R Projects and Interfaces</center>
 
@@ -86,7 +89,7 @@ to the R console:
 * [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r): R working environment based on vim and tmux 
 * [Emacs](http://www.xemacs.org/Download/index.html) ([ESS add-on package](http://ess.r-project.org/))
 	
-#### Example: RStudio 
+### Example: RStudio 
 
 New integrated development environment (IDE) for [R](http://www.rstudio.com/ide/download/). Highly functional for both beginners and 
 advanced.
@@ -96,20 +99,20 @@ advanced.
 
 Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomment), `Ctrl+1/2` (switch window focus)
 
-#### Example: Vim-R-Tmux
+### Example: Vim-R-Tmux
 
 Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r)
 
 <center><img title="Vim-R-Tmux" src="images/screenshot.png" ></center>
 <center>Vim-R-Tmux IDE for R</center>
 
-## R Package Repositories
+# R Package Repositories
 
 * CRAN (>8,000 packages) general data analysis \href{http://cran.at.r-project.org/}{{\beamerbutton{Link}}}
 * Bioconductor (>1,100 packages) bioscience data analysis \href{http://www.bioconductor.org/}{{\beamerbutton{Link}}}
 * Omegahat (>90 packages) programming interfaces \href{http://www.omegahat.org/}{{\beamerbutton{Link}}}
 
-## Installation of R and Add-on Packages
+# Installation of R and Add-on Packages
 
 1. Install R for your operating system from [CRAN](http://cran.at.r-project.org/).
 
@@ -137,9 +140,9 @@ biocLite(c("pkg1", "pkg2"))
 5. For more details consult the [Bioc Install page](\href{http://www.bioconductor.org/install/)
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
 
-## Getting Around
+# Getting Around
 
-### Startup and Closing Behavior
+## Startup and Closing Behavior
 
 * __Starting R__:
     The R GUI versions, including RStudio, under Windows and Mac OS X can be
@@ -166,7 +169,7 @@ and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocI
     regenerate all data sets and objects. 
 
 
-### Navigating directories
+## Navigating directories
 
 Create an object with the assignment operator `<-` or `=`
 
@@ -198,7 +201,7 @@ Change current working directory
 setwd("/home/user")
 ```
 
-## Basic Syntax
+# Basic Syntax
 
 General R command syntax
 
@@ -252,7 +255,7 @@ $ R CMD BATCH my_script.R
 $ R --slave < my_script.R 
 ```
 
-## Data Types 
+# Data Types 
 
 __Numeric data__: `1, 2, 3, ...`
 
@@ -307,7 +310,9 @@ which(x) # Returns index for the 'TRUE' values in logical vector
 ## [1] 1 2 3 4
 ```
 
-## Data Objects
+# Data objects and subsetting
+
+## Object types
 
 __Vectors (1D)__: `numeric` or `character`
 
@@ -491,6 +496,8 @@ iris$Species[1:8]
 ## Levels: setosa versicolor virginica
 ```
 
+# Graphics example
+
 Plotting example
 
 ```r
@@ -499,7 +506,7 @@ barplot(1:10, col="green")
 
 ![](Rbasics_files/figure-html/plot_example-1.png)\
 
-
+# Session Info
 
 
 ```r
