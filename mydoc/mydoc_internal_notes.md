@@ -77,28 +77,25 @@ from the root directory of the repository's master branch.
 ## Adding a new page
 
 ### Create page
-The easiest is usually to copy and existing page and them make the necessary changes
-to its Jekyll front matter section and content.
-
-{% highlight bash %}
-cd ./mydoc
-cp mydoc_some_existing_page.md mydoc_some_new_page.md
-git add mydoc_some_new_page.md 
-vim ./mydoc/mydoc_some_new_page.md # Make necessary content changes
-{% endhighlight %}
+The easiest is usually to copy and existing page in `\mydoc` and then make the necessary 
+changesto its Jekyll front matter section and content.
 
 ### Sidebar and URL configuration
 Next, the new page needs to be registered properly in the sidebar and URL configuration 
-files. After this the new page should be viewable in the local preview of your browser.
+files.
 
 {% highlight bash %}
 vim _data/mydoc/mydoc_sidebar.yml
 vim _data/mydoc/mydoc_urls.yml
 {% endhighlight %}
 
+After this the new page should be viewable in the local preview of your
+browser.  This requires a running session of `jekyll serve ...` in the root
+directory of the repository as shown above.
+
 ### Commit to GitHub
 Similar as above add, commit and push changes to the `master` and `gh-pages` branches 
-of the local and remote repositories.
+of the local and remote repositories or just run `buildAll.sh`.
 
 {% highlight bash %}
 git checkout master
