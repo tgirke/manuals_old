@@ -62,7 +62,7 @@ the syncing, one usually wants to shut down the locally running Jekyell server w
 {% highlight bash %}
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
-git add .
+git add -A :/
 git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
@@ -102,7 +102,7 @@ git checkout master
 git commit -am "some edits"; git push -u origin master
 git checkout gh-pages
 rsync -avh --stats --progress ~/Dropbox/Websites/doc_outputs/mydoc/designers/ ~/Dropbox/Websites/manuals/
-git add .
+git add -A :/
 git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
