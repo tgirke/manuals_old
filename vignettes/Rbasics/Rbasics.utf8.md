@@ -261,18 +261,56 @@ __Numeric data__: `1, 2, 3, ...`
 
 
 ```r
-x <- c(1, 2, 3); x
+x <- c(1, 2, 3)
+x
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
 is.numeric(x)
+```
+
+```
+## [1] TRUE
+```
+
+```r
 as.character(x)
+```
+
+```
+## [1] "1" "2" "3"
 ```
 
 __Character data__: `"a", "b", "c", ...`
 
 
 ```r
-x <- c("1", "2", "3"); x
+x <- c("1", "2", "3")
+x
+```
+
+```
+## [1] "1" "2" "3"
+```
+
+```r
 is.character(x)
+```
+
+```
+## [1] TRUE
+```
+
+```r
 as.numeric(x)
+```
+
+```
+## [1] 1 2 3
 ```
 
 __Complex data__: mix of both
@@ -280,6 +318,10 @@ __Complex data__: mix of both
 
 ```r
 c(1, "b", 3)
+```
+
+```
+## [1] "1" "b" "3"
 ```
 
 __Logical data__: `TRUE` of `FALSE`

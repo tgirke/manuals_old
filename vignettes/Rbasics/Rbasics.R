@@ -64,19 +64,21 @@ suppressPackageStartupMessages({
 ## $ R CMD BATCH my_script.R
 ## $ R --slave < my_script.R
 
-## ----r_numeric_data, eval=FALSE------------------------------------------
-## 
-## x <- c(1, 2, 3); x
-## is.numeric(x)
-## as.character(x)
+## ----r_numeric_data, eval=TRUE-------------------------------------------
 
-## ----r_character_data, eval=FALSE----------------------------------------
-## x <- c("1", "2", "3"); x
-## is.character(x)
-## as.numeric(x)
+x <- c(1, 2, 3)
+x
+is.numeric(x)
+as.character(x)
 
-## ----r_complex_data, eval=FALSE------------------------------------------
-## c(1, "b", 3)
+## ----r_character_data, eval=TRUE-----------------------------------------
+x <- c("1", "2", "3")
+x
+is.character(x)
+as.numeric(x)
+
+## ----r_complex_data, eval=TRUE-------------------------------------------
+c(1, "b", 3)
 
 ## ----r_logical_data, eval=TRUE-------------------------------------------
 x <- 1:10 < 5

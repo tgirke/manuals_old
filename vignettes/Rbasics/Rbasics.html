@@ -256,15 +256,24 @@ $ R --slave &lt; my_script.R </code></pre>
 <div id="data-types" class="section level1">
 <h1><span class="header-section-number">7</span> Data Types</h1>
 <p><strong>Numeric data</strong>: <code>1, 2, 3, ...</code></p>
-<pre class="r"><code>x &lt;- c(1, 2, 3); x
-is.numeric(x)
-as.character(x)</code></pre>
+<pre class="r"><code>x &lt;- c(1, 2, 3)
+x</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+<pre class="r"><code>is.numeric(x)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>as.character(x)</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
 <p><strong>Character data</strong>: <code>&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, ...</code></p>
-<pre class="r"><code>x &lt;- c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;); x
-is.character(x)
-as.numeric(x)</code></pre>
+<pre class="r"><code>x &lt;- c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;)
+x</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
+<pre class="r"><code>is.character(x)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>as.numeric(x)</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
 <p><strong>Complex data</strong>: mix of both</p>
 <pre class="r"><code>c(1, &quot;b&quot;, 3)</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;b&quot; &quot;3&quot;</code></pre>
 <p><strong>Logical data</strong>: <code>TRUE</code> of <code>FALSE</code></p>
 <pre class="r"><code>x &lt;- 1:10 &lt; 5
 x  </code></pre>

@@ -242,24 +242,26 @@ $ R --slave < my_script.R
 
 __Numeric data__: `1, 2, 3, ...`
 
-```{r r_numeric_data, eval=FALSE}
+```{r r_numeric_data, eval=TRUE}
 
-x <- c(1, 2, 3); x
+x <- c(1, 2, 3)
+x
 is.numeric(x)
 as.character(x)
 ```
 
 __Character data__: `"a", "b", "c", ...`
 
-```{r r_character_data, eval=FALSE}
-x <- c("1", "2", "3"); x
+```{r r_character_data, eval=TRUE}
+x <- c("1", "2", "3")
+x
 is.character(x)
 as.numeric(x)
 ```
 
 __Complex data__: mix of both
 
-```{r r_complex_data, eval=FALSE}
+```{r r_complex_data, eval=TRUE}
 c(1, "b", 3)
 ```
 
