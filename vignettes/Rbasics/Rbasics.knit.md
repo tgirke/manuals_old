@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 09 February, 2016" 
+date: "Last update: 10 February, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -77,7 +77,7 @@ common operating systems.
 * More on this see "Finding Help" section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R\_BioCondManual\#TOC-Finding-Help}{{\beamerbutton{Link}}}
 
 ## Working environments (IDEs) for R
-<center><img title="R_Interfaces" src="images/rinterface.png"/></center>
+<center><img title="R_Interfaces" src="images/rinterface.png"></center>
 <center> R Projects and Interfaces</center>
 
 Some R working environments with support for syntax highlighting and utilities to send code 
@@ -94,7 +94,7 @@ to the R console:
 New integrated development environment (IDE) for [R](http://www.rstudio.com/ide/download/). Highly functional for both beginners and 
 advanced.
 
-<center><img title="RStudio" src="images/rstudio.png"/></center>
+<center><img title="RStudio" src="images/rstudio.png"></center>
 <center> RStudio IDE</center>
 
 Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomment), `Ctrl+1/2` (switch window focus)
@@ -103,7 +103,7 @@ Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomm
 
 Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r)
 
-<center><img title="Vim-R-Tmux" src="images/screenshot.png" ></center>
+<center><img title="Vim-R-Tmux" src="images/screenshot.png"></center>
 <center>Vim-R-Tmux IDE for R</center>
 
 # R Package Repositories
@@ -310,7 +310,7 @@ which(x) # Returns index for the 'TRUE' values in logical vector
 ## [1] 1 2 3 4
 ```
 
-# Data objects and subsetting
+# Data objects
 
 ## Object types
 

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 09 February, 2016" 
+date: "Last update: 10 February, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -310,7 +310,7 @@ which(x) # Returns index for the 'TRUE' values in logical vector
 ## [1] 1 2 3 4
 ```
 
-# Data objects and subsetting
+# Data objects
 
 ## Object types
 
