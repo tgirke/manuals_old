@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <div class="seriesContext">
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Getting Started <span class="caret"></span></button>
@@ -1191,7 +1215,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
+                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
             </li>
             
             
@@ -1199,7 +1223,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
+                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
             
             
@@ -1237,8 +1261,8 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><strong>Mac computer</strong>. If you have a Windows machine, make sure you can get a vanilla Jekyll site working before proceeding. You’ll probably need Ruby and Ruby Dev Kit installed first. Also note that the shell scripts (.sh files) in this theme for automating the builds work only on a Mac. To run them on Windows, you need to convert them to BAT.</li>
-  <li><strong><a href="https://www.ruby-lang.org/en/">Ruby</a></strong>. On a Mac, this should already be installed. Open your Terminal and type <code class="highlighter-rouge">which ruby</code> to confirm.</li>
-  <li><strong><a href="https://rubygems.org/pages/download">Rubygems</a></strong>. This is a package manager for Ruby. Type <code class="highlighter-rouge">which gem</code> to confirm.</li>
+  <li><strong><a href="https://www.ruby-lang.org/en/">Ruby</a></strong>. On a Mac, this should already be installed. Open your Terminal and type <code>which ruby</code> to confirm.</li>
+  <li><strong><a href="https://rubygems.org/pages/download">Rubygems</a></strong>. This is a package manager for Ruby. Type <code>which gem</code> to confirm.</li>
   <li><strong>Text editor</strong>: My recommendations is WebStorm (or IntelliJ). You can use another text editor. However, there are certain shortcuts and efficiencies in WebStorm (such as using Find and Replace across the project, or Markdown syntax highlighting) that I’ll be noting in this documentation.</li>
 </ul>
 
@@ -1275,17 +1299,17 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Install the <a href="https://rubygems.org/gems/jekyll">Jekyll</a>, <a href="https://rubygems.org/gems/redcarpet">redcarpet</a>, and <a href="https://rubygems.org/gems/pygments.rb">pygments</a> gems.</p>
 
-    <p>These gems are the only ones the project uses. Go to the <a href="https://rubygems.org">Rubygems site</a> for each of these gems (based on the links above). In the right column, click the “INSTALL” command and paste the copied command into your terminal. If your computer gives you permissions errors, add <code class="highlighter-rouge">sudo</code> before the command.</p>
+    <p>These gems are the only ones the project uses. Go to the <a href="https://rubygems.org">Rubygems site</a> for each of these gems (based on the links above). In the right column, click the “INSTALL” command and paste the copied command into your terminal. If your computer gives you permissions errors, add <code>sudo</code> before the command.</p>
   </li>
   <li>In your terminal, browse to the documentation-theme-jekyll folder that you downloaded.</li>
   <li>
     <p>Build the writer’s output:</p>
 
-    <p><code class="highlighter-rouge">
+    <p><code>
  jekyll serve --config configs/mydoc/config_writers.yml
 </code></p>
 
-    <p>The <code class="highlighter-rouge">--config</code> parameter specifies the location of the configuration file to be used in the build. The configuration file itself contains the destination location for where the site gets built.</p>
+    <p>The <code>--config</code> parameter specifies the location of the configuration file to be used in the build. The configuration file itself contains the destination location for where the site gets built.</p>
 
     <p>Open a new tab in your browser and preview the site at the preview URL shown.</p>
   </li>
@@ -1293,7 +1317,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Build the designers output:</p>
 
-    <p><code class="highlighter-rouge">
+    <p><code>
  jekyll serve --config configs/mydoc/config_designers.yml
 </code></p>
 
@@ -1303,11 +1327,11 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Build both themes by running the following command:</p>
 
-    <p><code class="highlighter-rouge">
+    <p><code>
 . mydoc_3_multibuild_web.sh
 </code></p>
 
-    <p>The themes build in the <code class="highlighter-rouge">../doc_outputs/mydoc/mydoc_designers</code> and <code class="highlighter-rouge">../doc_outputs/mydoc/mydoc_writers</code> folders. Browse to these directories to view the output.</p>
+    <p>The themes build in the <code>../doc_outputs/mydoc/mydoc_designers</code> and <code>../doc_outputs/mydoc/mydoc_writers</code> folders. Browse to these directories to view the output.</p>
 
     <p>Open the writers and designers folders and click the index.html file. The themes should launch and appear similar to their appearance in the preview folder. This is because the themes are built using a relative link structure, so you can move the theme to any folder you want without breaking the links.</p>
 
@@ -1525,6 +1549,16 @@ $('#toc').on('click', 'a', function() {
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

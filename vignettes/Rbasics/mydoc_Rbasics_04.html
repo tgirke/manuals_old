@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -999,9 +1021,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <ol>
   <li>
     <p>Install R for your operating system from <a href="http://cran.at.r-project.org/">CRAN</a>.</p>
@@ -1014,18 +1038,18 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"pkg1"</span><span class="p">,</span> <span class="s2">"pkg2"</span><span class="p">))</span> 
-<span class="n">install.packages</span><span class="p">(</span><span class="s2">"pkg.zip"</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"pkg1"</span><span class="p">,</span> <span class="s2">"pkg2"</span><span class="p">))</span> 
+<span class="n">install.packages</span><span class="p">(</span><span class="s2">"pkg.zip"</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span></code></pre></div>
 
 <ol>
   <li>Install Bioconductor packages as follows:</li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://www.bioconductor.org/biocLite.R"</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://www.bioconductor.org/biocLite.R"</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">BiocInstaller</span><span class="p">)</span>
 <span class="n">BiocVersion</span><span class="p">()</span>
 <span class="n">biocLite</span><span class="p">()</span>
-<span class="n">biocLite</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"pkg1"</span><span class="p">,</span> <span class="s2">"pkg2"</span><span class="p">))</span></code></pre></figure>
+<span class="n">biocLite</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"pkg1"</span><span class="p">,</span> <span class="s2">"pkg2"</span><span class="p">))</span></code></pre></div>
 
 <ol>
   <li>For more details consult the <a href="http://www.bioconductor.org/install/">Bioc Install page</a>

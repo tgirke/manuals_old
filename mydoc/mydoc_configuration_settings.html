@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <div class="seriesContext">
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Getting Started <span class="caret"></span></button>
@@ -1191,7 +1215,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
+                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
             </li>
             
             
@@ -1199,7 +1223,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
+                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
             
             
@@ -1244,7 +1268,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="update-the-exclude-list">Update the exclude list</h2>
 
-<p>By default, all the files in the Jekyll project are included in the output. You have two manually tell Jekyll which files and folders you want to exclude from the output. In  each configuration file there is an <code class="highlighter-rouge">exclude</code> property that takes a list of items that should be excluded from the build.</p>
+<p>By default, all the files in the Jekyll project are included in the output. You have two manually tell Jekyll which files and folders you want to exclude from the output. In  each configuration file there is an <code>exclude</code> property that takes a list of items that should be excluded from the build.</p>
 
 <p>In the new configuration file that you created, exclude the mydoc folder and any other mydoc files that you don’t want to be output. Similarly, update the mydoc configuration files to exclude the new project that you added.</p>
 
@@ -1252,7 +1276,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="configuration-file-variables">Configuration file variables</h2>
 
-<p>You can define arbitrary key-value pairs in the configuration file, and then you can access them through <code class="highlighter-rouge">site.yourkey</code>, where <code class="highlighter-rouge">yourkey</code> is the name of the key.</p>
+<p>You can define arbitrary key-value pairs in the configuration file, and then you can access them through <code>site.yourkey</code>, where <code>yourkey</code> is the name of the key.</p>
 
 <p>However, some of the options you set in the configuration file determine theme settings. These options are required for this theme to work. The required settings are defined in the following tables.</p>
 
@@ -1260,7 +1284,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>The values in the following tables are used to control different aspects of the theme and are not arbitrary key-value pairs. As you set up your project, enter the appropriate values for each of these keys in the configuration file.</p>
 
-<p>If you’re unsure how or where the project setting affects the theme, just search for the project setting in the theme (for example, <code class="highlighter-rouge">site.sidebar_version</code>) and you’ll see the files involved.</p>
+<p>If you’re unsure how or where the project setting affects the theme, just search for the project setting in the theme (for example, <code>site.sidebar_version</code>) and you’ll see the files involved.</p>
 
 <p>The order of the settings doesn’t matter.</p>
 
@@ -1301,7 +1325,7 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td><strong>destination</strong></td>
       <td>Required</td>
-      <td>The folder where the site is built. If you put this into your same folder as your other files, Jekyll may start building and rebuilding in an infinite loop because it detects more files in the project folder. Make sure you specify a folder outside your project folder, by using <code class="highlighter-rouge">../</code> or by specifying the absolute path. The recommended output folder is <code class="highlighter-rouge">../doc_outputs</code>. The PDF configuration files will look in that directory for the outputs needed to build the PDF outputs.</td>
+      <td>The folder where the site is built. If you put this into your same folder as your other files, Jekyll may start building and rebuilding in an infinite loop because it detects more files in the project folder. Make sure you specify a folder outside your project folder, by using <code>../</code> or by specifying the absolute path. The recommended output folder is <code>../doc_outputs</code>. The PDF configuration files will look in that directory for the outputs needed to build the PDF outputs.</td>
     </tr>
     <tr>
       <td><strong>sidebar_tagline</strong></td>
@@ -1321,12 +1345,12 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td><strong>homepage_title</strong></td>
       <td>Required</td>
-      <td>You set the title for your homepage via this setting. This is because multiple projects are all using the same index.md as their homepage. Because index.md has <code class="highlighter-rouge">homepage: true</code> in the frontmatter, the “page” layout will use the <code class="highlighter-rouge">homepage_title</code> property from the configuration file instead of the traditional title in the frontmatter. In the sample theme files, the homepage title is “Jekyll Documentation Theme — writers” or “Jekyll Documentation Theme — designers.”</td>
+      <td>You set the title for your homepage via this setting. This is because multiple projects are all using the same index.md as their homepage. Because index.md has <code>homepage: true</code> in the frontmatter, the “page” layout will use the <code>homepage_title</code> property from the configuration file instead of the traditional title in the frontmatter. In the sample theme files, the homepage title is “Jekyll Documentation Theme — writers” or “Jekyll Documentation Theme — designers.”</td>
     </tr>
     <tr>
       <td><strong>site_title</strong></td>
       <td>Required</td>
-      <td>Appears in the webpage title area (on the browser tab, not in the page viewing area). In the sample theme files, the site title is rendered as <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">page.title</span><span class="w"> </span><span class="p">}</span><span class="err">}</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">  </span><span class="err">|</span><span class="w"> </span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.site_title</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> (these values get dynamically replaced depending on the page name and title).</td>
+      <td>Appears in the webpage title area (on the browser tab, not in the page viewing area). In the sample theme files, the site title is rendered as <code>{{ page.title }}{% endif %}  | {{ site.site_title }}</code> (these values get dynamically replaced depending on the page name and title).</td>
     </tr>
     <tr>
       <td><strong>port</strong></td>
@@ -1346,7 +1370,7 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td><strong>markdown</strong></td>
       <td>Required</td>
-      <td>The processor used to convert Markdown to HTML. This is a Jekyll-specific setting. Use <code class="highlighter-rouge">redcarpet</code>. Another option is <code class="highlighter-rouge">kramdown</code>. However, my examples will follow redcarpet.</td>
+      <td>The processor used to convert Markdown to HTML. This is a Jekyll-specific setting. Use <code>redcarpet</code>. Another option is <code>kramdown</code>. However, my examples will follow redcarpet.</td>
     </tr>
     <tr>
       <td><strong>redcarpet</strong></td>
@@ -1356,7 +1380,7 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td><strong>highlighter</strong></td>
       <td>Required</td>
-      <td>The syntax highlighter used. Use <code class="highlighter-rouge">rouge</code> because it has fewer dependencies on your operating system (it doesn’t require Python). However, you can also use <code class="highlighter-rouge">pygments</code>. If so, you may need need to <a href="http://pygments.org/download/">install Pygments</a>.</td>
+      <td>The syntax highlighter used. Use <code>rouge</code> because it has fewer dependencies on your operating system (it doesn’t require Python). However, you can also use <code>pygments</code>. If so, you may need need to <a href="http://pygments.org/download/">install Pygments</a>.</td>
     </tr>
     <tr>
       <td><strong>exclude</strong></td>
@@ -1376,12 +1400,12 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td><strong>output</strong></td>
       <td>Optional</td>
-      <td>Boolean. Whether this build is <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">pdf</code>. This setting allows you to run conditions in your content such as  <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.output</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">pdf</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> do this… <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> . Limit the options to just <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">pdf</code> for this setting.</td>
+      <td>Boolean. Whether this build is <code>web</code> or <code>pdf</code>. This setting allows you to run conditions in your content such as  <code>{% if site.output == pdf %}</code> do this… <code>{% endif %}</code> . Limit the options to just <code>web</code> or <code>pdf</code> for this setting.</td>
     </tr>
     <tr>
       <td><strong>github_editme_path</strong></td>
       <td>Optional</td>
-      <td>A path to configure the Github Edit Me button. Put the path to the branch on Github where you want to edit the theme. Here’s a sample: <code class="highlighter-rouge">tomjohnson1492/documentation-theme-jekyll/edit/reviews</code>. In this case, “reviews” is the name of the branch where I want people to make edits. I can then merge the “reviews” branch with the “gh-pages” branch (which is the default branch). See the “page” layout (inside the _layouts folder) for how this path gets inserted into the rest of the HTML.</td>
+      <td>A path to configure the Github Edit Me button. Put the path to the branch on Github where you want to edit the theme. Here’s a sample: <code>tomjohnson1492/documentation-theme-jekyll/edit/reviews</code>. In this case, “reviews” is the name of the branch where I want people to make edits. I can then merge the “reviews” branch with the “gh-pages” branch (which is the default branch). See the “page” layout (inside the _layouts folder) for how this path gets inserted into the rest of the HTML.</td>
     </tr>
     <tr>
       <td><strong>company_name</strong></td>
@@ -1401,7 +1425,7 @@ $('#toc').on('click', 'a', function() {
     <tr>
       <td><strong>pdf_file_name</strong></td>
       <td>Optional</td>
-      <td>The name of the PDF file generated by Prince. This is helpful for the code on the home.md page that allows users to download a PDF of the material. If you have 5 different PDFs, you don’t want to use <code class="highlighter-rouge">if</code> statements to render different PDF buttons. Instead, this theme uses the same PDF code but swaps out the PDF file name with a variable here.</td>
+      <td>The name of the PDF file generated by Prince. This is helpful for the code on the home.md page that allows users to download a PDF of the material. If you have 5 different PDFs, you don’t want to use <code>if</code> statements to render different PDF buttons. Instead, this theme uses the same PDF code but swaps out the PDF file name with a variable here.</td>
     </tr>
   </tbody>
 </table>
@@ -1418,7 +1442,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>When you build the PDF output (such as for the writers output), the command will look like this:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll serve --detach --config configs/config_writers.yml,configs/config_writers_pdf.yml
 </code></p>
 
@@ -1450,17 +1474,17 @@ jekyll serve --detach --config configs/config_writers.yml,configs/config_writers
   <tbody>
     <tr>
       <td><strong>destination</strong></td>
-      <td>Where the PDF web version should be served so that Prince XML can find it. By default, this is in <code class="highlighter-rouge">../mydoc_designers-pdf</code>, which is just one level above where your project is.</td>
+      <td>Where the PDF web version should be served so that Prince XML can find it. By default, this is in <code>../mydoc_designers-pdf</code>, which is just one level above where your project is.</td>
       <td> </td>
     </tr>
     <tr>
       <td><strong>url</strong></td>
-      <td>The URL where the files can be viewed. This is <code class="highlighter-rouge">http://127.0.0.1:4002</code> in the sample theme files for the designers output. Prince XML requires a URL to access the file.</td>
+      <td>The URL where the files can be viewed. This is <code>http://127.0.0.1:4002</code> in the sample theme files for the designers output. Prince XML requires a URL to access the file.</td>
       <td> </td>
     </tr>
     <tr>
       <td><strong>baseurl</strong></td>
-      <td>The subdirectory after the url where the content is stored. In the sample theme files for the designers output, this is <code class="highlighter-rouge">/designers</code>.</td>
+      <td>The subdirectory after the url where the content is stored. In the sample theme files for the designers output, this is <code>/designers</code>.</td>
       <td> </td>
     </tr>
     <tr>
@@ -1470,7 +1494,7 @@ jekyll serve --detach --config configs/config_writers.yml,configs/config_writers
     </tr>
     <tr>
       <td><strong>output</strong></td>
-      <td><code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">pdf</code>. This setting allows you to construct conditional statements in your content to check whether output is web or pdf. This setting can help you filter out content that doesn’t fit well into a PDF (such as dynamic web elements). In particular, the Prince XML script conflicts with any JavaScript on the page, so you want to filter out the JavaScript from the PDF-friendly HTML output that Prince consumes.</td>
+      <td><code>web</code> or <code>pdf</code>. This setting allows you to construct conditional statements in your content to check whether output is web or pdf. This setting can help you filter out content that doesn’t fit well into a PDF (such as dynamic web elements). In particular, the Prince XML script conflicts with any JavaScript on the page, so you want to filter out the JavaScript from the PDF-friendly HTML output that Prince consumes.</td>
       <td> </td>
     </tr>
     <tr>
@@ -1485,7 +1509,7 @@ jekyll serve --detach --config configs/config_writers.yml,configs/config_writers
     </tr>
     <tr>
       <td><strong>defaults</strong></td>
-      <td>See the sample settings in the config_designers_pdf.yml file. The only difference between this file and config_designers.yml is that the layout used for pages is <code class="highlighter-rouge">page_print</code> instead of <code class="highlighter-rouge">page</code>. The <code class="highlighter-rouge">page_print</code> layout also used <code class="highlighter-rouge">head_print</code> instead of <code class="highlighter-rouge">head</code>. This layout strips out components such as the sidebar and top navigation. It also leverages printstyles.css and includes some JavaScript for Prince XML.</td>
+      <td>See the sample settings in the config_designers_pdf.yml file. The only difference between this file and config_designers.yml is that the layout used for pages is <code>page_print</code> instead of <code>page</code>. The <code>page_print</code> layout also used <code>head_print</code> instead of <code>head</code>. This layout strips out components such as the sidebar and top navigation. It also leverages printstyles.css and includes some JavaScript for Prince XML.</td>
       <td> </td>
     </tr>
   </tbody>
@@ -1690,6 +1714,16 @@ jekyll serve --detach --config configs/config_writers.yml,configs/config_writers
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

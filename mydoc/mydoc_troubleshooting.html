@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,31 +1023,33 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="issues-building-the-site">Issues building the site</h2>
 
 <h3 id="address-already-in-use">Address already in use</h3>
 
 <p>When you try to build the site, you get this error in iTerm:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll 2.5.3 | Error:  Address already in use - bind(2)
 </code>
 This happens if a server is already in use. To fix this, edit your config file and change the port to a unique number.</p>
 
 <p>If the previous server wasn’t shut down properly, you can kill the server process using these commands:</p>
 
-<p><code class="highlighter-rouge">ps aux | grep jekyll</code></p>
+<p><code>ps aux | grep jekyll</code></p>
 
 <p>Find the PID (for example, it  looks like “22298”).</p>
 
-<p>Then type <code class="highlighter-rouge">kill -9 22298</code> where “22298” is the PID.</p>
+<p>Then type <code>kill -9 22298</code> where “22298” is the PID.</p>
 
 <p>Alternatively, type the following to stop all Jekyll servers:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 </code></p>
 
@@ -1033,13 +1057,13 @@ kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 
 <p>If your build doesn’t entirely finish on the command line, check to see if you have a space after a comma when using multiple configuration files, like this:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll serve --config config_base.yml, config_designer.yml
 </code></p>
 
 <p>Remove the space after the comma, and the build will finish executing:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll serve --config config_base.yml,config_designer.yml
 </code></p>
 
@@ -1047,19 +1071,19 @@ jekyll serve --config config_base.yml,config_designer.yml
 
 <p>If you run into permissions errors trying to run a shell script file (such as mydoc_multibuild_web.sh), you may need to change the file permissions to make the sh file executable. Browse to the directory containing the shell script and run the following:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 chmod +x build_writer.sh
 </code></p>
 
 <h3 id="pygments-not-installed">Pygments not installed</h3>
 
-<p>The config file requires pygments for the highlighter. You must <a href="http://pygments.org/download/">download and install Pygments</a>, which requires Python, in order to use this syntax highlighter. If you don’t want to bother with Pygments, open the configuration file and change <code class="highlighter-rouge">pygments</code> to <code class="highlighter-rouge">rouge</code>.</p>
+<p>The config file requires pygments for the highlighter. You must <a href="http://pygments.org/download/">download and install Pygments</a>, which requires Python, in order to use this syntax highlighter. If you don’t want to bother with Pygments, open the configuration file and change <code>pygments</code> to <code>rouge</code>.</p>
 
 <h3 id="page-0-cross-references-in-the-pdf">“page 0” cross references in the PDF</h3>
 
 <p>If you see “page 0” cross-references in the PDF, the URL doesn’t exist. Check to make sure you actually included this page in the build.</p>
 
-<p>If it’s not a page but rather a file, you need to add a <code class="highlighter-rouge">noCrossRef</code> class to the file so that your print stylesheet excludes the counter from it. Add <code class="highlighter-rouge">class="noCrossRef"</code> as an attribute to the link. In the css/printstyles.css file, there is a style that should remove the counter from anchor elements with this class.</p>
+<p>If it’s not a page but rather a file, you need to add a <code>noCrossRef</code> class to the file so that your print stylesheet excludes the counter from it. Add <code>class="noCrossRef"</code> as an attribute to the link. In the css/printstyles.css file, there is a style that should remove the counter from anchor elements with this class.</p>
 
 <h3 id="the-pdf-is-blank">The PDF is blank</h3>
 
@@ -1071,11 +1095,11 @@ chmod +x build_writer.sh
 
 <p>Look in _includes/custom/conditions.html and make sure the conditional values there match up with the values declared in the configuration file. Specifically, you need to make sure you’ve declared a value for project, product, platform, and version.</p>
 
-<p>If you don’t have any values for these properties, you still need to keep them in your configuration file. Just put something like <code class="highlighter-rouge">all</code> as the value.</p>
+<p>If you don’t have any values for these properties, you still need to keep them in your configuration file. Just put something like <code>all</code> as the value.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note: </b> This theme is designed for single sourcing. If you're only building one site, you can remove these values from the \_includes/sidebar.html file and \_data/sidebar.yml files.</div>
 
-<p>Understanding how the theme works can be helpful in troubleshooting. The _includes/sidebar.html file loops through the values in the _data/sidebar.yml file. There are <code class="highlighter-rouge">if</code> statements that check whether the conditions (as specified in the conditions.html file) are met. If the sidebar.yml item has the right product, platform, audience, and version, then it gets displayed in the sidebar. If not, it get skipped.</p>
+<p>Understanding how the theme works can be helpful in troubleshooting. The _includes/sidebar.html file loops through the values in the _data/sidebar.yml file. There are <code>if</code> statements that check whether the conditions (as specified in the conditions.html file) are met. If the sidebar.yml item has the right product, platform, audience, and version, then it gets displayed in the sidebar. If not, it get skipped.</p>
 
 <h3 id="sidebar-heading-level-not-opening">Sidebar heading level not opening</h3>
 
@@ -1089,7 +1113,7 @@ chmod +x build_writer.sh
 
 <h3 id="search-isnt-working">Search isn’t working</h3>
 
-<p>If the search isn’t working, check the JSON validity in the search.json file in your output folder. Usually something is invalid. Identify the problematic line, fix the file, or put <code class="highlighter-rouge">search: exclude</code> in the frontmatter of the file to exclude it from search.</p>
+<p>If the search isn’t working, check the JSON validity in the search.json file in your output folder. Usually something is invalid. Identify the problematic line, fix the file, or put <code>search: exclude</code> in the frontmatter of the file to exclude it from search.</p>
 
 
 
@@ -1097,6 +1121,16 @@ chmod +x build_writer.sh
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

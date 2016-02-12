@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,11 +1023,13 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="add-a-tag-to-a-page">Add a tag to a page</h2>
-<p>You can add tags to pages by adding <code class="highlighter-rouge">tags</code> in the frontmatter with values inside brackets, like this:</p>
+<p>You can add tags to pages by adding <code>tags</code> in the frontmatter with values inside brackets, like this:</p>
 
 <h2 id="section">```</h2>
 <p>title: 2.0 Release Notes
@@ -1034,7 +1058,7 @@ tags: [formatting, single_sourcing]
   <li>
     <p>First make sure you configure a few details in the conditions.html file. In particular, see this setting:</p>
 
-    <p><code class="highlighter-rouge">liquid
+    <p><code>liquid
  {% assign projectTags = site.data.tags_doc.allowed-tags %}
 </code></p>
 
@@ -1043,7 +1067,7 @@ tags: [formatting, single_sourcing]
   <li>
     <p>In the _data file, add a yml file similar to tags_doc.yml. The YML file lists the tags that are allowed:</p>
 
-    <p><code class="highlighter-rouge">json
+    <p><code>json
  allowed-tags:
    - getting_started
    - overview
@@ -1059,7 +1083,7 @@ tags: [formatting, single_sourcing]
 
     <p>Each tag archive file needs only this:</p>
 
-    <p><code class="highlighter-rouge">liquid
+    <p><code>liquid
  ---
  title: "Getting Started Pages"
  tagName: getting_started
@@ -1088,13 +1112,12 @@ tags: [formatting, single_sourcing]
     {% endfor %}
     {% endif %}
 </div>
-<div class="highlighter-rouge"><pre class="highlight"><code>```
+<pre><code>```
 </code></pre>
-</div>
 
 <p>Because this code appears on the _layouts/page.html file by default, you don’t need to do anything. However, if you want to alter the placement or change the button color, you can do so.</p>
 
-<p>You can change the button color by changing the class on the button from <code class="highlighter-rouge">btn-info</code> to one of the other button classes bootstrap provides. See <a href="../mydoc/mydoc_labels.html">Labels</a> for more options on button class names.</p>
+<p>You can change the button color by changing the class on the button from <code>btn-info</code> to one of the other button classes bootstrap provides. See <a href="../mydoc/mydoc_labels.html">Labels</a> for more options on button class names.</p>
 
 <h2 id="retrieving-pages-for-a-specific-tag">Retrieving pages for a specific tag</h2>
 
@@ -1414,7 +1437,7 @@ Getting started pages:</p>
 
 </ul>
 
-<p>If you want to sort the pages alphabetically, you have to apply a <code class="highlighter-rouge">sort</code> filter:</p>
+<p>If you want to sort the pages alphabetically, you have to apply a <code>sort</code> filter:</p>
 
 <p>```liquid</p>
 
@@ -1735,13 +1758,13 @@ Getting started pages:</p>
 </ul>
 
 <h2 id="efficiency">Efficiency</h2>
-<p>Although the tag approach here uses <code class="highlighter-rouge">for</code> loops, these are somewhat inefficient on a large site. Most of my tech doc projects don’t have hundreds of pages (like my blog does). If your project does have hundreds of pages, this <code class="highlighter-rouge">for</code> loop approach with tags is going to slow down your build times.</p>
+<p>Although the tag approach here uses <code>for</code> loops, these are somewhat inefficient on a large site. Most of my tech doc projects don’t have hundreds of pages (like my blog does). If your project does have hundreds of pages, this <code>for</code> loop approach with tags is going to slow down your build times.</p>
 
 <p>Without the ability to access pages inside a universal namespace with the page type, there aren’t many workarounds here for faster looping.</p>
 
-<p>With posts (instead of pages), since you can access just the posts inside <code class="highlighter-rouge">posts.tag.tagname</code>, you can be a lot more efficient with the looping.</p>
+<p>With posts (instead of pages), since you can access just the posts inside <code>posts.tag.tagname</code>, you can be a lot more efficient with the looping.</p>
 
-<p>Still, if the build times are getting long (e.g., 1 or 2 minutes per build), look into reducing the number of <code class="highlighter-rouge">for</code> loops on your site.</p>
+<p>Still, if the build times are getting long (e.g., 1 or 2 minutes per build), look into reducing the number of <code>for</code> loops on your site.</p>
 
 <h2 id="empty-tags">Empty tags?</h2>
 
@@ -1749,7 +1772,7 @@ Getting started pages:</p>
 
 <ul>
   <li>You’re using a tag that isn’t specified in your allowed tags list in your tags.yml file.</li>
-  <li>You have an empty <code class="highlighter-rouge">tags: []</code> property in your frontmatter.</li>
+  <li>You have an empty <code>tags: []</code> property in your frontmatter.</li>
 </ul>
 
 <p>If you don’t want tags to appear at all on your page, remove the tags property from your frontmatter.</p>
@@ -1766,6 +1789,16 @@ Getting started pages:</p>
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

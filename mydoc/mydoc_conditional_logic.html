@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="about-liquid-and-conditional-statements">About Liquid and conditional statements</h2>
 <p>If you want to create different outputs for different audiences, you can do all of this using a combination of Jekyll’s Liquid markup and values in your configuration file.</p>
 
@@ -1035,13 +1059,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>Here’s an example of conditional logic based on a value in the configs/config_writer.yml file. In my config_writer.yml file, I have the following:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 audience: writers
 </code></p>
 
 <p>On a page in my site (it can be HTML or markdown), I can conditionalize content using the following:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% if site.audience == "writers" %}
 The writer audience should see this...
 {% elsif site.audience == "designers" %}
@@ -1049,9 +1073,9 @@ The designer audience should see this ...
 {% endif %}
 </code></p>
 
-<p>This uses simple <code class="highlighter-rouge">if-elsif</code> logic to determine what is shown (note the spelling of <code class="highlighter-rouge">elsif</code>). The <code class="highlighter-rouge">else</code> statement handles all other conditions not handled by the <code class="highlighter-rouge">if</code> statements.</p>
+<p>This uses simple <code>if-elsif</code> logic to determine what is shown (note the spelling of <code>elsif</code>). The <code>else</code> statement handles all other conditions not handled by the <code>if</code> statements.</p>
 
-<p>Here’s an example of <code class="highlighter-rouge">if-else</code> logic inside a list:</p>
+<p>Here’s an example of <code>if-else</code> logic inside a list:</p>
 
 <p>```liquid
 To bake a casserole:</p>
@@ -1067,15 +1091,15 @@ To bake a casserole:</p>
 ```</li>
 </ol>
 
-<p>You don’t need the <code class="highlighter-rouge">elsif</code> or <code class="highlighter-rouge">else</code>. You could just use an <code class="highlighter-rouge">if</code> (but be sure to close it with <code class="highlighter-rouge">endif</code>).</p>
+<p>You don’t need the <code>elsif</code> or <code>else</code>. You could just use an <code>if</code> (but be sure to close it with <code>endif</code>).</p>
 
 <h2 id="or-operator">Or operator</h2>
 
-<p>You can use more advanced Liquid markup for conditional logic, such as an <code class="highlighter-rouge">or</code> command. See <a href="http://docs.shopify.com/themes/liquid-documentation/basics/operators">Shopify’s Liquid documentation</a> for more details.</p>
+<p>You can use more advanced Liquid markup for conditional logic, such as an <code>or</code> command. See <a href="http://docs.shopify.com/themes/liquid-documentation/basics/operators">Shopify’s Liquid documentation</a> for more details.</p>
 
-<p>For example, here’s an example using <code class="highlighter-rouge">or</code>:</p>
+<p>For example, here’s an example using <code>or</code>:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% if site.audience contains "vegan" or site.audience == "vegetarian" %}
     // run this.
 {% endif %}
@@ -1083,7 +1107,7 @@ To bake a casserole:</p>
 
 <p>Note that you have to specify the full condition each time. You can’t shorten the above logic to the following:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% if site.audience contains "vegan" or "vegetarian" %}
     // run this.
 {% endif %}
@@ -1093,9 +1117,9 @@ To bake a casserole:</p>
 
 <h2 id="unless-operator">Unless operator</h2>
 
-<p>You can also use <code class="highlighter-rouge">unless</code> in your logic, like this:</p>
+<p>You can also use <code>unless</code> in your logic, like this:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% unless site.output == "pdf" %}
 ...
 {% endunless %}
@@ -1105,13 +1129,13 @@ To bake a casserole:</p>
 
 <p>Don’t read it the other way around or you’ll get confused. (It’s not executing the code only if the condition is satisfied.)</p>
 
-<p>In this situation, if <code class="highlighter-rouge">site.print == true</code>, then the code will <em>not</em> be run here.</p>
+<p>In this situation, if <code>site.print == true</code>, then the code will <em>not</em> be run here.</p>
 
 <h2 id="storing-conditions-in-the-data-folder">Storing conditions in the _data folder</h2>
 
 <p>Here’s an example of using conditional logic based on a value in a data file:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% if site.data.options.output == "alpha" %}
 show this content...
 {% elsif site.data.options.output == "beta" %}
@@ -1121,23 +1145,23 @@ this shows if neither of the above two if conditions are met.
 {% endif %}
 </code></p>
 
-<p>To use this, I would need to have a _data folder called options where the <code class="highlighter-rouge">output</code> property is stored.</p>
+<p>To use this, I would need to have a _data folder called options where the <code>output</code> property is stored.</p>
 
 <p>I don’t really use the _data folder as much for project options. I store them in the configuration file because I usually want different projects to use different values for the same property.</p>
 
 <p>For example, maybe a file or function name is called something different for different audiences. I currently single source the same content to at least two audiences in different markets.</p>
 
-<p>For the first audience, the function name might be called <code class="highlighter-rouge">generate</code>, but for the second audience, the same function might be called called <code class="highlighter-rouge">expand</code>. In my content, I’d just use <code class="highlighter-rouge"><span class="p">{</span><span class="err">{site.function</span><span class="p">}</span><span class="err">}</span></code>. Then in the configuration file I change its value appropriately for the audience.</p>
+<p>For the first audience, the function name might be called <code>generate</code>, but for the second audience, the same function might be called called <code>expand</code>. In my content, I’d just use <code>{{site.function}}</code>. Then in the configuration file I change its value appropriately for the audience.</p>
 
 <h2 id="specifying-the-location-for-data">Specifying the location for _data</h2>
 
-<p>You can also specify a <code class="highlighter-rouge">data_source</code> for your data location in your configuration file. Then you aren’t limited to simply using <code class="highlighter-rouge">_data</code> to store your data files.</p>
+<p>You can also specify a <code>data_source</code> for your data location in your configuration file. Then you aren’t limited to simply using <code>_data</code> to store your data files.</p>
 
 <p>For example, suppose you have 2 projects: alpha and beta. You might store all the data files for alpha inside data_alpha, and all the data files for beta inside data_beta.</p>
 
 <p>In your alpha configuration file, specify the data source like this:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 data_source: data_alpha
 </code></p>
 
@@ -1145,7 +1169,7 @@ data_source: data_alpha
 
 <p>For your beta configuratoin file, specify the data source like this:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 data_source: data_beta
 </code></p>
 
@@ -1163,7 +1187,7 @@ user_plan: full
 
 <p>Now you can run logic based on the conditional property in that page’s front matter:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% if page.user_plan == "full" %}
 // run this code
 {% endif %}
@@ -1171,7 +1195,7 @@ user_plan: full
 
 <h2 id="conditions-versus-includes">Conditions versus includes</h2>
 
-<p>If you have a lot of conditions in your text, it can get confusing. As a best practice, whenever you insert an <code class="highlighter-rouge">if</code> condition, add the <code class="highlighter-rouge">endif</code> at the same time. This will reduce the chances of forgetting to close the if statement. Jekyll won’t build if there are problems with the liquid logic.</p>
+<p>If you have a lot of conditions in your text, it can get confusing. As a best practice, whenever you insert an <code>if</code> condition, add the <code>endif</code> at the same time. This will reduce the chances of forgetting to close the if statement. Jekyll won’t build if there are problems with the liquid logic.</p>
 
 <p>If your text is getting busy with a lot of conditional statements, consider putting a lot of content into includes so that you can more easily see where the conditions begin and end.</p>
 
@@ -1181,6 +1205,16 @@ user_plan: full
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

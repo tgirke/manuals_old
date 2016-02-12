@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="about-the-review-process">About the review process</h2>
 
 <p>If you’re using the doc as code approach, you might also consider using the same techniques for reviewing the doc as people use in reviewing code. This approach will involve using Github to edit the files.</p>
@@ -1012,24 +1036,24 @@ $('#toc').on('click', 'a', function() {
 
 <p>Here’s the code for that button on the page.html layout:</p>
 
-<p><code class="highlighter-rouge"><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.github_editme_path</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"https://github.com/{{site.github_editme_path}}{{page.url | replace: '.html', '.md'}}"</span><span class="w"> </span><span class="err">class=</span><span class="s2">"btn btn-default "</span><span class="w"> </span><span class="err">role=</span><span class="s2">"button"</span><span class="err">&gt;&lt;i</span><span class="w"> </span><span class="err">class=</span><span class="s2">"fa fa-github fa-lg"</span><span class="err">&gt;&lt;/i&gt;</span><span class="w"> </span><span class="err">Edit</span><span class="w"> </span><span class="err">me&lt;/a&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></p>
+<p><code>
+{% if site.github_editme_path %}
+&lt;a href="https://github.com/{{site.github_editme_path}}{{page.url | replace: '.html', '.md'}}" class="btn btn-default " role="button"&gt;&lt;i class="fa fa-github fa-lg"&gt;&lt;/i&gt; Edit me&lt;/a&gt;
+{% endif %}
+</code></p>
 
 <p>You could also make it so the Github button appears only when you’re working in a development environment.</p>
 
-<p><code class="highlighter-rouge"><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">jekyll.environment</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"development"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.github_editme_path</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;a</span><span class="w"> </span><span class="err">target=</span><span class="s2">"_blank"</span><span class="w"> </span><span class="err">href=</span><span class="s2">"https://github.com/{{site.github_editme_path}}{{page.url | replace: '.html', '.md'}}"</span><span class="w"> </span><span class="err">class=</span><span class="s2">"btn btn-default githubEditButton"</span><span class="w"> </span><span class="err">role=</span><span class="s2">"button"</span><span class="err">&gt;&lt;i</span><span class="w"> </span><span class="err">class=</span><span class="s2">"fa fa-github fa-lg"</span><span class="err">&gt;&lt;/i&gt;</span><span class="w"> </span><span class="err">Edit</span><span class="w"> </span><span class="err">me&lt;/a&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></p>
+<p><code>
+{% if jekyll.environment == "development" %}
+{% if site.github_editme_path %}
+&lt;a target="_blank" href="https://github.com/{{site.github_editme_path}}{{page.url | replace: '.html', '.md'}}" class="btn btn-default githubEditButton" role="button"&gt;&lt;i class="fa fa-github fa-lg"&gt;&lt;/i&gt; Edit me&lt;/a&gt;
+{% endif %}
+</code></p>
 
 <p>To activate the development environment, add the <a href="http://jekyllrb.com/docs/configuration/">environment flag</a> in your build command:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 JEKYLL_ENV=development jekyll serve
 </code></p>
 
@@ -1049,6 +1073,16 @@ JEKYLL_ENV=development jekyll serve
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

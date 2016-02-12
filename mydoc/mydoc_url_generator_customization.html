@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <div class="seriesContext">
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Getting Started <span class="caret"></span></button>
@@ -1193,7 +1217,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
+                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
             </li>
             
             
@@ -1201,7 +1225,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
+                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
             
             
@@ -1246,9 +1270,9 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Change the project conditions at the top:</p>
 
-    <p><code class="highlighter-rouge"><span class="w">
- </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.project</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"mydoc_writers"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">site.project</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"mydoc_designers"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span></code></p>
+    <p><code>
+ {% if site.project == "mydoc_writers" or site.project == "mydoc_designers" %}
+</code></p>
 
     <p>Add all the projects here that will use this URL generator. For example, if you have 3 different projects, list them here. Otherwise the file’s contents will be replaced with the values from the latest project that you run.</p>
   </li>
@@ -1457,6 +1481,16 @@ $('#toc').on('click', 'a', function() {
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

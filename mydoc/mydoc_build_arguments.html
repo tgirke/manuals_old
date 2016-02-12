@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,30 +1023,32 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="how-to-build-jekyll-sites">How to build Jekyll sites</h2>
 
 <p>The normal way to build the Jekyll site is through the build command:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll build
 </code></p>
 
-<p>To build the site and view it in a live server so that Jekyll rebuilds that site each time you make a change, use the <code class="highlighter-rouge">serve</code> command:</p>
+<p>To build the site and view it in a live server so that Jekyll rebuilds that site each time you make a change, use the <code>serve</code> command:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll serve
 </code></p>
 
-<p>By default, the _config.yml in the root directory will be used, Jekyll will scan the current directory for files, and the folder <code class="highlighter-rouge">_site</code> will be used as the output. You can customize these build commands like this:</p>
+<p>By default, the _config.yml in the root directory will be used, Jekyll will scan the current directory for files, and the folder <code>_site</code> will be used as the output. You can customize these build commands like this:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 jekyll serve --config configs/config_writers.yml --destination /users/tjohnson/projects/documentation-theme-jekyll-builds/writer
 </code></p>
 
-<p>Here the <code class="highlighter-rouge">configs/config_writers.yml</code> file is used instead of <code class="highlighter-rouge">_config.yml</code>. The destination directory is <code class="highlighter-rouge">../mydoc_writers</code>.</p>
+<p>Here the <code>configs/config_writers.yml</code> file is used instead of <code>_config.yml</code>. The destination directory is <code>../mydoc_writers</code>.</p>
 
 <h2 id="shortcuts-for-the-build-arguments">Shortcuts for the build arguments</h2>
 
@@ -1038,17 +1062,17 @@ jekyll serve --config configs/config_writers.yml --destination /users/tjohnson/p
 
 <p>You can kill the server process using these commands:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 ps aux | grep jekyll
 </code></p>
 
 <p>Find the PID (for example, it  looks like “22298”).</p>
 
-<p>Then type <code class="highlighter-rouge">kill -9 22298</code> where “22298” is the PID.</p>
+<p>Then type <code>kill -9 22298</code> where “22298” is the PID.</p>
 
 <p>To kill all Jekyll instances, use this:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 </code></p>
 
@@ -1062,6 +1086,16 @@ kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

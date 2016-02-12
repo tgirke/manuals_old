@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <div class="seriesContext">
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Getting Started <span class="caret"></span></button>
@@ -1192,15 +1216,15 @@ $('#toc').on('click', 'a', function() {
             
             
             
+            <li class="active"> → 5. Customize the conditions file</li>
+            
+            
+            
+            
+            
             <li>
                 <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
-            
-            
-            
-            
-            
-            <li class="active"> → 5. Customize the conditions file</li>
             
             
             
@@ -1241,19 +1265,19 @@ $('#toc').on('click', 'a', function() {
 
 <p>In the _includes/custom directory, open the conditions.html file. Duplicate one of the project settings blocks like this:</p>
 
-<p><code class="highlighter-rouge"><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.project</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"mydoc_writers"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">audience</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"writers"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">sidebar</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_sidebar.entries</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">topnav</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_topnav.topnav</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">topnav_dropdowns</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_topnav.topnav_dropdowns</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">version</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"all"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">product</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"all"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">platform</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"all"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">projectTags</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_tags.allowed-tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">projectFolder</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"mydoc"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></p>
+<p><code>
+{% if site.project == "mydoc_writers" %}
+{% assign audience = "writers" %}
+{% assign sidebar = site.data.mydoc.mydoc_sidebar.entries %}
+{% assign topnav = site.data.mydoc.mydoc_topnav.topnav %}
+{% assign topnav_dropdowns = site.data.mydoc.mydoc_topnav.topnav_dropdowns %}
+{% assign version = "all" %}
+{% assign product = "all" %}
+{% assign platform = "all" %}
+{% assign projectTags = site.data.mydoc.mydoc_tags.allowed-tags %}
+{% assign projectFolder = "mydoc" %}
+{% endif %}
+</code></p>
 
 <p>You need to duplicate this block for each output you have.</p>
 
@@ -1468,6 +1492,16 @@ $('#toc').on('click', 'a', function() {
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

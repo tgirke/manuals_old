@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,13 +1023,15 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h1 id="introduction">Introduction</h1>
-<p>This vignette provides general information about the <code class="highlighter-rouge">longevityTools</code> package.
+<p>This vignette provides general information about the <code>longevityTools</code> package.
 This includes an introduction into the objects, data structures, methods and
-functions defined by <code class="highlighter-rouge">longevityTools</code>. The development of <code class="highlighter-rouge">longevityTools</code> is part of the 
+functions defined by <code>longevityTools</code>. The development of <code>longevityTools</code> is part of the 
 <a href="http://www.longevitygenomics.org/">Longevity Genomics</a> project. 
 The analysis workflows used by this project are documented in its companion vignettes listed below.
 <script type="math/tex">eSNP Risk Score_i = \sum_{j=1}^{N} eSNP_j^{AlleleDown} + \sum_{k=1}^{N} eSNP_k^{AlleleUp}</script></p>
@@ -1016,10 +1040,10 @@ The analysis workflows used by this project are documented in its companion vign
 
 <h2 id="installation">Installation</h2>
 
-<p>The R software for running <a href="https://github.com/tgirke/longevityTools"><em><code class="highlighter-rouge">longevityTools</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code class="highlighter-rouge">longevityTools</code></em> package can be installed from the R console using the following <em><code class="highlighter-rouge">biocLite</code></em> install command.</p>
+<p>The R software for running <a href="https://github.com/tgirke/longevityTools"><em><code>longevityTools</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code>longevityTools</code></em> package can be installed from the R console using the following <em><code>biocLite</code></em> install command.</p>
 
-<figure class="highlight"><pre><code class="language-rb" data-lang="rb"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script </span>
-<span class="n">biocLite</span><span class="p">(</span><span class="s2">"tgirke/longevityTools"</span><span class="p">,</span> <span class="n">build_vignettes</span><span class="o">=</span><span class="no">TRUE</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="no">TRUE</span><span class="p">)</span> <span class="c1"># Installs package from GitHub</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-rb" data-lang="rb"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script </span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s2">"tgirke/longevityTools"</span><span class="p">,</span> <span class="n">build_vignettes</span><span class="o">=</span><span class="no">TRUE</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="no">TRUE</span><span class="p">)</span> <span class="c1"># Installs package from GitHub</span></code></pre></div>
 
 <h2 id="loading-package-and-documentation">Loading package and documentation</h2>
 
@@ -1027,9 +1051,9 @@ The analysis workflows used by this project are documented in its companion vign
 </pre></noscript>
 <script src="https://gist.github.com/c26daac0f647f1732a58.js"> </script>
 
-<figure class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">library</span><span class="p">(</span><span class="s2">"longevityTools"</span><span class="p">)</span> <span class="c1"># Loads the package
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">library</span><span class="p">(</span><span class="s2">"longevityTools"</span><span class="p">)</span> <span class="c1"># Loads the package
 </span><span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"longevityTools"</span><span class="p">)</span> <span class="c1"># Lists package info
-</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"longevityTools"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">vignette</span></code></pre></figure>
+</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"longevityTools"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">vignette</span></code></pre></div>
 
 <h1 id="overview-of-object-clases-methods-and-functions">Overview of object clases, methods and functions</h1>
 
@@ -1082,9 +1106,9 @@ ith gene expression data collected from tissues other than muscle [@Sood2015-pb]
 
 <h1 id="version-information">Version information</h1>
 
-<figure class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">sessionInfo</span><span class="p">()</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="n">sessionInfo</span><span class="p">()</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-s" data-lang="s"><span class="c1">## R version 3.2.3 (2015-12-10)
+<div class="highlight"><pre><code class="language-s" data-lang="s"><span class="c1">## R version 3.2.3 (2015-12-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.3 LTS
 ## 
@@ -1104,7 +1128,7 @@ ith gene expression data collected from tissues other than muscle [@Sood2015-pb]
 ##  [1] Rcpp_0.12.3      codetools_0.2-14 digest_0.6.9     plyr_1.8.3       grid_3.2.3      
 ##  [6] gtable_0.1.2     formatR_1.2.1    magrittr_1.5     evaluate_0.8     scales_0.3.0    
 ## [11] stringi_1.0-1    rmarkdown_0.9.2  tools_3.2.3      stringr_1.0.0    munsell_0.4.2   
-</span><span class="err">##</span> <span class="p">[</span><span class="m">16</span><span class="p">]</span> <span class="n">yaml_2.1.13</span>      <span class="n">colorspace_1.2</span><span class="m">-6</span> <span class="n">htmltools_0.3</span>    <span class="n">knitr_1.12</span></code></pre></figure>
+</span><span class="err">##</span> <span class="p">[</span><span class="m">16</span><span class="p">]</span> <span class="n">yaml_2.1.13</span>      <span class="n">colorspace_1.2</span><span class="m">-6</span> <span class="n">htmltools_0.3</span>    <span class="n">knitr_1.12</span></code></pre></div>
 
 
 
@@ -1112,6 +1136,16 @@ ith gene expression data collected from tissues other than muscle [@Sood2015-pb]
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="full-code-demo-of-content-api">Full code demo of content API</h2>
 
 <p>You can create a help API that developers can use to pull in content.</p>
@@ -1034,7 +1058,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Add the following information to your configuration file to declare your collection:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 collections:
   tooltips:
     output: false
@@ -1042,13 +1066,13 @@ collections:
 
 <p>In your Jekyll project’s root directory, create a new folder called “_tooltips” and put every page that you want to be part of that tooltips collection inside that folder.</p>
 
-<p>In Jekyll, folders that begin with an underscore (“_”) aren’t included in the output. However, in the collection information that you add to your configuration file, if you change <code class="highlighter-rouge">output</code> to <code class="highlighter-rouge">true</code>, the tooltips folder will appear in the output, and each page inside tooltips will be generated. You most likely don’t want this for tooltips (you just want the JSON file), so make the <code class="highlighter-rouge">output</code> setting <code class="highlighter-rouge">false</code>.</p>
+<p>In Jekyll, folders that begin with an underscore (“_”) aren’t included in the output. However, in the collection information that you add to your configuration file, if you change <code>output</code> to <code>true</code>, the tooltips folder will appear in the output, and each page inside tooltips will be generated. You most likely don’t want this for tooltips (you just want the JSON file), so make the <code>output</code> setting <code>false</code>.</p>
 
 <h2 id="create-tooltip-definitions-in-a-yaml-file">2. Create tooltip definitions in a YAML file</h2>
 
 <p>Inside _data &gt; mydoc create a YAML file called something like mydoc_definitions.yml. Add the definitions for each of your tooltips here like this:</p>
 
-<p><code class="highlighter-rouge">yaml
+<p><code>yaml
 basketball: "Basketball is a sport involving two teams of five players each competing to put a ball through a small circular rim 10 feet above the ground. Basketball requires players to be in top physical condition, since they spend most of the game running back and forth along a 94-foot-long floor."
 </code></p>
 
@@ -1056,7 +1080,7 @@ basketball: "Basketball is a sport involving two teams of five players each comp
 
 <h2 id="create-pages-in-your-collection">3. Create pages in your collection</h2>
 
-<p>Create pages inside your new tooltips collection (that is, inside the _tooltips folder). Each page needs to have a unique <code class="highlighter-rouge">id</code> in the frontmatter as well as a <code class="highlighter-rouge">product</code>. Then reference the definition you created in the mydoc_definitions.yml file.</p>
+<p>Create pages inside your new tooltips collection (that is, inside the _tooltips folder). Each page needs to have a unique <code>id</code> in the frontmatter as well as a <code>product</code>. Then reference the definition you created in the mydoc_definitions.yml file.</p>
 
 <p>Here’s an example:</p>
 
@@ -1097,42 +1121,42 @@ search: exclude
 }
 ```</p>
 
-<p>Change “mydoc” to the product name you used in each of the tooltip files. The template here will only include content in the JSON file if it meets the <code class="highlighter-rouge">product</code> attribute requirements. We need this <code class="highlighter-rouge">if</code> statement to prevent tooltips from other products from being included in the JSON file.</p>
+<p>Change “mydoc” to the product name you used in each of the tooltip files. The template here will only include content in the JSON file if it meets the <code>product</code> attribute requirements. We need this <code>if</code> statement to prevent tooltips from other products from being included in the JSON file.</p>
 
-<p>This code will loop through all pages in the tooltips collection and insert the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">body</code> into key-value pairs for the JSON code. Here’s an example of what that looks like after it’s processed by Jekyll in the site build:</p>
+<p>This code will loop through all pages in the tooltips collection and insert the <code>id</code> and <code>body</code> into key-value pairs for the JSON code. Here’s an example of what that looks like after it’s processed by Jekyll in the site build:</p>
 
-<p><code class="highlighter-rouge"><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baseball"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Baseball is considered America's pasttime sport, though that may be more of a historical term than a current one. There's a lot more excitement about football than baseball. A baseball game is somewhat of a snooze to watch, for the most part."</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"basketball"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basketball is a sport involving two teams of five players each competing to put a ball through a small circular rim 10 feet above the ground. Basketball requires players to be in top physical condition, since they spend most of the game running back and forth along a 94-foot-long floor."</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"football"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No doubt the most fun sport to watch, football also manages to accrue the most injuries with the players. From concussions to blown knees, football players have short sport lives."</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"soccer"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If there's one sport that dominates the world landscape, it's soccer. However, US soccer fans are few and far between. Apart from the popularity of soccer during the World Cup, most people don't even know the name of the professional soccer organization in their area."</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></p>
+<p><code>
+{
+  "entries": [
+    {
+      "id": "baseball",
+      "body": "Baseball is considered America's pasttime sport, though that may be more of a historical term than a current one. There's a lot more excitement about football than baseball. A baseball game is somewhat of a snooze to watch, for the most part."
+    },
+    {
+      "id": "basketball",
+      "body": "Basketball is a sport involving two teams of five players each competing to put a ball through a small circular rim 10 feet above the ground. Basketball requires players to be in top physical condition, since they spend most of the game running back and forth along a 94-foot-long floor."
+    },
+    {
+      "id": "football",
+      "body": "No doubt the most fun sport to watch, football also manages to accrue the most injuries with the players. From concussions to blown knees, football players have short sport lives."
+    },
+    {
+      "id": "soccer",
+      "body": "If there's one sport that dominates the world landscape, it's soccer. However, US soccer fans are few and far between. Apart from the popularity of soccer during the World Cup, most people don't even know the name of the professional soccer organization in their area."
+    }
+  ]
+}
+</code></p>
 
 <p>You can also view the same JSON file here: <a class="noCrossRef" href="mydoc_tooltips_source.json">mydoc_tooltips_source.json</a>.</p>
 
-<p>You can add different fields depending on how you want the JSON to be structured. Here we just have to fields: <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">body</code>. And the JSON is looking just in the tooltips collection that we created.</p>
+<p>You can add different fields depending on how you want the JSON to be structured. Here we just have to fields: <code>id</code> and <code>body</code>. And the JSON is looking just in the tooltips collection that we created.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b> Check out <a href="https://google-styleguide.googlecode.com/svn/trunk/jsoncstyleguide.xml">Google's style guide for JSON</a>. These best practices can help you keep your JSON file valid.</div>
 
 <p>You can store your mydoc_tooltips_source.json file anywhere you want, but to me it make sense to store it inside a tooltips folder for your specific project. This way it will automatically be excluded from other projects that are already excluding that project directory.</p>
 
-<p>Note that you can create different JSON files that specialize in different content. For example, suppose you have some getting started information. You could put that into a different JSON file. Using the same structure, you might add an <code class="highlighter-rouge">if</code> tag that checks whether the page has frontmatter that says <code class="highlighter-rouge">type: getting_started</code> or something. Or you could put the content into separate collection entirely (different from tooltips).</p>
+<p>Note that you can create different JSON files that specialize in different content. For example, suppose you have some getting started information. You could put that into a different JSON file. Using the same structure, you might add an <code>if</code> tag that checks whether the page has frontmatter that says <code>type: getting_started</code> or something. Or you could put the content into separate collection entirely (different from tooltips).</p>
 
 <p>By chunking up your JSON files, you can provide a quicker lookup, though I’m not sure how big the JSON file can be before you experience any latency with the jQuery lookup.</p>
 
@@ -1152,7 +1176,7 @@ search: exclude
 
 <p>If your server setup allows htaccess files to override general server permissions, create an .htaccess file and add the following:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 Header set Access-Control-Allow-Origin "*"
 </code></p>
 
@@ -1162,15 +1186,15 @@ Header set Access-Control-Allow-Origin "*"
 
 <p>To test whether your server permissions are set correctly, open a terminal and run the following curl command pointing to your tooltips.json file:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 curl -I http://idratherbetellingstories.com/wp-content/apidemos/mydoc_tooltips_source.json
 </code></p>
 
-<p>The <code class="highlighter-rouge">-I</code> command tells cURL to return the request header only.</p>
+<p>The <code>-I</code> command tells cURL to return the request header only.</p>
 
 <p>If the server permissions are set correctly, you should see the following line somewhere in the response:</p>
 
-<p><code class="highlighter-rouge">xml
+<p><code>xml
 Access-Control-Allow-Origin: *
 </code></p>
 
@@ -1197,7 +1221,7 @@ Access-Control-Allow-Origin: *
 
 <h2 id="explain-how-developers-can-access-the-help">7. Explain how developers can access the help</h2>
 
-<p>Developers can access the help using the <code class="highlighter-rouge">.get</code> method from jQuery, among other methods. Here’s an example of how to get a page with the ID of <code class="highlighter-rouge">basketball</code>:</p>
+<p>Developers can access the help using the <code>.get</code> method from jQuery, among other methods. Here’s an example of how to get a page with the ID of <code>basketball</code>:</p>
 
 <p>```js
 <script type="text/javascript">
@@ -1207,7 +1231,7 @@ $(document).ready(function(){</script></p>
 
 <p>$.get( url, function( data ) {</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    $.each(data.entries, function(i, page) {
+<pre><code>    $.each(data.entries, function(i, page) {
         if (page.id == "basketball") {
 			$( "#basketball" ).attr( "data-content", page.body );
         }
@@ -1215,7 +1239,6 @@ $(document).ready(function(){</script></p>
     });
 });
 </code></pre>
-</div>
 
 <p>});
 &lt;/script&gt;
@@ -1223,13 +1246,13 @@ $(document).ready(function(){</script></p>
 
 <p>View the <a class="noCrossRef" href="tooltips/mydoc_tooltips_fields.html">Tooltip Demo</a> for a demo.</p>
 
-<p>The <code class="highlighter-rouge">url</code> here is relative, but you could equally point it to an absolute path on a remote host assuming CORS is enabled on the host.</p>
+<p>The <code>url</code> here is relative, but you could equally point it to an absolute path on a remote host assuming CORS is enabled on the host.</p>
 
-<p>The <code class="highlighter-rouge">each</code> method looks through all the JSON content to find the item whose <code class="highlighter-rouge">page.id</code> is equal to <code class="highlighter-rouge">basketball</code>. It then looks for an element on the page named <code class="highlighter-rouge">#basketball</code> and adds a <code class="highlighter-rouge">data-content</code> attribute to that element.</p>
+<p>The <code>each</code> method looks through all the JSON content to find the item whose <code>page.id</code> is equal to <code>basketball</code>. It then looks for an element on the page named <code>#basketball</code> and adds a <code>data-content</code> attribute to that element.</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning: </b><b>Note:</b> Make sure your JSON file is valid. Otherwise, this method won't work. I use the <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en">JSON Formatter extension for Chrome</a>. When I go to the tooltips.json page in my browser, the JSON content &mdash; if valid &mdash; is nicely formatted (and includes some color coding). If the file isn't valid, it's not formatted and there isn't any color. You can also check the JSON formatting using <a href="http://jsonformatter.curiousconcept.com/">JSON Formatter and Validator</a>. If your JSON file isn't valid, identify the problem area using the validator and troubleshoot the file causing issues. It's usually due to some code that isn't escaping correctly. </div>
 
-<p>Why <code class="highlighter-rouge">data-content</code>? Well, in this case, I’m using <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popovers</a> to display the tooltip content. The <code class="highlighter-rouge">data-content</code> attribute is how Bootstrap injects popovers.</p>
+<p>Why <code>data-content</code>? Well, in this case, I’m using <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popovers</a> to display the tooltip content. The <code>data-content</code> attribute is how Bootstrap injects popovers.</p>
 
 <p>Here’s the section on the page where the popover is inserted:</p>
 
@@ -1237,7 +1260,7 @@ $(document).ready(function(){</script></p>
 <p>Basketball <span class="glyphicon glyphicon-info-sign" id="basketball" data-toggle="popover"></span></p>
 <p>```</p>
 
-<p>Notice that I just have <code class="highlighter-rouge">id="basketball"</code> added to this popover element. Developers merely need to add a unique ID to each tooltip they want to pull in the help content. Either you tell developers the unique ID they should add, or ask them what IDs they added (or just tell them to use an ID that matches the field’s name).</p>
+<p>Notice that I just have <code>id="basketball"</code> added to this popover element. Developers merely need to add a unique ID to each tooltip they want to pull in the help content. Either you tell developers the unique ID they should add, or ask them what IDs they added (or just tell them to use an ID that matches the field’s name).</p>
 
 <p>In order to use jQuery and Bootstrap, you’ll need to add the appropriate references in the head tags of your page:</p>
 
@@ -1353,6 +1376,16 @@ Now you have both documentation and UI tooltips generated from the same definiti
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

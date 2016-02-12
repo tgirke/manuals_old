@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <div class="seriesContext">
     <div class="btn-group">
         <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Getting Started <span class="caret"></span></button>
@@ -1191,7 +1215,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
+                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
             </li>
             
             
@@ -1199,7 +1223,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
+                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
             
             
@@ -1246,11 +1270,11 @@ $('#toc').on('click', 'a', function() {
 
 <p>YAML is a markup that uses spacing and hyphens instead of tags. YAML is a superset of JSON, so you can convert from YAML to JSON and vice versa equivalently.</p>
 
-<p>There are certain values in the sidebar file coded to match the theme’s code. These values include the main level names (<code class="highlighter-rouge">entries</code>, <code class="highlighter-rouge">subcategories</code>, <code class="highlighter-rouge">items</code>, <code class="highlighter-rouge">thirdlevel</code>, and <code class="highlighter-rouge">thirdlevelitems</code>). If you change these values in the sidebar file, the navigation won’t display. (As long as you follow the sample with mydoc_sidebar.yml, you should be fine.)</p>
+<p>There are certain values in the sidebar file coded to match the theme’s code. These values include the main level names (<code>entries</code>, <code>subcategories</code>, <code>items</code>, <code>thirdlevel</code>, and <code>thirdlevelitems</code>). If you change these values in the sidebar file, the navigation won’t display. (As long as you follow the sample with mydoc_sidebar.yml, you should be fine.)</p>
 
 <p>At a high level, the sidebar data structure looks like this:</p>
 
-<p><code class="highlighter-rouge">yaml
+<p><code>yaml
 entries
   subcategories
     items
@@ -1260,7 +1284,7 @@ entries
 
 <p>Within these levels, you add your content. You can only have two levels in the sidebar. Here’s an example:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 Introduction
  -&gt; Getting started
  -&gt; Features
@@ -1277,26 +1301,26 @@ Introduction
 
 <p>(If you need deeper sublevels, I recommend creating different sidebars for different pages, which is logic that I haven’t coded into the theme but which could probably be added fairly easily. Additionally, if you wanted to create a third level, you could do so by following the same pattern as the second level and customizing a few things. However, the theme is not coded to support additional levels.)</p>
 
-<p>The code in the theme’s sidebar.html file (in the _includes folder) iterates through the items in the mydoc_sidebar.yml file using a Liquid <code class="highlighter-rouge">for</code> loop and inserts the items into HTML. Iterating over a list in a data file to populate HTML is a common technique with static site generators.</p>
+<p>The code in the theme’s sidebar.html file (in the _includes folder) iterates through the items in the mydoc_sidebar.yml file using a Liquid <code>for</code> loop and inserts the items into HTML. Iterating over a list in a data file to populate HTML is a common technique with static site generators.</p>
 
 <p>What I’ve added in this theme is some special logic that checks if the sidebar items meet the right attribute conditions. As a result, the sidebar.html file has code that looks like this:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
  {% include custom/conditions.html %}
     {% for entry in sidebar %}
     {% for subcategory in entry.subcategories %}
         {% if subcategory.audience contains audience and subcategory.product contains product and subcategory.platform contains platform and subcategory.version contains version and subcategory.output contains "web" %}
 </code></p>
 
-<p>Only if the sidebar item contains the right <code class="highlighter-rouge">audience</code>, <code class="highlighter-rouge">product</code>, <code class="highlighter-rouge">platform</code>, <code class="highlighter-rouge">version</code>, and <code class="highlighter-rouge">output</code> attributes does the item get included in the sidebar navigation.</p>
+<p>Only if the sidebar item contains the right <code>audience</code>, <code>product</code>, <code>platform</code>, <code>version</code>, and <code>output</code> attributes does the item get included in the sidebar navigation.</p>
 
 <p>This means you will have just one sidebar data file for all the outputs in a single project. Different projects will use different sidebar data files, but all outputs for a single project will use the same sidebar data file. (This allows you to do single sourcing.)</p>
 
-<p>If you look at the code above, you’ll see that <code class="highlighter-rouge">audience</code>, <code class="highlighter-rouge">product</code>, <code class="highlighter-rouge">platform</code>, and <code class="highlighter-rouge">version</code> are defined generally. In sidebar.html, there are lines like <code class="highlighter-rouge">subcategory.audience contains audience</code>.</p>
+<p>If you look at the code above, you’ll see that <code>audience</code>, <code>product</code>, <code>platform</code>, and <code>version</code> are defined generally. In sidebar.html, there are lines like <code>subcategory.audience contains audience</code>.</p>
 
-<p>This is where the conditions.html file (inside _includes) comes into play. <code class="highlighter-rouge">audience</code> is a variable defined in the conditions.html file. If you open up conditions.html, you’ll see something like this:</p>
+<p>This is where the conditions.html file (inside _includes) comes into play. <code>audience</code> is a variable defined in the conditions.html file. If you open up conditions.html, you’ll see something like this:</p>
 
-<p><code class="highlighter-rouge">liquid
+<p><code>liquid
 {% if site.project == "mydoc_writers" %}
 {% assign audience = "writers" %}
 {% assign sidebar = site.data.mydoc.mydoc_sidebar.entries %}
@@ -1310,13 +1334,13 @@ Introduction
 {% endif %}
 </code></p>
 
-<p><code class="highlighter-rouge">audience</code> is a variable set to <code class="highlighter-rouge">writers</code> for the mydoc_writers project. Therefore anywhere <code class="highlighter-rouge">audience</code> appears, <code class="highlighter-rouge">writers</code> gets inserted in its place.</p>
+<p><code>audience</code> is a variable set to <code>writers</code> for the mydoc_writers project. Therefore anywhere <code>audience</code> appears, <code>writers</code> gets inserted in its place.</p>
 
-<p>When the sidebar.html code runs <code class="highlighter-rouge">subcategory.audience contains audience</code>, it’s saying that the subcategory item must have an attribute called <code class="highlighter-rouge">audience</code>, and the value for audience must contain <code class="highlighter-rouge">writers</code>.</p>
+<p>When the sidebar.html code runs <code>subcategory.audience contains audience</code>, it’s saying that the subcategory item must have an attribute called <code>audience</code>, and the value for audience must contain <code>writers</code>.</p>
 
 <p>All of the attributes (which are defined in the conditions.html file) must be met in order to display in the navigation. The attributes must be present on both the heading and items under that heading.</p>
 
-<p>However, note that the <code class="highlighter-rouge">output</code> attribute is a bit different. With this attribute, you just list whether you want a <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">pdf</code> output (or both, usually). For both, you just write <code class="highlighter-rouge">web, pdf</code>.</p>
+<p>However, note that the <code>output</code> attribute is a bit different. With this attribute, you just list whether you want a <code>web</code> or <code>pdf</code> output (or both, usually). For both, you just write <code>web, pdf</code>.</p>
 
 <p>The logic in the sidebar is multi-step and somewhat complex, but you’re also doing something truly sophisticated. You’re instructing a static site generator to conditionally include certain information while using the same source files (not just the same sidebar data file, but the same sidebar.html file).</p>
 
@@ -1354,11 +1378,11 @@ Introduction
 
 <p>```</p>
 
-<p>The only values you should change here are the values for the <code class="highlighter-rouge">audience</code>, <code class="highlighter-rouge">platform</code>, <code class="highlighter-rouge">product,</code> and <code class="highlighter-rouge">version</code>.</p>
+<p>The only values you should change here are the values for the <code>audience</code>, <code>platform</code>, <code>product,</code> and <code>version</code>.</p>
 
 <p>These frontmatter pages are used in producing the PDF. This part will grab the titlepage.html and tocpage.html content in the theme’s root directory. (If you’re not publishing PDF, you can remove this section.)</p>
 
-<p>Note that the output is <code class="highlighter-rouge">pdf</code> only for these frontmatter pages. They are specific to the PDF output only.</p>
+<p>Note that the output is <code>pdf</code> only for these frontmatter pages. They are specific to the PDF output only.</p>
 
 <p>To learn more about the sidebar, see <a href="../mydoc/mydoc_sidebar_navigation.html">Sidebar navigation</a>.</p>
 
@@ -1532,14 +1556,14 @@ Introduction
     
     
     
-    <a href="../mydoc/mydoc_top_navigation.html"><button type="button" class="btn btn-primary">Next: 7. Configure the top navigation</button></a>
-    
-    
-    
-    
-    
-    
     <a href="../mydoc/mydoc_conditions_file_customization.html"><button type="button" class="btn btn-primary">Next: 5. Customize the conditions file</button></a>
+    
+    
+    
+    
+    
+    
+    <a href="../mydoc/mydoc_top_navigation.html"><button type="button" class="btn btn-primary">Next: 7. Configure the top navigation</button></a>
     
     
     
@@ -1565,6 +1589,16 @@ Introduction
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

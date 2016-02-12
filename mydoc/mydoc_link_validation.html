@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="why-broken-links-are-challenging-for-technical-writers">Why broken links are challenging for technical writers</h2>
 <p>One of the challenging aspects of technical writing is avoiding broken links in your output. Consider this example. You have three outputs, with different topics included for different audiences. The topics each have inline cross references pointing to the other topics, but since some of the topics aren’t included for each audience, you risk having a broken link for the output that omits that topic.</p>
 
@@ -1023,15 +1047,15 @@ $('#toc').on('click', 'a', function() {
 
 <p>When you generate a PDF, Prince XML will print “page 0” for any cross references it can’t find. This lets you know that a particular link is bad because the page is missing.</p>
 
-<p>If you have links in your PDF that aren’t references to other topics (maybe they’re links to PDF file assets, or links within a navtab or collapsible section), then you must add a class of <code class="highlighter-rouge">noCrossRef</code> to the link to avoid having Prince write “page 0” for the link.</p>
+<p>If you have links in your PDF that aren’t references to other topics (maybe they’re links to PDF file assets, or links within a navtab or collapsible section), then you must add a class of <code>noCrossRef</code> to the link to avoid having Prince write “page 0” for the link.</p>
 
-<p>(Note that there are still some kinks I’m working out with this. You may find that links still say “page 0” even if they have the <code class="highlighter-rouge">noCrossRef</code> class.)</p>
+<p>(Note that there are still some kinks I’m working out with this. You may find that links still say “page 0” even if they have the <code>noCrossRef</code> class.)</p>
 
 <h2 id="use-data-references-for-all-inline-links">Use data references for all inline links</h2>
 
 <p>Instead of creating links to direct pages, use the data reference technique described in <a href="../mydoc/mydoc_hyperlinks.html">Links</a>. With this method, the urls.txt file iterates through all the pages in your navigation and formats them into a YAML syntax.</p>
 
-<p>Then you insert an inline link by referring to that YAML data. For example, the previous hyperlink is <code class="highlighter-rouge"><span class="p">{</span><span class="err">{site.data.mydoc.mydoc_urls.mydoc_hyperlinks.link</span><span class="p">}</span><span class="err">}</span></code>.</p>
+<p>Then you insert an inline link by referring to that YAML data. For example, the previous hyperlink is <code>{{site.data.mydoc.mydoc_urls.mydoc_hyperlinks.link}}</code>.</p>
 
 <p>As you go through the link validation process, make sure you copy over the content from the generated urls.txt (in the Jekyll site output) and insert it into the urls.yml file in your _data folder.</p>
 
@@ -1040,6 +1064,16 @@ $('#toc').on('click', 'a', function() {
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

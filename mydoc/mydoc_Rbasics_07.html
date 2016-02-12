@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -999,59 +1021,61 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p><strong>Numeric data</strong>: <code class="highlighter-rouge">1, 2, 3, ...</code></p>
+-->
+  <p><strong>Numeric data</strong>: <code>1, 2, 3, ...</code></p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">x</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">x</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 1 2 3</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 1 2 3</code></pre></div>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">is.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">is.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] TRUE</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] TRUE</code></pre></div>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">as.character</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">as.character</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "1" "2" "3"</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "1" "2" "3"</code></pre></div>
 
-<p><strong>Character data</strong>: <code class="highlighter-rouge">"a", "b", "c", ...</code></p>
+<p><strong>Character data</strong>: <code>"a", "b", "c", ...</code></p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">)</span>
-<span class="n">x</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">)</span>
+<span class="n">x</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "1" "2" "3"</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "1" "2" "3"</code></pre></div>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">is.character</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">is.character</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] TRUE</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] TRUE</code></pre></div>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">as.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">as.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 1 2 3</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 1 2 3</code></pre></div>
 
 <p><strong>Complex data</strong>: mix of both</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "1" "b" "3"</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "1" "b" "3"</code></pre></div>
 
-<p><strong>Logical data</strong>: <code class="highlighter-rouge">TRUE</code> of <code class="highlighter-rouge">FALSE</code></p>
+<p><strong>Logical data</strong>: <code>TRUE</code> of <code>FALSE</code></p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span> <span class="o">&lt;</span> <span class="m">5</span>
-<span class="n">x</span>  </code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span> <span class="o">&lt;</span> <span class="m">5</span>
+<span class="n">x</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre></div>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="o">!</span><span class="n">x</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="o">!</span><span class="n">x</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre></div>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">which</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">index</span> <span class="k">for</span> <span class="n">the</span> <span class="s1">'TRUE'</span> <span class="n">values</span> <span class="k">in</span> <span class="n">logical</span> <span class="n">vector</span></code></pre></figure>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">which</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">index</span> <span class="k">for</span> <span class="n">the</span> <span class="s1">'TRUE'</span> <span class="n">values</span> <span class="k">in</span> <span class="n">logical</span> <span class="n">vector</span></code></pre></div>
 
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 1 2 3 4</code></pre></figure>
+<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 1 2 3 4</code></pre></div>
 
 
 

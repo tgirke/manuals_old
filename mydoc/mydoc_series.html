@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,9 +1023,11 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="using-series-for-pages">Using series for pages</h2>
 <p>You create a series by looking for all pages within a tag namespace that contain certain frontmatter. Here’s a <a href="mydoc_seriesdemo1_0.html" class="noCrossRef">demo</a>.</p>
 
@@ -1064,16 +1088,16 @@ $('#toc').on('click', 'a', function() {
 
 <p>Now add the following frontmatter to each page in the series:</p>
 
-<p><code class="highlighter-rouge">json
+<p><code>json
 series: "ACME series"
 weight: 1.0
 </code></p>
 
 <p>With weight, you could use 1, 2, 3, etc.., but Jekyll will treat 10 as coming after 1. This is why I use 1.0 and 1.1, 1.2, etc.</p>
 
-<p>If you do use whole numbers, change the <code class="highlighter-rouge">plus: "0.1"</code> to <code class="highlighter-rouge">plus: "1"</code>.</p>
+<p>If you do use whole numbers, change the <code>plus: "0.1"</code> to <code>plus: "1"</code>.</p>
 
-<p>Additionally, if your page names are prefaced with numbers, such as “1. Download the code,” then the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{p.weight</span><span class="p">}</span><span class="err">}</span></code> will create a duplicate number. In that case, just remove the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{p.weight</span><span class="p">}</span><span class="err">}</span></code> from both code samples here.</p>
+<p>Additionally, if your page names are prefaced with numbers, such as “1. Download the code,” then the <code>{{p.weight}}</code> will create a duplicate number. In that case, just remove the <code>{{p.weight}}</code> from both code samples here.</p>
 
 <h2 id="add-links-to-the-series-button-and-next-button-on-each-page">4. Add links to the series button and next button on each page.</h2>
 
@@ -1091,7 +1115,7 @@ weight: 1.0
 
 <h2 id="changing-the-series-drop-down-color">Changing the series drop-down color</h2>
 
-<p>The Bootstrap menu uses the <code class="highlighter-rouge">primary</code> class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of <code class="highlighter-rouge">btn-primary</code>, use <code class="highlighter-rouge">btn-info</code> or <code class="highlighter-rouge">btn-warning</code>. See <a href="../mydoc/mydoc_labels.html">Labels</a> for more Bootstrap button classes.</p>
+<p>The Bootstrap menu uses the <code>primary</code> class for styling. If you change this class in your theme, the Bootstrap menu should automatically change color as well. You can also just use another Bootstrap class in your button code. Instead of <code>btn-primary</code>, use <code>btn-info</code> or <code>btn-warning</code>. See <a href="../mydoc/mydoc_labels.html">Labels</a> for more Bootstrap button classes.</p>
 
 <h2 id="using-a-collection-with-your-series">Using a collection with your series</h2>
 
@@ -1102,6 +1126,16 @@ weight: 1.0
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

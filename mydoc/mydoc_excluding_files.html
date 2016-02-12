@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,11 +1023,13 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="about-exclusion">About exclusion</h2>
-<p>By default, all files in your project are included in your output (regardless of whether they’re listed in the sidebar_doc.yml file or not). To exclude files, note them in the <code class="highlighter-rouge">exclude</code> section in the configuration file. Here’s a sample:</p>
+<p>By default, all files in your project are included in your output (regardless of whether they’re listed in the sidebar_doc.yml file or not). To exclude files, note them in the <code>exclude</code> section in the configuration file. Here’s a sample:</p>
 
 <p>```</p>
 
@@ -1027,14 +1051,14 @@ $('#toc').on('click', 'a', function() {
 
 <p>In your exclude list for your beta project, specify it as follows:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 exclude: 
 - alpha_*
 </code></p>
 
 <p>In your exclude list for your alpha project, specify it as follows:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 exclude:
 - beta_*
 </code></p>
@@ -1070,7 +1094,7 @@ exclude:</p>
 
 <p>When you exclude folders, include the trailing slash at the end of the folder name:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 exclude:
 - images/alpha/
 </code></p>
@@ -1079,7 +1103,7 @@ exclude:
 
 <h2 id="excluding-draft-content">Excluding draft content</h2>
 
-<p>If you’re working on a draft, put it inside the _drafts folder or add <code class="highlighter-rouge">published: false</code> in the frontmatter. The _drafts folder is excluded by default, so you don’t have to specify it in your exclude list.</p>
+<p>If you’re working on a draft, put it inside the _drafts folder or add <code>published: false</code> in the frontmatter. The _drafts folder is excluded by default, so you don’t have to specify it in your exclude list.</p>
 
 <h2 id="limitations">Limitations</h2>
 
@@ -1090,6 +1114,16 @@ exclude:
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 

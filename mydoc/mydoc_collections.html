@@ -77,6 +77,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
                 
                 
                 
@@ -151,6 +161,8 @@
                 <!-- special insertion -->
 
                
+                
+                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -242,6 +254,16 @@ window.location.href = uri;
 
 
         
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,16 +1023,18 @@ $('#toc').on('click', 'a', function() {
 <div id="toc"></div>
 
 
+<!--
     
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
+-->
   <h2 id="what-are-collections">What are collections</h2>
 <p>Collections are custom content types different from pages and posts. You might create a collection if you want to treat a specific set of articles in a unique way, such as with a custom layout or listing. For more detail on collections, see <a href="http://ben.balter.com/2015/02/20/jekyll-collections/">Ben Balter’s explanation of collections here</a>.</p>
 
 <h2 id="create-a-collection">Create a collection</h2>
 <p>To create a collection, add the following in your configuration file:</p>
 
-<p><code class="highlighter-rouge">
+<p><code>
 collections:
   tooltips:
     output: true
@@ -1020,7 +1044,7 @@ collections:
 
 <h2 id="interacting-with-collections">Interacting with collections</h2>
 
-<p>You can interact with collections by using the <code class="highlighter-rouge">site.collectionname</code> namespace, where <code class="highlighter-rouge">collectionname</code> is what you’ve configured. In this case, if I wanted to loop through all tooltips, I would use <code class="highlighter-rouge">site.tooltips</code> instead of <code class="highlighter-rouge">site.pages</code> or <code class="highlighter-rouge">site.posts</code>.</p>
+<p>You can interact with collections by using the <code>site.collectionname</code> namespace, where <code>collectionname</code> is what you’ve configured. In this case, if I wanted to loop through all tooltips, I would use <code>site.tooltips</code> instead of <code>site.pages</code> or <code>site.posts</code>.</p>
 
 <p>See <a href="http://jekyllrb.com/docs/collections/">Collections in the Jekyll documentation</a> for more information.</p>
 
@@ -1033,6 +1057,16 @@ collections:
     
     <b>Tags: </b>
     
+
+
+
+
+
+
+
+
+
+
 
 
 
