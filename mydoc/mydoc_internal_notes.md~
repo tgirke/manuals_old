@@ -111,28 +111,22 @@ git checkout master
 
 (1) Write R markdown vignette (`*.Rmd` file) in `./vignettes` directory (*e.g.* `./vignettes/Rbasics`).
 
-(2) Render vignette to `.md` and `.html` files with:
+(2) Render vignette to `.md` and `.html` files with `rmarkdown::render()`.
 
-{% highlight bash %}
-echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd
-{% endhighlight %}
 
 (3) Append `.md` file (here `Rbasics.knit.md`) to corresponding `.md` file in `./mydoc` directory.
 
 (4) Remove front matter genereted by R markdown, but leave the one required for Jekyll
 
-(5) Replace chode chunk tags to the ones required by Jekyll
-
-{% highlight bash %}
-%s/```r/\{\% highlight s \%\}/cg
-%s/```sh/\{\% highlight sh \%\}/cg
-%s/```/\{\% endhighlight \%\}/cg
-{% endhighlight %}
+(5) Replace chode chunk tags to the ones required by Jekyll Doc Theme
 
 (6) Move images into proper directory and adjust their path in the `.md` file
 
-Task
-: Write script that automates steps (2)-(6)
+Run steps (1)-(6) with one command using `render()` function and `md2jekyll.R` script:
+
+{% highlight bash %}
+echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R
+{% endhighlight %}
 
 ## Useful utilities
 

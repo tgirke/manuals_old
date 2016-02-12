@@ -1,7 +1,7 @@
 ---
 title: Overview
 keywords: 
-last_updated: Thu Feb 11 19:32:31 2016
+last_updated: Thu Feb 11 19:41:30 2016
 ---
 Alternative formats of this tutorial:
 [`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html), 
