@@ -197,8 +197,8 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     urllist <- splitFcturl(url=urls, pattern="^\\w{1,}.*:")
     ## Construct new url entries
     mytitles <- gsub("# {1,}", "", titles)
-    myurls <- paste0("../mydoc/", gsub("^.*?/", "", filenames))
-    myurls <- gsub(".md$", ".html", myurls)
+    #myurls <- paste0("../mydoc/", gsub("^.*?/", "", filenames))
+    myurls <- gsub(".md$", ".html", filenames)
     headerlines <- gsub("(^.*/)|(.html$)", "", myurls)
     urlentry <- c("",
                   "  title: ",

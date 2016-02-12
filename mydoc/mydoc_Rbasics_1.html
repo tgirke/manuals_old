@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>R Package Repositories  | Manuals</title>
+<title>Overview  | Manuals</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -167,7 +167,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Manuals feedback";
-var body = "I have some feedback about the R Package Repositories page: ";
+var body = "I have some feedback about the Overview page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:?subject=";
@@ -194,7 +194,7 @@ window.location.href = uri;
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: '../search.json',
-                            searchResultTemplate: '<li><a href="{url}" title="R Package Repositories">{title}</a></li>',
+                            searchResultTemplate: '<li><a href="{url}" title="Overview">{title}</a></li>',
                         noResultsText: 'No results found.',
                                 limit: 10,
                                 fuzzy: true,
@@ -982,7 +982,7 @@ window.location.href = uri;
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main">R Package Repositories</h1>
+   <h1 class="post-title-main">Overview</h1>
 </div>
 
 <div class="post-content">
@@ -1017,11 +1017,72 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-  <ul>
-  <li>CRAN (&gt;8,000 packages) general data analysis \href{http://cran.at.r-project.org/}}</li>
-  <li>Bioconductor (&gt;1,100 packages) bioscience data analysis \href{http://www.bioconductor.org/}}</li>
-  <li>Omegahat (&gt;90 packages) programming interfaces \href{http://www.omegahat.org/}}</li>
+  <p>Alternative formats of this tutorial:
+<a href="http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html"><code>.Rmd HTML</code></a>, 
+<a href="http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd"><code>.Rmd Source</code></a>, 
+<a href="http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R"><code>.R Source</code></a>, 
+<a href="http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf"><code>PDF Slides</code></a></p>
+
+<h2 id="what-is-r">What is R?</h2>
+
+<p><a href="http://cran.at.r-project.org">R</a> is a powerful statistical environment and
+programming language for the analysis and visualization of data.  The
+associated <a href="http://bioconductor.org/">Bioconductor</a> and CRAN package
+repositories provide many additional R packages for statistical data analysis
+for a wide array of research areas. The R software is free and runs on all
+common operating systems.</p>
+
+<h2 id="why-using-r">Why Using R?</h2>
+<ul>
+  <li>Complete statistical environment and programming language</li>
+  <li>Efficient functions and data structures for data analysis</li>
+  <li>Powerful graphics</li>
+  <li>Access to fast growing number of analysis packages</li>
+  <li>Most widely used language in bioinformatics</li>
+  <li>Is standard for data mining and biostatistical analysis</li>
+  <li>Technical advantages: free, open-source, available for all OSs</li>
 </ul>
+
+<h2 id="books-and-documentation">Books and Documentation</h2>
+<ul>
+  <li>simpleR - Using R for Introductory Statistics (John Verzani, 2004) \href{http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf}}</li>
+  <li>Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) \href{http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/}}</li>
+  <li>More on this see “Finding Help” section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual#TOC-Finding-Help}}</li>
+</ul>
+
+<h2 id="r-working-environments">R Working Environments</h2>
+
+<h2 id="working-environments-ides-for-r">Working environments (IDEs) for R</h2>
+<center><img title="R_Interfaces" src="Rbasics_images/rinterface.png" /></center>
+<center> R Projects and Interfaces</center>
+
+<p>Some R working environments with support for syntax highlighting and utilities to send code 
+to the R console:</p>
+
+<ul>
+  <li><a href="https://www.rstudio.com/products/rstudio/features">RStudio</a>: excellent choice for beginners (<a href="http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf">Cheat Sheet</a>)</li>
+  <li>Basic R code editors provided by Rguis</li>
+  <li><a href="https://wiki.gnome.org/Apps/Gedit">gedit</a>, <a href="http://rgedit.sourceforge.net/">Rgedit</a>, <a href="https://rkward.kde.org/">RKWard</a>, <a href="http://www.walware.de/goto/statet">Eclipse</a>, <a href="http://www.sciviews.org/Tinn-R/">Tinn-R</a>, <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="http://sourceforge.net/projects/npptor/">NppToR</a></li>
+  <li><a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r">Vim-R-Tmux</a>: R working environment based on vim and tmux</li>
+  <li><a href="http://www.xemacs.org/Download/index.html">Emacs</a> (<a href="http://ess.r-project.org/">ESS add-on package</a>)</li>
+</ul>
+
+<h3 id="example-rstudio">Example: RStudio</h3>
+
+<p>New integrated development environment (IDE) for <a href="http://www.rstudio.com/ide/download/">R</a>. Highly functional for both beginners and 
+advanced.</p>
+
+<center><img title="RStudio" src="Rbasics_images/rstudio.png" /></center>
+<center> RStudio IDE</center>
+
+<p>Some userful shortcuts: <code>Ctrl+Enter</code> (send code), <code>Ctrl+Shift+C</code> (comment/uncomment), <code>Ctrl+1/2</code> (switch window focus)</p>
+
+<h3 id="example-vim-r-tmux">Example: Vim-R-Tmux</h3>
+
+<p>Terminal-based Working Environment for R: <a href="http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r">Vim-R-Tmux</a></p>
+
+<center><img title="Vim-R-Tmux" src="Rbasics_images/screenshot.png" /></center>
+<center>Vim-R-Tmux IDE for R</center>
 
 
 
@@ -1039,7 +1100,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> Thu Feb 11 17:45:10 2016<br/> Site last generated: Feb 11, 2016 <br />
+<p>Page last updated:</span> Thu Feb 11 21:32:28 2016<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

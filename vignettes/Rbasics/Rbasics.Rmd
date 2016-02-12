@@ -313,7 +313,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_01.html">1. Overview</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_1.html">1. Overview</a></li>
                     
 
                     
@@ -322,7 +322,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_02.html">2. Look and Feel of R Environment</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_2.html">2. R Package Repositories</a></li>
                     
 
                     
@@ -331,7 +331,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_03.html">3. R Package Repositories</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_3.html">3. Installation of R and Add-on Packages</a></li>
                     
 
                     
@@ -340,7 +340,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_04.html">4. Installation of R and Add-on Packages</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_4.html">4. Getting Around</a></li>
                     
 
                     
@@ -349,7 +349,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_05.html">5. Getting Around</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_5.html">5. Basic Syntax</a></li>
                     
 
                     
@@ -358,7 +358,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_06.html">6. Basic Syntax</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_6.html">6. Data Types</a></li>
                     
 
                     
@@ -367,7 +367,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_07.html">7. Data Types</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_7.html">7. Data objects</a></li>
                     
 
                     
@@ -376,7 +376,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_08.html">8. Data objects</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_8.html">8. Graphics example</a></li>
                     
 
                     
@@ -385,16 +385,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_09.html">9. Graphics example</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_10.html">10. Session Info</a></li>
+                    <li><a href="../mydoc/../mydoc/mydoc_Rbasics_9.html">9. Session Info</a></li>
                     
 
                     
@@ -1067,14 +1058,14 @@ Alternative formats of this tutorial:
 
 # Overview
 
+## What is R?
+
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
 programming language for the analysis and visualization of data.  The
 associated [Bioconductor](http://bioconductor.org/) and CRAN package
 repositories provide many additional R packages for statistical data analysis
 for a wide array of research areas. The R software is free and runs on all
 common operating systems. 
-
-# Look and Feel of R Environment
 
 ## Why Using R?
 * Complete statistical environment and programming language
@@ -1089,6 +1080,8 @@ common operating systems.
 * simpleR - Using R for Introductory Statistics (John Verzani, 2004) \href{http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf}}
 * Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) \href{http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/}}
 * More on this see "Finding Help" section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R\_BioCondManual\#TOC-Finding-Help}}
+
+## R Working Environments
 
 ## Working environments (IDEs) for R
 <center><img title="R_Interfaces" src="images/rinterface.png"/></center>
