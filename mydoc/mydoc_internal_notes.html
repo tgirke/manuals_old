@@ -1105,26 +1105,19 @@ git checkout master</code></pre></figure>
 
 <p>(1) Write R markdown vignette (<code class="highlighter-rouge">*.Rmd</code> file) in <code class="highlighter-rouge">./vignettes</code> directory (<em>e.g.</em> <code class="highlighter-rouge">./vignettes/Rbasics</code>).</p>
 
-<p>(2) Render vignette to <code class="highlighter-rouge">.md</code> and <code class="highlighter-rouge">.html</code> files with:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"rmarkdown::render('Rbasics.Rmd', clean=FALSE)"</span> | R --slave; R CMD Stangle Rbasics.Rmd</code></pre></figure>
+<p>(2) Render vignette to <code class="highlighter-rouge">.md</code> and <code class="highlighter-rouge">.html</code> files with <code class="highlighter-rouge">rmarkdown::render()</code>.</p>
 
 <p>(3) Append <code class="highlighter-rouge">.md</code> file (here <code class="highlighter-rouge">Rbasics.knit.md</code>) to corresponding <code class="highlighter-rouge">.md</code> file in <code class="highlighter-rouge">./mydoc</code> directory.</p>
 
 <p>(4) Remove front matter genereted by R markdown, but leave the one required for Jekyll</p>
 
-<p>(5) Replace chode chunk tags to the ones required by Jekyll</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">%s/```r/\{\% </span>highlight s <span class="se">\%\}</span>/cg
-<span class="gp">%s/```sh/\{\% </span>highlight sh <span class="se">\%\}</span>/cg
-<span class="gp">%s/```/\{\% </span>endhighlight <span class="se">\%\}</span>/cg</code></pre></figure>
+<p>(5) Replace chode chunk tags to the ones required by Jekyll Doc Theme</p>
 
 <p>(6) Move images into proper directory and adjust their path in the <code class="highlighter-rouge">.md</code> file</p>
 
-<dl>
-  <dt>Task</dt>
-  <dd>Write script that automates steps (2)-(6)</dd>
-</dl>
+<p>Run steps (1)-(6) with one command using <code class="highlighter-rouge">render()</code> function and <code class="highlighter-rouge">md2jekyll.R</code> script:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"rmarkdown::render('Rbasics.Rmd', clean=FALSE)"</span> | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R</code></pre></figure>
 
 <h2 id="useful-utilities">Useful utilities</h2>
 
