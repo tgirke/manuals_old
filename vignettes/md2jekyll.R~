@@ -4,7 +4,7 @@
 ## Author: Thomas Girke
 ## Date: Feb 10, 2016
 
-md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL, outpath="./", fenced2highlight=TRUE, image_dir=NULL) {
+md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL) {
     ## (1) Import md file
     md <- readLines(mdfile)
     
@@ -172,7 +172,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     sectionlist <- list(c(list(header=sectionheader), subsectionlist))
     names(sectionlist) <- doctitle
     sblist <- c(sblist[1:(sidebarpos)], sectionlist, sblist[(sidebarpos+1):length(sblist)])
-    sidebarfile <- paste0(outpath, "/", "mydoc_sidebar.yml")
+    sidebarfile <- paste0(sidebar_url_path, "/", "mydoc_sidebar.yml")
     sidebarfile <- gsub("/{1,}", "/", sidebarfile)
     writeLines(unlist(sblist), sidebarfile)
     cat(paste("Created file", sidebarfile), "\n")
@@ -216,7 +216,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     urllist <- urllist[!names(urllist) %in% names(newurllist)] # Removes existing section entry
     urllist <- c(urllist, newurllist)
     urllist <- urllist[!duplicated(names(urllist))] # Removes duplicated entries
-    urlfile <- paste0(outpath, "/", "mydoc_urls.yml")
+    urlfile <- paste0(sidebar_url_path, "/", "mydoc_urls.yml")
     urlfile <- gsub("/{1,}", "/", urlfile)
     writeLines(unlist(urllist), urlfile)
     cat(paste("Created file", urlfile), "\n")
@@ -226,6 +226,6 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
 # setwd("~/Dropbox/Websites/manuals/vignettes/Rbasics")
 # source("../md2jekyll.R")
 ## For debugging save output files in current (test) directory: outpath="./" 
-# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", fenced2highlight=TRUE, image_dir=NULL)
+# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL)
 ## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
-md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="../../mydoc", fenced2highlight=TRUE, image_dir=NULL)
+md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=2, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
