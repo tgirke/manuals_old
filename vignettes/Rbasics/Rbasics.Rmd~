@@ -20,7 +20,7 @@ fontsize: 14pt
 
 <!---
 - Compile from command-line
-echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd
+echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd; ../md2jekyll.R
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
@@ -49,7 +49,7 @@ Alternative formats of this tutorial:
 [`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R), 
 [`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf)
 
-# zzzOverview
+# Overview
 
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
 programming language for the analysis and visualization of data.  The

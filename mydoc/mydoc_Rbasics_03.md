@@ -1,7 +1,7 @@
 ---
 title: R Package Repositories
 keywords: 
-last_updated: Thu Feb 11 19:24:07 2016
+last_updated: Thu Feb 11 19:32:31 2016
 ---
 
 * CRAN (>8,000 packages) general data analysis \href{http://cran.at.r-project.org/}{{\beamerbutton{Link}}}

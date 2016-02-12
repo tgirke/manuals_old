@@ -20,7 +20,7 @@ fontsize: 14pt
 
 <!---
 - Compile from command-line
-echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd
+echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd; ../md2jekyll.R
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
