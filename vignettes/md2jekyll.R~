@@ -49,7 +49,8 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
         htmlimgtag <- md[htmlimgindex]
         htmlimgpath <- gsub("^.*?src=\"(.*?)\".*", "\\1", htmlimgtag)
         ## Correct html image paths in md accordingly
-        newhtmlimgpath <- paste0(image_dir, "/", gsub("^.*/", "", htmlimgpath))
+        image_dir2 <- gsub("^.*/", "", image_dir) # Note, image path is relative in html source
+        newhtmlimgpath <- paste0(image_dir2, "/", gsub("^.*/", "", htmlimgpath))
         newhtmlimgpath <- paste0(gsub("(^.*?src=\").*", "\\1", htmlimgtag), 
                                  newhtmlimgpath, 
                                  gsub("^.*?src=\".*?(\".*)", "\\1", htmlimgtag))
@@ -64,7 +65,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
         mdimgtag <- md[mdimgindex]
         mdimgpath <- gsub("\\!\\[.*{0,}\\]\\((.*)\\)\\\\", "\\1", mdimgtag)
         ## Correct image paths in md accordingly
-        newmdimgpath <- paste0(image_dir, "/", gsub("^.*/", "", mdimgpath))
+        newmdimgpath <- paste0(image_dir2, "/", gsub("^.*/", "", mdimgpath))
         newmdimgpath <- paste0(gsub("(\\!\\[.*{0,}\\]\\().*", "\\1", mdimgtag),
                                newmdimgpath,
                                ")")
@@ -227,4 +228,4 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
 ## For debugging save output files in current (test) directory: outpath="./" 
 # md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", fenced2highlight=TRUE, image_dir=NULL)
 ## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
-# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="../../mydoc", fenced2highlight=TRUE, image_dir=NULL)
+md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="../../mydoc", fenced2highlight=TRUE, image_dir=NULL)
