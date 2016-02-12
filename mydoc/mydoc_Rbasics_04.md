@@ -1,7 +1,7 @@
 ---
 title: Installation of R and Add-on Packages
 keywords: 
-last_updated: Wed Feb 10 20:44:34 2016
+last_updated: Thu Feb 11 18:02:41 2016
 ---
 
 1. Install R for your operating system from [CRAN](http://cran.at.r-project.org/).
@@ -27,6 +27,6 @@ biocLite()
 biocLite(c("pkg1", "pkg2"))
 {% endhighlight %}
 
-5. For more details consult the [Bioc Install page](\href{http://www.bioconductor.org/install/)
+5. For more details consult the [Bioc Install page](http://www.bioconductor.org/install/)
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
 

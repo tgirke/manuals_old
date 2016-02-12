@@ -23,10 +23,15 @@ kramdown:
 
 sidebar_tagline: Manuals
 sidebar_version: Under Construction!
-theme_file: theme-gray.css
+theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf
 
 # the algolia entries here are experimental only.
+
+ginate
+  - redcarpet
+  - jekyll-gist
+  - pygments.rb
 
 #gems:
 #  - algoliasearch-jekyll

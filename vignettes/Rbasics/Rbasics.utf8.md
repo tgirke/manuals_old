@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 10 February, 2016" 
+date: "Last update: 11 February, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -137,7 +137,7 @@ biocLite()
 biocLite(c("pkg1", "pkg2"))
 ```
 
-5. For more details consult the [Bioc Install page](\href{http://www.bioconductor.org/install/)
+5. For more details consult the [Bioc Install page](http://www.bioconductor.org/install/)
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
 
 # Getting Around

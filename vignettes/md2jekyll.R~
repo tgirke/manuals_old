@@ -4,7 +4,7 @@
 ## Author: Thomas Girke
 ## Date: Feb 10, 2016
 
-md2Jekyll <- function(mdfile="Rbasics/Rbasics.knit.md", sidebarpos, outfilebasename=NULL, outfilepath="./", fenced2highlight=TRUE, image_dir="./images_jekyll") {
+md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL, outpath="./", fenced2highlight=TRUE, image_dir=NULL) {
     ## (1) Import md file
     md <- readLines(mdfile)
     
@@ -33,8 +33,16 @@ md2Jekyll <- function(mdfile="Rbasics/Rbasics.knit.md", sidebarpos, outfilebasen
     }
    
     ## (3) Collect all images in one directory and adjust image file paths in md file accordingly
-    ## Generate new image_dir 
-    dir.create(image_dir)
+    ## Generate new image_dir
+    if(is.null(image_dir)) {
+        image_dir <- gsub(".knit.md$", "_images", mdfile)
+        image_dir <- gsub("^.*/", "", image_dir)
+    } else {
+        image_dir <- image_dir
+    }
+    image_dir <- paste0(outpath, "/", image_dir)
+    image_dir <- gsub("/{1,}", "/", image_dir)
+    dir.create(image_dir, showWarnings=FALSE)
     ## Get html image file paths
     htmlimgindex <- grepl("src=\".*\"", md)
     if(sum(htmlimgindex) > 0) {
@@ -64,6 +72,7 @@ md2Jekyll <- function(mdfile="Rbasics/Rbasics.knit.md", sidebarpos, outfilebasen
         ## Copy image files into image_dir
         file.copy(from=mdimgpath[file.exists(mdimgpath)], to=image_dir, overwrite=TRUE)
     }
+    cat(paste("Saved image files to directory:", image_dir, "\n")) 
 
     ## (4) Split on main sections (^# )
     splitpos <- grep("^# {1,}", md)
@@ -100,9 +109,11 @@ md2Jekyll <- function(mdfile="Rbasics/Rbasics.knit.md", sidebarpos, outfilebasen
     } else {
         outfilebasename <- outfilebasename    
     }
-    filenames <- paste0(gsub("/$", "", outfilepath), "/mydoc_", outfilebasename, "_", filenumbers, ".md")
+    filenames <- paste0(gsub("/$", "", outpath), "/mydoc_", outfilebasename, "_", filenumbers, ".md")
+    filenames <- gsub("/{1,}", "/", filenames)
     for(i in seq_along(mdlist)) {
-        writeLines(mdlist[[i]], filenames[i])        
+        writeLines(mdlist[[i]], filenames[i])
+        cat(paste("Created file:", filenames[i]), "\n") 
     }
     
     ## (7) Register new files in sidebar (_data/mydoc/mydoc_sidebar.yml)
@@ -160,12 +171,60 @@ md2Jekyll <- function(mdfile="Rbasics/Rbasics.knit.md", sidebarpos, outfilebasen
     sectionlist <- list(c(list(header=sectionheader), subsectionlist))
     names(sectionlist) <- doctitle
     sblist <- c(sblist[1:(sidebarpos)], sectionlist, sblist[(sidebarpos+1):length(sblist)])
-    writeLines(unlist(sblist), "mydoc_sidebar.yml")
+    sidebarfile <- paste0(outpath, "/", "mydoc_sidebar.yml")
+    sidebarfile <- gsub("/{1,}", "/", sidebarfile)
+    writeLines(unlist(sblist), sidebarfile)
+    cat(paste("Created file", sidebarfile), "\n")
     
     ## (8) Add new files to URL configuration file (_data/mydoc/mydoc_urls.yml)
     urls <- readLines("../../_data/mydoc/mydoc_urls.yml")
+    splitFcturl <- function(url, pattern) {    
+        splitpos <- grep(pattern, url)
+        if(length(splitpos) != 0) {
+            splitdist <- c(splitpos, length(url)+1) - c(1, splitpos) 
+            urllist <- split(url, factor(rep(c(1, splitpos), splitdist)))
+            mynames <- url[splitpos]
+            mynames <- gsub(" {1,}", "_", mynames)
+            mynames <- gsub(":", "", mynames)
+            names(urllist) <- mynames
+            return(urllist)
+        } else {
+            stop("mydoc_urls.yml is expected to contain at least one component.")
+        }
+    }
+    ## Split on title lines
+    urllist <- splitFcturl(url=urls, pattern="^\\w{1,}.*:")
+    ## Construct new url entries
+    mytitles <- gsub("# {1,}", "", titles)
+    myurls <- paste0("../mydoc/", gsub("^.*?/", "", filenames))
+    myurls <- gsub(".md$", ".html", myurls)
+    headerlines <- gsub("(^.*/)|(.html$)", "", myurls)
+    urlentry <- c("",
+                  "  title: ",
+                  "  url: ",
+                  "  link: ",
+                  "")
+    newurllist <- lapply(seq_along(mytitles), function(x) urlentry)
+    for(i in seq_along(newurllist)) {
+        newurllist[[i]][1] <- paste0(headerlines[i], ":")
+        newurllist[[i]][2] <- paste0(newurllist[[i]][2], "\"", mytitles[i], "\"")
+        newurllist[[i]][3] <- paste0(newurllist[[i]][3], "\"", myurls[i], "\"")
+        newurllist[[i]][4] <- paste0(newurllist[[i]][4], "\"<a href='", myurls[i], "'>", mytitles[i], "</a>\"")
+    }
+    names(newurllist) <- headerlines
+    urllist <- urllist[!names(urllist) %in% names(newurllist)] # Removes existing section entry
+    urllist <- c(urllist, newurllist)
+    urllist <- urllist[!duplicated(names(urllist))] # Removes duplicated entries
+    urlfile <- paste0(outpath, "/", "mydoc_urls.yml")
+    urlfile <- gsub("/{1,}", "/", urlfile)
+    writeLines(unlist(urllist), urlfile)
+    cat(paste("Created file", urlfile), "\n")
 }
 
 ## Usage:
 # setwd("~/Dropbox/Websites/manuals/vignettes/Rbasics")
-# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outfilepath="./", fenced2highlight=TRUE, image_dir="./images_jekyll")
+# source("../md2jekyll.R")
+## For debugging save output files in current (test) directory: outpath="./" 
+# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", fenced2highlight=TRUE, image_dir=NULL)
+## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
+# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="../../mydoc", fenced2highlight=TRUE, image_dir=NULL)

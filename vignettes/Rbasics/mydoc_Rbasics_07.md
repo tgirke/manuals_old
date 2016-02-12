@@ -1,7 +1,7 @@
 ---
 title: Data Types 
 keywords: 
-last_updated: Wed Feb 10 20:55:21 2016
+last_updated: Thu Feb 11 17:45:10 2016
 ---
 
 __Numeric data__: `1, 2, 3, ...`

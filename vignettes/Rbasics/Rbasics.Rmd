@@ -133,7 +133,7 @@ biocLite()
 biocLite(c("pkg1", "pkg2"))
 ```
 
-5. For more details consult the [Bioc Install page](\href{http://www.bioconductor.org/install/)
+5. For more details consult the [Bioc Install page](http://www.bioconductor.org/install/)
 and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocInstaller.html) package.
 
 # Getting Around

@@ -1,7 +1,7 @@
 ---
 title: Look and Feel of R Environment
 keywords: 
-last_updated: Wed Feb 10 20:44:34 2016
+last_updated: Thu Feb 11 18:02:41 2016
 ---
 
 ## Why Using R?
@@ -19,7 +19,7 @@ last_updated: Wed Feb 10 20:44:34 2016
 * More on this see "Finding Help" section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R\_BioCondManual\#TOC-Finding-Help}{{\beamerbutton{Link}}}
 
 ## Working environments (IDEs) for R
-<center><img title="R_Interfaces" src="./images_jekyll/rinterface.png"/></center>
+<center><img title="R_Interfaces" src="../../mydoc/Rbasics_images/rinterface.png"/></center>
 <center> R Projects and Interfaces</center>
 
 Some R working environments with support for syntax highlighting and utilities to send code 
@@ -36,7 +36,7 @@ to the R console:
 New integrated development environment (IDE) for [R](http://www.rstudio.com/ide/download/). Highly functional for both beginners and 
 advanced.
 
-<center><img title="RStudio" src="./images_jekyll/rstudio.png"/></center>
+<center><img title="RStudio" src="../../mydoc/Rbasics_images/rstudio.png"/></center>
 <center> RStudio IDE</center>
 
 Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomment), `Ctrl+1/2` (switch window focus)
@@ -45,6 +45,6 @@ Some userful shortcuts: `Ctrl+Enter` (send code), `Ctrl+Shift+C` (comment/uncomm
 
 Terminal-based Working Environment for R: [Vim-R-Tmux](http://manuals.bioinformatics.ucr.edu/home/programming-in-r/vim-r)
 
-<center><img title="Vim-R-Tmux" src="./images_jekyll/screenshot.png" ></center>
+<center><img title="Vim-R-Tmux" src="../../mydoc/Rbasics_images/screenshot.png" ></center>
 <center>Vim-R-Tmux IDE for R</center>
 

@@ -28,6 +28,11 @@ pdf_file_name: mydoc_designers_pdf.pdf
 
 # the algolia entries here are experimental only.
 
+gems:
+  - redcarpet
+  - jekyll-gist
+  - pygments.rb
+
 #gems:
 #  - algoliasearch-jekyll
 #algolia:

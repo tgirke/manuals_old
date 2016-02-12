@@ -1,7 +1,7 @@
 ---
 title: Graphics example
 keywords: 
-last_updated: Wed Feb 10 20:55:21 2016
+last_updated: Thu Feb 11 17:45:10 2016
 ---
 
 Plotting example
@@ -10,5 +10,5 @@ Plotting example
 barplot(1:10, col="green")
 {% endhighlight %}
 
-![](./images_jekyll/plot_example-1.png)
+![](./Rbasics_images/plot_example-1.png)
 
