@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -254,16 +242,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1046,7 +1024,7 @@ info:
     &lt;div class="alert alert-success" role="alert"&gt;<i class="fa fa-info-circle"></i> <b>Tip: </b>See the <a href="http://docs.the41.internal/resolve/fe/resolve/res_tutorial_getting_started.html" style="text-decoration: underline;" target="_blank">Getting Started Tutorial</a> in the documentation for instructions on submitting requests with each endpoint.&lt;/div&gt;
     &lt;div class="alert alert-warning" role="alert"&gt;<i class="fa fa-info-circle"></i> <b>Note: </b>The Experian network blocks requests to AWS testing domains. Before clicking “Try it out!”, switch to another network.&lt;/div&gt;</p>
 
-<pre><code>&lt;div class="container"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="container"&gt;
 &lt;div class="apiConfigDetails"&gt;
 &lt;button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#demo"&gt;
 &lt;span class="glyphicon glyphicon-collapse-down"&gt;&lt;/span&gt; See API Configuration Details
@@ -1218,6 +1196,7 @@ info:
 &lt;/div&gt;
 &lt;/div&gt; host: 52.5.74.221
 </code></pre>
+</div>
 
 <p>securityDefinitions:
   hmac:
@@ -1252,7 +1231,7 @@ paths:
          required: true
          type: string</p>
 
-<pre><code>   - name: body
+<div class="highlighter-rouge"><pre class="highlight"><code>   - name: body
      in: body
      description: Contains the identifiers you want to submit to Resolve to look for matches.
      required: true
@@ -1288,6 +1267,7 @@ paths:
               }
             }
 </code></pre>
+</div>
 
 <p>“:1117/idtranslation/group/{type}”:
      post:
@@ -1303,7 +1283,7 @@ paths:
          in: header
          description: The message in the HMAC authorization header must contain all the identifier values arranged adjacent to each other in the same order as they appear in the request. <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#group">Generate Authorization</button></p>
 
-<pre><code>     required: true
+<div class="highlighter-rouge"><pre class="highlight"><code>     required: true
      type: string
 
    - name: type
@@ -1412,6 +1392,7 @@ paths:
      500:
        description: Internal server error
 </code></pre>
+</div>
 
 <p>“:1117/idtranslation/devices/{groupid}/client/{client}”:
     get:
@@ -1424,7 +1405,7 @@ paths:
         - hmac: []
       parameters:</p>
 
-<pre><code>    - name: Authorization
+<div class="highlighter-rouge"><pre class="highlight"><code>    - name: Authorization
       in: header
       description: The message for this endpoint must contain the group ID + current epoch time. &lt;button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#devices"&gt;Generate Authorization&lt;/button&gt;
       required: true
@@ -1494,13 +1475,14 @@ paths:
      500:
        description: Internal server error
 </code></pre>
+</div>
 
 <p>“:1117/idtranslation/identifiers/{deviceid}/client/{client}”:
      get:
       summary: Idtranslation Identifiers Endpoint
       description: Returns all identifiers for a specific profile. Profiles contain all the identifiers that have been matched to that profile based on the rules configured in the ID service. This endpoint provides a way to list all the identifiers for a specific profile.</p>
 
-<pre><code>  tags:
+<div class="highlighter-rouge"><pre class="highlight"><code>  tags:
     - idtranslation
   security:
     - hmac: []
@@ -1565,6 +1547,7 @@ paths:
     500:
       description: Internal server error
 </code></pre>
+</div>
 
 <p>“:1117/idtranslation/groupdetails/{deviceid}/client/{client}”:
     get:
@@ -1577,7 +1560,7 @@ paths:
         - hmac: []
       parameters:</p>
 
-<pre><code>    - name: Authorization
+<div class="highlighter-rouge"><pre class="highlight"><code>    - name: Authorization
       in: header
       description: The message in the HMAC authorization header must include profile ID + current epoch time. &lt;button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#groupdetails"&gt;Generate Authorization&lt;/button&gt;
       required: true
@@ -1643,6 +1626,7 @@ paths:
      500:
        description: Internal server error
 </code></pre>
+</div>
 
 <p>definitions:</p>
 
@@ -1662,7 +1646,7 @@ paths:
         type: string
         example: “1444670381”</p>
 
-<pre><code>  verbose:
+<div class="highlighter-rouge"><pre class="highlight"><code>  verbose:
     description: The amount of detail to include in the REST response. Options are `true`, `false`, or `testing`. This is a string, not a Boolean
     type: string
     example: "true"
@@ -1684,6 +1668,7 @@ paths:
     items:
       "$ref": "#/definitions/privacy object"
 </code></pre>
+</div>
 
 <p>inputIds object: #matchdevice object
     type: object
@@ -1744,7 +1729,7 @@ paths:
         type: object
         “$ref”: “#/definitions/group identifiers object”</p>
 
-<pre><code>  noOfDevices:
+<div class="highlighter-rouge"><pre class="highlight"><code>  noOfDevices:
     description: The number of device profiles sent back in the response. The default is all available devices
     type: integer
     format: int32
@@ -1765,6 +1750,7 @@ paths:
     type: string
     example: "email"
 </code></pre>
+</div>
 
 <p>group identifiers object: #group object
     type: array
@@ -1970,10 +1956,11 @@ paths:
         type: string
         description: Group ID history. The most recent group ID is stored in the <code>lgid</code> (last group ID). Each time Resolve receives a request containing a unique value for either an identifier configured in the multiscreening or householding rules, a new group ID gets created. In addition to the last group ID (<code>lgid</code>), the other group IDs are stored in a group ID history (<code>gidhl</code>). If you set the Max Group ID Threshold to 50, it means that 1 group ID can be stored in the <code>lgid</code>, and 49 can be stored in the <code>gidhl</code>. If ID service receives another group ID, it takes the place of the <code>lgid</code> value. The previous <code>lgid</code> value moves down to the <code>gidhl</code>, and the last <code>gidhl</code> gets removed.</p>
 
-<pre><code>  devices:
+<div class="highlighter-rouge"><pre class="highlight"><code>  devices:
     type: string
     description: A list of profile IDs. Usually this key is used inside a list of group IDs that list out all the devices (or profiles) that contain the same group ID.
 </code></pre>
+</div>
 
 <p>MS object:
     type: object
@@ -1986,10 +1973,11 @@ paths:
         type: string
         description: Group ID history. The most recent group ID is stored in the <code>lgid</code> (last group ID). Each time Resolve receives a request containing a unique value for either an identifier configured in the multiscreening or householding rules, a new group ID gets created. In addition to the last group ID (<code>lgid</code>), the other group IDs are stored in a group ID history (<code>gidhl</code>). If you set the Max Group ID Threshold to 50, it means that 1 group ID can be stored in the <code>lgid</code>, and 49 can be stored in the <code>gidhl</code>. If ID service receives another group ID, it takes the place of the <code>lgid</code> value. The previous <code>lgid</code> value moves down to the <code>gidhl</code>, and the last <code>gidhl</code> gets removed.</p>
 
-<pre><code>  devices:
+<div class="highlighter-rouge"><pre class="highlight"><code>  devices:
     type: string
     description: A list of profile IDs. Usually this key is used inside a list of group IDs that list out all the devices (or profiles) that contain the same group ID.
 </code></pre>
+</div>
 
 <p>Devices Response:
     type: object
@@ -2021,7 +2009,7 @@ paths:
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
- Site last generated: Feb 10, 2016 <br />
+ Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

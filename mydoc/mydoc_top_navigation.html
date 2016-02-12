@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -254,16 +242,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1164,6 +1142,8 @@ $('#toc').on('click', 'a', function() {
             
             
             
+            
+            
             <li>
                 <a href="../mydoc/mydoc_getting_started.html">1. Build the default project</a>
             </li>
@@ -1212,15 +1192,15 @@ $('#toc').on('click', 'a', function() {
             
             
             
+            <li class="active"> → 7. Configure the top navigation</li>
+            
+            
+            
+            
+            
             <li>
                 <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
             </li>
-            
-            
-            
-            
-            
-            <li class="active"> → 7. Configure the top navigation</li>
             
             
             
@@ -1257,21 +1237,21 @@ $('#toc').on('click', 'a', function() {
 <p>The top navigation reads from the _data/mydoc/mydoc_topnav_doc.yml file. There are two <em>separate</em> sections in the mydoc_topnav_doc.yml file:</p>
 
 <ul>
-  <li><code>topnav</code></li>
-  <li><code>topnav_dropdowns</code></li>
+  <li><code class="highlighter-rouge">topnav</code></li>
+  <li><code class="highlighter-rouge">topnav_dropdowns</code></li>
 </ul>
 
-<p>Items in the <code>topnav</code> section are rendered as single links. In contrast, items in the <code>topnav_dropdowns</code> section are rendered as a drop-down menu. You can’t mix up the order of single links and drop-down links. The single links appear on the left, and the drop-down menus appear on the right.</p>
+<p>Items in the <code class="highlighter-rouge">topnav</code> section are rendered as single links. In contrast, items in the <code class="highlighter-rouge">topnav_dropdowns</code> section are rendered as a drop-down menu. You can’t mix up the order of single links and drop-down links. The single links appear on the left, and the drop-down menus appear on the right.</p>
 
 <h2 id="the-feedback-email">The Feedback email</h2>
 
 <p>If you click the Feedback link in the default theme, you’ll see that it inserts the link to the current page along with a subject header and body. The topnav.html file contains an include to feedback.html. The feedback.html file contains the JavaScript that gets the current page URL and inserts it into the message body.</p>
 
-<p>You configure the email in the configuration file through this property: <code>site.feedback_email</code>.</p>
+<p>You configure the email in the configuration file through this property: <code class="highlighter-rouge">site.feedback_email</code>.</p>
 
 <h2 id="external-links">External links</h2>
 
-<p>If you want the URL to point to an external site, use <code>external_url</code> instead of <code>url</code> in the data file. Then just enter the full HTTP URL. When you use <code>external_url</code>, the sidebar.html will apply this logic:</p>
+<p>If you want the URL to point to an external site, use <code class="highlighter-rouge">external_url</code> instead of <code class="highlighter-rouge">url</code> in the data file. Then just enter the full HTTP URL. When you use <code class="highlighter-rouge">external_url</code>, the sidebar.html will apply this logic:</p>
 
 <p>```html
 {% if item.external_url %}</p>
@@ -1302,16 +1282,6 @@ $('#toc').on('click', 'a', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
     
     
     <a href="tag_navigation.html" class="btn btn-default navbar-btn cursorNorm" role="button">navigation</a>
@@ -1330,7 +1300,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 10, 2016 <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

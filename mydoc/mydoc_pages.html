@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -254,16 +242,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1046,7 +1024,7 @@ $('#toc').on('click', 'a', function() {
   <li>mydoc_writers_*</li>
 </ul>
 
-<p>These wildcards will exclude every match after the <code>*</code>.</p>
+<p>These wildcards will exclude every match after the <code class="highlighter-rouge">*</code>.</p>
 
 <h2 id="frontmatter">Frontmatter</h2>
 <p>Make sure each page has frontmatter at the top like this:</p>
@@ -1060,7 +1038,7 @@ summary: “Deploying DeviceInsight requires the following steps.”
 —
 ```</p>
 
-<p>Frontmatter is always formatted with three hyphens at the top and bottom. Your frontmatter must have a <code>title</code> value. All the other values are optional.</p>
+<p>Frontmatter is always formatted with three hyphens at the top and bottom. Your frontmatter must have a <code class="highlighter-rouge">title</code> value. All the other values are optional.</p>
 
 <p>The following table describes each of the frontmatter that you can use with this theme:</p>
 
@@ -1101,12 +1079,12 @@ summary: “Deploying DeviceInsight requires the following steps.”
     <tr>
       <td><strong>datatable</strong></td>
       <td>Optional</td>
-      <td>Boolean. If you add <code>true</code>, then scripts for the <a href="https://www.datatables.net/">jQuery datatables plugin</a> get included on the page.</td>
+      <td>Boolean. If you add <code class="highlighter-rouge">true</code>, then scripts for the <a href="https://www.datatables.net/">jQuery datatables plugin</a> get included on the page.</td>
     </tr>
     <tr>
       <td><strong>video</strong></td>
       <td>Optional</td>
-      <td>If you add <code>true</code>, then scripts for <a href="http://www.videojs.com/">Video JS: The HTML5 video player</a> get included on the page.</td>
+      <td>If you add <code class="highlighter-rouge">true</code>, then scripts for <a href="http://www.videojs.com/">Video JS: The HTML5 video player</a> get included on the page.</td>
     </tr>
   </tbody>
 </table>
@@ -1114,9 +1092,9 @@ summary: “Deploying DeviceInsight requires the following steps.”
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b> You can see the scripts that conditionally appear by looking in the _layouts/default.html page. Note that these scripts are served via a CDN, so the user must be online for the scripts to work. However, if the user isn't online, the tables and video still appear. In other words, they degrade gracefully. </div>
 
 <h2 id="what-about-permalinks">What about permalinks?</h2>
-<p>What about permalinks? This theme isn’t build using permalinks because it makes linking and directory structures problematic. Permalinks generate an index file inside a folder for each file in the output. This makes it so links (to other pages as well as to resources such as styles and scripts) need to include <code>../</code> depending upon where the other assets are located. But for any pages outside folders, such as the index.html page, you wouldn’t use the <code>../</code> structure.</p>
+<p>What about permalinks? This theme isn’t build using permalinks because it makes linking and directory structures problematic. Permalinks generate an index file inside a folder for each file in the output. This makes it so links (to other pages as well as to resources such as styles and scripts) need to include <code class="highlighter-rouge">../</code> depending upon where the other assets are located. But for any pages outside folders, such as the index.html page, you wouldn’t use the <code class="highlighter-rouge">../</code> structure.</p>
 
-<p>Basically, permalinks complicate the linking structure significantly, so they aren’t used here. As a result, page URLs have an .html extension. If you include <code>permalink: something</code> in your frontmatter, your link to the page will break (actually, you could still go to sample instead of sample.html, but none of the styles or scripts will be correctly referenced).</p>
+<p>Basically, permalinks complicate the linking structure significantly, so they aren’t used here. As a result, page URLs have an .html extension. If you include <code class="highlighter-rouge">permalink: something</code> in your frontmatter, your link to the page will break (actually, you could still go to sample instead of sample.html, but none of the styles or scripts will be correctly referenced).</p>
 
 <h2 id="colons-in-page-titles">Colons in page titles</h2>
 
@@ -1124,7 +1102,7 @@ summary: “Deploying DeviceInsight requires the following steps.”
 
 <h2 id="saving-pages-as-drafts">Saving pages as drafts</h2>
 
-<p>If you add <code>published: false</code> in the frontmatter, your page won’t be published. You can also move draft pages into the _drafts folder to exclude them from the build.</p>
+<p>If you add <code class="highlighter-rouge">published: false</code> in the frontmatter, your page won’t be published. You can also move draft pages into the _drafts folder to exclude them from the build.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b> You can create file templates in WebStorm that have all your common frontmatter, such as all possible tags, prepopulated. See <a href="../mydoc/mydoc_webstorm_text_editor.html">WebStorm Text Editor</a> for details. </div>
 
@@ -1170,7 +1148,7 @@ These extensions mean the following:</p>
     </tr>
     <tr>
       <td>fenced_code_blocks</td>
-      <td>allow three backticks before and after code blocks instead of <code>&lt;pre&gt;</code> tags</td>
+      <td>allow three backticks before and after code blocks instead of <code class="highlighter-rouge">&lt;pre&gt;</code> tags</td>
     </tr>
     <tr>
       <td>tables</td>
@@ -1189,17 +1167,17 @@ These extensions mean the following:</p>
 
 <h2 id="automatic-mini-tocs">Automatic mini-TOCs</h2>
 
-<p>By default, a mini-TOC appears at the top of your pages and posts. If you don’t want this, you can remove the <code>{% include toc.html %}</code>  from the layouts/page.html file.</p>
+<p>By default, a mini-TOC appears at the top of your pages and posts. If you don’t want this, you can remove the <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">toc.html</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code>  from the layouts/page.html file.</p>
 
-<p>If you don’t want the TOC to appear for a specific page, add <code>toc: false</code> in the frontmatter of the page.</p>
+<p>If you don’t want the TOC to appear for a specific page, add <code class="highlighter-rouge">toc: false</code> in the frontmatter of the page.</p>
 
-<p>The mini-TOC requires you to use the <code>##</code> syntax for headings. If you use <code>&lt;h2&gt;</code> elements, then you must add an ID attribute for the h2 element in order for it to appear in the mini-TOC.</p>
+<p>The mini-TOC requires you to use the <code class="highlighter-rouge">##</code> syntax for headings. If you use <code class="highlighter-rouge">&lt;h2&gt;</code> elements, then you must add an ID attribute for the h2 element in order for it to appear in the mini-TOC.</p>
 
 <h2 id="specify-a-particular-page-layout">Specify a particular page layout</h2>
 
 <p>The configuration file sets the default layout for pages as the “page” layout.</p>
 
-<p>You can create other layouts inside the layouts folder. If you create a new layout, you can specify that your page use your new layout by adding <code>layout: mylayout.html</code> in the page’s frontmatter. Whatever layout you specify in the frontmatter of a page will override the layout default set in the configuration file.</p>
+<p>You can create other layouts inside the layouts folder. If you create a new layout, you can specify that your page use your new layout by adding <code class="highlighter-rouge">layout: mylayout.html</code> in the page’s frontmatter. Whatever layout you specify in the frontmatter of a page will override the layout default set in the configuration file.</p>
 
 <h2 id="comments">Comments</h2>
 
@@ -1212,7 +1190,7 @@ These extensions mean the following:</p>
 <h2 id="custom-keyboard-shortcuts">Custom keyboard shortcuts</h2>
 <p>Some of the Jekyll syntax can be slow to create. Using a utility such as <a href="https://www.trankynam.com/atext/">aText</a> can make creating content a lot of faster.</p>
 
-<p>For example, when I type <code>jif</code>, aText replaces it with <code>{% if site.platform == "x" %}</code>. When I type <code>jendif</code>, aText replaces it with <code>{% endif %}</code>.</p>
+<p>For example, when I type <code class="highlighter-rouge">jif</code>, aText replaces it with <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.platform</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"x"</span><span class="w"> </span><span class="err">%}</span></code>. When I type <code class="highlighter-rouge">jendif</code>, aText replaces it with <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code>.</p>
 
 <p>You get aText from the App Store on a Mac for about $5.</p>
 
@@ -1223,16 +1201,6 @@ These extensions mean the following:</p>
     
     <b>Tags: </b>
     
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1265,7 +1233,7 @@ These extensions mean the following:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 10, 2016 <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

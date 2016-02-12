@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -254,16 +242,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1037,7 +1015,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>By default, every page is included in the search. Depending on the type of content you’re including, you may find that some pages will break the JSON formatting. If that happens, then the search will no longer work.</p>
 
-<p>If you want to exclude a page from search add <code>search: exclude</code> in the frontmatter.</p>
+<p>If you want to exclude a page from search add <code class="highlighter-rouge">search: exclude</code> in the frontmatter.</p>
 
 <h2 id="troubleshooting-search">Troubleshooting search</h2>
 
@@ -1049,11 +1027,11 @@ $('#toc').on('click', 'a', function() {
 
 <p>The search.json file already tries to strip out content that would otherwise make the JSON invalid:</p>
 
-<p><code>json
+<p><code class="highlighter-rouge">json
       "body": "{{ page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '^t', '    '  }}",
 </code></p>
 
-<p>Note that the last replace, <code>| replace: '^t', '    ' </code>, looks for any tab character and replaces it with four spaces. Yes, an innocent little tab character invalidates JSON. Geez. If you run into other problematic formatting, you can use regex expressions to find and replace the content. See <a href="http://www.ultraedit.com/support/tutorials_power_tips/ultraedit/regular_expressions.html">Regular Expressions</a> for details on finding and replacing code.</p>
+<p>Note that the last replace, <code class="highlighter-rouge">| replace: '^t', '    ' </code>, looks for any tab character and replaces it with four spaces. Yes, an innocent little tab character invalidates JSON. Geez. If you run into other problematic formatting, you can use regex expressions to find and replace the content. See <a href="http://www.ultraedit.com/support/tutorials_power_tips/ultraedit/regular_expressions.html">Regular Expressions</a> for details on finding and replacing code.</p>
 
 <p>It’s possible that the formatting may not account for all the scenarios that would invalidate the JSON. (Sometimes it’s an extra comma after the last item that makes it invalid.)</p>
 
@@ -1063,17 +1041,18 @@ $('#toc').on('click', 'a', function() {
 
 <p>```json</p>
 
-<pre><code>{% if page.search == true %}
-  {
-  "title": "{{ page.title | escape }}",
-  "tags": "{{ page.tags }}",
-  "keywords": "{{page.keywords}}",
-  "url": "{{ page.url | replace: "/", "" }}",
-  "last_updated": "{{ page.last_updated }}",
-  "summary": "{{page.summary}}",
-  "body": "{{ page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' }}"
-  }
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.search</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">true</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.title | escape }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.tags }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{page.keywords}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.url | replace: "</span><span class="err">/</span><span class="s2">", "" }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.last_updated }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{page.summary}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"</span><span class="err">'</span><span class="p">,</span><span class="w"> </span><span class="err">'\\</span><span class="nt">"' }}"</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>```</p>
 
@@ -1103,25 +1082,15 @@ fuzzy: true,
 <p>&lt;/li&gt;
 ```</p>
 
-<p>Where you see <code>{url}</code> and <code>{title}</code>, the search is retrieving the values for these as specified in the search.json file.</p>
+<p>Where you see <code class="highlighter-rouge"><span class="p">{</span><span class="err">url</span><span class="p">}</span></code> and <code class="highlighter-rouge"><span class="p">{</span><span class="err">title</span><span class="p">}</span></code>, the search is retrieving the values for these as specified in the search.json file.</p>
 
-<p>At some point, you may want to add in the <code>{summary}</code> as well. You could create a dedicated search page that could include the summary as an instant result as you type.</p>
+<p>At some point, you may want to add in the <code class="highlighter-rouge"><span class="p">{</span><span class="err">summary</span><span class="p">}</span></code> as well. You could create a dedicated search page that could include the summary as an instant result as you type.</p>
 
 
 <div class="tags">
     
     <b>Tags: </b>
     
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1152,7 +1121,7 @@ fuzzy: true,
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 10, 2016 <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

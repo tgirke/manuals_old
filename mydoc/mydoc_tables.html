@@ -89,16 +89,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -173,8 +163,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -266,16 +254,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1055,7 +1033,7 @@ $(document).ready(function(){
 
 <p>You can use Multimarkdown syntax for tables. The following shows a sample:</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
 Column 1 | Column 2
 --------|----------
 cell 1a | cell 1b
@@ -1085,7 +1063,7 @@ cell 2a | cell 2b
 
 <h2 id="jquery-datables">jQuery datables</h2>
 
-<p>You also have the option of using a <a href="https://www.datatables.net/">jQuery datatable</a>, which gives you some more options. If you want to use a jQuery datatable, then add <code>datatable: true</code> in a page’s frontmatter. This will load the right jQuery datatable scripts for the table on that page only (rather than loading the scripts on every page of the site.)</p>
+<p>You also have the option of using a <a href="https://www.datatables.net/">jQuery datatable</a>, which gives you some more options. If you want to use a jQuery datatable, then add <code class="highlighter-rouge">datatable: true</code> in a page’s frontmatter. This will load the right jQuery datatable scripts for the table on that page only (rather than loading the scripts on every page of the site.)</p>
 
 <p>Also, you need to add this script to trigger the jQuery table on your page:</p>
 
@@ -1093,17 +1071,18 @@ cell 2a | cell 2b
 <script>
 $(document).ready(function(){</script></p>
 
-<pre><code>$('table.display').DataTable( {
+<div class="highlighter-rouge"><pre class="highlight"><code>$('table.display').DataTable( {
     paging: true,
     stateSave: true,
     searching: true
 }
     ); }); &lt;/script&gt; ```
 </code></pre>
+</div>
 
 <p>The available options for the datable are described in the <a href="https://www.datatables.net/manual/options">datatable documentation</a>, which is excellent.</p>
 
-<p>Additionally, you must add a class of <code>display</code> to your tables. (You can change the class, but then you’ll need to change the trigger above from <code>table.display</code> to whatever class you want to you. You might have different triggers with different options for different tables.)</p>
+<p>Additionally, you must add a class of <code class="highlighter-rouge">display</code> to your tables. (You can change the class, but then you’ll need to change the trigger above from <code class="highlighter-rouge">table.display</code> to whatever class you want to you. You might have different triggers with different options for different tables.)</p>
 
 <p>Since Markdown doesn’t allow you to add classes to tables, you’ll need to use HTML for any datatables. Here’s an example:</p>
 
@@ -1218,16 +1197,6 @@ $(document).ready(function(){</script></p>
 
 
 
-
-
-
-
-
-
-
-
-
-
     
     
     <a href="tag_formatting.html" class="btn btn-default navbar-btn cursorNorm" role="button">formatting</a>
@@ -1246,7 +1215,7 @@ $(document).ready(function(){</script></p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 10, 2016 <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -254,16 +242,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1164,6 +1142,8 @@ $('#toc').on('click', 'a', function() {
             
             
             
+            
+            
             <li>
                 <a href="../mydoc/mydoc_getting_started.html">1. Build the default project</a>
             </li>
@@ -1212,15 +1192,15 @@ $('#toc').on('click', 'a', function() {
             
             
             
-            <li class="active"> → 5. Customize the conditions file</li>
-            
-            
-            
-            
-            
             <li>
                 <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
+            
+            
+            
+            
+            
+            <li class="active"> → 5. Customize the conditions file</li>
             
             
             
@@ -1261,19 +1241,19 @@ $('#toc').on('click', 'a', function() {
 
 <p>In the _includes/custom directory, open the conditions.html file. Duplicate one of the project settings blocks like this:</p>
 
-<p><code>
-{% if site.project == "mydoc_writers" %}
-{% assign audience = "writers" %}
-{% assign sidebar = site.data.mydoc.mydoc_sidebar.entries %}
-{% assign topnav = site.data.mydoc.mydoc_topnav.topnav %}
-{% assign topnav_dropdowns = site.data.mydoc.mydoc_topnav.topnav_dropdowns %}
-{% assign version = "all" %}
-{% assign product = "all" %}
-{% assign platform = "all" %}
-{% assign projectTags = site.data.mydoc.mydoc_tags.allowed-tags %}
-{% assign projectFolder = "mydoc" %}
-{% endif %}
-</code></p>
+<p><code class="highlighter-rouge"><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.project</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"mydoc_writers"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">audience</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"writers"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">sidebar</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_sidebar.entries</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">topnav</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_topnav.topnav</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">topnav_dropdowns</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_topnav.topnav_dropdowns</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">version</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"all"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">product</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"all"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">platform</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"all"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">projectTags</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.mydoc.mydoc_tags.allowed-tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">projectFolder</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"mydoc"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></p>
 
 <p>You need to duplicate this block for each output you have.</p>
 
@@ -1287,6 +1267,8 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip: </b> If you want to create signposts in the code as shown in the conditions.html file, install a utility called [figlets](http://www.figlet.org/) on your Mac. The figlets just make scanning long code blocks easier. If you have 15+ configuration groupings in your conditions file, the figlets make it easy to scan.</div>
 
 <p>
+    
+    
     
     
     
@@ -1494,16 +1476,6 @@ $('#toc').on('click', 'a', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
     
     
     <a href="tag_navigation.html" class="btn btn-default navbar-btn cursorNorm" role="button">navigation</a>
@@ -1522,7 +1494,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 10, 2016 <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

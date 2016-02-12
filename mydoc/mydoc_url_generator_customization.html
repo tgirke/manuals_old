@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -254,16 +242,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1164,6 +1142,8 @@ $('#toc').on('click', 'a', function() {
             
             
             
+            
+            
             <li>
                 <a href="../mydoc/mydoc_getting_started.html">1. Build the default project</a>
             </li>
@@ -1213,7 +1193,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
+                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
             </li>
             
             
@@ -1221,7 +1201,7 @@ $('#toc').on('click', 'a', function() {
             
             
             <li>
-                <a href="../mydoc/mydoc_top_navigation.html">7. Configure the top navigation</a>
+                <a href="../mydoc/mydoc_conditions_file_customization.html">5. Customize the conditions file</a>
             </li>
             
             
@@ -1266,9 +1246,9 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Change the project conditions at the top:</p>
 
-    <p><code>
- {% if site.project == "mydoc_writers" or site.project == "mydoc_designers" %}
-</code></p>
+    <p><code class="highlighter-rouge"><span class="w">
+ </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">site.project</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"mydoc_writers"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">site.project</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"mydoc_designers"</span><span class="w"> </span><span class="err">%}</span><span class="w">
+</span></code></p>
 
     <p>Add all the projects here that will use this URL generator. For example, if you have 3 different projects, list them here. Otherwise the file’s contents will be replaced with the values from the latest project that you run.</p>
   </li>
@@ -1277,6 +1257,8 @@ $('#toc').on('click', 'a', function() {
 <p>Notice that this URL generator iterates through the sidebar file only, and it doesn’t apply the attribute qualifiers as with the sidebar.html file. As such, this URL generator will work with the output from any of the project files.</p>
 
 <p>
+    
+    
     
     
     
@@ -1483,16 +1465,6 @@ $('#toc').on('click', 'a', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
     
     
     <a href="tag_navigation.html" class="btn btn-default navbar-btn cursorNorm" role="button">navigation</a>
@@ -1511,7 +1483,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 10, 2016 <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 11, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>
