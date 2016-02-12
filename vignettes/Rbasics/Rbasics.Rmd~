@@ -51,14 +51,14 @@ Alternative formats of this tutorial:
 
 # Overview
 
+## What is R?
+
 [R](http://cran.at.r-project.org) is a powerful statistical environment and
 programming language for the analysis and visualization of data.  The
 associated [Bioconductor](http://bioconductor.org/) and CRAN package
 repositories provide many additional R packages for statistical data analysis
 for a wide array of research areas. The R software is free and runs on all
 common operating systems. 
-
-# Look and Feel of R Environment
 
 ## Why Using R?
 * Complete statistical environment and programming language
@@ -73,6 +73,8 @@ common operating systems.
 * simpleR - Using R for Introductory Statistics (John Verzani, 2004) \href{http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf}{{\beamerbutton{Link}}}
 * Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) \href{http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/}{{\beamerbutton{Link}}}
 * More on this see "Finding Help" section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R\_BioCondManual\#TOC-Finding-Help}{{\beamerbutton{Link}}}
+
+## R Working Environments
 
 ## Working environments (IDEs) for R
 <center><img title="R_Interfaces" src="images/rinterface.png"/></center>

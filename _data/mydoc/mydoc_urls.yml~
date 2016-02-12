@@ -249,3 +249,98 @@ mydoc_internal_notes:
 
 
 
+mydoc_Rbasics_01:
+  title: "Overview"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_01.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_01.html'>Overview</a>"
+
+mydoc_Rbasics_02:
+  title: "Look and Feel of R Environment"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_02.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_02.html'>Look and Feel of R Environment</a>"
+
+mydoc_Rbasics_03:
+  title: "R Package Repositories"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_03.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_03.html'>R Package Repositories</a>"
+
+mydoc_Rbasics_04:
+  title: "Installation of R and Add-on Packages"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_04.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_04.html'>Installation of R and Add-on Packages</a>"
+
+mydoc_Rbasics_05:
+  title: "Getting Around"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_05.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_05.html'>Getting Around</a>"
+
+mydoc_Rbasics_06:
+  title: "Basic Syntax"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_06.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_06.html'>Basic Syntax</a>"
+
+mydoc_Rbasics_07:
+  title: "Data Types "
+  url: "../mydoc/../mydoc/mydoc_Rbasics_07.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_07.html'>Data Types </a>"
+
+mydoc_Rbasics_08:
+  title: "Data objects"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_08.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_08.html'>Data objects</a>"
+
+mydoc_Rbasics_09:
+  title: "Graphics example"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_09.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_09.html'>Graphics example</a>"
+
+mydoc_Rbasics_10:
+  title: "Session Info"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_10.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_10.html'>Session Info</a>"
+
+mydoc_Rbasics_1:
+  title: "Overview"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_1.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_1.html'>Overview</a>"
+
+mydoc_Rbasics_2:
+  title: "R Package Repositories"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_2.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_2.html'>R Package Repositories</a>"
+
+mydoc_Rbasics_3:
+  title: "Installation of R and Add-on Packages"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_3.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_3.html'>Installation of R and Add-on Packages</a>"
+
+mydoc_Rbasics_4:
+  title: "Getting Around"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_4.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_4.html'>Getting Around</a>"
+
+mydoc_Rbasics_5:
+  title: "Basic Syntax"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_5.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_5.html'>Basic Syntax</a>"
+
+mydoc_Rbasics_6:
+  title: "Data Types "
+  url: "../mydoc/../mydoc/mydoc_Rbasics_6.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_6.html'>Data Types </a>"
+
+mydoc_Rbasics_7:
+  title: "Data objects"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_7.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_7.html'>Data objects</a>"
+
+mydoc_Rbasics_8:
+  title: "Graphics example"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_8.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_8.html'>Graphics example</a>"
+
+mydoc_Rbasics_9:
+  title: "Session Info"
+  url: "../mydoc/../mydoc/mydoc_Rbasics_9.html"
+  link: "<a href='../mydoc/../mydoc/mydoc_Rbasics_9.html'>Session Info</a>"
+

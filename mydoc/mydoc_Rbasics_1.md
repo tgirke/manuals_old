@@ -1,8 +1,23 @@
 ---
-title: Look and Feel of R Environment
+title: Overview
 keywords: 
-last_updated: Thu Feb 11 21:16:00 2016
+last_updated: Thu Feb 11 21:32:28 2016
 ---
+Alternative formats of this tutorial:
+[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html), 
+[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd), 
+[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R), 
+[`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf)
+
+
+## What is R?
+
+[R](http://cran.at.r-project.org) is a powerful statistical environment and
+programming language for the analysis and visualization of data.  The
+associated [Bioconductor](http://bioconductor.org/) and CRAN package
+repositories provide many additional R packages for statistical data analysis
+for a wide array of research areas. The R software is free and runs on all
+common operating systems. 
 
 ## Why Using R?
 * Complete statistical environment and programming language
@@ -17,6 +32,8 @@ last_updated: Thu Feb 11 21:16:00 2016
 * simpleR - Using R for Introductory Statistics (John Verzani, 2004) \href{http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf}{{\beamerbutton{Link}}}
 * Bioinformatics and Computational Biology Solutions Using R and Bioconductor (Gentleman et al., 2005) \href{http://www.bioconductor.org/help/publications/books/bioinformatics-and-computational-biology-solutions/}{{\beamerbutton{Link}}}
 * More on this see "Finding Help" section in UCR Manual \href{http://manuals.bioinformatics.ucr.edu/home/R\_BioCondManual\#TOC-Finding-Help}{{\beamerbutton{Link}}}
+
+## R Working Environments
 
 ## Working environments (IDEs) for R
 <center><img title="R_Interfaces" src="Rbasics_images/rinterface.png"/></center>
