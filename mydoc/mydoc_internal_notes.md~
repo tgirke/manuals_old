@@ -113,7 +113,6 @@ git checkout master
 
 (2) Render vignette to `.md` and `.html` files with `rmarkdown::render()`.
 
-
 (3) Append `.md` file (here `Rbasics.knit.md`) to corresponding `.md` file in `./mydoc` directory.
 
 (4) Remove front matter genereted by R markdown, but leave the one required for Jekyll
@@ -122,7 +121,7 @@ git checkout master
 
 (6) Move images into proper directory and adjust their path in the `.md` file
 
-Run steps (1)-(6) with one command using `render()` function and `md2jekyll.R` script:
+Run steps (2)-(6) with one command using `render()` function and `md2jekyll.R` script:
 
 {% highlight bash %}
 echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R
