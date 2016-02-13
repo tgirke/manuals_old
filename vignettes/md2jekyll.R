@@ -145,7 +145,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     ## Construct new sidebar entries
     mytitles <- gsub("# {1,}", "", titles)
     mytitles <- paste0(1:length(mytitles), ". ", mytitles)
-    myurls <- paste0("/mydoc/", gsub("^.*?/", "", filenames))
+    myurls <- paste0("/mydoc/", basename(filenames))
     myurls <- gsub(".md$", ".html", myurls)
     sectionheader <- c(paste0("  - title: ", doctitle),
                        "    audience: writers, designers",
