@@ -1,7 +1,7 @@
 ---
 title: Graphics example
 keywords: 
-last_updated: Fri Feb 12 17:57:41 2016
+last_updated: Fri Feb 12 18:06:43 2016
 ---
 
 Plotting example

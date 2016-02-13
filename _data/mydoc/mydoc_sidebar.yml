@@ -61,7 +61,7 @@ entries:
     items:
 
     - title: 1. Overview
-      url: ../mydoc/mydoc_Rbasics_1.html
+      url: /mydoc/mydoc_Rbasics_1.html
       audience: writers, designers
       platform: all
       product: all
