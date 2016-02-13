@@ -1,14 +1,27 @@
-############################################################################
-## Functions to convert R Markdown vignettes to paged markdown for Jekyll ##
-############################################################################
+######################################################################################
+## Functions to convert R Markdown vignettes to paged markdown for Jekyll Doc Theme ##
+######################################################################################
 ## Author: Thomas Girke
 ## Date: Feb 10, 2016
 
-md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL) {
-    ## (1) Import md file
+md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL) {
+    ## (1) Import md file 
     md <- readLines(mdfile)
+
+    ## Remove lines/patterns that are not appropriate for the Jekyll Doc Theme
+    md <- md[!grepl("\\[Back to Table of Contents\\]", md)]
+    md <- gsub("</br>", "", md) # Removes orphan breaks
+
+    ## (2) Parse specific entries in front matter
+    mymaindoctitle <- md[1:20][grepl("^title:", tolower(md[1:20]))]
+    mymaindoctitle <- gsub("(^.*? )|_|\\*|\"", "", mymaindoctitle)
+    mymaindoctitle <- gsub(":", " -", mymaindoctitle)
+    myauthor <- md[1:20][grepl("^author:", tolower(md[1:20]))]
+    myauthor <- gsub("(^.*? )|_|\\*|\"", "", myauthor)
+    mydate <- md[1:20][grepl("^date:", tolower(md[1:20]))]
+    mydate <- gsub("(^.*? )|_|\\*|\"", "", mydate)
     
-    ## (2) Optionally, convert fenced backtick code tags to 'highlight' tags
+    ## (3) Optionally, convert fenced backtick code tags to 'highlight' tags
     if(fenced2highlight==TRUE) {
         chunkpos <- grep("^```", md)
         if((length(chunkpos) %% 2) != 0) stop("Odd number of chunk tags.")
@@ -32,7 +45,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
         }
     }
    
-    ## (3) Collect all images in one directory and adjust image file paths in md file accordingly
+    ## (4) Collect all images in one directory and adjust image file paths in md file accordingly
     ## Generate new image_dir
     if(is.null(image_dir)) {
         image_dir <- gsub(".knit.md$", "_images", mdfile)
@@ -63,8 +76,9 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     mdimgindex <- grepl("\\!\\[.*{0,}\\]\\(.*\\)", md)
     if(sum(mdimgindex) > 0) {
         mdimgtag <- md[mdimgindex]
-        mdimgpath <- gsub("\\!\\[.*{0,}\\]\\((.*)\\)\\\\", "\\1", mdimgtag)
+        mdimgpath <- gsub("\\!\\[.*{0,}\\]\\((.*)\\)\\\\{0,}", "\\1", mdimgtag)
         ## Correct image paths in md accordingly
+        image_dir2 <- gsub("^.*/", "", image_dir) # Note, image path is relative in html source
         newmdimgpath <- paste0(image_dir2, "/", gsub("^.*/", "", mdimgpath))
         newmdimgpath <- paste0(gsub("(\\!\\[.*{0,}\\]\\().*", "\\1", mdimgtag),
                                newmdimgpath,
@@ -75,15 +89,20 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     }
     cat(paste("Saved image files to directory:", image_dir, "\n")) 
 
-    ## (4) Split on main sections (^# )
+    ## (5) Split on main sections (^# )
     splitpos <- grep("^# {1,}", md)
     if(length(splitpos) != 0) {
         splitdist <- c(splitpos, length(md)+1) - c(1, splitpos) 
         mdlist <- split(md, factor(rep(c(1, splitpos), splitdist)))
     
         ## Get alternative format info and remove front matter of R Markdown 
-        altformats <- mdlist[[1]][grep("^Alternative formats", mdlist[[1]]) : length(mdlist[[1]])]
-        mdlist[[2]] <- c(mdlist[[2]][1], altformats, mdlist[[2]][-1])
+        altformatspos <- grep("^Alternative formats", mdlist[[1]])
+        if(length(altformatspos)==1) {
+            altformats <- mdlist[[1]][grep("^Alternative formats", mdlist[[1]]) : length(mdlist[[1]])]
+            # mdlist[[2]] <- c(mdlist[[2]][1], altformats, mdlist[[2]][-1])
+        } else {
+            altformats <- ""
+        }
         mdlist <- mdlist[-1] # Removes R Markdown front matter
     
         ## Write sections stored in list components to separate files
@@ -92,7 +111,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
         stop("mdfile is expected to contain at least one section tag.")
     }
     
-    ## (5) Add expected front matter to each list component
+    ## (6) Add Jekyll Doc front matter to each list component
     for(i in seq_along(mdlist)) {
         frontmatter <- c(starttag="---", 
                          title=paste0("title: ", gsub("^# {1,}", "", titles[i])), 
@@ -101,8 +120,13 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
                          endtag="---")
         mdlist[[i]] <- c(as.character(frontmatter), mdlist[[i]][-1])
     }
+    
+    ## Special handling of first page
+    mdlist[[1]][2] <- paste0("title: ", mymaindoctitle) # Uses in front matter main title of source document
+    mdlist[[1]] <- c(mdlist[[1]][1:5], myauthor, "", mydate, "", altformats, "", paste0("#", titles[1]), mdlist[[1]][6:length(mdlist[[1]])])    
 
-    ## (6) Write sections to files named after input files with numbers appended
+
+    ## (7) Write sections to files named after input files with numbers appended
     filenumbers <- sprintf(paste0("%0", as.character(nchar(length(mdlist))), "d"), seq_along(mdlist))
     ## If no outfilebasename is provided the use default where they are named after input file with ".knit.md" stripped off
     if(is.null(outfilebasename)) {
@@ -117,7 +141,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
         cat(paste("Created file:", filenames[i]), "\n") 
     }
     
-    ## (7) Register new files in sidebar (_data/mydoc/mydoc_sidebar.yml)
+    ## (8) Register new files in sidebar (_data/mydoc/mydoc_sidebar.yml)
     sb <- readLines("../../_data/mydoc/mydoc_sidebar.yml")
     splitFct <- function(sb, pattern) {    
         splitpos <- grep(pattern, sb)
@@ -138,16 +162,20 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     header <- sblist[1]
     sblist <- sblist[-1]
     sblist <- sapply(names(sblist), function(x) splitFct(sb= sblist[[x]], pattern="^ {4,4}- title: \\w{1,}"), simplify=FALSE)
-    doctitle <- as.character(md[1:20][grepl("title: ", md[1:20])])
-    doctitle <- gsub("(^.*: {1,}\")|\" {0,}", "", doctitle)
-    sblist <- sblist[!names(sblist) %in% gsub(" {1,}", "_", doctitle)] # Removes existing section entry
+    if(is.null(sidebartitle)) {
+        sidebartitle <- gsub("(^.*?) {1,}.*", "\\1", mymaindoctitle)
+    } else {
+        sidebartitle <- sidebartitle
+    }
+    sidebartitle <- gsub("(^ {1,})|( {1,}$)", "", sidebartitle)
+    sblist <- sblist[!names(sblist) %in% sidebartitle] # Removes existing section entry
     sblist <- c(header, sblist)        
     ## Construct new sidebar entries
     mytitles <- gsub("# {1,}", "", titles)
     mytitles <- paste0(1:length(mytitles), ". ", mytitles)
     myurls <- paste0("/mydoc/", basename(filenames))
     myurls <- gsub(".md$", ".html", myurls)
-    sectionheader <- c(paste0("  - title: ", doctitle),
+    sectionheader <- c(paste0("  - title: ", sidebartitle),
                        "    audience: writers, designers",
                        "    platform: all",
                        "    product: all",
@@ -170,14 +198,14 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
     }
     names(subsectionlist) <- mytitles
     sectionlist <- list(c(list(header=sectionheader), subsectionlist))
-    names(sectionlist) <- doctitle
+    names(sectionlist) <- sidebartitle
     sblist <- c(sblist[1:(sidebarpos)], sectionlist, sblist[(sidebarpos+1):length(sblist)])
     sidebarfile <- paste0(sidebar_url_path, "/", "mydoc_sidebar.yml")
     sidebarfile <- gsub("/{1,}", "/", sidebarfile)
     writeLines(unlist(sblist), sidebarfile)
     cat(paste("Created file", sidebarfile), "\n")
     
-    ## (8) Add new files to URL configuration file (_data/mydoc/mydoc_urls.yml)
+    ## (9) Add new files to URL configuration file (_data/mydoc/mydoc_urls.yml)
     urls <- readLines("../../_data/mydoc/mydoc_urls.yml")
     splitFcturl <- function(url, pattern) {    
         splitpos <- grep(pattern, url)
@@ -228,4 +256,4 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebarpos, outfilebasename=NULL
 ## For debugging save output files in current (test) directory: outpath="./" 
 # md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL)
 ## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
-md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=2, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+md2Jekyll(mdfile="systemPipeR.knit.md", sidebartitle=NULL, sidebarpos=10, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
