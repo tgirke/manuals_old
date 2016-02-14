@@ -1461,7 +1461,7 @@ git checkout master</code></pre></div>
 
 <p>Run steps (2)-(6) with one command using <code>render()</code> function and <code>md2jekyll.R</code> script:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"rmarkdown::render('Rbasics.Rmd', clean=FALSE)"</span> | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"rmarkdown::render('Rbasics.Rmd', clean=FALSE)"</span> | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3</code></pre></div>
 
 <h2 id="useful-utilities">Useful utilities</h2>
 
