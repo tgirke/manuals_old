@@ -121,7 +121,7 @@ git checkout master
 
 (6) Move images into proper directory and adjust their path in the `.md` file
 
-Run steps (2)-(6) with one command using `render()` function and `md2jekyll.R` script:
+Run steps (2)-(6) with one command using the `render()` function and the `md2jekyll.R` script:
 
 {% highlight bash %}
 echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3
