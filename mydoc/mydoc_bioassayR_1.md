@@ -1,7 +1,7 @@
 ---
-title: bioassayR Introduction and Examples 
+title: bioassayR - Introduction and Examples 
 keywords: 
-last_updated: Sat Feb 13 17:20:46 2016
+last_updated: Sat Feb 13 17:27:42 2016
 ---
 Authors: Tyler Backman, Thomas Girke
 

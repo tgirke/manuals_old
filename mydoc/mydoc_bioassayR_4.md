@@ -1,7 +1,7 @@
 ---
 title: Building PubChem BioAssay Database
 keywords: 
-last_updated: Sat Feb 13 17:20:46 2016
+last_updated: Sat Feb 13 17:27:42 2016
 ---
 As mentioned in the above examples, a pre-built database containing large 
 quantities of public domain bioactivity data sourced from the PubChem BioAssay database, can be downloaded from <http://chemmine.ucr.edu/bioassayr>. 
