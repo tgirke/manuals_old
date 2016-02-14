@@ -12,6 +12,14 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
     md <- md[!grepl("\\[Back to Table of Contents\\]", md)]
     md <- gsub("</br>", "", md) # Removes orphan breaks
 
+    ## Convert underline-section tags to comment-section tags (some *.Rmd/*.md files use this format)
+    sectionunderlineindex <- grepl("^==={1,}", md)
+    subsectionunderlineindex <- grepl("^---{1,}", md)
+    md[which(sectionunderlineindex) - 1] <- paste0("# ", md[which(sectionunderlineindex) - 1])
+    md[which(subsectionunderlineindex) - 1] <- paste0("## ", md[which(subsectionunderlineindex) - 1])
+    md <- md[!sectionunderlineindex]
+    md <- md[!subsectionunderlineindex]
+
     ## (2) Parse specific entries in front matter
     mymaindoctitle <- md[1:20][grepl("^title:", tolower(md[1:20]))]
     mymaindoctitle <- gsub("(^.*? )|_|\\*|\"", "", mymaindoctitle)
@@ -22,8 +30,12 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
     mydate <- gsub("(^.*? )|_|\\*|\"", "", mydate)
     
     ## (3) Optionally, convert fenced backtick code tags to 'highlight' tags
+    ## Get code chunk ranges to protect them from being split if they contain #s at beginning of lines
+    chunkpos <- grep("^```", md)
+    ma <- matrix(chunkpos, length(chunkpos)/2, 2, byrow=TRUE)
+    codechunk_ranges <- unlist(sapply(seq_along(ma[,1]), function(x) ma[x,1]:ma[x,2]))
+    
     if(fenced2highlight==TRUE) {
-        chunkpos <- grep("^```", md)
         if((length(chunkpos) %% 2) != 0) stop("Odd number of chunk tags.")
         if(length(chunkpos) != 0) {
             ## Process code chunk positions
@@ -90,7 +102,9 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
     cat(paste("Saved image files to directory:", image_dir, "\n")) 
 
     ## (5) Split on main sections (^# )
+    ## Identify split positions
     splitpos <- grep("^# {1,}", md)
+    splitpos <- splitpos[!splitpos %in% codechunk_ranges]
     if(length(splitpos) != 0) {
         splitdist <- c(splitpos, length(md)+1) - c(1, splitpos) 
         mdlist <- split(md, factor(rep(c(1, splitpos), splitdist)))
@@ -256,4 +270,4 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
 ## For debugging save output files in current (test) directory: outpath="./" 
 # md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL)
 ## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
-md2Jekyll(mdfile="systemPipeR.knit.md", sidebartitle=NULL, sidebarpos=10, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+md2Jekyll(mdfile="bioassayR.knit.md", sidebartitle=NULL, sidebarpos=12, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
