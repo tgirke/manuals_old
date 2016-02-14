@@ -1,11 +1,17 @@
 ---
 title: ChemmineR - Cheminformatics Toolkit for R
 keywords: 
-last_updated: Sat Feb 13 19:21:10 2016
+last_updated: Sat Feb 13 19:33:23 2016
 ---
 Authors: Kevin Horan, Yiqun Cao, Tyler Backman, [Thomas Girke](mailto:thomas.girke@ucr.edu)
 
 Last update: 13 February, 2016 
+
+Alternative formats of this tutorial:
+[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/ChemmineR/ChemmineR.html), 
+[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/ChemmineR/ChemmineR.Rmd), 
+[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/ChemmineR/ChemmineR.R), 
+[`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rcheminfo/Cheminfo.pdf)
 
 
 
