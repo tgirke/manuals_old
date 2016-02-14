@@ -17,8 +17,7 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
     subsectionunderlineindex <- grepl("^---{1,}", md)
     md[which(sectionunderlineindex) - 1] <- paste0("# ", md[which(sectionunderlineindex) - 1])
     md[which(subsectionunderlineindex) - 1] <- paste0("## ", md[which(subsectionunderlineindex) - 1])
-    md <- md[!sectionunderlineindex]
-    md <- md[!subsectionunderlineindex]
+    md <- md[!(sectionunderlineindex | subsectionunderlineindex)]
 
     ## (2) Parse specific entries in front matter
     mymaindoctitle <- md[1:20][grepl("^title:", tolower(md[1:20]))]

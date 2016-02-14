@@ -1,13 +1,13 @@
 ---
 title: Examples
 keywords: 
-last_updated: Sat Feb 13 17:27:42 2016
+last_updated: Sat Feb 13 18:11:24 2016
 ---
 
 ## Loading User Supplied PubChem BioAssay Data
--------------------------------------
 
 This section demonstrates the process for creating a new bioactivity database from user supplied data. As an example, we will demonstrate the process of downloading an assay from the NCBI PubChem BioAssay bioactivity data repository, and loading this into a new database (Wang, et al., 2012).
+
 First, get two files from PubChem BioAssay for the assay of interest: an XML file containing details on how the experiment was performed, and a CSV (comma separated value) file which contains the actual activity scores. For the purposes of this example, we will use the data from assay 1000, which is a confirmatory assay (titration assay) of 57 small molecules against a mevalonate kinase protein. More details on this assay were provided in the  "Quick Tutorial," where the same data is used. These files can be downloaded from PubChem BioAssay at <http://pubchem.ncbi.nlm.nih.gov/> or loaded from the example data repository included in this package as follows:
 
 
@@ -130,9 +130,9 @@ disconnectBioassayDB(mydb)
 
 
 ## Prebuilt Database Example: Investigate Activity of a Known Drug
--------------------------------------
 
 A pre-built database containing large quantities of public domain bioactivity data sourced from the PubChem BioAssay database, can be downloaded from <http://chemmine.ucr.edu/bioassayr>. 
+While downloading the full database is recommended, it is possible to run this example using a small subset of the database, included within the *bioassayR* package for testing purposes.
 This example demonstrates the utility of *bioassayR* for identifying the bioactivity patterns of a small drug-like molecule. In this example, we look at the binding activity patterns for the drug acetylsalicylic acid (aka Aspirin) and compare these binding data to annotated targets in the [DrugBank](http://www.DrugBank.ca) drug database (Wishart, et al., 2008).
 
 The DrugBank database is a valuable resource containing numerous data on drug activity in humans, including known molecular targets. In this exercise, first take a look at the
@@ -276,9 +276,9 @@ cbind(proteinDetails, drugTargets)
 {% endhighlight %}
 
 ## Identify Target Selective Compounds
--------------------------------------
 
 In the previous example, acetylsalicylic acid was found to show binding activity against numerous proteins, including the COX-1 cyclooxygenase enzyme (NCBI Protein ID 166897622).
+COX-1 activity is theorized to be the key mechanism in this molecules function as a nonsteroidal anti-inflammatory drug (NSAID).
 In this example, we will look for other small molecules which selectively bind to COX-1, under the assumption that these may be worth further investigation as potential nonsteroidal anti-inflammatory drugs.
 This example shows how *bioassayR* can be used 
 identify small molecules which selectively bind to a target of interest, and assist in the
@@ -372,9 +372,9 @@ plot(structures[1:4], print=FALSE) # Plots structures to R graphics device
 ![](bioassayR_images/unnamed-chunk-38-1.png)
 
 ## Cluster Compounds by Activity Profile
----------------------------------------
 
 This example demonstrates an example of clustering small molecules by similar bioactivity profiles across several distinct bioassay experiments.
+In many cases it is too cpu and memory intensive to cluster all compounds in the database, so we first pull just a subset of these data from the database into an *bioassaySet* object, and then convert that into a compounds vs targets activity matrix for subsequent clustering according to similarities in activity profile.
 The function *getBioassaySetByCids* extracts the activity data for a given list of compounds. Alternatively, the entire data for a given list of assay ids can be extracted with the function *getAssays*.
 
 First, connect to the included sample database:
@@ -671,9 +671,9 @@ disconnectBioassayDB(sampleDB)
 {% endhighlight %}
 
 ## Analyze and Load Raw Screening Data
--------------------------------------
 
 This example demonstrates the basics of analyzing and loading data
+from a high throughput screening experiment with scores for 21,888
 distinct compounds.
 
 This example is based on the cellHTS2 library 
@@ -803,9 +803,9 @@ disconnectBioassayDB(mydb)
 
 
 ## Custom SQL Queries
--------------------------------------
 
 While many pre-built queries are provided (see other examples and man pages) 
+advanced users can also build their own SQL queries. 
 As bioassayR uses a SQLite database, you can consult <http://www.sqlite.org> for specifics on building SQL queries. 
 We also reccomend the book "Using SQLite" (Kreibich, 2010).
 

@@ -1,12 +1,12 @@
 ---
 title: Getting Started
 keywords: 
-last_updated: Sat Feb 13 17:27:42 2016
+last_updated: Sat Feb 13 18:11:24 2016
 ---
 
 ## Installation
-------------
 
+The R software for running bioassayR can be downloaded from CRAN (<http://cran.at.r-project.org/>). The *bioassayR* package can be installed from R using the *bioLite* install command. 
 
 
 {% highlight r %}
@@ -15,7 +15,7 @@ biocLite("bioassayR") # Installs the package
 {% endhighlight %}
 
 ## Loading the Package and Documentation
--------------------------------------
+
 
 {% highlight r %}
 library(bioassayR) # Loads the package
@@ -28,8 +28,8 @@ vignette("bioassayR") # Opens this manual from R
 {% endhighlight %}
 
 ## Quick Tutorial
--------------------------------------
 
+This example walks you through creating a new empty database, adding example small molecule bioactivity data, and performing queries on these data. If you are interested only in querying
 a pre-built PubChem BioAssay database, skip to the later section titled "Prebuilt Database Example: Investigate Activity of a Known Drug."
 
 This example includes real experimental data from an antibiotics discovery experiment. These data are a "confirmatory bioassay" where 57 small molecules were screened against the mevalonate kinase protein from the *Streptococcus pneumonia* (SP) bacteria. Mevalonate kinase inhibitors are one possible class of antibiotic drugs that may be effective against this infamous bacteria.

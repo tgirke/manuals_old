@@ -1,7 +1,7 @@
 ---
 title: References
 keywords: 
-last_updated: Sat Feb 13 17:27:42 2016
+last_updated: Sat Feb 13 18:11:24 2016
 ---
 
 [1] T. W. Backman, et al. "ChemMine tools: an online service for
@@ -45,10 +45,3 @@ acids research_ 40.Database issue (Jan. 2012), pp. D400-12.
 [11] D. S. Wishart, et al. "DrugBank: a knowledgebase for drugs,
 drug actions and drug targets.". In: _Nucleic acids research_
 36.Database issue (Jan. 2008), pp. D901-6.
-NA
-NA
-NA
-NA
-NA
-NA
-NA
