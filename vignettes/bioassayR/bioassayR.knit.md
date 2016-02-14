@@ -20,9 +20,10 @@ bibliography: bibtex.bib
 
 
 Alternative formats of this tutorial:
-[`.Rmd HTML`](http://bioconductor.org/packages/release/bioc/vignettes/bioassayR/inst/doc/bioassayR.html), 
-[`.Rmd Source`](http://bioconductor.org/packages/release/bioc/vignettes/bioassayR/inst/doc/bioassayR.Rmd), 
-[`.R Source`](http://bioconductor.org/packages/release/bioc/vignettes/bioassayR/inst/doc/bioassayR.Rmd), 
+[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.html), 
+[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassaryR/bioassaryR.Rmd), 
+[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassaryR/bioassayR.R), 
+[`PDF Slides`](http://biocluster.ucr.edu/~tbackman/chem_workshop/ht_screen.pdf)
 
 Introduction
 ============
