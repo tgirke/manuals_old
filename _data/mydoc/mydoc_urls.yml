@@ -251,441 +251,441 @@ mydoc_internal_notes:
 
 mydoc_Rbasics_1:
   title: "Overview"
-  url: "../../mydoc/mydoc_Rbasics_1.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_1.html'>Overview</a>"
+  url: "../mydoc/mydoc_Rbasics_1.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_1.html'>Overview</a>"
 
 mydoc_Rbasics_2:
   title: "R Package Repositories"
-  url: "../../mydoc/mydoc_Rbasics_2.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_2.html'>R Package Repositories</a>"
+  url: "../mydoc/mydoc_Rbasics_2.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_2.html'>R Package Repositories</a>"
 
 mydoc_Rbasics_3:
   title: "Installation of R and Add-on Packages"
-  url: "../../mydoc/mydoc_Rbasics_3.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_3.html'>Installation of R and Add-on Packages</a>"
+  url: "../mydoc/mydoc_Rbasics_3.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_3.html'>Installation of R and Add-on Packages</a>"
 
 mydoc_Rbasics_4:
   title: "Getting Around"
-  url: "../../mydoc/mydoc_Rbasics_4.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_4.html'>Getting Around</a>"
+  url: "../mydoc/mydoc_Rbasics_4.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_4.html'>Getting Around</a>"
 
 mydoc_Rbasics_5:
   title: "Basic Syntax"
-  url: "../../mydoc/mydoc_Rbasics_5.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_5.html'>Basic Syntax</a>"
+  url: "../mydoc/mydoc_Rbasics_5.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_5.html'>Basic Syntax</a>"
 
 mydoc_Rbasics_6:
   title: "Data Types "
-  url: "../../mydoc/mydoc_Rbasics_6.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_6.html'>Data Types </a>"
+  url: "../mydoc/mydoc_Rbasics_6.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_6.html'>Data Types </a>"
 
 mydoc_Rbasics_7:
   title: "Data objects"
-  url: "../../mydoc/mydoc_Rbasics_7.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_7.html'>Data objects</a>"
+  url: "../mydoc/mydoc_Rbasics_7.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_7.html'>Data objects</a>"
 
 mydoc_Rbasics_8:
   title: "Graphics example"
-  url: "../../mydoc/mydoc_Rbasics_8.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_8.html'>Graphics example</a>"
+  url: "../mydoc/mydoc_Rbasics_8.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_8.html'>Graphics example</a>"
 
 mydoc_Rbasics_9:
   title: "Session Info"
-  url: "../../mydoc/mydoc_Rbasics_9.html"
-  link: "<a href='../../mydoc/mydoc_Rbasics_9.html'>Session Info</a>"
+  url: "../mydoc/mydoc_Rbasics_9.html"
+  link: "<a href='../mydoc/mydoc_Rbasics_9.html'>Session Info</a>"
 
 mydoc_systemPipeR_01:
   title: "Introduction"
-  url: "../../mydoc/mydoc_systemPipeR_01.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_01.html'>Introduction</a>"
+  url: "../mydoc/mydoc_systemPipeR_01.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_01.html'>Introduction</a>"
 
 mydoc_systemPipeR_02:
   title: "Getting Started"
-  url: "../../mydoc/mydoc_systemPipeR_02.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_02.html'>Getting Started</a>"
+  url: "../mydoc/mydoc_systemPipeR_02.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_02.html'>Getting Started</a>"
 
 mydoc_systemPipeR_03:
   title: "Installation"
-  url: "../../mydoc/mydoc_systemPipeR_03.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_03.html'>Installation</a>"
+  url: "../mydoc/mydoc_systemPipeR_03.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_03.html'>Installation</a>"
 
 mydoc_systemPipeR_04:
   title: "Loading package and documentation"
-  url: "../../mydoc/mydoc_systemPipeR_04.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_04.html'>Loading package and documentation</a>"
+  url: "../mydoc/mydoc_systemPipeR_04.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_04.html'>Loading package and documentation</a>"
 
 mydoc_systemPipeR_05:
   title: "Load sample data and workflow templates"
-  url: "../../mydoc/mydoc_systemPipeR_05.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_05.html'>Load sample data and workflow templates</a>"
+  url: "../mydoc/mydoc_systemPipeR_05.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_05.html'>Load sample data and workflow templates</a>"
 
 mydoc_systemPipeR_06:
   title: "Structure of _`targets`_ file"
-  url: "../../mydoc/mydoc_systemPipeR_06.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_06.html'>Structure of _`targets`_ file</a>"
+  url: "../mydoc/mydoc_systemPipeR_06.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_06.html'>Structure of _`targets`_ file</a>"
 
 mydoc_systemPipeR_07:
   title: "Structure of _`param`_ file and _`SYSargs`_ container"
-  url: "../../mydoc/mydoc_systemPipeR_07.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_07.html'>Structure of _`param`_ file and _`SYSargs`_ container</a>"
+  url: "../mydoc/mydoc_systemPipeR_07.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_07.html'>Structure of _`param`_ file and _`SYSargs`_ container</a>"
 
 mydoc_systemPipeR_08:
   title: "Workflow overview"
-  url: "../../mydoc/mydoc_systemPipeR_08.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_08.html'>Workflow overview</a>"
+  url: "../mydoc/mydoc_systemPipeR_08.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_08.html'>Workflow overview</a>"
 
 mydoc_systemPipeR_09:
   title: "Define environment settings and samples"
-  url: "../../mydoc/mydoc_systemPipeR_09.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_09.html'>Define environment settings and samples</a>"
+  url: "../mydoc/mydoc_systemPipeR_09.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_09.html'>Define environment settings and samples</a>"
 
 mydoc_systemPipeR_10:
   title: "Read Preprocessing"
-  url: "../../mydoc/mydoc_systemPipeR_10.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_10.html'>Read Preprocessing</a>"
+  url: "../mydoc/mydoc_systemPipeR_10.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_10.html'>Read Preprocessing</a>"
 
 mydoc_systemPipeR_11:
   title: "FASTQ quality report"
-  url: "../../mydoc/mydoc_systemPipeR_11.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_11.html'>FASTQ quality report</a>"
+  url: "../mydoc/mydoc_systemPipeR_11.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_11.html'>FASTQ quality report</a>"
 
 mydoc_systemPipeR_12:
   title: "Alignment with _`Tophat2`_"
-  url: "../../mydoc/mydoc_systemPipeR_12.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_12.html'>Alignment with _`Tophat2`_</a>"
+  url: "../mydoc/mydoc_systemPipeR_12.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_12.html'>Alignment with _`Tophat2`_</a>"
 
 mydoc_systemPipeR_13:
   title: "Read and alignment count stats"
-  url: "../../mydoc/mydoc_systemPipeR_13.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_13.html'>Read and alignment count stats</a>"
+  url: "../mydoc/mydoc_systemPipeR_13.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_13.html'>Read and alignment count stats</a>"
 
 mydoc_systemPipeR_14:
   title: "Create symbolic links for viewing BAM files in IGV"
-  url: "../../mydoc/mydoc_systemPipeR_14.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_14.html'>Create symbolic links for viewing BAM files in IGV</a>"
+  url: "../mydoc/mydoc_systemPipeR_14.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_14.html'>Create symbolic links for viewing BAM files in IGV</a>"
 
 mydoc_systemPipeR_15:
   title: "Alternative NGS Aligners"
-  url: "../../mydoc/mydoc_systemPipeR_15.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_15.html'>Alternative NGS Aligners</a>"
+  url: "../mydoc/mydoc_systemPipeR_15.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_15.html'>Alternative NGS Aligners</a>"
 
 mydoc_systemPipeR_16:
   title: "Read counting for mRNA profiling experiments"
-  url: "../../mydoc/mydoc_systemPipeR_16.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_16.html'>Read counting for mRNA profiling experiments</a>"
+  url: "../mydoc/mydoc_systemPipeR_16.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_16.html'>Read counting for mRNA profiling experiments</a>"
 
 mydoc_systemPipeR_17:
   title: "Read counting for miRNA profiling experiments"
-  url: "../../mydoc/mydoc_systemPipeR_17.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_17.html'>Read counting for miRNA profiling experiments</a>"
+  url: "../mydoc/mydoc_systemPipeR_17.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_17.html'>Read counting for miRNA profiling experiments</a>"
 
 mydoc_systemPipeR_18:
   title: "Correlation analysis of samples"
-  url: "../../mydoc/mydoc_systemPipeR_18.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_18.html'>Correlation analysis of samples</a>"
+  url: "../mydoc/mydoc_systemPipeR_18.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_18.html'>Correlation analysis of samples</a>"
 
 mydoc_systemPipeR_19:
   title: "DEG analysis with _`edgeR`_"
-  url: "../../mydoc/mydoc_systemPipeR_19.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_19.html'>DEG analysis with _`edgeR`_</a>"
+  url: "../mydoc/mydoc_systemPipeR_19.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_19.html'>DEG analysis with _`edgeR`_</a>"
 
 mydoc_systemPipeR_20:
   title: "DEG analysis with _`DESeq2`_ "
-  url: "../../mydoc/mydoc_systemPipeR_20.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_20.html'>DEG analysis with _`DESeq2`_ </a>"
+  url: "../mydoc/mydoc_systemPipeR_20.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_20.html'>DEG analysis with _`DESeq2`_ </a>"
 
 mydoc_systemPipeR_21:
   title: "Venn Diagrams"
-  url: "../../mydoc/mydoc_systemPipeR_21.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_21.html'>Venn Diagrams</a>"
+  url: "../mydoc/mydoc_systemPipeR_21.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_21.html'>Venn Diagrams</a>"
 
 mydoc_systemPipeR_22:
   title: "GO term enrichment analysis of DEGs"
-  url: "../../mydoc/mydoc_systemPipeR_22.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_22.html'>GO term enrichment analysis of DEGs</a>"
+  url: "../mydoc/mydoc_systemPipeR_22.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_22.html'>GO term enrichment analysis of DEGs</a>"
 
 mydoc_systemPipeR_23:
   title: "Clustering and heat maps"
-  url: "../../mydoc/mydoc_systemPipeR_23.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_23.html'>Clustering and heat maps</a>"
+  url: "../mydoc/mydoc_systemPipeR_23.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_23.html'>Clustering and heat maps</a>"
 
 mydoc_systemPipeR_24:
   title: "Workflow templates"
-  url: "../../mydoc/mydoc_systemPipeR_24.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_24.html'>Workflow templates</a>"
+  url: "../mydoc/mydoc_systemPipeR_24.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_24.html'>Workflow templates</a>"
 
 mydoc_systemPipeR_25:
   title: "RNA-Seq sample"
-  url: "../../mydoc/mydoc_systemPipeR_25.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_25.html'>RNA-Seq sample</a>"
+  url: "../mydoc/mydoc_systemPipeR_25.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_25.html'>RNA-Seq sample</a>"
 
 mydoc_systemPipeR_26:
   title: "ChIP-Seq sample"
-  url: "../../mydoc/mydoc_systemPipeR_26.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_26.html'>ChIP-Seq sample</a>"
+  url: "../mydoc/mydoc_systemPipeR_26.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_26.html'>ChIP-Seq sample</a>"
 
 mydoc_systemPipeR_27:
   title: "VAR-Seq sample "
-  url: "../../mydoc/mydoc_systemPipeR_27.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_27.html'>VAR-Seq sample </a>"
+  url: "../mydoc/mydoc_systemPipeR_27.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_27.html'>VAR-Seq sample </a>"
 
 mydoc_systemPipeR_28:
   title: "Ribo-Seq sample"
-  url: "../../mydoc/mydoc_systemPipeR_28.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_28.html'>Ribo-Seq sample</a>"
+  url: "../mydoc/mydoc_systemPipeR_28.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_28.html'>Ribo-Seq sample</a>"
 
 mydoc_systemPipeR_29:
   title: "Version information"
-  url: "../../mydoc/mydoc_systemPipeR_29.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_29.html'>Version information</a>"
+  url: "../mydoc/mydoc_systemPipeR_29.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_29.html'>Version information</a>"
 
 mydoc_systemPipeR_30:
   title: "References"
-  url: "../../mydoc/mydoc_systemPipeR_30.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_30.html'>References</a>"
+  url: "../mydoc/mydoc_systemPipeR_30.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_30.html'>References</a>"
 
 mydoc_systemPipeR_1:
   title: "Introduction"
-  url: "../../mydoc/mydoc_systemPipeR_1.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_1.html'>Introduction</a>"
+  url: "../mydoc/mydoc_systemPipeR_1.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_1.html'>Introduction</a>"
 
 mydoc_systemPipeR_2:
   title: "Getting Started"
-  url: "../../mydoc/mydoc_systemPipeR_2.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_2.html'>Getting Started</a>"
+  url: "../mydoc/mydoc_systemPipeR_2.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_2.html'>Getting Started</a>"
 
 mydoc_systemPipeR_3:
   title: "Workflow overview"
-  url: "../../mydoc/mydoc_systemPipeR_3.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_3.html'>Workflow overview</a>"
+  url: "../mydoc/mydoc_systemPipeR_3.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_3.html'>Workflow overview</a>"
 
 mydoc_systemPipeR_4:
   title: "Workflow templates"
-  url: "../../mydoc/mydoc_systemPipeR_4.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_4.html'>Workflow templates</a>"
+  url: "../mydoc/mydoc_systemPipeR_4.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_4.html'>Workflow templates</a>"
 
 mydoc_systemPipeR_5:
   title: "Version information"
-  url: "../../mydoc/mydoc_systemPipeR_5.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_5.html'>Version information</a>"
+  url: "../mydoc/mydoc_systemPipeR_5.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_5.html'>Version information</a>"
 
 mydoc_systemPipeR_6:
   title: "References"
-  url: "../../mydoc/mydoc_systemPipeR_6.html"
-  link: "<a href='../../mydoc/mydoc_systemPipeR_6.html'>References</a>"
+  url: "../mydoc/mydoc_systemPipeR_6.html"
+  link: "<a href='../mydoc/mydoc_systemPipeR_6.html'>References</a>"
 
 mydoc_bioassayR_01:
   title: "Introduction"
-  url: "../../mydoc/mydoc_bioassayR_01.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_01.html'>Introduction</a>"
+  url: "../mydoc/mydoc_bioassayR_01.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_01.html'>Introduction</a>"
 
 mydoc_bioassayR_02:
   title: "Getting Started"
-  url: "../../mydoc/mydoc_bioassayR_02.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_02.html'>Getting Started</a>"
+  url: "../mydoc/mydoc_bioassayR_02.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_02.html'>Getting Started</a>"
 
 mydoc_bioassayR_03:
   title: "Examples"
-  url: "../../mydoc/mydoc_bioassayR_03.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_03.html'>Examples</a>"
+  url: "../mydoc/mydoc_bioassayR_03.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_03.html'>Examples</a>"
 
 mydoc_bioassayR_04:
   title: "run translateTargetId on each target identifier"
-  url: "../../mydoc/mydoc_bioassayR_04.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_04.html'>run translateTargetId on each target identifier</a>"
+  url: "../mydoc/mydoc_bioassayR_04.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_04.html'>run translateTargetId on each target identifier</a>"
 
 mydoc_bioassayR_05:
   title: "if any targets had more than one UniProt ID, keep only the first one"
-  url: "../../mydoc/mydoc_bioassayR_05.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_05.html'>if any targets had more than one UniProt ID, keep only the first one</a>"
+  url: "../mydoc/mydoc_bioassayR_05.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_05.html'>if any targets had more than one UniProt ID, keep only the first one</a>"
 
 mydoc_bioassayR_06:
   title: "get kClust protein cluster number for a single target"
-  url: "../../mydoc/mydoc_bioassayR_06.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_06.html'>get kClust protein cluster number for a single target</a>"
+  url: "../mydoc/mydoc_bioassayR_06.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_06.html'>get kClust protein cluster number for a single target</a>"
 
 mydoc_bioassayR_07:
   title: "get kClust protein cluster numbers for all targets in myAssayTargets"
-  url: "../../mydoc/mydoc_bioassayR_07.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_07.html'>get kClust protein cluster numbers for all targets in myAssayTargets</a>"
+  url: "../mydoc/mydoc_bioassayR_07.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_07.html'>get kClust protein cluster numbers for all targets in myAssayTargets</a>"
 
 mydoc_bioassayR_08:
   title: "get number of rows and columns for unmerged matrix"
-  url: "../../mydoc/mydoc_bioassayR_08.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_08.html'>get number of rows and columns for unmerged matrix</a>"
+  url: "../mydoc/mydoc_bioassayR_08.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_08.html'>get number of rows and columns for unmerged matrix</a>"
 
 mydoc_bioassayR_09:
   title: "get number of rows and columns for merged matrix"
-  url: "../../mydoc/mydoc_bioassayR_09.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_09.html'>get number of rows and columns for merged matrix</a>"
+  url: "../mydoc/mydoc_bioassayR_09.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_09.html'>get number of rows and columns for merged matrix</a>"
 
 mydoc_bioassayR_10:
   title: "Building PubChem BioAssay Database"
-  url: "../../mydoc/mydoc_bioassayR_10.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_10.html'>Building PubChem BioAssay Database</a>"
+  url: "../mydoc/mydoc_bioassayR_10.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_10.html'>Building PubChem BioAssay Database</a>"
 
 mydoc_bioassayR_11:
   title: "Version Information"
-  url: "../../mydoc/mydoc_bioassayR_11.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_11.html'>Version Information</a>"
+  url: "../mydoc/mydoc_bioassayR_11.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_11.html'>Version Information</a>"
 
 mydoc_bioassayR_12:
   title: "Funding"
-  url: "../../mydoc/mydoc_bioassayR_12.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_12.html'>Funding</a>"
+  url: "../mydoc/mydoc_bioassayR_12.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_12.html'>Funding</a>"
 
 mydoc_bioassayR_13:
   title: "References"
-  url: "../../mydoc/mydoc_bioassayR_13.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_13.html'>References</a>"
+  url: "../mydoc/mydoc_bioassayR_13.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_13.html'>References</a>"
 
 mydoc_ChemmineR_01:
   title: "Introduction"
-  url: "../../mydoc/mydoc_ChemmineR_01.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_01.html'>Introduction</a>"
+  url: "../mydoc/mydoc_ChemmineR_01.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_01.html'>Introduction</a>"
 
 mydoc_ChemmineR_02:
   title: "Getting Started"
-  url: "../../mydoc/mydoc_ChemmineR_02.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_02.html'>Getting Started</a>"
+  url: "../mydoc/mydoc_ChemmineR_02.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_02.html'>Getting Started</a>"
 
 mydoc_ChemmineR_03:
   title: "OpenBabel Functions"
-  url: "../../mydoc/mydoc_ChemmineR_03.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_03.html'>OpenBabel Functions</a>"
+  url: "../mydoc/mydoc_ChemmineR_03.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_03.html'>OpenBabel Functions</a>"
 
 mydoc_ChemmineR_04:
   title: "Overview of Classes and Functions"
-  url: "../../mydoc/mydoc_ChemmineR_04.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_04.html'>Overview of Classes and Functions</a>"
+  url: "../mydoc/mydoc_ChemmineR_04.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_04.html'>Overview of Classes and Functions</a>"
 
 mydoc_ChemmineR_05:
   title: "Import of Compounds"
-  url: "../../mydoc/mydoc_ChemmineR_05.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_05.html'>Import of Compounds</a>"
+  url: "../mydoc/mydoc_ChemmineR_05.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_05.html'>Import of Compounds</a>"
 
 mydoc_ChemmineR_06:
   title: "Export of Compounds"
-  url: "../../mydoc/mydoc_ChemmineR_06.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_06.html'>Export of Compounds</a>"
+  url: "../mydoc/mydoc_ChemmineR_06.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_06.html'>Export of Compounds</a>"
 
 mydoc_ChemmineR_07:
   title: "Format Interconversions"
-  url: "../../mydoc/mydoc_ChemmineR_07.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_07.html'>Format Interconversions</a>"
+  url: "../mydoc/mydoc_ChemmineR_07.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_07.html'>Format Interconversions</a>"
 
 mydoc_ChemmineR_08:
   title: "Splitting SD Files"
-  url: "../../mydoc/mydoc_ChemmineR_08.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_08.html'>Splitting SD Files</a>"
+  url: "../mydoc/mydoc_ChemmineR_08.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_08.html'>Splitting SD Files</a>"
 
 mydoc_ChemmineR_09:
   title: "Streaming Through Large SD Files"
-  url: "../../mydoc/mydoc_ChemmineR_09.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_09.html'>Streaming Through Large SD Files</a>"
+  url: "../mydoc/mydoc_ChemmineR_09.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_09.html'>Streaming Through Large SD Files</a>"
 
 mydoc_ChemmineR_10:
   title: "Storing Compounds in an SQL Database"
-  url: "../../mydoc/mydoc_ChemmineR_10.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_10.html'>Storing Compounds in an SQL Database</a>"
+  url: "../mydoc/mydoc_ChemmineR_10.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_10.html'>Storing Compounds in an SQL Database</a>"
 
 mydoc_ChemmineR_11:
   title: "Working with SDF/SDFset Classes"
-  url: "../../mydoc/mydoc_ChemmineR_11.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_11.html'>Working with SDF/SDFset Classes</a>"
+  url: "../mydoc/mydoc_ChemmineR_11.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_11.html'>Working with SDF/SDFset Classes</a>"
 
 mydoc_ChemmineR_12:
   title: "Molecular Property Functions (Physicochemical Descriptors)"
-  url: "../../mydoc/mydoc_ChemmineR_12.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_12.html'>Molecular Property Functions (Physicochemical Descriptors)</a>"
+  url: "../mydoc/mydoc_ChemmineR_12.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_12.html'>Molecular Property Functions (Physicochemical Descriptors)</a>"
 
 mydoc_ChemmineR_13:
   title: "Bond Matrices"
-  url: "../../mydoc/mydoc_ChemmineR_13.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_13.html'>Bond Matrices</a>"
+  url: "../mydoc/mydoc_ChemmineR_13.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_13.html'>Bond Matrices</a>"
 
 mydoc_ChemmineR_14:
   title: "Charges and Missing Hydrogens"
-  url: "../../mydoc/mydoc_ChemmineR_14.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_14.html'>Charges and Missing Hydrogens</a>"
+  url: "../mydoc/mydoc_ChemmineR_14.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_14.html'>Charges and Missing Hydrogens</a>"
 
 mydoc_ChemmineR_15:
   title: "Ring Perception and Aromaticity Assignment"
-  url: "../../mydoc/mydoc_ChemmineR_15.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_15.html'>Ring Perception and Aromaticity Assignment</a>"
+  url: "../mydoc/mydoc_ChemmineR_15.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_15.html'>Ring Perception and Aromaticity Assignment</a>"
 
 mydoc_ChemmineR_16:
   title: "Rendering Chemical Structure Images"
-  url: "../../mydoc/mydoc_ChemmineR_16.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_16.html'>Rendering Chemical Structure Images</a>"
+  url: "../mydoc/mydoc_ChemmineR_16.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_16.html'>Rendering Chemical Structure Images</a>"
 
 mydoc_ChemmineR_17:
   title: "Similarity Comparisons and Searching"
-  url: "../../mydoc/mydoc_ChemmineR_17.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_17.html'>Similarity Comparisons and Searching</a>"
+  url: "../mydoc/mydoc_ChemmineR_17.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_17.html'>Similarity Comparisons and Searching</a>"
 
 mydoc_ChemmineR_18:
   title: "Clustering"
-  url: "../../mydoc/mydoc_ChemmineR_18.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_18.html'>Clustering</a>"
+  url: "../mydoc/mydoc_ChemmineR_18.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_18.html'>Clustering</a>"
 
 mydoc_ChemmineR_19:
   title: "Searching PubChem"
-  url: "../../mydoc/mydoc_ChemmineR_19.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_19.html'>Searching PubChem</a>"
+  url: "../mydoc/mydoc_ChemmineR_19.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_19.html'>Searching PubChem</a>"
 
 mydoc_ChemmineR_20:
   title: "ChemMine Tools R Interface"
-  url: "../../mydoc/mydoc_ChemmineR_20.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_20.html'>ChemMine Tools R Interface</a>"
+  url: "../mydoc/mydoc_ChemmineR_20.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_20.html'>ChemMine Tools R Interface</a>"
 
 mydoc_ChemmineR_21:
   title: "Version Information"
-  url: "../../mydoc/mydoc_ChemmineR_21.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_21.html'>Version Information</a>"
+  url: "../mydoc/mydoc_ChemmineR_21.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_21.html'>Version Information</a>"
 
 mydoc_ChemmineR_22:
   title: "Funding"
-  url: "../../mydoc/mydoc_ChemmineR_22.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_22.html'>Funding</a>"
+  url: "../mydoc/mydoc_ChemmineR_22.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_22.html'>Funding</a>"
 
 mydoc_ChemmineR_23:
   title: "References"
-  url: "../../mydoc/mydoc_ChemmineR_23.html"
-  link: "<a href='../../mydoc/mydoc_ChemmineR_23.html'>References</a>"
+  url: "../mydoc/mydoc_ChemmineR_23.html"
+  link: "<a href='../mydoc/mydoc_ChemmineR_23.html'>References</a>"
 
 mydoc_bioassayR_1:
   title: "Introduction"
-  url: "../../mydoc/mydoc_bioassayR_1.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_1.html'>Introduction</a>"
+  url: "../mydoc/mydoc_bioassayR_1.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_1.html'>Introduction</a>"
 
 mydoc_bioassayR_2:
   title: "Getting Started"
-  url: "../../mydoc/mydoc_bioassayR_2.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_2.html'>Getting Started</a>"
+  url: "../mydoc/mydoc_bioassayR_2.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_2.html'>Getting Started</a>"
 
 mydoc_bioassayR_3:
   title: "Examples"
-  url: "../../mydoc/mydoc_bioassayR_3.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_3.html'>Examples</a>"
+  url: "../mydoc/mydoc_bioassayR_3.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_3.html'>Examples</a>"
 
 mydoc_bioassayR_4:
   title: "Building PubChem BioAssay Database"
-  url: "../../mydoc/mydoc_bioassayR_4.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_4.html'>Building PubChem BioAssay Database</a>"
+  url: "../mydoc/mydoc_bioassayR_4.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_4.html'>Building PubChem BioAssay Database</a>"
 
 mydoc_bioassayR_5:
   title: "Version Information"
-  url: "../../mydoc/mydoc_bioassayR_5.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_5.html'>Version Information</a>"
+  url: "../mydoc/mydoc_bioassayR_5.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_5.html'>Version Information</a>"
 
 mydoc_bioassayR_6:
   title: "Funding"
-  url: "../../mydoc/mydoc_bioassayR_6.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_6.html'>Funding</a>"
+  url: "../mydoc/mydoc_bioassayR_6.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_6.html'>Funding</a>"
 
 mydoc_bioassayR_7:
   title: "References"
-  url: "../../mydoc/mydoc_bioassayR_7.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_7.html'>References</a>"
+  url: "../mydoc/mydoc_bioassayR_7.html"
+  link: "<a href='../mydoc/mydoc_bioassayR_7.html'>References</a>"
 
