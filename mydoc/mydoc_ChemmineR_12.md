@@ -1,7 +1,7 @@
 ---
 title: Molecular Property Functions (Physicochemical Descriptors)
 keywords: 
-last_updated: Sat Feb 13 19:33:23 2016
+last_updated: Sat Feb 13 19:36:03 2016
 ---
 
 Several methods and functions are available to compute basic compound
