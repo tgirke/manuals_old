@@ -4,7 +4,6 @@
 ## Author: Thomas Girke
 ## Date: Feb 10, 2016
 
-myfile <- commandArgs()
 md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL) {
     ## (1) Import md file 
     md <- readLines(mdfile)
@@ -239,8 +238,8 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
     urllist <- splitFcturl(url=urls, pattern="^\\w{1,}.*:")
     ## Construct new url entries
     mytitles <- gsub("# {1,}", "", titles)
-    #myurls <- paste0("../mydoc/", gsub("^.*?/", "", filenames))
-    myurls <- gsub(".md$", ".html", filenames)
+    myurls <- paste0("../mydoc/", basename(filenames))
+    myurls <- gsub(".md$", ".html", myurls)
     headerlines <- gsub("(^.*/)|(.html$)", "", myurls)
     urlentry <- c("",
                   "  title: ",

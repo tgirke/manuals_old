@@ -4,7 +4,6 @@
 ## Author: Thomas Girke
 ## Date: Feb 10, 2016
 
-myfile <- commandArgs()
 md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL) {
     ## (1) Import md file 
     md <- readLines(mdfile)
@@ -239,8 +238,8 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
     urllist <- splitFcturl(url=urls, pattern="^\\w{1,}.*:")
     ## Construct new url entries
     mytitles <- gsub("# {1,}", "", titles)
-    #myurls <- paste0("../mydoc/", gsub("^.*?/", "", filenames))
-    myurls <- gsub(".md$", ".html", filenames)
+    myurls <- paste0("../mydoc/", basename(filenames))
+    myurls <- gsub(".md$", ".html", myurls)
     headerlines <- gsub("(^.*/)|(.html$)", "", myurls)
     urlentry <- c("",
                   "  title: ",
@@ -271,6 +270,6 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
 
 ## Run from command-line with arguments
 myargs <- commandArgs()
-md2Jekyll(mdfile=myargs[6], sidebartitle=NULL, sidebarpos=as.numeric(myargs[8]), outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+md2Jekyll(mdfile=myargs[6], sidebartitle=NULL, sidebarpos=as.numeric(myargs[7]), outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
 # $ Rscript ../md2jekyll.R bioassayR.knit.md NULL 8
 
