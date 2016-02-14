@@ -269,4 +269,4 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
 ## For debugging save output files in current (test) directory: outpath="./" 
 # md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL)
 ## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
-md2Jekyll(mdfile="ChemmineR.knit.md", sidebartitle=NULL, sidebarpos=12, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+md2Jekyll(mdfile="bioassayR.knit.md", sidebartitle=NULL, sidebarpos=12, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)

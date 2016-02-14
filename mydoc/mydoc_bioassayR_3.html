@@ -993,6 +993,76 @@ window.location.href = uri;
                 
                 
             
+            <li><a href="#">bioassayR</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_bioassayR_1.html">1. Introduction</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_bioassayR_2.html">2. Getting Started</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="../mydoc/mydoc_bioassayR_3.html">3. Examples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_bioassayR_4.html">4. Building PubChem BioAssay Database</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_bioassayR_5.html">5. Version Information</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_bioassayR_6.html">6. Funding</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_bioassayR_7.html">7. References</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+            
             <li><a href="#">ChemmineR</a>
                 <ul>
                     
@@ -1207,76 +1277,6 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">bioassayR</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="../mydoc/mydoc_bioassayR_1.html">1. Introduction</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li><a href="../mydoc/mydoc_bioassayR_2.html">2. Getting Started</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li class="active"><a href="../mydoc/mydoc_bioassayR_3.html">3. Examples</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li><a href="../mydoc/mydoc_bioassayR_4.html">4. Building PubChem BioAssay Database</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li><a href="../mydoc/mydoc_bioassayR_5.html">5. Version Information</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li><a href="../mydoc/mydoc_bioassayR_6.html">6. Funding</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    <li><a href="../mydoc/mydoc_bioassayR_7.html">7. References</a></li>
-                    
-
-                    
-
-                    
-                    
-                </ul>
-                
-                
-            
             <li><a href="#">Internal notes</a>
                 <ul>
                     
@@ -1347,10 +1347,10 @@ $('#toc').on('click', 'a', function() {
     
 -->
   <h2 id="loading-user-supplied-pubchem-bioassay-data">Loading User Supplied PubChem BioAssay Data</h2>
-<hr />
 
-<p>This section demonstrates the process for creating a new bioactivity database from user supplied data. As an example, we will demonstrate the process of downloading an assay from the NCBI PubChem BioAssay bioactivity data repository, and loading this into a new database (Wang, et al., 2012).
-First, get two files from PubChem BioAssay for the assay of interest: an XML file containing details on how the experiment was performed, and a CSV (comma separated value) file which contains the actual activity scores. For the purposes of this example, we will use the data from assay 1000, which is a confirmatory assay (titration assay) of 57 small molecules against a mevalonate kinase protein. More details on this assay were provided in the  “Quick Tutorial,” where the same data is used. These files can be downloaded from PubChem BioAssay at <a href="http://pubchem.ncbi.nlm.nih.gov/">http://pubchem.ncbi.nlm.nih.gov/</a> or loaded from the example data repository included in this package as follows:</p>
+<p>This section demonstrates the process for creating a new bioactivity database from user supplied data. As an example, we will demonstrate the process of downloading an assay from the NCBI PubChem BioAssay bioactivity data repository, and loading this into a new database (Wang, et al., 2012).</p>
+
+<p>First, get two files from PubChem BioAssay for the assay of interest: an XML file containing details on how the experiment was performed, and a CSV (comma separated value) file which contains the actual activity scores. For the purposes of this example, we will use the data from assay 1000, which is a confirmatory assay (titration assay) of 57 small molecules against a mevalonate kinase protein. More details on this assay were provided in the  “Quick Tutorial,” where the same data is used. These files can be downloaded from PubChem BioAssay at <a href="http://pubchem.ncbi.nlm.nih.gov/">http://pubchem.ncbi.nlm.nih.gov/</a> or loaded from the example data repository included in this package as follows:</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">extdata_dir</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span>
@@ -1440,9 +1440,9 @@ For data from sources other than PubChem BioAssay, you may need to write your ow
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
 
 <h2 id="prebuilt-database-example-investigate-activity-of-a-known-drug">Prebuilt Database Example: Investigate Activity of a Known Drug</h2>
-<hr />
 
 <p>A pre-built database containing large quantities of public domain bioactivity data sourced from the PubChem BioAssay database, can be downloaded from <a href="http://chemmine.ucr.edu/bioassayr">http://chemmine.ucr.edu/bioassayr</a>. 
+While downloading the full database is recommended, it is possible to run this example using a small subset of the database, included within the <em>bioassayR</em> package for testing purposes.
 This example demonstrates the utility of <em>bioassayR</em> for identifying the bioactivity patterns of a small drug-like molecule. In this example, we look at the binding activity patterns for the drug acetylsalicylic acid (aka Aspirin) and compare these binding data to annotated targets in the <a href="http://www.DrugBank.ca">DrugBank</a> drug database (Wishart, et al., 2008).</p>
 
 <p>The DrugBank database is a valuable resource containing numerous data on drug activity in humans, including known molecular targets. In this exercise, first take a look at the
@@ -1560,9 +1560,9 @@ the biomaRt results with the <em>match</em> function to get them in the correct 
 ## 3            P10635             CYP2D6            1.00             1</code></pre></div>
 
 <h2 id="identify-target-selective-compounds">Identify Target Selective Compounds</h2>
-<hr />
 
 <p>In the previous example, acetylsalicylic acid was found to show binding activity against numerous proteins, including the COX-1 cyclooxygenase enzyme (NCBI Protein ID 166897622).
+COX-1 activity is theorized to be the key mechanism in this molecules function as a nonsteroidal anti-inflammatory drug (NSAID).
 In this example, we will look for other small molecules which selectively bind to COX-1, under the assumption that these may be worth further investigation as potential nonsteroidal anti-inflammatory drugs.
 This example shows how <em>bioassayR</em> can be used 
 identify small molecules which selectively bind to a target of interest, and assist in the
@@ -1635,9 +1635,9 @@ This example requires an active internet connection, as the compound structures 
 <p><img src="bioassayR_images/unnamed-chunk-38-1.png" alt="" /></p>
 
 <h2 id="cluster-compounds-by-activity-profile">Cluster Compounds by Activity Profile</h2>
-<hr />
 
 <p>This example demonstrates an example of clustering small molecules by similar bioactivity profiles across several distinct bioassay experiments.
+In many cases it is too cpu and memory intensive to cluster all compounds in the database, so we first pull just a subset of these data from the database into an <em>bioassaySet</em> object, and then convert that into a compounds vs targets activity matrix for subsequent clustering according to similarities in activity profile.
 The function <em>getBioassaySetByCids</em> extracts the activity data for a given list of compounds. Alternatively, the entire data for a given list of assay ids can be extracted with the function <em>getAssays</em>.</p>
 
 <p>First, connect to the included sample database:</p>
@@ -1855,9 +1855,9 @@ the first compound to all compounds.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">sampleDB</span><span class="p">)</span></code></pre></div>
 
 <h2 id="analyze-and-load-raw-screening-data">Analyze and Load Raw Screening Data</h2>
-<hr />
 
 <p>This example demonstrates the basics of analyzing and loading data
+from a high throughput screening experiment with scores for 21,888
 distinct compounds.</p>
 
 <p>This example is based on the cellHTS2 library 
@@ -1954,9 +1954,9 @@ binding data against a protein target as the data format is the same.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
 
 <h2 id="custom-sql-queries">Custom SQL Queries</h2>
-<hr />
 
 <p>While many pre-built queries are provided (see other examples and man pages) 
+advanced users can also build their own SQL queries. 
 As bioassayR uses a SQLite database, you can consult <a href="http://www.sqlite.org">http://www.sqlite.org</a> for specifics on building SQL queries. 
 We also reccomend the book “Using SQLite” (Kreibich, 2010).</p>
 
@@ -2067,7 +2067,7 @@ protein targets table:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 Thomas Girke. All rights reserved. <br />
-<p>Page last updated:</span> Sat Feb 13 17:27:42 2016<br/> Site last generated: Feb 13, 2016 <br />
+<p>Page last updated:</span> Sat Feb 13 18:11:24 2016<br/> Site last generated: Feb 13, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>
