@@ -1,5 +1,5 @@
 ---
-title: "bioassayR Introduction and Examples" 
+title: "bioassayR - Introduction and Examples" 
 author: "Authors: Tyler Backman, Thomas Girke"
 date: "Last update: 13 February, 2016" 
 output:

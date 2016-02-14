@@ -1,5 +1,5 @@
 ---
-title: "bioassayR Introduction and Examples" 
+title: "bioassayR - Introduction and Examples" 
 author: "Authors: Tyler Backman, Thomas Girke"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
