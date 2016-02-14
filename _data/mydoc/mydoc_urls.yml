@@ -574,3 +574,118 @@ mydoc_bioassayR_7:
   url: "../../mydoc/mydoc_bioassayR_7.html"
   link: "<a href='../../mydoc/mydoc_bioassayR_7.html'>References</a>"
 
+mydoc_ChemmineR_01:
+  title: "Introduction"
+  url: "../../mydoc/mydoc_ChemmineR_01.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_01.html'>Introduction</a>"
+
+mydoc_ChemmineR_02:
+  title: "Getting Started"
+  url: "../../mydoc/mydoc_ChemmineR_02.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_02.html'>Getting Started</a>"
+
+mydoc_ChemmineR_03:
+  title: "OpenBabel Functions"
+  url: "../../mydoc/mydoc_ChemmineR_03.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_03.html'>OpenBabel Functions</a>"
+
+mydoc_ChemmineR_04:
+  title: "Overview of Classes and Functions"
+  url: "../../mydoc/mydoc_ChemmineR_04.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_04.html'>Overview of Classes and Functions</a>"
+
+mydoc_ChemmineR_05:
+  title: "Import of Compounds"
+  url: "../../mydoc/mydoc_ChemmineR_05.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_05.html'>Import of Compounds</a>"
+
+mydoc_ChemmineR_06:
+  title: "Export of Compounds"
+  url: "../../mydoc/mydoc_ChemmineR_06.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_06.html'>Export of Compounds</a>"
+
+mydoc_ChemmineR_07:
+  title: "Format Interconversions"
+  url: "../../mydoc/mydoc_ChemmineR_07.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_07.html'>Format Interconversions</a>"
+
+mydoc_ChemmineR_08:
+  title: "Splitting SD Files"
+  url: "../../mydoc/mydoc_ChemmineR_08.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_08.html'>Splitting SD Files</a>"
+
+mydoc_ChemmineR_09:
+  title: "Streaming Through Large SD Files"
+  url: "../../mydoc/mydoc_ChemmineR_09.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_09.html'>Streaming Through Large SD Files</a>"
+
+mydoc_ChemmineR_10:
+  title: "Storing Compounds in an SQL Database"
+  url: "../../mydoc/mydoc_ChemmineR_10.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_10.html'>Storing Compounds in an SQL Database</a>"
+
+mydoc_ChemmineR_11:
+  title: "Working with SDF/SDFset Classes"
+  url: "../../mydoc/mydoc_ChemmineR_11.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_11.html'>Working with SDF/SDFset Classes</a>"
+
+mydoc_ChemmineR_12:
+  title: "Molecular Property Functions (Physicochemical Descriptors)"
+  url: "../../mydoc/mydoc_ChemmineR_12.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_12.html'>Molecular Property Functions (Physicochemical Descriptors)</a>"
+
+mydoc_ChemmineR_13:
+  title: "Bond Matrices"
+  url: "../../mydoc/mydoc_ChemmineR_13.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_13.html'>Bond Matrices</a>"
+
+mydoc_ChemmineR_14:
+  title: "Charges and Missing Hydrogens"
+  url: "../../mydoc/mydoc_ChemmineR_14.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_14.html'>Charges and Missing Hydrogens</a>"
+
+mydoc_ChemmineR_15:
+  title: "Ring Perception and Aromaticity Assignment"
+  url: "../../mydoc/mydoc_ChemmineR_15.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_15.html'>Ring Perception and Aromaticity Assignment</a>"
+
+mydoc_ChemmineR_16:
+  title: "Rendering Chemical Structure Images"
+  url: "../../mydoc/mydoc_ChemmineR_16.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_16.html'>Rendering Chemical Structure Images</a>"
+
+mydoc_ChemmineR_17:
+  title: "Similarity Comparisons and Searching"
+  url: "../../mydoc/mydoc_ChemmineR_17.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_17.html'>Similarity Comparisons and Searching</a>"
+
+mydoc_ChemmineR_18:
+  title: "Clustering"
+  url: "../../mydoc/mydoc_ChemmineR_18.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_18.html'>Clustering</a>"
+
+mydoc_ChemmineR_19:
+  title: "Searching PubChem"
+  url: "../../mydoc/mydoc_ChemmineR_19.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_19.html'>Searching PubChem</a>"
+
+mydoc_ChemmineR_20:
+  title: "ChemMine Tools R Interface"
+  url: "../../mydoc/mydoc_ChemmineR_20.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_20.html'>ChemMine Tools R Interface</a>"
+
+mydoc_ChemmineR_21:
+  title: "Version Information"
+  url: "../../mydoc/mydoc_ChemmineR_21.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_21.html'>Version Information</a>"
+
+mydoc_ChemmineR_22:
+  title: "Funding"
+  url: "../../mydoc/mydoc_ChemmineR_22.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_22.html'>Funding</a>"
+
+mydoc_ChemmineR_23:
+  title: "References"
+  url: "../../mydoc/mydoc_ChemmineR_23.html"
+  link: "<a href='../../mydoc/mydoc_ChemmineR_23.html'>References</a>"
+
