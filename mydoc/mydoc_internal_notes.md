@@ -124,7 +124,7 @@ git checkout master
 Run steps (2)-(6) with one command using `render()` function and `md2jekyll.R` script:
 
 {% highlight bash %}
-echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R
+echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3
 {% endhighlight %}
 
 ## Useful utilities
