@@ -1,7 +1,7 @@
 ---
 title: Version Information
 keywords: 
-last_updated: Sat Feb 13 20:02:43 2016
+last_updated: Sat Feb 13 20:05:18 2016
 ---
 
 This document was compiled in an R session with the following 
