@@ -4,6 +4,7 @@
 ## Author: Thomas Girke
 ## Date: Feb 10, 2016
 
+myfile <- commandArgs()
 md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL) {
     ## (1) Import md file 
     md <- readLines(mdfile)
@@ -266,7 +267,10 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
 ## Usage:
 # setwd("~/Dropbox/Websites/manuals/vignettes/Rbasics")
 # source("../md2jekyll.R")
-## For debugging save output files in current (test) directory: outpath="./" 
-# md2Jekyll(mdfile="Rbasics.knit.md", sidebarpos=3, outfilebasename=NULL, outpath="./", sidebar_url_path="./", fenced2highlight=TRUE, image_dir=NULL)
-## To make things life, save files to jekyll source directory: outpath="../../mydoc/" 
-md2Jekyll(mdfile="ChemmineR.knit.md", sidebartitle=NULL, sidebarpos=12, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+# md2Jekyll(mdfile="bioassayR.knit.md", sidebartitle=NULL, sidebarpos=12, outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+
+## Run from command-line with arguments
+myargs <- commandArgs()
+md2Jekyll(mdfile=myargs[6], sidebartitle=NULL, sidebarpos=as.numeric(myargs[8]), outfilebasename=NULL, outpath="../../mydoc", sidebar_url_path="../../_data/mydoc/", fenced2highlight=TRUE, image_dir=NULL)
+# $ Rscript ../md2jekyll.R bioassayR.knit.md NULL 8
+

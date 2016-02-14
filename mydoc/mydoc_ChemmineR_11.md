@@ -1,7 +1,7 @@
 ---
 title: Working with SDF/SDFset Classes
 keywords: 
-last_updated: Sat Feb 13 17:50:15 2016
+last_updated: Sat Feb 13 19:06:28 2016
 ---
 
 Several methods are available to return the different data components of

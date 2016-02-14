@@ -1,7 +1,7 @@
 ---
 title: Rendering Chemical Structure Images
 keywords: 
-last_updated: Sat Feb 13 17:50:15 2016
+last_updated: Sat Feb 13 19:06:28 2016
 ---
 
 ## R Graphics Device

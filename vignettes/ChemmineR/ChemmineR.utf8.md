@@ -23,7 +23,8 @@ bibliography: references.bib
 
 <!---
 - Compile from command-line
-echo "rmarkdown::render('ChemmineR.Rmd')" | R -slave; R CMD Stangle ChemmineR.Rmd
+echo "rmarkdown::render('ChemmineR.Rmd'), clean=F" | R -slave; R CMD Stangle ChemmineR.Rmd; 
+Rscript ../md2jekyll.R ChemmineR.knit.md 7
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
@@ -61,8 +62,7 @@ physicochemical/structural property predictions, structural similarity
 searching, classification and clustering of compound libraries with a
 wide spectrum of algorithms.
 
-![Figure: `ChemmineR` environment with its add-on packages and
-selected functionalities](overview.png )
+![Figure: `ChemmineR` environment with its add-on packages and selected functionalities](overview.png)
 
 In addition, `ChemmineR` offers visualization functions
 for compound clustering results and chemical structures. The integration

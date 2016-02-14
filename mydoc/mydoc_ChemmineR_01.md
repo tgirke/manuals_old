@@ -1,7 +1,7 @@
 ---
 title: ChemmineR - Cheminformatics Toolkit for R
 keywords: 
-last_updated: Sat Feb 13 17:50:15 2016
+last_updated: Sat Feb 13 19:06:28 2016
 ---
 Authors: Kevin Horan, Yiqun Cao, Tyler Backman, [Thomas Girke](mailto:thomas.girke@ucr.edu)
 
@@ -18,8 +18,7 @@ physicochemical/structural property predictions, structural similarity
 searching, classification and clustering of compound libraries with a
 wide spectrum of algorithms.
 
-![Figure: `ChemmineR` environment with its add-on packages and
-selected functionalities](overview.png )
+![Figure: `ChemmineR` environment with its add-on packages and selected functionalities](ChemmineR_images/overview.png)
 
 In addition, `ChemmineR` offers visualization functions
 for compound clustering results and chemical structures. The integration

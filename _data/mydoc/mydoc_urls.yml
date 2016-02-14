@@ -539,6 +539,41 @@ mydoc_bioassayR_13:
   url: "../../mydoc/mydoc_bioassayR_13.html"
   link: "<a href='../../mydoc/mydoc_bioassayR_13.html'>References</a>"
 
+mydoc_bioassayR_1:
+  title: "Introduction"
+  url: "../../mydoc/mydoc_bioassayR_1.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_1.html'>Introduction</a>"
+
+mydoc_bioassayR_2:
+  title: "Getting Started"
+  url: "../../mydoc/mydoc_bioassayR_2.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_2.html'>Getting Started</a>"
+
+mydoc_bioassayR_3:
+  title: "Examples"
+  url: "../../mydoc/mydoc_bioassayR_3.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_3.html'>Examples</a>"
+
+mydoc_bioassayR_4:
+  title: "Building PubChem BioAssay Database"
+  url: "../../mydoc/mydoc_bioassayR_4.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_4.html'>Building PubChem BioAssay Database</a>"
+
+mydoc_bioassayR_5:
+  title: "Version Information"
+  url: "../../mydoc/mydoc_bioassayR_5.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_5.html'>Version Information</a>"
+
+mydoc_bioassayR_6:
+  title: "Funding"
+  url: "../../mydoc/mydoc_bioassayR_6.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_6.html'>Funding</a>"
+
+mydoc_bioassayR_7:
+  title: "References"
+  url: "../../mydoc/mydoc_bioassayR_7.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_7.html'>References</a>"
+
 mydoc_ChemmineR_01:
   title: "Introduction"
   url: "../../mydoc/mydoc_ChemmineR_01.html"
@@ -653,39 +688,4 @@ mydoc_ChemmineR_23:
   title: "References"
   url: "../../mydoc/mydoc_ChemmineR_23.html"
   link: "<a href='../../mydoc/mydoc_ChemmineR_23.html'>References</a>"
-
-mydoc_bioassayR_1:
-  title: "Introduction"
-  url: "../../mydoc/mydoc_bioassayR_1.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_1.html'>Introduction</a>"
-
-mydoc_bioassayR_2:
-  title: "Getting Started"
-  url: "../../mydoc/mydoc_bioassayR_2.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_2.html'>Getting Started</a>"
-
-mydoc_bioassayR_3:
-  title: "Examples"
-  url: "../../mydoc/mydoc_bioassayR_3.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_3.html'>Examples</a>"
-
-mydoc_bioassayR_4:
-  title: "Building PubChem BioAssay Database"
-  url: "../../mydoc/mydoc_bioassayR_4.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_4.html'>Building PubChem BioAssay Database</a>"
-
-mydoc_bioassayR_5:
-  title: "Version Information"
-  url: "../../mydoc/mydoc_bioassayR_5.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_5.html'>Version Information</a>"
-
-mydoc_bioassayR_6:
-  title: "Funding"
-  url: "../../mydoc/mydoc_bioassayR_6.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_6.html'>Funding</a>"
-
-mydoc_bioassayR_7:
-  title: "References"
-  url: "../../mydoc/mydoc_bioassayR_7.html"
-  link: "<a href='../../mydoc/mydoc_bioassayR_7.html'>References</a>"
 
