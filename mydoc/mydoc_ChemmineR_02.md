@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 keywords: 
-last_updated: Sat Feb 13 19:06:28 2016
+last_updated: Sat Feb 13 19:21:10 2016
 ---
 
 ## Installation
@@ -309,8 +309,7 @@ Plot molecule structure of one or many SDFs:
  sdf.visualize(sdfset[1:4]) # Compound viewing in web browser 
 {% endhighlight %}
 
-![Figure: Visualization webpage created by calling
-`sdf.visualize`.](visualizescreenshot-small.png )
+![Figure: Visualization webpage created by calling`sdf.visualize`.](ChemmineR_images/visualizescreenshot-small.png)
 
 Structure similarity searching and clustering: 
 

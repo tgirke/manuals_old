@@ -1,7 +1,7 @@
 ---
 title: ChemMine Tools R Interface
 keywords: 
-last_updated: Sat Feb 13 19:06:28 2016
+last_updated: Sat Feb 13 19:21:10 2016
 ---
 
 ChemMine Web Tools is an online service for analyzing and clustering small molecules. It provides numerous cheminformatics tools which can be used directly on the website, or called remotely from within R. When called within R jobs are sent remotely to a queue on a compute cluster at UC Riverside, which is a free service offered to `ChemmineR` users.

@@ -1,7 +1,7 @@
 ---
 title: Ring Perception and Aromaticity Assignment
 keywords: 
-last_updated: Sat Feb 13 19:06:28 2016
+last_updated: Sat Feb 13 19:21:10 2016
 ---
 
 The function `rings` identifies all possible rings in one

@@ -406,8 +406,7 @@ Plot molecule structure of one or many SDFs:
  sdf.visualize(sdfset[1:4]) # Compound viewing in web browser 
 ```
 
-![Figure: Visualization webpage created by calling
-`sdf.visualize`.](visualizescreenshot-small.png )
+![Figure: Visualization webpage created by calling`sdf.visualize`.](visualizescreenshot-small.png)
 
 Structure similarity searching and clustering: 
 
@@ -1988,8 +1987,7 @@ Plot structures using web service ChemMine Tools:
  sdf.visualize(sdfset[1:4]) 
 ```
 
-![Figure: Visualization webpage created by calling
-`sdf.visualize`.](visualizescreenshot-small.png )
+![Figure: Visualization webpage created by calling `sdf.visualize`.](visualizescreenshot-small.png)
 
 <div align="right">[Back to Table of Contents]()</div>
 
