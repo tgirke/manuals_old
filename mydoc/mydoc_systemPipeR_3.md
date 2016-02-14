@@ -1,7 +1,7 @@
 ---
 title: Workflow overview
 keywords: 
-last_updated: Sat Feb 13 15:22:55 2016
+last_updated: Sat Feb 13 15:31:51 2016
 ---
 
 ## Define environment settings and samples
@@ -537,14 +537,7 @@ pdf("heatmap1.pdf")
 pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
 dev.off()
 {% endhighlight %}
-
-Alternative formats of this tutorial:
-[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html), 
-[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd), 
-[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R), 
-[`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf)
 ![](systemPipeR_images/heatmap1.png)
-
 <div align="center">**Figure 8:** Heat map with hierarchical clustering dendrograms of DEGs.</div>
 
 

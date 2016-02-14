@@ -474,3 +474,103 @@ mydoc_systemPipeR_6:
   url: "../../mydoc/mydoc_systemPipeR_6.html"
   link: "<a href='../../mydoc/mydoc_systemPipeR_6.html'>References</a>"
 
+mydoc_bioassayR_01:
+  title: "Introduction"
+  url: "../../mydoc/mydoc_bioassayR_01.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_01.html'>Introduction</a>"
+
+mydoc_bioassayR_02:
+  title: "Getting Started"
+  url: "../../mydoc/mydoc_bioassayR_02.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_02.html'>Getting Started</a>"
+
+mydoc_bioassayR_03:
+  title: "Examples"
+  url: "../../mydoc/mydoc_bioassayR_03.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_03.html'>Examples</a>"
+
+mydoc_bioassayR_04:
+  title: "run translateTargetId on each target identifier"
+  url: "../../mydoc/mydoc_bioassayR_04.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_04.html'>run translateTargetId on each target identifier</a>"
+
+mydoc_bioassayR_05:
+  title: "if any targets had more than one UniProt ID, keep only the first one"
+  url: "../../mydoc/mydoc_bioassayR_05.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_05.html'>if any targets had more than one UniProt ID, keep only the first one</a>"
+
+mydoc_bioassayR_06:
+  title: "get kClust protein cluster number for a single target"
+  url: "../../mydoc/mydoc_bioassayR_06.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_06.html'>get kClust protein cluster number for a single target</a>"
+
+mydoc_bioassayR_07:
+  title: "get kClust protein cluster numbers for all targets in myAssayTargets"
+  url: "../../mydoc/mydoc_bioassayR_07.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_07.html'>get kClust protein cluster numbers for all targets in myAssayTargets</a>"
+
+mydoc_bioassayR_08:
+  title: "get number of rows and columns for unmerged matrix"
+  url: "../../mydoc/mydoc_bioassayR_08.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_08.html'>get number of rows and columns for unmerged matrix</a>"
+
+mydoc_bioassayR_09:
+  title: "get number of rows and columns for merged matrix"
+  url: "../../mydoc/mydoc_bioassayR_09.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_09.html'>get number of rows and columns for merged matrix</a>"
+
+mydoc_bioassayR_10:
+  title: "Building PubChem BioAssay Database"
+  url: "../../mydoc/mydoc_bioassayR_10.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_10.html'>Building PubChem BioAssay Database</a>"
+
+mydoc_bioassayR_11:
+  title: "Version Information"
+  url: "../../mydoc/mydoc_bioassayR_11.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_11.html'>Version Information</a>"
+
+mydoc_bioassayR_12:
+  title: "Funding"
+  url: "../../mydoc/mydoc_bioassayR_12.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_12.html'>Funding</a>"
+
+mydoc_bioassayR_13:
+  title: "References"
+  url: "../../mydoc/mydoc_bioassayR_13.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_13.html'>References</a>"
+
+mydoc_bioassayR_1:
+  title: "Introduction"
+  url: "../../mydoc/mydoc_bioassayR_1.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_1.html'>Introduction</a>"
+
+mydoc_bioassayR_2:
+  title: "Getting Started"
+  url: "../../mydoc/mydoc_bioassayR_2.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_2.html'>Getting Started</a>"
+
+mydoc_bioassayR_3:
+  title: "Examples"
+  url: "../../mydoc/mydoc_bioassayR_3.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_3.html'>Examples</a>"
+
+mydoc_bioassayR_4:
+  title: "Building PubChem BioAssay Database"
+  url: "../../mydoc/mydoc_bioassayR_4.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_4.html'>Building PubChem BioAssay Database</a>"
+
+mydoc_bioassayR_5:
+  title: "Version Information"
+  url: "../../mydoc/mydoc_bioassayR_5.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_5.html'>Version Information</a>"
+
+mydoc_bioassayR_6:
+  title: "Funding"
+  url: "../../mydoc/mydoc_bioassayR_6.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_6.html'>Funding</a>"
+
+mydoc_bioassayR_7:
+  title: "References"
+  url: "../../mydoc/mydoc_bioassayR_7.html"
+  link: "<a href='../../mydoc/mydoc_bioassayR_7.html'>References</a>"
+
