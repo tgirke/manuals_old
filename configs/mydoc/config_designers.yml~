@@ -28,7 +28,7 @@ pdf_file_name: mydoc_designers_pdf.pdf
 
 # the algolia entries here are experimental only.
 
-ginate
+gems:
   - redcarpet
   - jekyll-gist
   - pygments.rb
