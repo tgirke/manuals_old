@@ -44,6 +44,10 @@ host: 127.0.0.1
 feedback_email: thomas.girke@ucr.edu
 
 highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
 
 collections:
   tooltips:

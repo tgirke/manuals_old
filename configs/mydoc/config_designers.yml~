@@ -10,7 +10,7 @@ topnav_title: Data Analysis Tutorials
 homepage_title: Introduction
 site_title: Manuals
 project_folder: mydoc
-company_name: Thomas Girke
+company_name: UC Riverside
 footer_image_location: ../common_images/company_logo.png
 github_editme_path: tgirke/manuals/edit/reviews
 disqus_shortname: 
@@ -29,10 +29,10 @@ pdf_file_name: mydoc_designers_pdf.pdf
 
 # the algolia entries here are experimental only.
 
-gems:
-  - redcarpet
-  - jekyll-gist
-  - pygments.rb
+#gems:
+#  - redcarpet
+#  - jekyll-gist
+#  - pygments.rb
 
 #gems:
 #  - algoliasearch-jekyll
