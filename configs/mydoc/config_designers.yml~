@@ -22,6 +22,7 @@ kramdown:
 
 
 sidebar_tagline: Manuals
+#sidebar_tagline: <img src="../common_images/logo.png">
 sidebar_version: Under Construction!
 theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf
@@ -48,7 +49,7 @@ exclude:
 
 # same for all
 host: 127.0.0.1
-feedback_email: tomjohnson1492@gmail.com
+feedback_email: thomas.girke@ucr.edu
 
 highlighter: rouge
 

@@ -22,6 +22,7 @@ kramdown:
 
 
 sidebar_tagline: Manuals
+#sidebar_tagline: <img src="../common_images/logo.png">
 sidebar_version: Under Construction!
 theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf

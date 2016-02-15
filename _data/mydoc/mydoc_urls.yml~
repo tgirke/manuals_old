@@ -1,12 +1,7 @@
 home:
   title: "Introduction"
-  url: "../mydoc/home.html"
-  link: "<a href='../mydoc/home.html'>Introduction</a>"
-
-mydoc_troubleshooting:
-  title: "Troubleshooting"
-  url: "../mydoc/mydoc_troubleshooting.html"
-  link: "<a href='../mydoc/mydoc_troubleshooting.html'>Troubleshooting</a>"
+  url: "../mydoc/mydoc_home.html"
+  link: "<a href='../mydoc/mydoc_home.html'>Introduction</a>"
 
 mydoc_classes:
   title: "Class Teaching"
