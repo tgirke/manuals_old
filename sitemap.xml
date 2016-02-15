@@ -6,7 +6,157 @@
     <url>
       <loc>/404.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/08_ChemmineR/ChemmineR.Rmd</loc>
+      
+        <last_updated>1969-12-31T16:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/08_ChemmineR/ChemmineR.knit.html</loc>
+      
+        <last_updated>2016-02-13T00:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/08_ChemmineR/ChemmineR.utf8.html</loc>
+      
+        <last_updated>2016-02-13T00:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/02_Rbasics/Rbasics.Rmd</loc>
+      
+        <last_updated>1969-12-31T16:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/02_Rbasics/Rbasics.knit.html</loc>
+      
+        <last_updated>2016-02-11T00:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/02_Rbasics/Rbasics.utf8.html</loc>
+      
+        <last_updated>2016-02-11T00:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/09_bioassayR/bioassayR.Rmd</loc>
+      
+        <last_updated>1969-12-31T16:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/09_bioassayR/bioassayR.knit.html</loc>
+      
+        <last_updated>2016-02-13T00:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/09_bioassayR/bioassayR.utf8.html</loc>
+      
+        <last_updated>2016-02-13T00:00:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/01_Overview/home.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -21,7 +171,7 @@
     <url>
       <loc>/mydoc/home.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -36,7 +186,7 @@
     <url>
       <loc>/</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -49,24 +199,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_Rbasics.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_01.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_adding_new_projects.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -79,24 +214,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_adding_tooltips.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_02.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_alerts.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -109,24 +229,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_build_arguments.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_03.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_build_scripts.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -139,24 +244,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_collections.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_04.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_commenting_on_files.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -169,24 +259,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_conditional_logic.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_05.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_conditions_file_customization.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -199,24 +274,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_configuration_settings.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_06.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_configure_sidebar.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -229,24 +289,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_content_reuse.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_07.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_decide_on_attributes.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -259,24 +304,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_excluding_files.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_08.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_faq.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -289,24 +319,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_generating_pdfs.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_09.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_getting_started.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -319,24 +334,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_glossary.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_10.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_help_api.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -349,24 +349,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_hyperlinks.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_11.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_icons.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -379,24 +364,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_images.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_12.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_iterm_profiles.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -409,24 +379,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_kb_layout.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_13.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_labels.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -439,24 +394,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_link_validation.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_14.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_myendpoint.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -469,24 +409,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_navtabs.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_15.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_no_password_prompts_scp.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -499,24 +424,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_pages.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_16.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_princexml_setup.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -529,24 +439,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_push_build_to_server.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_17.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_scroll.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -559,24 +454,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_search_configuration.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_18.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_series.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -589,24 +469,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_seriesdemo1_0.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_19.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_seriesdemo1_1.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -619,24 +484,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_seriesdemo1_2.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_20.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_seriesdemo1_3.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -649,24 +499,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_shuffle.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_21.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_sidebar_navigation.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -679,24 +514,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_special_layouts.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_22.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_support.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -709,24 +529,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_syntax_highlighting.html</loc>
+      <loc>/mydoc/mydoc_ChemmineR_23.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_tables.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -739,24 +544,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_tag_archives_overview.html</loc>
+      <loc>/mydoc/mydoc_Rbasics_01.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_tags.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -769,24 +559,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_themes.html</loc>
+      <loc>/mydoc/mydoc_Rbasics_02.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_title_checker.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -799,24 +574,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_tooltips_source.json</loc>
+      <loc>/mydoc/mydoc_Rbasics_03.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_top_navigation.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -829,24 +589,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_top_navigation_deep_dive.html</loc>
+      <loc>/mydoc/mydoc_Rbasics_04.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_troubleshooting.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -859,24 +604,9 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_url_generator_customization.html</loc>
+      <loc>/mydoc/mydoc_Rbasics_05.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/mydoc_video_embeds.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -889,9 +619,459 @@
   
     
     <url>
-      <loc>/mydoc/mydoc_webstorm_text_editor.html</loc>
+      <loc>/mydoc/mydoc_Rbasics_06.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_07.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_08.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_09.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_1.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_10.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_2.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_3.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_4.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_5.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_6.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_7.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_8.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_Rbasics_9.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_1.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_2.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_3.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_4.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_5.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_6.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_bioassayR_7.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/01_Overview/mydoc_classes.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_classes.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/vignettes/12_Internal_notes/mydoc_internal_notes.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_internal_notes.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_systemPipeR_1.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_systemPipeR_2.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_systemPipeR_3.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_systemPipeR_4.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_systemPipeR_5.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/mydoc/mydoc_systemPipeR_6.html</loc>
+      
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -906,22 +1086,7 @@
     <url>
       <loc>/prince-file-list.txt</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/search.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -936,7 +1101,7 @@
     <url>
       <loc>/search.json</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -951,7 +1116,7 @@
     <url>
       <loc>/sitemap.xml</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -964,24 +1129,9 @@
   
     
     <url>
-      <loc>/mydoc/tag_collaboration.html</loc>
+      <loc>/vignettes/07_systemPipeR/systemPipeR/systemPipeR.Rmd</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/tag_content_types.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>1969-12-31T16:00:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -994,24 +1144,9 @@
   
     
     <url>
-      <loc>/mydoc/tag_formatting.html</loc>
+      <loc>/vignettes/07_systemPipeR/systemPipeR/systemPipeR.knit.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/tag_getting_started.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-13T00:00:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -1024,69 +1159,9 @@
   
     
     <url>
-      <loc>/mydoc/tag_mobile.html</loc>
+      <loc>/vignettes/07_systemPipeR/systemPipeR/systemPipeR.utf8.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/tag_navigation.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/tag_publishing.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/tag_single_sourcing.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/mydoc/tag_special_layouts.html</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-13T00:00:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -1101,7 +1176,7 @@
     <url>
       <loc>/title-checker.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -1116,7 +1191,7 @@
     <url>
       <loc>/titlepage.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
@@ -1131,22 +1206,7 @@
     <url>
       <loc>/tocpage.html</loc>
       
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>/urls_mydoc.txt</loc>
-      
-        <last_updated>2016-02-06T15:27:45-08:00</last_updated>
+        <last_updated>2016-02-15T12:42:00-08:00</last_updated>
       
       
         <changefreq>monthly</changefreq>
