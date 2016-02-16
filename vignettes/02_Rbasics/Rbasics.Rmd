@@ -309,6 +309,94 @@ window.location.href = uri;
                 
                 
             
+            <li><a href="#">Introduction</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_1.html">1. Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_2.html">2. R Package Repositories</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_3.html">3. Installation of R and Add-on Packages</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_4.html">4. Getting Around</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_5.html">5. Basic Syntax</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_6.html">6. Data Types</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_7.html">7. Data objects</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_8.html">8. Graphics example</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li><a href="../mydoc/mydoc_Rbasics_9.html">9. Session Info</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+            
             <li><a href="#">Introduction to R</a>
                 <ul>
                     
@@ -821,7 +909,7 @@ $('#toc').on('click', 'a', function() {
 
 <!---
 - Compile from command-line
-echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3
+echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 2
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
@@ -955,10 +1043,12 @@ and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocI
     
 * __Closing R__:
 
-    ```{r closing_r, eval=FALSE}
-    q()  
-    Save workspace image? [y/n/c]:
-    ```
+```{r closing_r, eval=FALSE}
+q()  
+```
+```
+Save workspace image? [y/n/c]:
+```
         
 * __Note__:
     When responding with `y`, then the entire R workspace will be written to

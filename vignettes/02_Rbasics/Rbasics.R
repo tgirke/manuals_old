@@ -23,7 +23,6 @@ suppressPackageStartupMessages({
 
 ## ----closing_r, eval=FALSE-----------------------------------------------
 ## q()
-## Save workspace image? [y/n/c]:
 
 ## ----r_assignment, eval=FALSE--------------------------------------------
 ## object <- ...
