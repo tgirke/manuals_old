@@ -107,6 +107,14 @@ git commit -am "some edits"; git push -u origin gh-pages
 git checkout master
 {% endhighlight %}
 
+## Set theme color
+Pick you favorite color [here](http://www.december.com/html/spec/color3.html), then apply changes at the proper 
+lines in `./css/theme-blue.css`. This task can be greatly simplified by using `vimdiff`:
+
+{% highlight bash %}
+vimdiff css/theme-blue.css css/theme-blue_orig.css
+{% endhighlight %}
+
 ## R markdown integration
 
 (1) Write R markdown vignette (`*.Rmd` file) in `./vignettes` directory (*e.g.* `./vignettes/Rbasics`).
