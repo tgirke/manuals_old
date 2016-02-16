@@ -148,7 +148,7 @@ configs/mydoc/config_designers.yml
 The fixed sidebar is a nice feature of this theme. However, if there are too many
 section entries then it may be desirable to switch contitionally to a floating behavior 
 depending on the size of the viewport available on a system. This can be achieved by 
-changing the height value in 'js/customscripts.js' to a large value (_e.g._ 800 to 1200): 
+changing the height value in 'js/customscripts.js' to a larger value (_e.g._ 800 to 1200): 
 
 {% highlight bash %}
 if (h > 800) {
