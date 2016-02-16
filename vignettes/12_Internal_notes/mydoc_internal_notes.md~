@@ -144,6 +144,18 @@ Edit this file accordingly.
 configs/mydoc/config_designers.yml
 {% endhighlight %}
 
+### Change sidebar behavior
+The fixed sidebar is a nice feature of this theme. However, if there are too many
+section entries then it may be desirable to switch contitionally to a floating behavior 
+depending on the size of the viewport available on a system. This can be achieved by 
+changing the height value in 'js/customscripts.js' to a large value (_e.g._ 800 to 1200): 
+
+{% highlight bash %}
+if (h > 800) {
+    $( "#mysidebar" ).attr("class", "nav affix");
+}
+{% endhighlight %}
+
 ### Check differences in directories
 One can also double-check by downloading the changes from GitHub and then run `diff`
 
