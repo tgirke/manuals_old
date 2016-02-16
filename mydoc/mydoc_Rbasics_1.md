@@ -1,14 +1,20 @@
 ---
-title: Overview
+title: Introduction to R 
 keywords: 
-last_updated: Fri Feb 12 18:06:43 2016
+last_updated: Mon Feb 15 16:58:04 2016
 ---
+Author: Thomas Girke
+
+Last update: 15 February, 2016 
+
 Alternative formats of this tutorial:
 [`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.html), 
 [`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.Rmd), 
 [`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/Rbasics/Rbasics.R), 
 [`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rbasics/Introduction_into_R.pdf)
 
+
+## Overview
 
 ## What is R?
 

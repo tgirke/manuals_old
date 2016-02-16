@@ -1,7 +1,7 @@
 ---
 title: Getting Around
 keywords: 
-last_updated: Fri Feb 12 18:06:43 2016
+last_updated: Mon Feb 15 16:58:04 2016
 ---
 
 ## Startup and Closing Behavior
@@ -18,11 +18,13 @@ last_updated: Fri Feb 12 18:06:43 2016
     
 * __Closing R__:
 
-    
-```r
+
+{% highlight r %}
 q()  
+{% endhighlight %}
+{% highlight txt %}
 Save workspace image? [y/n/c]:
-```
+{% endhighlight %}
         
 * __Note__:
     When responding with `y`, then the entire R workspace will be written to

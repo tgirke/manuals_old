@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R" 
 author: "Author: Thomas Girke"
-date: "Last update: 11 February, 2016" 
+date: "Last update: 15 February, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -20,7 +20,7 @@ fontsize: 14pt
 
 <!---
 - Compile from command-line
-echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R
+echo "rmarkdown::render('Rbasics.Rmd', clean=F)" | R -slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 2
 
 - Commit to github
 git commit -am "some edits"; git push -u origin master
@@ -158,11 +158,13 @@ and [BiocInstaller](http://www.bioconductor.org/packages/release/bioc/html/BiocI
     
 * __Closing R__:
 
-    
-    ```r
-    q()  
-    Save workspace image? [y/n/c]:
-    ```
+
+```r
+q()  
+```
+```
+Save workspace image? [y/n/c]:
+```
         
 * __Note__:
     When responding with `y`, then the entire R workspace will be written to
