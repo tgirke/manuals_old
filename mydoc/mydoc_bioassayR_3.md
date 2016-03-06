@@ -1,7 +1,7 @@
 ---
 title: Examples
 keywords: 
-last_updated: Sat Feb 13 20:05:18 2016
+last_updated: Sun Mar  6 13:50:33 2016
 ---
 
 ## Loading User Supplied PubChem BioAssay Data
@@ -369,7 +369,7 @@ Here we visualize just the first four compounds found with *selectiveAgainst*. C
 plot(structures[1:4], print=FALSE) # Plots structures to R graphics device
 {% endhighlight %}
 
-![](bioassayR_images/unnamed-chunk-38-1.png)
+![](bioassayR_files/unnamed-chunk-38-1.png)
 
 ## Cluster Compounds by Activity Profile
 
@@ -598,7 +598,7 @@ clusterResults <- hclust(distanceMatrix, method="average")
 plot(clusterResults)
 {% endhighlight %}
 
-![](bioassayR_images/unnamed-chunk-46-1.png)
+![](bioassayR_files/unnamed-chunk-46-1.png)
 
 A second way to compare activity profiles and cluster data is to pass
 the activity matrix to the *ChemmineR* cheminformatics library as an *FPset* (binary fingerprint) object.
@@ -661,7 +661,7 @@ clusterResults <- hclust(as.dist(1-simMA), method="single")
 plot(clusterResults)
 {% endhighlight %}
 
-![](bioassayR_images/unnamed-chunk-50-1.png)
+![](bioassayR_files/unnamed-chunk-50-1.png)
 
 Finally, disconnect from the database.
 

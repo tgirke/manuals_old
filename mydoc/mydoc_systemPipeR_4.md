@@ -1,7 +1,7 @@
 ---
 title: Workflow templates
 keywords: 
-last_updated: Sat Feb 13 15:31:51 2016
+last_updated: Sun Mar  6 14:00:56 2016
 ---
 
 ## RNA-Seq sample

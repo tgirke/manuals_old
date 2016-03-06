@@ -1,7 +1,7 @@
 ---
 title: Workflow overview
 keywords: 
-last_updated: Sat Feb 13 15:31:51 2016
+last_updated: Sun Mar  6 14:00:56 2016
 ---
 
 ## Define environment settings and samples
@@ -71,7 +71,7 @@ pdf("./results/fastqReport.pdf", height=18, width=4*length(fqlist))
 seeFastqPlot(fqlist)
 dev.off()
 {% endhighlight %}
-![](systemPipeR_images/fastqReport.png)
+![](systemPipeR_files/fastqReport.png)
 <div align="center">**Figure 2:** FASTQ quality report </div>
 
 
@@ -237,7 +237,7 @@ for(i in seq(along=outfile1(args))) asBam(file=outfile1(args)[i], destination=gs
 {% endhighlight %}
 
 ### Alignment with _`gsnap`_ (_e.g._ for VAR-Seq and RNA-Seq)
-Another R-based short read aligner is _`gsnap`_ from the _`gmapR`_ package [@Wu2010-iq]. 
+Another R-based short read aligner is _`gsnap`_ from the _`gmapR`_ package (Wu et al., 2010). 
 The code sample below introduces how to run this aligner on multiple nodes of a compute cluster. 
 
 {% highlight r %}
@@ -353,7 +353,7 @@ hc <- hclust(dist(1-d))
 plot.phylo(as.phylo(hc), type="p", edge.col=4, edge.width=3, show.node.label=TRUE, no.margin=TRUE)
 {% endhighlight %}
 
-![](systemPipeR_images/sample_tree_rlog-1.png)
+![](systemPipeR_files/sample_tree_rlog-1.png)
 
 <div align="center">**Figure 3:** Correlation dendrogram of samples for _`rlog`_ values. </div>
 
@@ -373,7 +373,7 @@ plot.phylo(as.phylo(hc), type="p", edge.col="blue", edge.width=2, show.node.labe
 ## DEG analysis with _`edgeR`_
 The following _`run_edgeR`_ function is a convenience wrapper for
 identifying differentially expressed genes (DEGs) in batch mode with
-_`edgeR`_'s GML method [@Robinson2010-uk] for any number of
+_`edgeR`_'s GML method (Robinson et al., 2010) for any number of
 pairwise sample comparisons specified under the _`cmp`_ argument. Users
 are strongly encouraged to consult the 
 [_`edgeR`_](\href{http://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf) vignette 
@@ -415,7 +415,7 @@ Filter and plot DEG results for up and down regulated genes. Because of the smal
 DEG_list <- filterDEGs(degDF=edgeDF, filter=c(Fold=2, FDR=10))
 {% endhighlight %}
 
-![](systemPipeR_images/edger_deg_counts-1.png)
+![](systemPipeR_files/edger_deg_counts-1.png)
 <div align="center">**Figure 4:** Up and down regulated DEGs identified by _`edgeR`_. </div>
 
 
@@ -441,7 +441,7 @@ DEG_list$Summary[1:4,]
 
 ## DEG analysis with _`DESeq2`_ 
 The following _`run_DESeq2`_ function is a convenience wrapper for
-identifying DEGs in batch mode with _`DESeq2`_ [@Love2014-sh] for any number of
+identifying DEGs in batch mode with _`DESeq2`_ (Love et al., 2014) for any number of
 pairwise sample comparisons specified under the _`cmp`_ argument. Users
 are strongly encouraged to consult the 
 [_`DESeq2`_](http://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf) vignette
@@ -458,7 +458,7 @@ Filter and plot DEG results for up and down regulated genes.
 DEG_list2 <- filterDEGs(degDF=degseqDF, filter=c(Fold=2, FDR=10))
 {% endhighlight %}
 
-![](systemPipeR_images/deseq2_deg_counts-1.png)
+![](systemPipeR_files/deseq2_deg_counts-1.png)
 <div align="center">**Figure 5:** Up and down regulated DEGs identified by _`DESeq2`_. </div>
 
 
@@ -471,7 +471,7 @@ vennsetdown <- overLapper(DEG_list$Down[6:9], type="vennsets")
 vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
 {% endhighlight %}
 
-![](systemPipeR_images/vennplot-1.png)
+![](systemPipeR_files/vennplot-1.png)
 <div align="center">**Figure 6:** Venn Diagram for 4 Up and Down DEG Sets. </div>
 
 
@@ -520,7 +520,7 @@ pdf("GOslimbarplotMF.pdf", height=8, width=10); goBarplot(gos, gocat="MF"); dev.
 goBarplot(gos, gocat="BP")
 goBarplot(gos, gocat="CC")
 {% endhighlight %}
-![](systemPipeR_images/GOslimbarplotMF.png)
+![](systemPipeR_files/GOslimbarplotMF.png)
 <div align="center">**Figure 7:** GO Slim Barplot for MF Ontology.</div>
 
 
@@ -537,7 +537,7 @@ pdf("heatmap1.pdf")
 pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
 dev.off()
 {% endhighlight %}
-![](systemPipeR_images/heatmap1.png)
+![](systemPipeR_files/heatmap1.png)
 <div align="center">**Figure 8:** Heat map with hierarchical clustering dendrograms of DEGs.</div>
 
 
