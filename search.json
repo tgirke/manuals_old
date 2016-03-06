@@ -793,7 +793,7 @@
 "title": "_systemPipeR_: NGS workflow and report generation environment",
 "tags": "",
 "keywords": "",
-"url": "../vignettes/07_systemPipeR/systemPipeR/systemPipeR.Rmd",
+"url": "../vignettes/07_systemPipeR/systemPipeR.Rmd",
 "summary": ""
 },
 
@@ -804,7 +804,7 @@
 "title": "_systemPipeR_: NGS workflow and report generation environment",
 "tags": "",
 "keywords": "",
-"url": "../vignettes/07_systemPipeR/systemPipeR/systemPipeR.knit.html",
+"url": "../vignettes/07_systemPipeR/systemPipeR.knit.html",
 "summary": ""
 },
 
@@ -815,7 +815,7 @@
 "title": "_systemPipeR_: NGS workflow and report generation environment",
 "tags": "",
 "keywords": "",
-"url": "../vignettes/07_systemPipeR/systemPipeR/systemPipeR.utf8.html",
+"url": "../vignettes/07_systemPipeR/systemPipeR.utf8.html",
 "summary": ""
 },
 

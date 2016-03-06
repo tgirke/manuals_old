@@ -868,7 +868,7 @@ quality cutoffs and mean quality distribution.</p>
 <span class="n">seeFastqPlot</span><span class="p">(</span><span class="n">fqlist</span><span class="p">)</span>
 <span class="n">dev.off</span><span class="p">()</span></code></pre></div>
 
-<p><img src="systemPipeR_images/fastqReport.png" alt="" /></p>
+<p><img src="systemPipeR_files/fastqReport.png" alt="" /></p>
 <div align="center">**Figure 2:** FASTQ quality report </div>
 
 <p>Parallelization of QC report on single machine with multiple cores</p>
@@ -995,7 +995,7 @@ aligner \Rpackage{Rsubread} or other R-based functions that read from input file
 <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)))</span> <span class="n">asBam</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">i</span><span class="p">],</span> <span class="n">destination</span><span class="o">=</span><span class="n">gsub</span><span class="p">(</span><span class="s2">".sam"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">i</span><span class="p">]),</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">indexDestination</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></div>
 
 <h3 id="alignment-with-gsnap-eg-for-var-seq-and-rna-seq">Alignment with <em><code>gsnap</code></em> (<em>e.g.</em> for VAR-Seq and RNA-Seq)</h3>
-<p>Another R-based short read aligner is <em><code>gsnap</code></em> from the <em><code>gmapR</code></em> package [@Wu2010-iq]. 
+<p>Another R-based short read aligner is <em><code>gsnap</code></em> from the <em><code>gmapR</code></em> package (Wu et al., 2010). 
 The code sample below introduces how to run this aligner on multiple nodes of a compute cluster.</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">gmapR</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BatchJobs</span><span class="p">)</span>
@@ -1088,7 +1088,7 @@ The code sample below introduces how to run this aligner on multiple nodes of a 
 <span class="n">hc</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">dist</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
 <span class="n">plot.phylo</span><span class="p">(</span><span class="n">as.phylo</span><span class="p">(</span><span class="n">hc</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s2">"p"</span><span class="p">,</span> <span class="n">edge.col</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">edge.width</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">show.node.label</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">no.margin</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></div>
 
-<p><img src="systemPipeR_images/sample_tree_rlog-1.png" alt="" /></p>
+<p><img src="systemPipeR_files/sample_tree_rlog-1.png" alt="" /></p>
 
 <div align="center">**Figure 3:** Correlation dendrogram of samples for _`rlog`_ values. </div>
 
@@ -1104,7 +1104,7 @@ The code sample below introduces how to run this aligner on multiple nodes of a 
 <h2 id="deg-analysis-with-edger">DEG analysis with <em><code>edgeR</code></em></h2>
 <p>The following <em><code>run_edgeR</code></em> function is a convenience wrapper for
 identifying differentially expressed genes (DEGs) in batch mode with
-<em><code>edgeR</code></em>’s GML method [@Robinson2010-uk] for any number of
+<em><code>edgeR</code></em>’s GML method (Robinson et al., 2010) for any number of
 pairwise sample comparisons specified under the <em><code>cmp</code></em> argument. Users
 are strongly encouraged to consult the 
 <a href="\href{http://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf"><em><code>edgeR</code></em></a> vignette 
@@ -1136,7 +1136,7 @@ on data sets with more complex experimental designs.</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">DEG_list</span> <span class="o">&lt;-</span> <span class="n">filterDEGs</span><span class="p">(</span><span class="n">degDF</span><span class="o">=</span><span class="n">edgeDF</span><span class="p">,</span> <span class="n">filter</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="n">Fold</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">FDR</span><span class="o">=</span><span class="m">10</span><span class="p">))</span></code></pre></div>
 
-<p><img src="systemPipeR_images/edger_deg_counts-1.png" alt="" /></p>
+<p><img src="systemPipeR_files/edger_deg_counts-1.png" alt="" /></p>
 <div align="center">**Figure 4:** Up and down regulated DEGs identified by _`edgeR`_. </div>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">names</span><span class="p">(</span><span class="n">DEG_list</span><span class="p">)</span></code></pre></div>
@@ -1153,7 +1153,7 @@ on data sets with more complex experimental designs.</p>
 
 <h2 id="deg-analysis-with-deseq2">DEG analysis with <em><code>DESeq2</code></em></h2>
 <p>The following <em><code>run_DESeq2</code></em> function is a convenience wrapper for
-identifying DEGs in batch mode with <em><code>DESeq2</code></em> [@Love2014-sh] for any number of
+identifying DEGs in batch mode with <em><code>DESeq2</code></em> (Love et al., 2014) for any number of
 pairwise sample comparisons specified under the <em><code>cmp</code></em> argument. Users
 are strongly encouraged to consult the 
 <a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf"><em><code>DESeq2</code></em></a> vignette
@@ -1166,7 +1166,7 @@ on data sets with more complex experimental designs.</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">DEG_list2</span> <span class="o">&lt;-</span> <span class="n">filterDEGs</span><span class="p">(</span><span class="n">degDF</span><span class="o">=</span><span class="n">degseqDF</span><span class="p">,</span> <span class="n">filter</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="n">Fold</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">FDR</span><span class="o">=</span><span class="m">10</span><span class="p">))</span></code></pre></div>
 
-<p><img src="systemPipeR_images/deseq2_deg_counts-1.png" alt="" /></p>
+<p><img src="systemPipeR_files/deseq2_deg_counts-1.png" alt="" /></p>
 <div align="center">**Figure 5:** Up and down regulated DEGs identified by _`DESeq2`_. </div>
 
 <h2 id="venn-diagrams">Venn Diagrams</h2>
@@ -1176,7 +1176,7 @@ on data sets with more complex experimental designs.</p>
 <span class="n">vennsetdown</span> <span class="o">&lt;-</span> <span class="n">overLapper</span><span class="p">(</span><span class="n">DEG_list</span><span class="o">$</span><span class="n">Down</span><span class="p">[</span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"vennsets"</span><span class="p">)</span>
 <span class="n">vennPlot</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">vennsetup</span><span class="p">,</span> <span class="n">vennsetdown</span><span class="p">),</span> <span class="n">mymain</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">mysub</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">colmode</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">ccol</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"blue"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">))</span></code></pre></div>
 
-<p><img src="systemPipeR_images/vennplot-1.png" alt="" /></p>
+<p><img src="systemPipeR_files/vennplot-1.png" alt="" /></p>
 <div align="center">**Figure 6:** Venn Diagram for 4 Up and Down DEG Sets. </div>
 
 <h2 id="go-term-enrichment-analysis-of-degs">GO term enrichment analysis of DEGs</h2>
@@ -1219,7 +1219,7 @@ The following shows how to obtain gene-to-GO mappings from <em><code>biomaRt</co
 <span class="n">goBarplot</span><span class="p">(</span><span class="n">gos</span><span class="p">,</span> <span class="n">gocat</span><span class="o">=</span><span class="s2">"BP"</span><span class="p">)</span>
 <span class="n">goBarplot</span><span class="p">(</span><span class="n">gos</span><span class="p">,</span> <span class="n">gocat</span><span class="o">=</span><span class="s2">"CC"</span><span class="p">)</span></code></pre></div>
 
-<p><img src="systemPipeR_images/GOslimbarplotMF.png" alt="" /></p>
+<p><img src="systemPipeR_files/GOslimbarplotMF.png" alt="" /></p>
 <div align="center">**Figure 7:** GO Slim Barplot for MF Ontology.</div>
 
 <h2 id="clustering-and-heat-maps">Clustering and heat maps</h2>
@@ -1233,7 +1233,7 @@ above differential expression analysis. It uses a Pearson correlation-based dist
 <span class="n">pheatmap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">"row"</span><span class="p">,</span> <span class="n">clustering_distance_rows</span><span class="o">=</span><span class="s2">"correlation"</span><span class="p">,</span> <span class="n">clustering_distance_cols</span><span class="o">=</span><span class="s2">"correlation"</span><span class="p">)</span>
 <span class="n">dev.off</span><span class="p">()</span></code></pre></div>
 
-<p><img src="systemPipeR_images/heatmap1.png" alt="" /></p>
+<p><img src="systemPipeR_files/heatmap1.png" alt="" /></p>
 <div align="center">**Figure 8:** Heat map with hierarchical clustering dendrograms of DEGs.</div>
 
 
@@ -1252,7 +1252,7 @@ above differential expression analysis. It uses a Pearson correlation-based dist
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Feb 13 15:31:51 2016<br/> Site last generated: Feb 23, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 14:00:56 2016<br/> Site last generated: Mar 6, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>
