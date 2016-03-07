@@ -836,7 +836,7 @@ will be frequently, but not necessarily, identical compounds.</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="s2">"650059"</span><span class="p">,</span><span class="s2">"650060"</span><span class="p">,</span> <span class="s2">"650065"</span><span class="p">,</span> <span class="s2">"650066"</span><span class="p">)],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
 
-<p><img src="ChemmineR_images/duplicates-1.png" alt="" /></p>
+<p><img src="ChemmineR_files/duplicates-1.png" alt="" /></p>
 
 <p>Remove AP duplicates from SDFset and APset objects:</p>
 
@@ -984,7 +984,7 @@ method allows to call various similarity methods provided by the
 <h2 id="jarvis-patrick-clustering">Jarvis-Patrick Clustering</h2>
 
 <p>The Jarvis-Patrick clustering algorithm is widely used in
-cheminformatics [@greycite13371]. It requires a nearest neighbor table, which consists
+cheminformatics (R.A. Jarvis , 1973). It requires a nearest neighbor table, which consists
 of <em>j</em> nearest neighbors for each item (<em>e.g.</em> compound).
 The nearest neighbor table is then used to join items into clusters when
 they meet the following requirements: (a) they are contained in each
@@ -1226,7 +1226,7 @@ provided to generate cluster size statistics.</p>
  <span class="n">coord</span> <span class="o">&lt;-</span> <span class="n">cluster.visualize</span><span class="p">(</span><span class="n">apset</span><span class="p">,</span> <span class="n">clusters</span><span class="p">,</span> <span class="n">size.cutoff</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> 
  <span class="n">scatterplot3d</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span></code></pre></div>
 
-<p><img src="ChemmineR_images/mds_scatter-1.png" alt="" /></p>
+<p><img src="ChemmineR_files/mds_scatter-1.png" alt="" /></p>
 
 <p>Interactive 3D scatter plot with Open GL (graphics not evaluated here):</p>
 
@@ -1263,7 +1263,7 @@ below.</p>
  <span class="n">hc</span><span class="p">[[</span><span class="s2">"labels"</span><span class="p">]]</span> <span class="o">&lt;-</span> <span class="n">cid</span><span class="p">(</span><span class="n">apset</span><span class="p">)</span> <span class="c1"># Assign correct item labels 
 </span> <span class="n">plot</span><span class="p">(</span><span class="n">as.dendrogram</span><span class="p">(</span><span class="n">hc</span><span class="p">),</span> <span class="n">edgePar</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">),</span> <span class="n">horiz</span><span class="o">=</span><span class="n">T</span><span class="p">)</span></code></pre></div>
 
-<p><img src="ChemmineR_images/hclust-1.png" alt="" /></p>
+<p><img src="ChemmineR_files/hclust-1.png" alt="" /></p>
 
 <p>Instead of atom pairs one can use PubChem’s fingerprints for clustering:</p>
 
@@ -1286,7 +1286,7 @@ below.</p>
 			  <span class="n">col</span><span class="o">=</span><span class="n">colorpanel</span><span class="p">(</span><span class="m">40</span><span class="p">,</span> <span class="s2">"darkblue"</span><span class="p">,</span> <span class="s2">"yellow"</span><span class="p">,</span> <span class="s2">"white"</span><span class="p">),</span> 
 			  <span class="n">density.info</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span> <span class="n">trace</span><span class="o">=</span><span class="s2">"none"</span><span class="p">)</span></code></pre></div>
 
-<p><img src="ChemmineR_images/heatmap-1.png" alt="" /></p>
+<p><img src="ChemmineR_files/heatmap-1.png" alt="" /></p>
 
 
 
@@ -1304,7 +1304,7 @@ below.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sat Feb 13 19:36:03 2016<br/> Site last generated: Mar 6, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 18:27:50 2016<br/> Site last generated: Mar 6, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

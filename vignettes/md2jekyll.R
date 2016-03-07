@@ -128,10 +128,9 @@ md2Jekyll <- function(mdfile="Rbasics.knit.md", sidebartitle=NULL, sidebarpos, o
         mdlist <- split(md, factor(rep(c(1, splitpos), splitdist)))
     
         ## Get alternative format info and remove front matter of R Markdown 
-        altformatspos <- grep("^Alternative formats", mdlist[[1]])
-        if(length(altformatspos)==1) {
-            altformats <- mdlist[[1]][grep("^Alternative formats", mdlist[[1]]) : length(mdlist[[1]])]
-            # mdlist[[2]] <- c(mdlist[[2]][1], altformats, mdlist[[2]][-1])
+        altformatpath <- paste0("_alternativeFormatlinks.md")
+        if(file.exists(altformatpath)) {
+            altformats <- readLines(altformatpath)
         } else {
             altformats <- ""
         }
@@ -391,6 +390,7 @@ renderBib <- function(x, bibtex="bibtex.bib") {
     ## Extract citations
     citation <- substring(xc, mpos, mpos + (mlength - 1))
     citation <- gsub("(\\[)|(\\])|(^ {1,})|( {1,}$)", "", citation)    
+    citation <- gsub("(, )|(; )", " ", citation)
     citation <- gsub(" {0,}, {0,}", "_", citation) # Support for split on comma 
     citation <- gsub(" {1,}", "_", citation) # Support for split on space
     citation <- strsplit(citation, "_")
