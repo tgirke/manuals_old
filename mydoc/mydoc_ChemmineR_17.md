@@ -1,7 +1,7 @@
 ---
 title: Similarity Comparisons and Searching
 keywords: 
-last_updated: Sun Mar  6 18:27:50 2016
+last_updated: Sun Mar  6 19:12:48 2016
 ---
 
 ## Maximum Common Substructure (MCS) Searching
@@ -13,7 +13,7 @@ flexible MCSs among compounds. The algorithm can be used for pairwise
 compound comparisons, structure similarity searching and clustering. The
 manual describing this functionality is available
 [here](http://www.bioconductor.org/packages/devel/bioc/vignettes/fmcsR/inst/doc/fmcsR.html)
-and the associated publication is Wang et al. (-@Wang_2013). The following gives a
+and the associated publication is Wang et al. (2013). The following gives a
 short preview of some functionalities provided by the
 `fmcsR` package.  
 
@@ -31,7 +31,7 @@ short preview of some functionalities provided by the
 ## AP/APset Classes for Storing Atom Pair Descriptors
 
 The function `sdf2ap` computes atom pair descriptors for
-one or many compounds (@Carhart_1985; @Chen_2002). It returns a searchable atom pair database
+one or many compounds (Raymond E. Carhart et al., 1985; X. Chen , 2002). It returns a searchable atom pair database
 stored in a container of class `APset`, which can be used
 for structural similarity searching and clustering. As similarity
 measure, the Tanimoto coefficient or related coefficients can be used.

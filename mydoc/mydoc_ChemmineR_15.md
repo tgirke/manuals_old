@@ -1,12 +1,12 @@
 ---
 title: Ring Perception and Aromaticity Assignment
 keywords: 
-last_updated: Sun Mar  6 18:27:50 2016
+last_updated: Sun Mar  6 19:12:48 2016
 ---
 
 The function `rings` identifies all possible rings in one
 or many molecules (here `sdfset[1]`) using the exhaustive
-ring perception algorithm from Hanser et al. (-@Hanser_1996). In addition, the function can 
+ring perception algorithm from Hanser et al. (1996). In addition, the function can 
 return all smallest possible rings as well as aromaticity information.
 
 The following example returns all possible rings in a

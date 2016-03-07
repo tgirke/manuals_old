@@ -1,11 +1,11 @@
 ---
 title: OpenBabel Functions
 keywords: 
-last_updated: Sun Mar  6 18:27:50 2016
+last_updated: Sun Mar  6 19:12:48 2016
 ---
 
 `ChemmineR` integrates now a subset of cheminformatics
-functionalities implemented in the OpenBabel C++ library (Noel M O'Boyle et al., 2008; @Cao_2008). These
+functionalities implemented in the OpenBabel C++ library (Noel M O'Boyle et al., 2008; Y. Cao et al., 2008). These
 utilities can be accessed by installing the `ChemmineOB`
 package and the OpenBabel software itself. `ChemmineR`
 will automatically detect the availability of

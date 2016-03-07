@@ -1,7 +1,7 @@
 ---
 title: Bond Matrices
 keywords: 
-last_updated: Sun Mar  6 18:27:50 2016
+last_updated: Sun Mar  6 19:12:48 2016
 ---
 
 Bond matrices provide an efficient data structure for many basic

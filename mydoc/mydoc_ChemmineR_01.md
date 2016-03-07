@@ -1,7 +1,7 @@
 ---
 title: ChemmineR - Cheminformatics Toolkit for R
 keywords: 
-last_updated: Sun Mar  6 18:27:50 2016
+last_updated: Sun Mar  6 19:12:48 2016
 ---
 Authors: Kevin Horan, Yiqun Cao, Tyler Backman, [Thomas Girke](mailto:thomas.girke@ucr.edu)
 
@@ -29,9 +29,9 @@ for compound clustering results and chemical structures. The integration
 of chemoinformatic tools with the R programming environment has many
 advantages, such as easy access to a wide spectrum of statistical
 methods, machine learning algorithms and graphic utilities. The first
-version of this package was published in Cao et al. (-@Cao_2008). Since then many additional
+version of this package was published in Cao et al. (2008). Since then many additional
 utilities and add-on packages have been added to the environment (Figure 2) and
-many more are under development for future releases (@Backman_2011; @Wang_2013).
+many more are under development for future releases (T. W. H. Backman et al., 2011; Y. Wang et al., 2013).
 
 
 
@@ -41,7 +41,7 @@ __Recently Added Features__
     and SMILES import/export functions
 
 -   Integration of a subset of OpenBabel functionalities via new
-    `ChemmineOB` add-on package (@Cao_2008)
+    `ChemmineOB` add-on package (Y. Cao et al., 2008)
 
 -   Streaming functionality for processing millions of molecules on a
     laptop
