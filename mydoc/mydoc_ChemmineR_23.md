@@ -1,7 +1,7 @@
 ---
 title: References
 keywords: 
-last_updated: Sun Mar  6 19:12:48 2016
+last_updated: Sun Mar  6 19:34:18 2016
 ---
  
 1. Noel M O'Boyle, Chris Morley, Geoffrey R Hutchison (2008) Pybel: a Python wrapper for the OpenBabel cheminformatics toolkit. Chemistry Central Journal, NA: NA; [URL](http://journal.chemistrycentral.com/content/2/1/5)

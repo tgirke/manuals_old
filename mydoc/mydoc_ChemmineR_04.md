@@ -1,7 +1,7 @@
 ---
 title: Overview of Classes and Functions
 keywords: 
-last_updated: Sun Mar  6 19:12:48 2016
+last_updated: Sun Mar  6 19:34:18 2016
 ---
 
 The following list gives an overview of the most important S4 classes,
