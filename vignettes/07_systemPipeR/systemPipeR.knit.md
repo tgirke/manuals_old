@@ -52,11 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 ## Warning: replacing previous import by 'ggplot2::arrow' when loading 'systemPipeR'
 ```
-
 Note: the most recent version of this tutorial can be found <a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html">here</a> and a short overview slide show [here](https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html).
-Alternative formats of this tutorial:
-[`.Rmd HTML`](https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html),
-[`HTML Slides`](https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html)
 
 # Introduction
 

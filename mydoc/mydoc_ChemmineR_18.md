@@ -1,7 +1,7 @@
 ---
 title: Clustering
 keywords: 
-last_updated: Sat Feb 13 19:36:03 2016
+last_updated: Sun Mar  6 18:27:50 2016
 ---
 
 ## Clustering Identical or Very Similar Compounds
@@ -40,7 +40,7 @@ Plot the structure of two pairs of duplicates:
  plot(sdfset[c("650059","650060", "650065", "650066")], print=FALSE) 
 {% endhighlight %}
 
-![](ChemmineR_images/duplicates-1.png)
+![](ChemmineR_files/duplicates-1.png)
 
 
 Remove AP duplicates from SDFset and APset objects: 
@@ -243,7 +243,7 @@ Enforce calculation of distance matrix:
 ## Jarvis-Patrick Clustering
 
 The Jarvis-Patrick clustering algorithm is widely used in
-cheminformatics [@greycite13371]. It requires a nearest neighbor table, which consists
+cheminformatics (R.A. Jarvis , 1973). It requires a nearest neighbor table, which consists
 of *j* nearest neighbors for each item (*e.g.* compound).
 The nearest neighbor table is then used to join items into clusters when
 they meet the following requirements: (a) they are contained in each
@@ -542,7 +542,7 @@ Create a 3D scatter plot of MDS result:
  scatterplot3d(coord) 
 {% endhighlight %}
 
-![](ChemmineR_images/mds_scatter-1.png)
+![](ChemmineR_files/mds_scatter-1.png)
 
 
 Interactive 3D scatter plot with Open GL (graphics not evaluated here):
@@ -594,7 +594,7 @@ Hierarchical clustering with `hclust`:
  plot(as.dendrogram(hc), edgePar=list(col=4, lwd=2), horiz=T) 
 {% endhighlight %}
 
-![](ChemmineR_images/hclust-1.png)
+![](ChemmineR_files/hclust-1.png)
 
 
 Instead of atom pairs one can use PubChem's fingerprints for clustering:
@@ -630,6 +630,6 @@ Plot dendrogram with heatmap (here similarity matrix):
 			  density.info="none", trace="none") 
 {% endhighlight %}
 
-![](ChemmineR_images/heatmap-1.png)
+![](ChemmineR_files/heatmap-1.png)
 
 

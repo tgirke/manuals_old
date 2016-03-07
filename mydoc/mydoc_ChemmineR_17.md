@@ -1,7 +1,7 @@
 ---
 title: Similarity Comparisons and Searching
 keywords: 
-last_updated: Sat Feb 13 19:36:03 2016
+last_updated: Sun Mar  6 18:27:50 2016
 ---
 
 ## Maximum Common Substructure (MCS) Searching
@@ -13,7 +13,7 @@ flexible MCSs among compounds. The algorithm can be used for pairwise
 compound comparisons, structure similarity searching and clustering. The
 manual describing this functionality is available
 [here](http://www.bioconductor.org/packages/devel/bioc/vignettes/fmcsR/inst/doc/fmcsR.html)
-and the associated publication is Wang et al. [-@Wang_2013]. The following gives a
+and the associated publication is Wang et al. (-@Wang_2013). The following gives a
 short preview of some functionalities provided by the
 `fmcsR` package.  
 
@@ -25,13 +25,13 @@ short preview of some functionalities provided by the
  plotMCS(test) # Plots both query compounds with MCS in color 
 {% endhighlight %}
 
-![](ChemmineR_images/plotmcs-1.png)
+![](ChemmineR_files/plotmcs-1.png)
 
 
 ## AP/APset Classes for Storing Atom Pair Descriptors
 
 The function `sdf2ap` computes atom pair descriptors for
-one or many compounds [@Carhart_1985; @Chen_2002]. It returns a searchable atom pair database
+one or many compounds (@Carhart_1985; @Chen_2002). It returns a searchable atom pair database
 stored in a container of class `APset`, which can be used
 for structural similarity searching and clustering. As similarity
 measure, the Tanimoto coefficient or related coefficients can be used.
@@ -645,7 +645,7 @@ View similarity search results in R's graphics device:
  plot(sdfset[names(cmp.search(apset, apset["650065"], type=2, cutoff=4, quiet=TRUE))], print=FALSE) 
 {% endhighlight %}
 
-![](ChemmineR_images/search_result-1.png)
+![](ChemmineR_files/search_result-1.png)
 
 
 View results online with Chemmine Tools: 

@@ -1,7 +1,7 @@
 ---
 title: systemPipeR - NGS workflow and report generation environment 
 keywords: 
-last_updated: Sun Mar  6 14:00:56 2016
+last_updated: Sun Mar  6 18:04:22 2016
 ---
 Author: Thomas Girke (thomas.girke@ucr.edu)
 
@@ -9,12 +9,13 @@ Last update: 06 March, 2016
 
 Alternative formats of this tutorial:
 [`.Rmd HTML`](https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html),
+[`.Rmd`](https://raw.githubusercontent.com/tgirke/manuals/master/vignettes/07_systemPipeR/systemPipeR.Rmd),
+[`.R`](https://raw.githubusercontent.com/tgirke/manuals/master/vignettes/07_systemPipeR/systemPipeR.R),
 [`HTML Slides`](https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html)
-
 
 ## Introduction
 
-[_`systemPipeR`_](http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html) provides utilities for building and running automated end-to-end analysis workflows for a wide range of next generation sequence (NGS) applications such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (Girke , 2014). Important features include a uniform workflow interface across different NGS applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters. The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, _`systemPipeR`_ can be used with most command-line aligners such as `BWA` (@Li2013-oy; Li et al., 2009), `TopHat2` (Kim et al., 2013) and `Bowtie2` (Langmead et al., 2012), as well as the R-based NGS aligners [_`Rsubread`_](http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html) (Liao et al., 2013) and [_`gsnap (gmapR)`_](http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html) (Wu et al., 2010). Efficient handling of complex sample sets (_e.g._ FASTQ/BAM files) and experimental designs is facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area (Lawrence et al., 2013). 
+[_`systemPipeR`_](http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html) provides utilities for building and running automated end-to-end analysis workflows for a wide range of next generation sequence (NGS) applications such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (Girke , 2014). Important features include a uniform workflow interface across different NGS applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters. The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, _`systemPipeR`_ can be used with most command-line aligners such as `BWA` (Li , 2013; Li et al., 2009), `TopHat2` (Kim et al., 2013) and `Bowtie2` (Langmead et al., 2012), as well as the R-based NGS aligners [_`Rsubread`_](http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html) (Liao et al., 2013) and [_`gsnap (gmapR)`_](http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html) (Wu et al., 2010). Efficient handling of complex sample sets (_e.g._ FASTQ/BAM files) and experimental designs is facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area (Lawrence et al., 2013). 
 
 Motivation and advantages of _`sytemPipeR`_ environment:
 

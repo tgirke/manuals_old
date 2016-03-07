@@ -1,7 +1,7 @@
 ---
 title: Version Information
 keywords: 
-last_updated: Sun Mar  6 13:50:33 2016
+last_updated: Sun Mar  6 18:25:41 2016
 ---
 
 This document was compiled in an R session with the following 
@@ -14,7 +14,7 @@ configuration.
 
 R version 3.2.3 (2015-12-10)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 14.04.3 LTS
+Running under: Ubuntu 14.04.4 LTS
 
 locale:
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              

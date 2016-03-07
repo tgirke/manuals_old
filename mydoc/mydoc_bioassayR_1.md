@@ -1,18 +1,17 @@
 ---
 title: bioassayR - Introduction and Examples 
 keywords: 
-last_updated: Sun Mar  6 13:50:33 2016
+last_updated: Sun Mar  6 18:25:41 2016
 ---
 Authors: Tyler Backman, Thomas Girke
 
-Last update: 13 February, 2016 
+Last update: 06 March, 2016 
 
 Alternative formats of this tutorial:
 [`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.html), 
 [`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.Rmd), 
 [`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.R), 
 [`PDF Slides`](http://biocluster.ucr.edu/~tbackman/chem_workshop/ht_screen.pdf)
-
 
 ## Introduction
 

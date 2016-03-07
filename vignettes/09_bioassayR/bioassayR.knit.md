@@ -1,7 +1,7 @@
 ---
 title: "bioassayR - Introduction and Examples" 
 author: "Authors: Tyler Backman, Thomas Girke"
-date: "Last update: 13 February, 2016" 
+date: "Last update: 06 March, 2016" 
 output:
   BiocStyle::html_document:
     toc: true
@@ -18,12 +18,6 @@ bibliography: bibtex.bib
 -->
 
 
-
-Alternative formats of this tutorial:
-[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.html), 
-[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.Rmd), 
-[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/bioassayR/bioassayR.R), 
-[`PDF Slides`](http://biocluster.ucr.edu/~tbackman/chem_workshop/ht_screen.pdf)
 
 Introduction
 ============
@@ -1205,7 +1199,7 @@ configuration.
 
 R version 3.2.3 (2015-12-10)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 14.04.3 LTS
+Running under: Ubuntu 14.04.4 LTS
 
 locale:
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              

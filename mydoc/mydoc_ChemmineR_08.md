@@ -1,7 +1,7 @@
 ---
 title: Splitting SD Files
 keywords: 
-last_updated: Sat Feb 13 19:36:03 2016
+last_updated: Sun Mar  6 18:27:50 2016
 ---
 
 The following `write.SDFsplit` function allows to split

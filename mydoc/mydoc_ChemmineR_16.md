@@ -1,7 +1,7 @@
 ---
 title: Rendering Chemical Structure Images
 keywords: 
-last_updated: Sat Feb 13 19:36:03 2016
+last_updated: Sun Mar  6 18:27:50 2016
 ---
 
 ## R Graphics Device
@@ -23,7 +23,7 @@ Plot compound Structures with R's graphics device:
  plot(sdfset[1:4], regenCoords=TRUE,print=FALSE) # 'print=TRUE' returns SDF summaries
 {% endhighlight %}
 
-![](ChemmineR_images/plotstruct2-1.png)
+![](ChemmineR_files/plotstruct2-1.png)
 
 
 Customized plots: 
@@ -44,7 +44,7 @@ more details, consult help documentation with
 	  	atomcex=0.8, sub=paste("MW:", MW(sdfsample["CMP1"])), print=FALSE) 
 {% endhighlight %}
 
-![](ChemmineR_images/plotstruct3-1.png)
+![](ChemmineR_files/plotstruct3-1.png)
 
 
 Substructure highlighting by atom numbers: 
@@ -53,7 +53,7 @@ Substructure highlighting by atom numbers:
  plot(sdfset[1], print=FALSE, colbonds=c(22,26,25,3,28,27,2,23,21,18,8,19,20,24)) 
 {% endhighlight %}
 
-![](ChemmineR_images/plotstruct4-1.png)
+![](ChemmineR_files/plotstruct4-1.png)
 
 
 ## Online with ChemMine Tools
@@ -67,6 +67,6 @@ Plot structures using web service ChemMine Tools:
  sdf.visualize(sdfset[1:4]) 
 {% endhighlight %}
 
-![Figure: Visualization webpage created by calling `sdf.visualize`.](ChemmineR_images/visualizescreenshot-small.png)
+![Figure: Visualization webpage created by calling `sdf.visualize`.](ChemmineR_files/visualizescreenshot-small.png)
 
 

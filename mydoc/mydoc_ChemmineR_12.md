@@ -1,7 +1,7 @@
 ---
 title: Molecular Property Functions (Physicochemical Descriptors)
 keywords: 
-last_updated: Sat Feb 13 19:36:03 2016
+last_updated: Sun Mar  6 18:27:50 2016
 ---
 
 Several methods and functions are available to compute basic compound
@@ -17,7 +17,7 @@ include/add hydrogens that are often not specified in an SD file.
  boxplot(propma, col="blue", main="Atom Frequency") 
 {% endhighlight %}
 
-![](ChemmineR_images/boxplot-1.png)
+![](ChemmineR_files/boxplot-1.png)
 
 
 

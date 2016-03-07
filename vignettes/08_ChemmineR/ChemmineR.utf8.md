@@ -1,7 +1,7 @@
 ---
 title: "_ChemmineR_: Cheminformatics Toolkit for R"
 author: "Authors: Kevin Horan, Yiqun Cao, Tyler Backman, [Thomas Girke](mailto:thomas.girke@ucr.edu)"
-date: "Last update: 13 February, 2016" 
+date: "Last update: 06 March, 2016" 
 package: "ChemmineR 2.23.1"
 output:
   BiocStyle::html_document:
@@ -49,14 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-Alternative formats of this tutorial:
-[`.Rmd HTML`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/ChemmineR/ChemmineR.html), 
-[`.Rmd Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/ChemmineR/ChemmineR.Rmd), 
-[`.R Source`](http://girke.bioinformatics.ucr.edu/manuals/vignettes/ChemmineR/ChemmineR.R), 
-[`PDF Slides`](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rcheminfo/Cheminfo.pdf)
-
 Note: the most recent version of this tutorial can be found <a href="https://htmlpreview.github.io/?https://github.com/girke-lab/ChemmineR/blob/master/vignettes/ChemmineR.html">here</a> and a short overview slide show [here](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Workshop_Dec_5_8_2014/Rcheminfo/Cheminfo.pdf).
-
 
 Introduction
 ============

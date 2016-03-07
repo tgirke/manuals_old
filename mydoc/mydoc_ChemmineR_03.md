@@ -1,11 +1,11 @@
 ---
 title: OpenBabel Functions
 keywords: 
-last_updated: Sat Feb 13 19:36:03 2016
+last_updated: Sun Mar  6 18:27:50 2016
 ---
 
 `ChemmineR` integrates now a subset of cheminformatics
-functionalities implemented in the OpenBabel C++ library [@greycite13432; @Cao_2008]. These
+functionalities implemented in the OpenBabel C++ library (Noel M O'Boyle et al., 2008; @Cao_2008). These
 utilities can be accessed by installing the `ChemmineOB`
 package and the OpenBabel software itself. `ChemmineR`
 will automatically detect the availability of
@@ -91,7 +91,7 @@ sdfset2 = regenerateCoords(sdfset[1:5])
 plot(sdfset[1], regenCoords=TRUE,print=FALSE)
 {% endhighlight %}
 
-![](ChemmineR_images/unnamed-chunk-30-1.png)
+![](ChemmineR_files/unnamed-chunk-30-1.png)
 
 `generate3DCoords`: Generate 3D coordinates for compounds with only 2D coordinates.
 
