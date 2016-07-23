@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -815,9 +793,9 @@ $('#toc').on('click', 'a', function() {
 methods and functions available in the ChemmineR package. The help
 documents of the package provide much more detailed information on each
 utility. The standard R help documents for these utilities can be
-accessed with this syntax: <code>?function\_name</code> (<em>e.g.</em>
-<code>?cid</code>) and <code>?class\_name-class</code> (<em>e.g</em>.
-<code>?"SDFset-class"</code>).</p>
+accessed with this syntax: <code class="highlighter-rouge">?function\_name</code> (<em>e.g.</em>
+<code class="highlighter-rouge">?cid</code>) and <code class="highlighter-rouge">?class\_name-class</code> (<em>e.g</em>.
+<code class="highlighter-rouge">?"SDFset-class"</code>).</p>
 
 <h2 id="molecular-structure-data">Molecular Structure Data</h2>
 
@@ -825,47 +803,47 @@ accessed with this syntax: <code>?function\_name</code> (<em>e.g.</em>
 
 <ul>
   <li>
-    <p><code>SDFstr</code>: intermediate string class to facilitate SD
+    <p><code class="highlighter-rouge">SDFstr</code>: intermediate string class to facilitate SD
 file import; not important for end user</p>
   </li>
   <li>
-    <p><code>SDF</code>: container for single molecule imported from an
+    <p><code class="highlighter-rouge">SDF</code>: container for single molecule imported from an
 SD file</p>
   </li>
   <li>
-    <p><code>SDFset</code>: container for many SDF objects; most
+    <p><code class="highlighter-rouge">SDFset</code>: container for many SDF objects; most
 important structure container for end user</p>
   </li>
   <li>
-    <p><code>SMI</code>: container for a single SMILES string</p>
+    <p><code class="highlighter-rouge">SMI</code>: container for a single SMILES string</p>
   </li>
   <li>
-    <p><code>SMIset</code>: container for many SMILES strings</p>
+    <p><code class="highlighter-rouge">SMIset</code>: container for many SMILES strings</p>
   </li>
 </ul>
 
-<p>Functions/Methods (mainly for <code>SDFset</code> container,
-<code>SMIset</code> should be coerced with
-<code>smiles2sd</code> to <code>SDFset</code>)</p>
+<p>Functions/Methods (mainly for <code class="highlighter-rouge">SDFset</code> container,
+<code class="highlighter-rouge">SMIset</code> should be coerced with
+<code class="highlighter-rouge">smiles2sd</code> to <code class="highlighter-rouge">SDFset</code>)</p>
 
 <ul>
   <li>
-    <p>Accessor methods for <code>SDF/SDFset</code></p>
+    <p>Accessor methods for <code class="highlighter-rouge">SDF/SDFset</code></p>
 
     <ul>
       <li>
-        <p>Object slots: <code>cid</code>, <code>header</code>, <code>atomblock</code>, <code>bondblock</code>,
-<code>datablock</code> (<code>sdfid</code>, <code>datablocktag</code>)</p>
+        <p>Object slots: <code class="highlighter-rouge">cid</code>, <code class="highlighter-rouge">header</code>, <code class="highlighter-rouge">atomblock</code>, <code class="highlighter-rouge">bondblock</code>,
+<code class="highlighter-rouge">datablock</code> (<code class="highlighter-rouge">sdfid</code>, <code class="highlighter-rouge">datablocktag</code>)</p>
       </li>
       <li>
-        <p>Summary of <code>SDFset</code>: <code>view</code></p>
+        <p>Summary of <code class="highlighter-rouge">SDFset</code>: <code class="highlighter-rouge">view</code></p>
       </li>
       <li>
-        <p>Matrix conversion of data block: <code>datablock2ma</code>,
-<code>splitNumChar</code></p>
+        <p>Matrix conversion of data block: <code class="highlighter-rouge">datablock2ma</code>,
+<code class="highlighter-rouge">splitNumChar</code></p>
       </li>
       <li>
-        <p>String search in SDFset: <code>grepSDFset</code></p>
+        <p>String search in SDFset: <code class="highlighter-rouge">grepSDFset</code></p>
       </li>
     </ul>
   </li>
@@ -873,9 +851,9 @@ important structure container for end user</p>
     <p>Coerce one class to another</p>
 
     <ul>
-      <li>Standard syntax <code>as(..., "...")</code> works in most
+      <li>Standard syntax <code class="highlighter-rouge">as(..., "...")</code> works in most
 cases. For details see R help with
-   <code>?"SDFset-class"</code>.</li>
+   <code class="highlighter-rouge">?"SDFset-class"</code>.</li>
     </ul>
   </li>
   <li>
@@ -883,13 +861,13 @@ cases. For details see R help with
 
     <ul>
       <li>
-        <p>Atom frequencies: <code>atomcountMA</code>, <code>atomcount</code></p>
+        <p>Atom frequencies: <code class="highlighter-rouge">atomcountMA</code>, <code class="highlighter-rouge">atomcount</code></p>
       </li>
       <li>
-        <p>Molecular weight: <code>MW</code></p>
+        <p>Molecular weight: <code class="highlighter-rouge">MW</code></p>
       </li>
       <li>
-        <p>Molecular formula: <code>MF</code></p>
+        <p>Molecular formula: <code class="highlighter-rouge">MF</code></p>
       </li>
       <li>
         <p>…</p>
@@ -901,10 +879,10 @@ cases. For details see R help with
 
     <ul>
       <li>
-        <p>R graphics device: <code>plot</code>, <code>plotStruc</code></p>
+        <p>R graphics device: <code class="highlighter-rouge">plot</code>, <code class="highlighter-rouge">plotStruc</code></p>
       </li>
       <li>
-        <p>Online: <code>cmp.visualize</code></p>
+        <p>Online: <code class="highlighter-rouge">cmp.visualize</code></p>
       </li>
     </ul>
   </li>
@@ -916,18 +894,18 @@ cases. For details see R help with
 
 <ul>
   <li>
-    <p><code>AP</code>: container for atom pair descriptors of a single
+    <p><code class="highlighter-rouge">AP</code>: container for atom pair descriptors of a single
 molecule</p>
   </li>
   <li>
-    <p><code>APset</code>: container for many AP objects; most
+    <p><code class="highlighter-rouge">APset</code>: container for many AP objects; most
 important structure descriptor container for end user</p>
   </li>
   <li>
-    <p><code>FP</code>: container for fingerprint of a single molecule</p>
+    <p><code class="highlighter-rouge">FP</code>: container for fingerprint of a single molecule</p>
   </li>
   <li>
-    <p><code>FPset</code>: container for fingerprints of many
+    <p><code class="highlighter-rouge">FPset</code>: container for fingerprints of many
 molecules, most important structure descriptor container for end
 user</p>
   </li>
@@ -937,18 +915,18 @@ user</p>
 
 <ul>
   <li>
-    <p>Create <code>AP/APset</code> instances</p>
+    <p>Create <code class="highlighter-rouge">AP/APset</code> instances</p>
 
     <ul>
       <li>
-        <p>From <code>SDFset</code>: <code>sdf2ap</code></p>
+        <p>From <code class="highlighter-rouge">SDFset</code>: <code class="highlighter-rouge">sdf2ap</code></p>
       </li>
       <li>
-        <p>From SD file: <code>cmp.parse</code></p>
+        <p>From SD file: <code class="highlighter-rouge">cmp.parse</code></p>
       </li>
       <li>
-        <p>Summary of <code>AP/APset</code>: <code>view</code>,
-<code>db.explain</code></p>
+        <p>Summary of <code class="highlighter-rouge">AP/APset</code>: <code class="highlighter-rouge">view</code>,
+<code class="highlighter-rouge">db.explain</code></p>
       </li>
     </ul>
   </li>
@@ -956,16 +934,16 @@ user</p>
     <p>Accessor methods for AP/APset</p>
 
     <ul>
-      <li>Object slots: <code>ap</code>, <code>cid</code></li>
+      <li>Object slots: <code class="highlighter-rouge">ap</code>, <code class="highlighter-rouge">cid</code></li>
     </ul>
   </li>
   <li>
     <p>Coerce one class to another</p>
 
     <ul>
-      <li>Standard syntax <code>as(..., "...")</code> works in most
+      <li>Standard syntax <code class="highlighter-rouge">as(..., "...")</code> works in most
 cases. For details see R help with
-<code>?"APset-class"</code>.</li>
+<code class="highlighter-rouge">?"APset-class"</code>.</li>
     </ul>
   </li>
   <li>
@@ -973,11 +951,11 @@ cases. For details see R help with
 
     <ul>
       <li>
-        <p>Compute pairwise similarities : <code>cmp.similarity</code>,
-<code>fpSim</code></p>
+        <p>Compute pairwise similarities : <code class="highlighter-rouge">cmp.similarity</code>,
+<code class="highlighter-rouge">fpSim</code></p>
       </li>
       <li>
-        <p>Search APset database: <code>cmp.search</code>, <code>fpSim</code></p>
+        <p>Search APset database: <code class="highlighter-rouge">cmp.search</code>, <code class="highlighter-rouge">fpSim</code></p>
       </li>
     </ul>
   </li>
@@ -986,24 +964,24 @@ cases. For details see R help with
 
     <ul>
       <li>
-        <p>Single-linkage binning clustering: <code>cmp.cluster</code></p>
+        <p>Single-linkage binning clustering: <code class="highlighter-rouge">cmp.cluster</code></p>
       </li>
       <li>
         <p>Visualize clustering result with MDS:
-<code>cluster.visualize</code></p>
+<code class="highlighter-rouge">cluster.visualize</code></p>
       </li>
       <li>
-        <p>Size distribution of clusters: <code>cluster.sizestat</code></p>
+        <p>Size distribution of clusters: <code class="highlighter-rouge">cluster.sizestat</code></p>
       </li>
     </ul>
   </li>
   <li>
     <p>Folding</p>
     <ul>
-      <li>Fold a descriptor with <code>fold</code></li>
+      <li>Fold a descriptor with <code class="highlighter-rouge">fold</code></li>
       <li>Query the number of times a descriptor has been folded:
- <code>foldCount</code></li>
-      <li>Query the number of bits in a descriptor: <code>numBits</code></li>
+ <code class="highlighter-rouge">foldCount</code></li>
+      <li>Query the number of bits in a descriptor: <code class="highlighter-rouge">numBits</code></li>
     </ul>
   </li>
 </ul>
@@ -1024,7 +1002,7 @@ cases. For details see R help with
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

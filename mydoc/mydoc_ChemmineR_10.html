@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -828,7 +806,7 @@ quickly because of the database index, no need to scan a large compound
 file. In addition to user defined features, descriptors can also be
 computed and stored for each compound.</p>
 
-<p>A new database can be created with the <code>initDb</code> function.
+<p>A new database can be created with the <code class="highlighter-rouge">initDb</code> function.
 This takes either an existing database connection, or a filename. If a
 filename is given then an SQLite database connection is created. It then
 ensures that the required tables exist and creates them if not. The
@@ -838,29 +816,29 @@ data.</p>
 
 <h2 id="loading-data">Loading Data</h2>
 
-<p>The functions <code>loadSdf</code> and <code>loadSmiles</code> can be used to load
-compound data from either a file (both) or an <code>SDFset</code> (<code>loadSdf</code>
-only).  The <code>fct</code> parameter should be a function to
+<p>The functions <code class="highlighter-rouge">loadSdf</code> and <code class="highlighter-rouge">loadSmiles</code> can be used to load
+compound data from either a file (both) or an <code class="highlighter-rouge">SDFset</code> (<code class="highlighter-rouge">loadSdf</code>
+only).  The <code class="highlighter-rouge">fct</code> parameter should be a function to
 extract features from the data. It will be handed an
-<code>SDFset</code> generated from the data being loaded. This may
+<code class="highlighter-rouge">SDFset</code> generated from the data being loaded. This may
 be done in batches, so there is no guarantee that the given SDFSset will
 contain the whole dataset. This function should return a data frame with
 a column for each feature and a row for each compound given. The order
 of the final data frame should be the same as that of the
-<code>SDFset</code>. The column names will become the feature names.
+<code class="highlighter-rouge">SDFset</code>. The column names will become the feature names.
 Each of these features will become a new, indexed, table in the database
 which can be used later to search for compounds.</p>
 
-<p>The <code>descriptors</code> parameter can be a function which
+<p>The <code class="highlighter-rouge">descriptors</code> parameter can be a function which
 computes descriptors. This function will also be given an
-<code>SDFset</code> object, which may be done in batches. It should
+<code class="highlighter-rouge">SDFset</code> object, which may be done in batches. It should
 return a data frame with the following two columns: “descriptor” and
 “descriptor_type”. The “descriptor” column should contain a string
 representation of the descriptor, and “descriptor_type” is the type of
 the descriptor. Our convention for atom pair is “ap” and “fp” for finger
 print. The order should also be maintained.</p>
 
-<p>When the data has been loaded, <code>loadSdf</code> will return the
+<p>When the data has been loaded, <code class="highlighter-rouge">loadSdf</code> will return the
 compound id numbers of each compound loaded. These compound id numbers
 are computed by the database and are not extracted from the compound
 data itself. They can be used to quickly retrieve compounds later.</p>
@@ -868,22 +846,22 @@ data itself. They can be used to quickly retrieve compounds later.</p>
 <p>New features can also be added using this function. However, all
 compounds must have all features so if new features are added to a new
 set of compounds, all existing features must be computable by the
-<code>fct</code> function given. If new features are detected, all
-existing compounds will be run through <code>fct</code> in order to
+<code class="highlighter-rouge">fct</code> function given. If new features are detected, all
+existing compounds will be run through <code class="highlighter-rouge">fct</code> in order to
 compute the new features for them as well.</p>
 
 <p>For example, if dataset X is loaded with features F1 and F2, and then at
 a later time we load dataset Y with new feature F3, the
-<code>fct</code> function used to load dataset Y must compute and
-return features F1, F2, and F3. <code>loadSdf</code> will call
-<code>fct</code> with both datasets X and Y so that all features are
+<code class="highlighter-rouge">fct</code> function used to load dataset Y must compute and
+return features F1, F2, and F3. <code class="highlighter-rouge">loadSdf</code> will call
+<code class="highlighter-rouge">fct</code> with both datasets X and Y so that all features are
 available for all compounds. If any features are missing an error will
 be raised. If just new features are being added, but no new compounds,
-use the <code>addNewFeatures</code> function.</p>
+use the <code class="highlighter-rouge">addNewFeatures</code> function.</p>
 
 <p>In this example, we create a new database called “test.db” and load it
-with data from an <code>SDFset</code>. We also define
-<code>fct</code> to compute the molecular weight, “MW”, and the
+with data from an <code class="highlighter-rouge">SDFset</code>. We also define
+<code class="highlighter-rouge">fct</code> to compute the molecular weight, “MW”, and the
 number of rings and aromatic rings. The rings function actually returns
 a data frame with columns “RINGS” and “AROMATIC”, which will be merged
 into the data frame being created which will also contain the “MW”
@@ -891,29 +869,29 @@ column. These will be the names used for these features and must be used
 when searching with them. Finally, the new compound ids are returned and
 stored in the “ids” variable.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">)</span>
 
  <span class="c1">#create and initialize a new SQLite database 
-</span> <span class="n">conn</span> <span class="o">&lt;-</span> <span class="n">initDb</span><span class="p">(</span><span class="s2">"test.db"</span><span class="p">)</span></code></pre></div>
+</span> <span class="n">conn</span> <span class="o">&lt;-</span> <span class="n">initDb</span><span class="p">(</span><span class="s2">"test.db"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: RSQLite</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: RSQLite</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: DBI</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Loading required package: DBI</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># load data and compute 3 features: molecular weight, with the MW function, 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="c1"># load data and compute 3 features: molecular weight, with the MW function, 
 </span> <span class="c1"># and counts for RINGS and AROMATIC, as computed by rings, which 
 </span> <span class="c1"># returns a data frame itself. 
 </span> <span class="n">ids</span><span class="o">&lt;-</span><span class="n">loadSdf</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">sdfsample</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> 
 					 <span class="n">data.frame</span><span class="p">(</span><span class="n">rings</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span><span class="n">type</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span><span class="n">upper</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">arom</span><span class="o">=</span><span class="n">TRUE</span><span class="p">),</span><span class="n">propOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> <span class="p">)</span> 
 
  <span class="c1">#list features in the database:
-</span> <span class="n">print</span><span class="p">(</span><span class="n">listFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">))</span></code></pre></div>
+</span> <span class="n">print</span><span class="p">(</span><span class="n">listFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] "aromatic" "cansmi"   "cansmins" "formula"  "hba1"     "hba2"     "hbd"      "inchi"   
-##  [9] "logp"     "mr"       "mw"       "nf"       "rings"    "title"    "tpsa"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] "aromatic" "cansmi"   "cansmins" "formula"  "hba1"     "hba2"     "hbd"      "inchi"   
+##  [9] "logp"     "mr"       "mw"       "nf"       "rings"    "title"    "tpsa"</code></pre></figure>
 
 <h2 id="updates">Updates</h2>
-<p>By default the <code>loadSdf</code> / <code>loadSmiles</code> functions will detect duplicate
+<p>By default the <code class="highlighter-rouge">loadSdf</code> / <code class="highlighter-rouge">loadSmiles</code> functions will detect duplicate
 compound entries and only insert one of them. This means it is safe
 to run these functions on the same data set several times and you
 won’t end up with duplicates. This allows the functions to be re-run
@@ -922,7 +900,7 @@ Duplicate compounds are detected by compouting the MD5 checksum on
 the textual representation of it.</p>
 
 <p>It can also update existing compounds with new versions of the same
-compound. To enable this, set <code>updateByName</code> to true. It will then
+compound. To enable this, set <code class="highlighter-rouge">updateByName</code> to true. It will then
 consider two compounds with the same name to be the same, even if the
 definition is different. Then, if the name of a compound exists in
 the database and it is trying to insert another compound with the
@@ -933,79 +911,79 @@ computation are available at the time the update is performed).</p>
 
 <h2 id="duplicate-descriptors">Duplicate Descriptors</h2>
 <p>It is often the case when loading a large set of compounds that
-several compounds will produce the same descriptor. <code>ChemmineR</code> 
+several compounds will produce the same descriptor. <code class="highlighter-rouge">ChemmineR</code> 
 detects this case and only stores one copy of the descriptor for
 every compound it is for. This feature saves some space and some
 time for processes that need to be applied to every descriptor.
 It also highlights a new problem. If you have a descriptor in hand
 and you want to find a single compound to represent it, which
 compound should be used if the descriptor was produced from multiple
-compounds? To address this problem, <code>ChemmineR</code> allows you to set
+compounds? To address this problem, <code class="highlighter-rouge">ChemmineR</code> allows you to set
 priority values for each compound-descriptor mapping. Then, in
 contexts where a single compound is required, the highest priority
 compound will be chosen. Highest priority corresponds to the lowest
 numerical value. So mapping with priority 0 would be used first.</p>
 
-<p>To set these priorities there is the function <code>setPriorities</code>.
-It takes a function, <code>priorityFn</code>, for computing these priority values.
-The <code>setPriorities</code> function should be run after loading a complete set of data.
+<p>To set these priorities there is the function <code class="highlighter-rouge">setPriorities</code>.
+It takes a function, <code class="highlighter-rouge">priorityFn</code>, for computing these priority values.
+The <code class="highlighter-rouge">setPriorities</code> function should be run after loading a complete set of data.
 It will find each group of compounds which share the same
-descriptor and call the given function, <code>priorityFn</code>, 
+descriptor and call the given function, <code class="highlighter-rouge">priorityFn</code>, 
 with the compound_id numbers of the group. This function should
 then assign priorities to each compound-descriptor pair, however
 it wishes.</p>
 
-<p>One built in priority function is <code>forestSizePriorities</code>. This simply
+<p>One built in priority function is <code class="highlighter-rouge">forestSizePriorities</code>. This simply
 prefers compounds with fewer disconnected components over compounds with
 more dissconnected components.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">setPriorities</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">forestSizePriorities</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">setPriorities</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">forestSizePriorities</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="searching">Searching</h2>
 
-<p>Compounds can be searched for using the <code>findCompounds</code>
+<p>Compounds can be searched for using the <code class="highlighter-rouge">findCompounds</code>
 function. This function takes a connection object, a vector of feature
 names used in the tests, and finally, a vector of tests that must all
 pass for a compound to be included in the result set. Each test should
-be a boolean expression. For example: <code>c("MW &lt;= 400","RINGS \&gt; 3")</code>
+be a boolean expression. For example: <code class="highlighter-rouge">c("MW &lt;= 400","RINGS \&gt; 3")</code>
 would return all compounds with a molecular weight of 400 or less and
 more than 3 rings, assuming these features exist in the database. The
-syntax for each test is <code>'\&lt;feature name\&gt; \&lt;SQL operator\&gt; \&lt;value\&gt;'</code>.
+syntax for each test is <code class="highlighter-rouge">'\&lt;feature name\&gt; \&lt;SQL operator\&gt; \&lt;value\&gt;'</code>.
 If you know SQL you can go beyond this basic syntax. These tests will
 simply be concatenated together with “AND” in-between them and tacked on
 the end of a WHERE clause of an SQL statement. So any SQL that will work
 in that context is fine. The function will return a list of compound
 ids, the actual compounds can be fetched with
-<code>getCompounds</code>. If just the names are needed, the
-<code>getCompoundNames</code> function can be used. Compounds can
-also be fetched by name using the <code>findCompoundsByName</code>
+<code class="highlighter-rouge">getCompounds</code>. If just the names are needed, the
+<code class="highlighter-rouge">getCompoundNames</code> function can be used. Compounds can
+also be fetched by name using the <code class="highlighter-rouge">findCompoundsByName</code>
 function.</p>
 
 <p>In this example we search for compounds with molecular weight less than
 300.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">results</span> <span class="o">=</span> <span class="n">findCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="s2">"mw"</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw &lt; 300"</span><span class="p">))</span>
-<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">results</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">results</span> <span class="o">=</span> <span class="n">findCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="s2">"mw"</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw &lt; 300"</span><span class="p">))</span>
+<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">results</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## found 23</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## found 23</code></pre></figure>
 
 <p>If more than one test is given, only compounds which satisfy all tests are found. So if we wanted
 to further restrict our search to compounds with 2 or more aromatic rings we could do:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">results</span> <span class="o">=</span> <span class="n">findCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"aromatic"</span><span class="p">),</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw &lt; 300"</span><span class="p">,</span><span class="s2">"aromatic &gt;= 2"</span><span class="p">))</span>
-<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">results</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">results</span> <span class="o">=</span> <span class="n">findCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"aromatic"</span><span class="p">),</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw &lt; 300"</span><span class="p">,</span><span class="s2">"aromatic &gt;= 2"</span><span class="p">))</span>
+<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">results</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## found 9</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## found 9</code></pre></figure>
 
 <p>Remember that any feature used in some test must be listed in the second argument.</p>
 
 <p>String patterns can also be used. So if we wanted to match a substring of the molecular formula, say
 to find compounds with 21 carbon atoms, we could do:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">results</span> <span class="o">=</span> <span class="n">findCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="s2">"formula like '%C21%'"</span><span class="p">))</span>
-<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">results</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">results</span> <span class="o">=</span> <span class="n">findCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="s2">"formula like '%C21%'"</span><span class="p">))</span>
+<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">results</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## found 12</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## found 12</code></pre></figure>
 
 <p>The “like” operator does a pattern match. There are two wildcard 
 operators that can be used with this operator. The “%” will match any stretch of characters while the “?”
@@ -1020,18 +998,18 @@ will match any single character. So the above expression would match a formula l
 
 <p>The boolean operators “AND” and “OR” can also be used to create more complex expressions within a single test.</p>
 
-<p>If you just want to fetch every compound in the database you can use the <code>getAllCompoundIds</code> function:</p>
+<p>If you just want to fetch every compound in the database you can use the <code class="highlighter-rouge">getAllCompoundIds</code> function:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">allIds</span> <span class="o">=</span> <span class="n">getAllCompoundIds</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
-<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">allIds</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">allIds</span> <span class="o">=</span> <span class="n">getAllCompoundIds</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
+<span class="n">message</span><span class="p">(</span><span class="s2">"found "</span><span class="p">,</span><span class="n">length</span><span class="p">(</span><span class="n">allIds</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## found 100</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## found 100</code></pre></figure>
 
 <h2 id="using-search-results">Using Search Results</h2>
-<p>Once you have a list of compound ids from the <code>findCompounds</code> function, you can either
+<p>Once you have a list of compound ids from the <code class="highlighter-rouge">findCompounds</code> function, you can either
 fetch the compound names, or the whole set of compounds as an SDFset.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#get the names of the compounds:
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#get the names of the compounds:
 </span><span class="n">names</span> <span class="o">=</span> <span class="n">getCompoundNames</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">)</span>
 
 <span class="c1">#if the name order is important set keepOrder=TRUE 
@@ -1044,41 +1022,41 @@ fetch the compound names, or the whole set of compounds as an SDFset.</p>
 <span class="c1">#in order:
 </span><span class="n">compounds</span> <span class="o">=</span> <span class="n">getCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">,</span><span class="n">keepOrder</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
 <span class="c1">#write results directly to a file:
-</span><span class="n">compounds</span> <span class="o">=</span> <span class="n">getCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="n">file.path</span><span class="p">(</span><span class="n">tempdir</span><span class="p">(),</span><span class="s2">"results.sdf"</span><span class="p">))</span></code></pre></div>
+</span><span class="n">compounds</span> <span class="o">=</span> <span class="n">getCompounds</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="n">file.path</span><span class="p">(</span><span class="n">tempdir</span><span class="p">(),</span><span class="s2">"results.sdf"</span><span class="p">))</span></code></pre></figure>
 
-<p>Using the <code>getCompoundFeatures</code> function, you can get a set of feature values 
+<p>Using the <code class="highlighter-rouge">getCompoundFeatures</code> function, you can get a set of feature values 
 as a data frame:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">getCompoundFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"logp"</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">getCompoundFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"logp"</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##   compound_id       mw   logp       formula
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##   compound_id       mw   logp       formula
 ## 1         204 461.5346 1.3127   C21H27N5O5S
 ## 2         208 438.4780 3.5492  C21H19FN6O2S
 ## 3         221 340.4592 3.1325    C21H28N2O2
 ## 4         238 447.9351 5.2940 C21H22ClN3O4S
-## 5         243 456.5181 3.0020   C21H24N6O4S</code></pre></div>
+## 5         243 456.5181 3.0020   C21H24N6O4S</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#write results directly to a CSV file (reduces memory usage):
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#write results directly to a CSV file (reduces memory usage):
 </span><span class="n">getCompoundFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"logp"</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">),</span><span class="n">filename</span><span class="o">=</span><span class="s2">"features.csv"</span><span class="p">)</span>
 
 <span class="c1">#maintain input order in output:
-</span><span class="n">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span></code></pre></div>
+</span><span class="n">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 204 208 221 238 243</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 204 208 221 238 243</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">getCompoundFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"logp"</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">),</span><span class="n">keepOrder</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">getCompoundFeatures</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="n">results</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="n">c</span><span class="p">(</span><span class="s2">"mw"</span><span class="p">,</span><span class="s2">"logp"</span><span class="p">,</span><span class="s2">"formula"</span><span class="p">),</span><span class="n">keepOrder</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##     compound_id       mw   logp       formula
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##     compound_id       mw   logp       formula
 ## 204         204 461.5346 1.3127   C21H27N5O5S
 ## 208         208 438.4780 3.5492  C21H19FN6O2S
 ## 221         221 340.4592 3.1325    C21H28N2O2
 ## 238         238 447.9351 5.2940 C21H22ClN3O4S
-## 243         243 456.5181 3.0020   C21H24N6O4S</code></pre></div>
+## 243         243 456.5181 3.0020   C21H24N6O4S</code></pre></figure>
 
 <h2 id="pre-built-databases">Pre-Built Databases</h2>
 <p>We have pre-built SQLite databases for the Drug Bank and DUD datasets. They can be found in 
 the ChemmineDrugs annotation package. Connections to these databases can be fetched from the
-functions <code>DrugBank</code> and <code>DUD</code> to get the corresponding database. Any of the above functions can
+functions <code class="highlighter-rouge">DrugBank</code> and <code class="highlighter-rouge">DUD</code> to get the corresponding database. Any of the above functions can
 then be used to query the database.</p>
 
 <p>The DUD dataset was downloaded from <a href="http://dude.docking.org/db/subsets/all/all.tar.gz">here</a>. A description
@@ -1142,7 +1120,7 @@ can be found <a href="http://dude.docking.org/">here</a>.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

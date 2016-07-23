@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,34 +789,34 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-<p>The function <code>bonds</code> returns information about the number
-of bonds, charges and missing hydrogens in <code>SDF</code> and
-<code>SDFset</code> objects. It is used by many other functions
-(<em>e.g.</em> <code>MW</code>, <code>MF</code>,
-<code>atomcount</code>, <code>atomcuntMA</code> and
-<code>plot</code>) to correct for missing hydrogens that are often
+<p>The function <code class="highlighter-rouge">bonds</code> returns information about the number
+of bonds, charges and missing hydrogens in <code class="highlighter-rouge">SDF</code> and
+<code class="highlighter-rouge">SDFset</code> objects. It is used by many other functions
+(<em>e.g.</em> <code class="highlighter-rouge">MW</code>, <code class="highlighter-rouge">MF</code>,
+<code class="highlighter-rouge">atomcount</code>, <code class="highlighter-rouge">atomcuntMA</code> and
+<code class="highlighter-rouge">plot</code>) to correct for missing hydrogens that are often
 not specified in SD files.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"bonds"</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"bonds"</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##   atom Nbondcount Nbondrule charge
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##   atom Nbondcount Nbondrule charge
 ## 1    O          2         2      0
 ## 2    O          2         2      0
 ## 3    O          2         2      0
-## 4    O          2         2      0</code></pre></div>
+## 4    O          2         2      0</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"charge"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"charge"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## $CMP1
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## $CMP1
 ## NULL
 ## 
 ## $CMP2
-## NULL</code></pre></div>
+## NULL</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"addNH"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"addNH"</span><span class="p">)</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## CMP1 CMP2 
-##    0    0</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## CMP1 CMP2 
+##    0    0</code></pre></figure>
 
 
 
@@ -856,7 +834,7 @@ not specified in SD files.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

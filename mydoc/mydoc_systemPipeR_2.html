@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -813,26 +791,26 @@ $('#toc').on('click', 'a', function() {
 -->
 <h2 id="installation">Installation</h2>
 
-<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code>systemPipeR</code></em> environment can be installed from R using the <em><code>biocLite</code></em> install command. The associated data package <a href="https://github.com/tgirke/systemPipeRdata"><em><code>systemPipeRdata</code></em></a> can be used to generate <em><code>systemPipeR</code></em> workflow environments with a single command (<a href="#load-sample-data-and-workflow-templates">see below</a>) containing all parameter files and sample data required to quickly test and run workflows.</p>
+<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code class="highlighter-rouge">systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code class="highlighter-rouge">systemPipeR</code></em> environment can be installed from R using the <em><code class="highlighter-rouge">biocLite</code></em> install command. The associated data package <a href="https://github.com/tgirke/systemPipeRdata"><em><code class="highlighter-rouge">systemPipeRdata</code></em></a> can be used to generate <em><code class="highlighter-rouge">systemPipeR</code></em> workflow environments with a single command (<a href="#load-sample-data-and-workflow-templates">see below</a>) containing all parameter files and sample data required to quickly test and run workflows.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script 
 </span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Installs systemPipeR 
-</span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"systemPipeRdata"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Installs</span> <span class="n">systemPipeRdata</span></code></pre></div>
+</span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"systemPipeRdata"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Installs</span> <span class="n">systemPipeRdata</span></code></pre></figure>
 
 <h2 id="loading-package-and-documentation">Loading package and documentation</h2>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Loads the package
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Loads the package
 </span><span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Lists package info
-</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">vignette</span></code></pre></div>
+</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">vignette</span></code></pre></figure>
 
 <h2 id="load-sample-data-and-workflow-templates">Load sample data and workflow templates</h2>
-<p>The mini sample FASTQ files used by this overview vignette as well as the associated workflow reporting vignettes can be loaded via the <em><code>systemPipeRdata</code></em> package as shown below. The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code>SRP010938</code></a> contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em> (Howard et al., 2013). To minimize processing time during testing, each FASTQ file has been subsetted to 90,000-100,000 randomly sampled PE reads that map to the first 100,000 nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding reference genome sequence (FASTA) and its GFF annotion files (provided in the same download) have been truncated accordingly. This way the entire test sample data set requires less than 200MB disk storage space. A PE read set has been chosen for this test data set for flexibility, because it can be used for testing both types of analysis routines requiring either SE (single end) reads or PE reads.</p>
+<p>The mini sample FASTQ files used by this overview vignette as well as the associated workflow reporting vignettes can be loaded via the <em><code class="highlighter-rouge">systemPipeRdata</code></em> package as shown below. The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code class="highlighter-rouge">SRP010938</code></a> contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em> (Howard et al., 2013). To minimize processing time during testing, each FASTQ file has been subsetted to 90,000-100,000 randomly sampled PE reads that map to the first 100,000 nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding reference genome sequence (FASTA) and its GFF annotion files (provided in the same download) have been truncated accordingly. This way the entire test sample data set requires less than 200MB disk storage space. A PE read set has been chosen for this test data set for flexibility, because it can be used for testing both types of analysis routines requiring either SE (single end) reads or PE reads.</p>
 
 <p>The following loads one of the available NGS workflow templates (here RNA-Seq) into the user’s current working directory. At the moment, the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq. Templates for additional NGS applications will be provided in the future.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
 <span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">)</span>
-<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span></code></pre></div>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span></code></pre></figure>
 
 <p>The working environment of the sample data loaded in previous step contains the following preconfigured directory structure:</p>
 
@@ -877,28 +855,28 @@ Users can change this structure as needed, but need to adjust the code in their 
 <p>The following parameter files are included in each workflow template:</p>
 
 <ol>
-  <li><em><code>targets.txt</code></em>: initial one provided by user; downstream <em><code>targets_*.txt</code></em> files are generated automatically</li>
-  <li><em><code>*.param</code></em>: defines parameter for input/output file operations, <em>e.g.</em> <em><code>trim.param</code></em>, <em><code>bwa.param</code></em>, <em><code>vartools.parm</code></em>, …</li>
-  <li><em><code>*_run.sh</code></em>: optional bash script, <em>e.g.</em>: <em><code>gatk_run.sh</code></em></li>
+  <li><em><code class="highlighter-rouge">targets.txt</code></em>: initial one provided by user; downstream <em><code class="highlighter-rouge">targets_*.txt</code></em> files are generated automatically</li>
+  <li><em><code class="highlighter-rouge">*.param</code></em>: defines parameter for input/output file operations, <em>e.g.</em> <em><code class="highlighter-rouge">trim.param</code></em>, <em><code class="highlighter-rouge">bwa.param</code></em>, <em><code class="highlighter-rouge">vartools.parm</code></em>, …</li>
+  <li><em><code class="highlighter-rouge">*_run.sh</code></em>: optional bash script, <em>e.g.</em>: <em><code class="highlighter-rouge">gatk_run.sh</code></em></li>
   <li>Compute cluster environment (skip on single machine):
     <ul>
-      <li><em><code>.BatchJobs</code></em>: defines type of scheduler for <em><code>BatchJobs</code></em></li>
-      <li><em><code>*.tmpl</code></em>: specifies parameters of scheduler used by a system, <em>e.g.</em> Torque, SGE, StarCluster, Slurm, etc.</li>
+      <li><em><code class="highlighter-rouge">.BatchJobs</code></em>: defines type of scheduler for <em><code class="highlighter-rouge">BatchJobs</code></em></li>
+      <li><em><code class="highlighter-rouge">*.tmpl</code></em>: specifies parameters of scheduler used by a system, <em>e.g.</em> Torque, SGE, StarCluster, Slurm, etc.</li>
     </ul>
   </li>
 </ol>
 
-<h2 id="structure-of-targets-file">Structure of <em><code>targets</code></em> file</h2>
+<h2 id="structure-of-targets-file">Structure of <em><code class="highlighter-rouge">targets</code></em> file</h2>
 
-<p>The <em><code>targets</code></em> file defines all input files (<em>e.g.</em> FASTQ, BAM, BCF) and sample comparisons of an analysis workflow. The following shows the format of a sample <em><code>targets</code></em> file included in the package. It also can be viewed and downloaded from <em><code>systemPipeR</code></em>’s GitHub repository <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt">here</a>. In a target file with a single type of input files, here FASTQ files of single end (SE) reads, the first three columns are mandatory including their column names, while it is four mandatory columns for FASTQ files of PE reads. All subsequent columns are optional and any number of additional columns can be added as needed.</p>
+<p>The <em><code class="highlighter-rouge">targets</code></em> file defines all input files (<em>e.g.</em> FASTQ, BAM, BCF) and sample comparisons of an analysis workflow. The following shows the format of a sample <em><code class="highlighter-rouge">targets</code></em> file included in the package. It also can be viewed and downloaded from <em><code class="highlighter-rouge">systemPipeR</code></em>’s GitHub repository <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt">here</a>. In a target file with a single type of input files, here FASTQ files of single end (SE) reads, the first three columns are mandatory including their column names, while it is four mandatory columns for FASTQ files of PE reads. All subsequent columns are optional and any number of additional columns can be added as needed.</p>
 
-<h3 id="structure-of-targets-file-for-single-end-se-samples">Structure of <em><code>targets</code></em> file for single end (SE) samples</h3>
+<h3 id="structure-of-targets-file-for-single-end-se-samples">Structure of <em><code class="highlighter-rouge">targets</code></em> file for single end (SE) samples</h3>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
 <span class="n">targetspath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"targets.txt"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span> 
-<span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span></code></pre></div>
+<span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                    FileName SampleName Factor SampleLong Experiment        Date
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                    FileName SampleName Factor SampleLong Experiment        Date
 ## 1  ./data/SRR446027_1.fastq        M1A     M1  Mock.1h.A          1 23-Mar-2012
 ## 2  ./data/SRR446028_1.fastq        M1B     M1  Mock.1h.B          1 23-Mar-2012
 ## 3  ./data/SRR446029_1.fastq        A1A     A1   Avr.1h.A          1 23-Mar-2012
@@ -916,50 +894,50 @@ Users can change this structure as needed, but need to adjust the code in their 
 ## 15 ./data/SRR446041_1.fastq       A12A    A12  Avr.12h.A          1 23-Mar-2012
 ## 16 ./data/SRR446042_1.fastq       A12B    A12  Avr.12h.B          1 23-Mar-2012
 ## 17 ./data/SRR446043_1.fastq       V12A    V12  Vir.12h.A          1 23-Mar-2012
-## 18 ./data/SRR446044_1.fastq       V12B    V12  Vir.12h.B          1 23-Mar-2012</code></pre></div>
+## 18 ./data/SRR446044_1.fastq       V12B    V12  Vir.12h.B          1 23-Mar-2012</code></pre></figure>
 
-<p>To work with custom data, users need to generate a <em><code>targets</code></em> file containing the paths to their own FASTQ files and then provide under <em><code>targetspath</code></em> the path to the corresponding <em><code>targets</code></em> file.</p>
+<p>To work with custom data, users need to generate a <em><code class="highlighter-rouge">targets</code></em> file containing the paths to their own FASTQ files and then provide under <em><code class="highlighter-rouge">targetspath</code></em> the path to the corresponding <em><code class="highlighter-rouge">targets</code></em> file.</p>
 
-<h3 id="structure-of-targets-file-for-paired-end-pe-samples">Structure of <em><code>targets</code></em> file for paired end (PE) samples</h3>
+<h3 id="structure-of-targets-file-for-paired-end-pe-samples">Structure of <em><code class="highlighter-rouge">targets</code></em> file for paired end (PE) samples</h3>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">targetspath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"targetsPE.txt"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
-<span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">targetspath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"targetsPE.txt"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                  FileName1                FileName2 SampleName Factor SampleLong Experiment
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                  FileName1                FileName2 SampleName Factor SampleLong Experiment
 ## 1 ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq        M1A     M1  Mock.1h.A          1
-## 2 ./data/SRR446028_1.fastq ./data/SRR446028_2.fastq        M1B     M1  Mock.1h.B          1</code></pre></div>
+## 2 ./data/SRR446028_1.fastq ./data/SRR446028_2.fastq        M1B     M1  Mock.1h.B          1</code></pre></figure>
 
 <h3 id="sample-comparisons">Sample comparisons</h3>
-<p>Sample comparisons are defined in the header lines of the <em><code>targets</code></em> file starting with ‘<code># &lt;CMP&gt;</code>’.</p>
+<p>Sample comparisons are defined in the header lines of the <em><code class="highlighter-rouge">targets</code></em> file starting with ‘<code class="highlighter-rouge"># &lt;CMP&gt;</code>’.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">readLines</span><span class="p">(</span><span class="n">targetspath</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">readLines</span><span class="p">(</span><span class="n">targetspath</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)"                                                                              
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)"                                                                              
 ## [2] "# The following line(s) allow to specify the contrasts needed for comparative analyses, such as DEG identification. All possible comparisons can be specified with 'CMPset: ALL'."
 ## [3] "# &lt;CMP&gt; CMPset1: M1-A1, M1-V1, A1-V1, M6-A6, M6-V6, A6-V6, M12-A12, M12-V12, A12-V12"                                                                                             
-## [4] "# &lt;CMP&gt; CMPset2: ALL"</code></pre></div>
+## [4] "# &lt;CMP&gt; CMPset2: ALL"</code></pre></figure>
 
-<p>The function <em><code>readComp</code></em> imports the comparison information and stores it in a <em><code>list</code></em>. Alternatively, <em><code>readComp</code></em> can obtain the comparison information from the corresponding <em><code>SYSargs</code></em> object (see below). 
+<p>The function <em><code class="highlighter-rouge">readComp</code></em> imports the comparison information and stores it in a <em><code class="highlighter-rouge">list</code></em>. Alternatively, <em><code class="highlighter-rouge">readComp</code></em> can obtain the comparison information from the corresponding <em><code class="highlighter-rouge">SYSargs</code></em> object (see below). 
 Note, these header lines are optional. They are mainly useful for controlling comparative analyses according to certain biological expectations, such as identifying differentially expressed genes in RNA-Seq experiments based on simple pair-wise comparisons.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">readComp</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"vector"</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">readComp</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"vector"</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## $CMPset1
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## $CMPset1
 ## [1] "M1-A1"   "M1-V1"   "A1-V1"   "M6-A6"   "M6-V6"   "A6-V6"   "M12-A12" "M12-V12" "A12-V12"
 ## 
 ## $CMPset2
 ##  [1] "M1-A1"   "M1-V1"   "M1-M6"   "M1-A6"   "M1-V6"   "M1-M12"  "M1-A12"  "M1-V12"  "A1-V1"  
 ## [10] "A1-M6"   "A1-A6"   "A1-V6"   "A1-M12"  "A1-A12"  "A1-V12"  "V1-M6"   "V1-A6"   "V1-V6"  
 ## [19] "V1-M12"  "V1-A12"  "V1-V12"  "M6-A6"   "M6-V6"   "M6-M12"  "M6-A12"  "M6-V12"  "A6-V6"  
-## [28] "A6-M12"  "A6-A12"  "A6-V12"  "V6-M12"  "V6-A12"  "V6-V12"  "M12-A12" "M12-V12" "A12-V12"</code></pre></div>
+## [28] "A6-M12"  "A6-A12"  "A6-V12"  "V6-M12"  "V6-A12"  "V6-V12"  "M12-A12" "M12-V12" "A12-V12"</code></pre></figure>
 
-<h2 id="structure-of-param-file-and-sysargs-container">Structure of <em><code>param</code></em> file and <em><code>SYSargs</code></em> container</h2>
-<p>The <em><code>param</code></em> file defines the parameters of a chosen command-line software. The following shows the format of a sample <em><code>param</code></em> file provided by this package.</p>
+<h2 id="structure-of-param-file-and-sysargs-container">Structure of <em><code class="highlighter-rouge">param</code></em> file and <em><code class="highlighter-rouge">SYSargs</code></em> container</h2>
+<p>The <em><code class="highlighter-rouge">param</code></em> file defines the parameters of a chosen command-line software. The following shows the format of a sample <em><code class="highlighter-rouge">param</code></em> file provided by this package.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">parampath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
-<span class="n">read.delim</span><span class="p">(</span><span class="n">parampath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">parampath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">read.delim</span><span class="p">(</span><span class="n">parampath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##      PairSet         Name                                  Value
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##      PairSet         Name                                  Value
 ## 1    modules         &lt;NA&gt;                          bowtie2/2.2.5
 ## 2    modules         &lt;NA&gt;                          tophat/2.0.14
 ## 3   software         &lt;NA&gt;                                 tophat
@@ -974,46 +952,46 @@ Note, these header lines are optional. They are mainly useful for controlling co
 ## 12   infile1         &lt;NA&gt;                            &lt;FileName1&gt;
 ## 13   infile1         path                                   &lt;NA&gt;
 ## 14   infile2         &lt;NA&gt;                            &lt;FileName2&gt;
-## 15   infile2         path                                   &lt;NA&gt;</code></pre></div>
+## 15   infile2         path                                   &lt;NA&gt;</code></pre></figure>
 
-<p>The <em><code>systemArgs</code></em> function imports the definitions of both the <em><code>param</code></em> file and the <em><code>targets</code></em> file, and stores all relevant information in a <em><code>SYSargs</code></em> S4 class object. To run the pipeline without command-line software, one can assign <em><code>NULL</code></em> to <em><code>sysma</code></em> instead of a <em><code>param</code></em> file. In addition, one can start the <em><code>systemPipeR</code></em> workflow with pre-generated BAM files by providing a targets file where the <em><code>FileName</code></em> column gives the paths to the BAM files and <em><code>sysma</code></em> is assigned <em><code>NULL</code></em>.</p>
+<p>The <em><code class="highlighter-rouge">systemArgs</code></em> function imports the definitions of both the <em><code class="highlighter-rouge">param</code></em> file and the <em><code class="highlighter-rouge">targets</code></em> file, and stores all relevant information in a <em><code class="highlighter-rouge">SYSargs</code></em> S4 class object. To run the pipeline without command-line software, one can assign <em><code class="highlighter-rouge">NULL</code></em> to <em><code class="highlighter-rouge">sysma</code></em> instead of a <em><code class="highlighter-rouge">param</code></em> file. In addition, one can start the <em><code class="highlighter-rouge">systemPipeR</code></em> workflow with pre-generated BAM files by providing a targets file where the <em><code class="highlighter-rouge">FileName</code></em> column gives the paths to the BAM files and <em><code class="highlighter-rouge">sysma</code></em> is assigned <em><code class="highlighter-rouge">NULL</code></em>.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">suppressWarnings</span><span class="p">(</span><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">))</span>
-<span class="n">args</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">suppressWarnings</span><span class="p">(</span><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">))</span>
+<span class="n">args</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of 'SYSargs' for running 'tophat' on 18 samples</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of 'SYSargs' for running 'tophat' on 18 samples</code></pre></figure>
 
-<p>Several accessor functions are available that are named after the slot names of the <em><code>SYSargs</code></em> object.</p>
+<p>Several accessor functions are available that are named after the slot names of the <em><code class="highlighter-rouge">SYSargs</code></em> object.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">names</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">names</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] "targetsin"     "targetsout"    "targetsheader" "modules"       "software"      "cores"        
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##  [1] "targetsin"     "targetsout"    "targetsheader" "modules"       "software"      "cores"        
 ##  [7] "other"         "reference"     "results"       "infile1"       "infile2"       "outfile1"     
-## [13] "sysargs"       "outpaths"</code></pre></div>
+## [13] "sysargs"       "outpaths"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "bowtie2/2.2.5" "tophat/2.0.14"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "bowtie2/2.2.5" "tophat/2.0.14"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">cores</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">cores</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 4</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 4</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                              M1A 
-## "/home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/results/SRR446027_1.fastq.tophat/accepted_hits.bam"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                              M1A 
+## "/home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/results/SRR446027_1.fastq.tophat/accepted_hits.bam"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                                                                                                                                                                                  M1A 
-## "tophat -p 4 -g 1 --segment-length 25 -i 30 -I 3000 -o /home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/results/SRR446027_1.fastq.tophat /home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/data/tair10.fasta ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                                                                                                                                                                                  M1A 
+## "tophat -p 4 -g 1 --segment-length 25 -i 30 -I 3000 -o /home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/results/SRR446027_1.fastq.tophat /home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/data/tair10.fasta ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq"</code></pre></figure>
 
-<p>The content of the <em><code>param</code></em> file can also be returned as JSON object as follows (requires <em><code>rjson</code></em> package).</p>
+<p>The content of the <em><code class="highlighter-rouge">param</code></em> file can also be returned as JSON object as follows (requires <em><code class="highlighter-rouge">rjson</code></em> package).</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"json"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"json"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "{\"modules\":{\"n1\":\"\",\"v2\":\"bowtie2/2.2.5\",\"n1\":\"\",\"v2\":\"tophat/2.0.14\"},\"software\":{\"n1\":\"\",\"v1\":\"tophat\"},\"cores\":{\"n1\":\"-p\",\"v1\":\"4\"},\"other\":{\"n1\":\"\",\"v1\":\"-g 1 --segment-length 25 -i 30 -I 3000\"},\"outfile1\":{\"n1\":\"-o\",\"v2\":\"&lt;FileName1&gt;\",\"n3\":\"path\",\"v4\":\"./results/\",\"n5\":\"remove\",\"v1\":\"\",\"n2\":\"append\",\"v3\":\".tophat\",\"n4\":\"outextension\",\"v5\":\".tophat/accepted_hits.bam\"},\"reference\":{\"n1\":\"\",\"v1\":\"./data/tair10.fasta\"},\"infile1\":{\"n1\":\"\",\"v2\":\"&lt;FileName1&gt;\",\"n1\":\"path\",\"v2\":\"\"},\"infile2\":{\"n1\":\"\",\"v2\":\"&lt;FileName2&gt;\",\"n1\":\"path\",\"v2\":\"\"}}"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "{\"modules\":{\"n1\":\"\",\"v2\":\"bowtie2/2.2.5\",\"n1\":\"\",\"v2\":\"tophat/2.0.14\"},\"software\":{\"n1\":\"\",\"v1\":\"tophat\"},\"cores\":{\"n1\":\"-p\",\"v1\":\"4\"},\"other\":{\"n1\":\"\",\"v1\":\"-g 1 --segment-length 25 -i 30 -I 3000\"},\"outfile1\":{\"n1\":\"-o\",\"v2\":\"&lt;FileName1&gt;\",\"n3\":\"path\",\"v4\":\"./results/\",\"n5\":\"remove\",\"v1\":\"\",\"n2\":\"append\",\"v3\":\".tophat\",\"n4\":\"outextension\",\"v5\":\".tophat/accepted_hits.bam\"},\"reference\":{\"n1\":\"\",\"v1\":\"./data/tair10.fasta\"},\"infile1\":{\"n1\":\"\",\"v2\":\"&lt;FileName1&gt;\",\"n1\":\"path\",\"v2\":\"\"},\"infile2\":{\"n1\":\"\",\"v2\":\"&lt;FileName2&gt;\",\"n1\":\"path\",\"v2\":\"\"}}"</code></pre></figure>
 
 
 
@@ -1031,7 +1009,7 @@ Note, these header lines are optional. They are mainly useful for controlling co
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 18:04:22 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 18:04:22 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -817,28 +795,28 @@ $('#toc').on('click', 'a', function() {
 
 <p>First, get two files from PubChem BioAssay for the assay of interest: an XML file containing details on how the experiment was performed, and a CSV (comma separated value) file which contains the actual activity scores. For the purposes of this example, we will use the data from assay 1000, which is a confirmatory assay (titration assay) of 57 small molecules against a mevalonate kinase protein. More details on this assay were provided in the  “Quick Tutorial,” where the same data is used. These files can be downloaded from PubChem BioAssay at <a href="http://pubchem.ncbi.nlm.nih.gov/">http://pubchem.ncbi.nlm.nih.gov/</a> or loaded from the example data repository included in this package as follows:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">extdata_dir</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span>
 <span class="n">assayDescriptionFile</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"exampleAssay.xml"</span><span class="p">)</span>
-<span class="n">activityScoresFile</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"exampleScores.csv"</span><span class="p">)</span></code></pre></div>
+<span class="n">activityScoresFile</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"exampleScores.csv"</span><span class="p">)</span></code></pre></figure>
 
 <p>Next, create a new empty database for loading these data into. This example uses the R <em>tempfile</em> function to create the database in a random location. If you would like to keep your resulting database, replace <em>myDatabaseFilename</em> with your desired path and filename.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myDatabaseFilename</span> <span class="o">&lt;-</span> <span class="n">tempfile</span><span class="p">()</span>
-<span class="n">mydb</span> <span class="o">&lt;-</span> <span class="n">newBioassayDB</span><span class="p">(</span><span class="n">myDatabaseFilename</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="n">F</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myDatabaseFilename</span> <span class="o">&lt;-</span> <span class="n">tempfile</span><span class="p">()</span>
+<span class="n">mydb</span> <span class="o">&lt;-</span> <span class="n">newBioassayDB</span><span class="p">(</span><span class="n">myDatabaseFilename</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="n">F</span><span class="p">)</span></code></pre></figure>
 
 <p>We will also add a data source to this database, specifying that our data here mirrors an assay provided by PubChem BioAssay.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addDataSource</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"PubChem BioAssay"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addDataSource</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"PubChem BioAssay"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">)</span></code></pre></figure>
 
 <p>The XML file provided by PubChem BioAssay contains extensive details on how the assay was performed, molecular targets, and results scoring methods. You can extract these using the <em>parsePubChemBioassay</em> function as follows.
 The <em>parsePubChemBioassay</em> function also requires a .csv file which contains the activity scores for each assay, in the standard CSV format provided by PubChem BioAssay.
 For data from sources other than PubChem BioAssay, you may need to write your own code to parse out the assay details- or type them in manually.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssay</span> <span class="o">&lt;-</span> <span class="n">parsePubChemBioassay</span><span class="p">(</span><span class="s2">"1000"</span><span class="p">,</span> <span class="n">activityScoresFile</span><span class="p">,</span> <span class="n">assayDescriptionFile</span><span class="p">)</span>
-<span class="n">myAssay</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssay</span> <span class="o">&lt;-</span> <span class="n">parsePubChemBioassay</span><span class="p">(</span><span class="s2">"1000"</span><span class="p">,</span> <span class="n">activityScoresFile</span><span class="p">,</span> <span class="n">assayDescriptionFile</span><span class="p">)</span>
+<span class="n">myAssay</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 bioassay 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 bioassay 
 ## aid:		 1000 
 ## source_id:	 PubChem BioAssay 
 ## assay_type:	 confirmatory 
@@ -846,23 +824,23 @@ For data from sources other than PubChem BioAssay, you may need to write your ow
 ## scoring:	 IC50 
 ## targets:	 116516899 
 ## target_types:	 protein 
-## total scores:	 57</code></pre></div>
+## total scores:	 57</code></pre></figure>
 
 <p>Next, load the resulting data parsed from the XML and CSV files into the database. This creates records in the database for both the assay itself, and it’s molecular targets.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">myAssay</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">myAssay</span><span class="p">)</span></code></pre></figure>
 
 <p>To load additional assays, repeat the above steps. After all data is loaded, you can significantly improve subsequent query performance by adding an index to the database.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addBioassayIndex</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addBioassayIndex</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Creating index: note this may take a long time for a large database</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Creating index: note this may take a long time for a large database</code></pre></figure>
 
 <p>After indexing, perform a test query on your database to confirm that the data loaded correctly.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">activeAgainst</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span><span class="s2">"116516899"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">activeAgainst</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span><span class="s2">"116516899"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##          fraction_active total_assays
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##          fraction_active total_assays
 ## 16749973               1            1
 ## 16749974               1            1
 ## 16749975               1            1
@@ -898,11 +876,11 @@ For data from sources other than PubChem BioAssay, you may need to write your ow
 ## 16750005               1            1
 ## 16750006               1            1
 ## 16750007               1            1
-## 16750016               1            1</code></pre></div>
+## 16750016               1            1</code></pre></figure>
 
 <p>Lastly, disconnect from the database to prevent data corruption.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="prebuilt-database-example-investigate-activity-of-a-known-drug">Prebuilt Database Example: Investigate Activity of a Known Drug</h2>
 
@@ -918,19 +896,19 @@ database.</p>
 <p>To get started first connect to the database. The variable <em>sampleDatabasePath</em> can be replaced with the filename of the full test database you downloaded, if you would like to use
 that instead of the small example version included with this software package.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">extdata_dir</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span>
 <span class="n">sampleDatabasePath</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"sampleDatabase.sqlite"</span><span class="p">)</span>
-<span class="n">pubChemDatabase</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span></code></pre></div>
+<span class="n">pubChemDatabase</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span>  </code></pre></figure>
 
 <p>Next, use the <em>activeTargets</em> function to find all protein targets which acetylsalicylic acid shows activity against in the loaded database.
 These target IDs are NCBI Protein identifiers as provided by PubChem BioAssay (Tatusova, et al., 2014). In which cases do these results agree with or disagree
 with the annotated targets from DrugBank?</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">drugTargets</span> <span class="o">&lt;-</span> <span class="n">activeTargets</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"2244"</span><span class="p">)</span>
-<span class="n">drugTargets</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">drugTargets</span> <span class="o">&lt;-</span> <span class="n">activeTargets</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"2244"</span><span class="p">)</span>
+<span class="n">drugTargets</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##           fraction_active total_screens
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##           fraction_active total_screens
 ## 116241312            1.00             2
 ## 117144               1.00             1
 ## 166897622            1.00             1
@@ -939,7 +917,7 @@ with the annotated targets from DrugBank?</p>
 ## 3915797              0.75             8
 ## 548481               1.00            21
 ## 6686268              1.00             1
-## 84028191             1.00             1</code></pre></div>
+## 84028191             1.00             1</code></pre></figure>
 
 <p>Now we would like to connect to the UniProt (Universal Protein Resource) database
 to obtain annotation details on these targets<br />
@@ -958,28 +936,28 @@ In many instances, a single query GI will translate into multiple UniProt
 identifiers. In this case, we keep only the first one as the annotation
 details we are looking for here will likely be the same for all of them.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># run translateTargetId on each target identifier
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># run translateTargetId on each target identifier
 </span><span class="n">uniProtIds</span> <span class="o">&lt;-</span> <span class="n">lapply</span><span class="p">(</span><span class="n">row.names</span><span class="p">(</span><span class="n">drugTargets</span><span class="p">),</span> <span class="n">translateTargetId</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"UniProt"</span><span class="p">)</span>
 
 <span class="c1"># if any targets had more than one UniProt ID, keep only the first one
-</span><span class="n">uniProtIds</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">uniProtIds</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></div>
+</span><span class="n">uniProtIds</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">uniProtIds</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></figure>
 
 <p>Next, we connect to Ensembl via biomaRt to obtain a description for each
 target that is a <em>Homo sapiens</em> gene. For more information,
 consult the <em>biomaRt</em> documentation. After retrieving these data, we call the
 <em>match</em> function to ensure they are in the same order as the query data.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">biomaRt</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">biomaRt</span><span class="p">)</span>
 <span class="n">ensembl</span> <span class="o">&lt;-</span> <span class="n">useEnsembl</span><span class="p">(</span><span class="n">biomart</span><span class="o">=</span><span class="s2">"ensembl"</span><span class="p">,</span><span class="n">dataset</span><span class="o">=</span><span class="s2">"hsapiens_gene_ensembl"</span><span class="p">)</span>
 <span class="n">proteinDetails</span> <span class="o">&lt;-</span> <span class="n">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"description"</span><span class="p">,</span><span class="s2">"uniprot_swissprot"</span><span class="p">,</span><span class="s2">"external_gene_name"</span><span class="p">),</span> <span class="n">filters</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"uniprot_swissprot"</span><span class="p">),</span> <span class="n">mart</span><span class="o">=</span><span class="n">ensembl</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">uniProtIds</span><span class="p">)</span>
-<span class="n">proteinDetails</span> <span class="o">&lt;-</span> <span class="n">proteinDetails</span><span class="p">[</span><span class="n">match</span><span class="p">(</span><span class="n">uniProtIds</span><span class="p">,</span> <span class="n">proteinDetails</span><span class="o">$</span><span class="n">uniprot_swissprot</span><span class="p">),]</span></code></pre></div>
+<span class="n">proteinDetails</span> <span class="o">&lt;-</span> <span class="n">proteinDetails</span><span class="p">[</span><span class="n">match</span><span class="p">(</span><span class="n">uniProtIds</span><span class="p">,</span> <span class="n">proteinDetails</span><span class="o">$</span><span class="n">uniprot_swissprot</span><span class="p">),]</span></code></pre></figure>
 
 <p>Now we can view this annotation data. NAs represent proteins not found
 on the <em>Homo sapiens</em> Ensembl, which may be from other species.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">proteinDetails</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">proteinDetails</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                   description
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                   description
 ## 2                                    cytochrome P450, family 3, subfamily A, polypeptide 4 [Source:HGNC Symbol;Acc:HGNC:2637]
 ## 1                                    cytochrome P450, family 1, subfamily A, polypeptide 2 [Source:HGNC Symbol;Acc:HGNC:2596]
 ## NA                                                                                                                       &lt;NA&gt;
@@ -998,18 +976,18 @@ on the <em>Homo sapiens</em> Ensembl, which may be from other species.</p>
 ## 6               P35354              PTGS2
 ## NA.2              &lt;NA&gt;               &lt;NA&gt;
 ## 4               P11712             CYP2C9
-## 3               P10635             CYP2D6</code></pre></div>
+## 3               P10635             CYP2D6</code></pre></figure>
 
 <p>Lastly, let’s again look at our active target list, with the annotation alongside.
 Note, these only match up in length and order because in the above code
 we removed all but one UniProt ID for each target protein, and then reordered
 the biomaRt results with the <em>match</em> function to get them in the correct order.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">drugTargets</span> <span class="o">&lt;-</span> <span class="n">drugTargets</span><span class="p">[</span><span class="o">!</span> <span class="n">is.na</span><span class="p">(</span><span class="n">proteinDetails</span><span class="p">[,</span><span class="m">1</span><span class="p">]),]</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">drugTargets</span> <span class="o">&lt;-</span> <span class="n">drugTargets</span><span class="p">[</span><span class="o">!</span> <span class="n">is.na</span><span class="p">(</span><span class="n">proteinDetails</span><span class="p">[,</span><span class="m">1</span><span class="p">]),]</span>
 <span class="n">proteinDetails</span> <span class="o">&lt;-</span> <span class="n">proteinDetails</span><span class="p">[</span><span class="o">!</span><span class="n">is.na</span><span class="p">(</span><span class="n">proteinDetails</span><span class="p">[,</span><span class="m">1</span><span class="p">]),]</span>
-<span class="n">cbind</span><span class="p">(</span><span class="n">proteinDetails</span><span class="p">,</span> <span class="n">drugTargets</span><span class="p">)</span></code></pre></div>
+<span class="n">cbind</span><span class="p">(</span><span class="n">proteinDetails</span><span class="p">,</span> <span class="n">drugTargets</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                description
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                                                                                description
 ## 2                                 cytochrome P450, family 3, subfamily A, polypeptide 4 [Source:HGNC Symbol;Acc:HGNC:2637]
 ## 1                                 cytochrome P450, family 1, subfamily A, polypeptide 2 [Source:HGNC Symbol;Acc:HGNC:2596]
 ## 5 prostaglandin-endoperoxide synthase 1 (prostaglandin G/H synthase and cyclooxygenase) [Source:HGNC Symbol;Acc:HGNC:9604]
@@ -1022,7 +1000,7 @@ the biomaRt results with the <em>match</em> function to get them in the correct 
 ## 5            P23219              PTGS1            1.00             1
 ## 6            P35354              PTGS2            0.75             8
 ## 4            P11712             CYP2C9            1.00             1
-## 3            P10635             CYP2D6            1.00             1</code></pre></div>
+## 3            P10635             CYP2D6            1.00             1</code></pre></figure>
 
 <h2 id="identify-target-selective-compounds">Identify Target Selective Compounds</h2>
 
@@ -1037,19 +1015,19 @@ discovery of small molecule drugs and molecular probes.</p>
 Once again, the variable <em>sampleDatabasePath</em> can be replaced with the filename of the full PubChem BioAssay database (downloadable from <a href="http://chemmine.ucr.edu/bioassayr">http://chemmine.ucr.edu/bioassayr</a>), if you would like to use
 that instead of the small example version included with this software package.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">extdata_dir</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span> 
 <span class="n">sampleDatabasePath</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"sampleDatabase.sqlite"</span><span class="p">)</span>
-<span class="n">pubChemDatabase</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span></code></pre></div>
+<span class="n">pubChemDatabase</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span>  </code></pre></figure>
 
 <p>The <em>activeAgainst</em> function can be used to show all small molecules in the database which demonstrate activity against COX-1 as follows.
 Each row name represents a small molecule cid. The column labeled “total assays” shows the total number of times each small molecule has been screened against the target of interest. The column labeled “fraction active” shows the portion of these which were annotated as active as a number between 0 and 1.
 This function allows users to consider different binding assays from distinct sources as replicates, to assist in distinguishing potentially spurious binding results from those with demonstrated reproducibility.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">activeCompounds</span> <span class="o">&lt;-</span> <span class="n">activeAgainst</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"166897622"</span><span class="p">)</span>
-<span class="n">activeCompounds</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span> <span class="err">#</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="m">10</span> <span class="n">compounds</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">activeCompounds</span> <span class="o">&lt;-</span> <span class="n">activeAgainst</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"166897622"</span><span class="p">)</span>
+<span class="n">activeCompounds</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span> <span class="err">#</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="n">first</span> <span class="m">10</span> <span class="n">compounds</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##        fraction_active total_assays
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##        fraction_active total_assays
 ## 2244                 1            1
 ## 2662                 1            3
 ## 3033                 1            1
@@ -1059,7 +1037,7 @@ This function allows users to consider different binding assays from distinct so
 ## 133021               1            2
 ## 247704               1            1
 ## 444899               1            1
-## 445580               1            1</code></pre></div>
+## 445580               1            1</code></pre></figure>
 
 <p>Looking only at compounds which show binding to the target of interest is not sufficient for identifying drug candidates, as a portion of these compounds may be target unselective compounds (TUCs) which bind
 indiscriminately to a large number of distinct protein targets. The R function <em>selectiveAgainst</em> provides the user with a list of compounds that show activity against a target of interest (in at least one assay), while also showing limited activity against other targets.</p>
@@ -1067,11 +1045,11 @@ indiscriminately to a large number of distinct protein targets. The R function <
 <p>The <em>maxCompounds</em> option limits the maximum number of results returned, and the <em>minimumTargets</em>
 option limits returned compounds to those screened against a specified minimum of distinct targets. Results are formatted as a <em>data.frame</em> whereby each row name represents a distinct compound. The first column shows the number of distinct targets this compound shows activity against, and the second shows the total number of targets it was screened against.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">selectiveCompounds</span> <span class="o">&lt;-</span> <span class="n">selectiveAgainst</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"166897622"</span><span class="p">,</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">selectiveCompounds</span> <span class="o">&lt;-</span> <span class="n">selectiveAgainst</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"166897622"</span><span class="p">,</span> 
     <span class="n">maxCompounds</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">minimumTargets</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">selectiveCompounds</span></code></pre></div>
+<span class="n">selectiveCompounds</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##          active_targets tested_targets
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##          active_targets tested_targets
 ## 2662                  1              1
 ## 3033                  1              1
 ## 133021                1              1
@@ -1081,7 +1059,7 @@ option limits returned compounds to those screened against a specified minimum o
 ## 44564000              1              1
 ## 44564001              1              1
 ## 44564002              1              1
-## 44564003              1              1</code></pre></div>
+## 44564003              1              1</code></pre></figure>
 
 <p>In the example database these compounds are only showing one tested target because very few assays are loaded. Users are encouraged to try this example for themselves with the full PubChem BioAssay database downloadable from <a href="http://chemmine.ucr.edu/bioassayr">http://chemmine.ucr.edu/bioassayr</a> for a more interesting and informative result.</p>
 
@@ -1090,12 +1068,12 @@ option limits returned compounds to those screened against a specified minimum o
 <p>The <em>ChemmineR</em> software library can be used to download structural data for any of these compounds, and to visualize these structures as follows  (Cao, et al., 2008).
 This example requires an active internet connection, as the compound structures are obtained from a remote server.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ChemmineR</span><span class="p">)</span>
-<span class="n">structures</span> <span class="o">&lt;-</span> <span class="n">getIds</span><span class="p">(</span><span class="n">as.numeric</span><span class="p">(</span><span class="n">row.names</span><span class="p">(</span><span class="n">selectiveCompounds</span><span class="p">)))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ChemmineR</span><span class="p">)</span>
+<span class="n">structures</span> <span class="o">&lt;-</span> <span class="n">getIds</span><span class="p">(</span><span class="n">as.numeric</span><span class="p">(</span><span class="n">row.names</span><span class="p">(</span><span class="n">selectiveCompounds</span><span class="p">)))</span></code></pre></figure>
 
 <p>Here we visualize just the first four compounds found with <em>selectiveAgainst</em>. Consult the vignette supplied with <em>ChemmineR</em> for numerous examples of visualizing and analyzing these structures further.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">structures</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="err">#</span> <span class="n">Plots</span> <span class="n">structures</span> <span class="n">to</span> <span class="n">R</span> <span class="n">graphics</span> <span class="n">device</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">structures</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="err">#</span> <span class="n">Plots</span> <span class="n">structures</span> <span class="n">to</span> <span class="n">R</span> <span class="n">graphics</span> <span class="n">device</span></code></pre></figure>
 
 <p><img src="bioassayR_files/unnamed-chunk-38-1.png" alt="" /></p>
 
@@ -1107,22 +1085,22 @@ The function <em>getBioassaySetByCids</em> extracts the activity data for a give
 
 <p>First, connect to the included sample database:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">extdata_dir</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span> 
 <span class="n">sampleDatabasePath</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"sampleDatabase.sqlite"</span><span class="p">)</span>
-<span class="n">sampleDB</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span></code></pre></div>
+<span class="n">sampleDB</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span>  </code></pre></figure>
 
 <p>Next, select data from just 3 compounds to extract into a <em>bioassaySet</em> object for subsequent analysis.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compoundsOfInterest</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"2244"</span><span class="p">,</span> <span class="s2">"2662"</span><span class="p">,</span> <span class="s2">"3715"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">compoundsOfInterest</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"2244"</span><span class="p">,</span> <span class="s2">"2662"</span><span class="p">,</span> <span class="s2">"3715"</span><span class="p">)</span>
 <span class="n">selectedAssayData</span> <span class="o">&lt;-</span> <span class="n">getBioassaySetByCids</span><span class="p">(</span><span class="n">sampleDB</span><span class="p">,</span> <span class="n">compoundsOfInterest</span><span class="p">)</span>
-<span class="n">selectedAssayData</span></code></pre></div>
+<span class="n">selectedAssayData</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 bioassaySet 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 bioassaySet 
 ## assays:		 1176 
 ## compounds:	 3 
 ## targets:	 453 
-## sources:	 bioassayR_testdata</code></pre></div>
+## sources:	 bioassayR_testdata</code></pre></figure>
 
 <p>The function <em>perTargetMatrix</em> converts the activity data extracted earlier into a matrix of targets (rows) vs compounds (columns). Data from multiple assays hitting the same target are summarized into a single value in the manner specified by the user. If you choose the <em>summarizeReplicates</em> option
 <em>activesFirst</em>, any active scores take prescendence over inactives. If you choose the option <em>mode</em> the most abundant of either actives or inactives
@@ -1135,13 +1113,13 @@ taking extra space in memory.</p>
 
 <p>Here we create an activity matrix, choosing to include inactive values, and summarize replicates according to the statistical mode:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myActivityMatrix</span> <span class="o">&lt;-</span> <span class="n">perTargetMatrix</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">,</span> <span class="n">inactives</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">summarizeReplicates</span> <span class="o">=</span> <span class="s2">"mode"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myActivityMatrix</span> <span class="o">&lt;-</span> <span class="n">perTargetMatrix</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">,</span> <span class="n">inactives</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">summarizeReplicates</span> <span class="o">=</span> <span class="s2">"mode"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Note: in this version active scores now use a 2 instead of a 1</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Note: in this version active scores now use a 2 instead of a 1</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myActivityMatrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">15</span> <span class="n">rows</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myActivityMatrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">15</span> <span class="n">rows</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 15 x 3 sparse Matrix of class "dgCMatrix"
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 15 x 3 sparse Matrix of class "dgCMatrix"
 ##           2244 2662 3715
 ## 548481       2    .    .
 ## 3914304      2    .    .
@@ -1157,7 +1135,7 @@ taking extra space in memory.</p>
 ## 21464101     1    .    .
 ## 68565074     1    .    .
 ## 4325211      1    .    .
-## 66528677     1    .    .</code></pre></div>
+## 66528677     1    .    .</code></pre></figure>
 
 <p>Next, we will re-create the activity matrix where protein targets
 that are very similar at the sequence level (such as orthologues from different species)
@@ -1172,11 +1150,11 @@ to specify which assays are treated as replicates to be merged, so first we can
 obtain these data, and then replace them with a custom merge criteria formatted
 in the same manner.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssayTargets</span> <span class="o">&lt;-</span> <span class="n">assaySetTargets</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">)</span>
-<span class="n">myAssayTargets</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">5</span> <span class="n">targets</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssayTargets</span> <span class="o">&lt;-</span> <span class="n">assaySetTargets</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">)</span>
+<span class="n">myAssayTargets</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">5</span> <span class="n">targets</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##        410        411     624030        422        436 
-## "73915100"   "160794"   "160794" "21464101" "68565074"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##        410        411     624030        422        436 
+## "73915100"   "160794"   "160794" "21464101" "68565074"</code></pre></figure>
 
 <p>The pre-built PubChem BioAssay database includes sequence level
 protein target clustering results generated with the kClust tool
@@ -1187,25 +1165,25 @@ These clustering results are stored in the database as target
 translations under category “kClust”. Now we will access these
 traslations, and make a compound vs. target cluster matrix as follows.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get kClust protein cluster number for a single target
-</span><span class="n">translateTargetId</span><span class="p">(</span><span class="n">database</span> <span class="o">=</span> <span class="n">sampleDB</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">"166897622"</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s2">"kClust"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get kClust protein cluster number for a single target
+</span><span class="n">translateTargetId</span><span class="p">(</span><span class="n">database</span> <span class="o">=</span> <span class="n">sampleDB</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">"166897622"</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s2">"kClust"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] NA</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] NA</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get kClust protein cluster numbers for all targets in myAssayTargets
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get kClust protein cluster numbers for all targets in myAssayTargets
 </span><span class="n">customMerge</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">myAssayTargets</span><span class="p">,</span> <span class="n">translateTargetId</span><span class="p">,</span> <span class="n">database</span> <span class="o">=</span> <span class="n">sampleDB</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s2">"kClust"</span><span class="p">)</span>
-<span class="n">customMerge</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span></code></pre></div>
+<span class="n">customMerge</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##    410    411 624030    422    436 
-##     NA     NA     NA     NA     NA</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##    410    411 624030    422    436 
+##     NA     NA     NA     NA     NA</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mergedActivityMatrix</span> <span class="o">&lt;-</span> <span class="n">perTargetMatrix</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">,</span> <span class="n">inactives</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">assayTargets</span><span class="o">=</span><span class="n">customMerge</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mergedActivityMatrix</span> <span class="o">&lt;-</span> <span class="n">perTargetMatrix</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">,</span> <span class="n">inactives</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">assayTargets</span><span class="o">=</span><span class="n">customMerge</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Note: in this version active scores now use a 2 instead of a 1</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Note: in this version active scores now use a 2 instead of a 1</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mergedActivityMatrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">15</span> <span class="n">rows</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mergedActivityMatrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">15</span> <span class="n">rows</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 15 x 3 sparse Matrix of class "dgCMatrix"
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 15 x 3 sparse Matrix of class "dgCMatrix"
 ##           2244 2662 3715
 ## 548481       2    .    .
 ## 3914304      2    .    .
@@ -1221,29 +1199,29 @@ traslations, and make a compound vs. target cluster matrix as follows.</p>
 ## 21464101     1    .    .
 ## 68565074     1    .    .
 ## 4325211      1    .    .
-## 66528677     1    .    .</code></pre></div>
+## 66528677     1    .    .</code></pre></figure>
 
 <p>Note that the merged matrix is smaller, because several similar protein targets
 have been collapsed into single clusters.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get number of rows and columns for unmerged matrix
-</span><span class="n">dim</span><span class="p">(</span><span class="n">myActivityMatrix</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get number of rows and columns for unmerged matrix
+</span><span class="n">dim</span><span class="p">(</span><span class="n">myActivityMatrix</span><span class="p">)</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 298   3</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 298   3</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get number of rows and columns for merged matrix
-</span><span class="n">dim</span><span class="p">(</span><span class="n">mergedActivityMatrix</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># get number of rows and columns for merged matrix
+</span><span class="n">dim</span><span class="p">(</span><span class="n">mergedActivityMatrix</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 298   3</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] 298   3</code></pre></figure>
 
 <p>Now, to make it possible to use binary clustering methods, we simplify the matrix
 into a binary matrix where “1” represents active, and “0” represents either inactive
 or untested combinations. We caution the user to carefully consider if this makes sense within the context of the specific experiments being analyzed.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">binaryMatrix</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">*</span><span class="p">(</span><span class="n">mergedActivityMatrix</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">binaryMatrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">15</span> <span class="n">rows</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">binaryMatrix</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">*</span><span class="p">(</span><span class="n">mergedActivityMatrix</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">binaryMatrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">15</span> <span class="n">rows</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 15 x 3 sparse Matrix of class "dgCMatrix"
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 15 x 3 sparse Matrix of class "dgCMatrix"
 ##           2244 2662 3715
 ## 548481       1    .    .
 ## 3914304      1    .    .
@@ -1259,17 +1237,17 @@ or untested combinations. We caution the user to carefully consider if this make
 ## 21464101     0    .    .
 ## 68565074     0    .    .
 ## 4325211      0    .    .
-## 66528677     0    .    .</code></pre></div>
+## 66528677     0    .    .</code></pre></figure>
 
 <p>As mentioned earlier, “0” and “.” entries in a sparse matrix are numerically equivalent.</p>
 
 <p>Cluster using the built in euclidean clustering functions within R to cluster.
 This provides a dendrogram which indicates the similarity amongst compounds according to their activity profiles.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">transposedMatrix</span> <span class="o">&lt;-</span> <span class="n">t</span><span class="p">(</span><span class="n">binaryMatrix</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">transposedMatrix</span> <span class="o">&lt;-</span> <span class="n">t</span><span class="p">(</span><span class="n">binaryMatrix</span><span class="p">)</span>
 <span class="n">distanceMatrix</span> <span class="o">&lt;-</span> <span class="n">dist</span><span class="p">(</span><span class="n">transposedMatrix</span><span class="p">)</span>
 <span class="n">clusterResults</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">distanceMatrix</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"average"</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">clusterResults</span><span class="p">)</span></code></pre></div>
+<span class="n">plot</span><span class="p">(</span><span class="n">clusterResults</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="bioassayR_files/unnamed-chunk-46-1.png" alt="" /></p>
 
@@ -1281,43 +1259,43 @@ the full set of targets these compounds have shown activity against. This allows
 of the bioactivity profile among compounds.
 See the <em>ChemmineR</em> documentation at http://bioconductor.org/packages/ChemmineR/ for additional examples and details.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ChemmineR</span><span class="p">)</span>
-<span class="n">fpset</span> <span class="o">&lt;-</span> <span class="n">bioactivityFingerprint</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ChemmineR</span><span class="p">)</span>
+<span class="n">fpset</span> <span class="o">&lt;-</span> <span class="n">bioactivityFingerprint</span><span class="p">(</span><span class="n">selectedAssayData</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Note: in this version active scores now use a 2 instead of a 1</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Note: in this version active scores now use a 2 instead of a 1</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fpset</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fpset</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of a 453 bit "FPset" of type "bioactivity" with 3 molecules</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of a 453 bit "FPset" of type "bioactivity" with 3 molecules</code></pre></figure>
 
 <p>Perform activity profile similarity searching with the FPset object, by comparing
 the first compound to all compounds.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fpSim</span><span class="p">(</span><span class="n">fpset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">fpset</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"Tanimoto"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fpSim</span><span class="p">(</span><span class="n">fpset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">fpset</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"Tanimoto"</span><span class="p">)</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 2244 2662 3715 
-##  1.0  0.2  0.2</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 2244 2662 3715 
+##  1.0  0.2  0.2</code></pre></figure>
 
 <p>Compute an all-against-all bioactivity fingerprint similarity matrix for these compounds.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">simMA</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">cid</span><span class="p">(</span><span class="n">fpset</span><span class="p">),</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">fpSim</span><span class="p">(</span><span class="n">fpset</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">fpset</span><span class="p">,</span> <span class="n">sorted</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"Tanimoto"</span><span class="p">))</span>
-<span class="n">simMA</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">simMA</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">cid</span><span class="p">(</span><span class="n">fpset</span><span class="p">),</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">fpSim</span><span class="p">(</span><span class="n">fpset</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">fpset</span><span class="p">,</span> <span class="n">sorted</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"Tanimoto"</span><span class="p">))</span>
+<span class="n">simMA</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##      2244 2662 3715
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##      2244 2662 3715
 ## 2244  1.0  0.2  0.2
 ## 2662  0.2  1.0  1.0
-## 3715  0.2  1.0  1.0</code></pre></div>
+## 3715  0.2  1.0  1.0</code></pre></figure>
 
 <p>Convert similarity matrix to a distance matrix and perform hierarcheal clustering.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">clusterResults</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">as.dist</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">simMA</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s2">"single"</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">clusterResults</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">clusterResults</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">as.dist</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">simMA</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s2">"single"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">clusterResults</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="bioassayR_files/unnamed-chunk-50-1.png" alt="" /></p>
 
 <p>Finally, disconnect from the database.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">sampleDB</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">sampleDB</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="analyze-and-load-raw-screening-data">Analyze and Load Raw Screening Data</h2>
 
@@ -1333,7 +1311,7 @@ binding data against a protein target as the data format is the same.</p>
 
 <p>First read in the screening data provided with cellHTS2.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">cellHTS2</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">cellHTS2</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 
 <span class="n">dataPath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"KcViab"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"cellHTS2"</span><span class="p">)</span>
@@ -1351,34 +1329,34 @@ binding data against a protein target as the data format is the same.</p>
                       <span class="n">scale</span><span class="o">=</span><span class="s2">"multiplicative"</span><span class="p">,</span> 
                       <span class="n">log</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> 
                       <span class="n">method</span><span class="o">=</span><span class="s2">"median"</span><span class="p">,</span> 
-                      <span class="n">varianceAdjust</span><span class="o">=</span><span class="s2">"none"</span><span class="p">)</span></code></pre></div>
+                      <span class="n">varianceAdjust</span><span class="o">=</span><span class="s2">"none"</span><span class="p">)</span></code></pre></figure>
 
 <p>Next, score and summarize the replicates.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">xsc</span> <span class="o">&lt;-</span> <span class="n">scoreReplicates</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span> <span class="n">sign</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"zscore"</span><span class="p">)</span>
-<span class="n">xsc</span> <span class="o">&lt;-</span> <span class="n">summarizeReplicates</span><span class="p">(</span><span class="n">xsc</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">xsc</span> <span class="o">&lt;-</span> <span class="n">scoreReplicates</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span> <span class="n">sign</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"zscore"</span><span class="p">)</span>
+<span class="n">xsc</span> <span class="o">&lt;-</span> <span class="n">summarizeReplicates</span><span class="p">(</span><span class="n">xsc</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">)</span></code></pre></figure>
 
 <p>Parse the annotation data.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">xsc</span> <span class="o">&lt;-</span> <span class="n">annotate</span><span class="p">(</span><span class="n">xsc</span><span class="p">,</span> <span class="n">geneIDFile</span><span class="o">=</span><span class="s2">"GeneIDs_Dm_HFA_1.1.txt"</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">dataPath</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">xsc</span> <span class="o">&lt;-</span> <span class="n">annotate</span><span class="p">(</span><span class="n">xsc</span><span class="p">,</span> <span class="n">geneIDFile</span><span class="o">=</span><span class="s2">"GeneIDs_Dm_HFA_1.1.txt"</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">dataPath</span><span class="p">)</span></code></pre></figure>
 
 <p>Apply a sigmoidal transformation to generate binary calls.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">y</span> <span class="o">&lt;-</span> <span class="n">scores2calls</span><span class="p">(</span><span class="n">xsc</span><span class="p">,</span> <span class="n">z0</span><span class="o">=</span><span class="m">1.5</span><span class="p">,</span> <span class="n">lambda</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-<span class="n">binaryCalls</span> <span class="o">&lt;-</span> <span class="n">round</span><span class="p">(</span><span class="n">Data</span><span class="p">(</span><span class="n">y</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">y</span> <span class="o">&lt;-</span> <span class="n">scores2calls</span><span class="p">(</span><span class="n">xsc</span><span class="p">,</span> <span class="n">z0</span><span class="o">=</span><span class="m">1.5</span><span class="p">,</span> <span class="n">lambda</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="n">binaryCalls</span> <span class="o">&lt;-</span> <span class="n">round</span><span class="p">(</span><span class="n">Data</span><span class="p">(</span><span class="n">y</span><span class="p">))</span></code></pre></figure>
 
 <p>Convert the binary calls into an activity table that <em>bioassayR</em> can parse.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">scoreDataFrame</span> <span class="o">&lt;-</span> <span class="n">cbind</span><span class="p">(</span><span class="n">geneAnno</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">binaryCalls</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">scoreDataFrame</span> <span class="o">&lt;-</span> <span class="n">cbind</span><span class="p">(</span><span class="n">geneAnno</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">binaryCalls</span><span class="p">)</span>
 <span class="n">rawScores</span> <span class="o">&lt;-</span> <span class="n">as.vector</span><span class="p">(</span><span class="n">Data</span><span class="p">(</span><span class="n">xsc</span><span class="p">))</span>
 <span class="n">rawScores</span> <span class="o">&lt;-</span> <span class="n">rawScores</span><span class="p">[</span><span class="n">wellAnno</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"sample"</span><span class="p">]</span>
 <span class="n">scoreDataFrame</span> <span class="o">&lt;-</span> <span class="n">scoreDataFrame</span><span class="p">[</span><span class="n">wellAnno</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"sample"</span><span class="p">,]</span>
 <span class="n">activityTable</span> <span class="o">&lt;-</span> <span class="n">cbind</span><span class="p">(</span><span class="n">cid</span><span class="o">=</span><span class="n">scoreDataFrame</span><span class="p">[,</span><span class="m">1</span><span class="p">],</span> 
      <span class="n">activity</span><span class="o">=</span><span class="n">scoreDataFrame</span><span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="n">score</span><span class="o">=</span><span class="n">rawScores</span><span class="p">)</span>
 <span class="n">activityTable</span> <span class="o">&lt;-</span> <span class="n">as.data.frame</span><span class="p">(</span><span class="n">activityTable</span><span class="p">)</span>
-<span class="n">activityTable</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span></code></pre></div>
+<span class="n">activityTable</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##        cid activity              score
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##        cid activity              score
 ## 1  CG11371        1     2.147814893189
 ## 2  CG31671        1   4.00105151825918
 ## 3  CG11376        0  0.955550327380792
@@ -1388,35 +1366,35 @@ binding data against a protein target as the data format is the same.</p>
 ## 7   CG2674        0  0.706942495432899
 ## 8   CG7263        0  0.920455054477106
 ## 9   CG4822        0  0.251440513724104
-## 10  CG4265        0  0.414137389305878</code></pre></div>
+## 10  CG4265        0  0.414137389305878</code></pre></figure>
 
 <p>Create a new (temporary in this case) <em>bioassayR</em> database to load these data into.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myDatabaseFilename</span> <span class="o">&lt;-</span> <span class="n">tempfile</span><span class="p">()</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myDatabaseFilename</span> <span class="o">&lt;-</span> <span class="n">tempfile</span><span class="p">()</span> 
 <span class="n">mydb</span> <span class="o">&lt;-</span> <span class="n">newBioassayDB</span><span class="p">(</span><span class="n">myDatabaseFilename</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="n">F</span><span class="p">)</span>
-<span class="n">addDataSource</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"other"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">)</span></code></pre></div>
+<span class="n">addDataSource</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"other"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">)</span></code></pre></figure>
 
 <p>Create an assay object for the new assay.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssay</span> <span class="o">&lt;-</span> <span class="n">new</span><span class="p">(</span><span class="s2">"bioassay"</span><span class="p">,</span><span class="n">aid</span><span class="o">=</span><span class="s2">"1"</span><span class="p">,</span> <span class="n">source_id</span><span class="o">=</span><span class="s2">"other"</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssay</span> <span class="o">&lt;-</span> <span class="n">new</span><span class="p">(</span><span class="s2">"bioassay"</span><span class="p">,</span><span class="n">aid</span><span class="o">=</span><span class="s2">"1"</span><span class="p">,</span> <span class="n">source_id</span><span class="o">=</span><span class="s2">"other"</span><span class="p">,</span>
      <span class="n">assay_type</span><span class="o">=</span><span class="s2">"confirmatory"</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">"activity rank"</span><span class="p">,</span> 
-     <span class="n">targets</span><span class="o">=</span><span class="s2">"2224444"</span><span class="p">,</span> <span class="n">target_types</span><span class="o">=</span><span class="s2">"protein"</span><span class="p">,</span> <span class="n">scores</span><span class="o">=</span><span class="n">activityTable</span><span class="p">)</span></code></pre></div>
+     <span class="n">targets</span><span class="o">=</span><span class="s2">"2224444"</span><span class="p">,</span> <span class="n">target_types</span><span class="o">=</span><span class="s2">"protein"</span><span class="p">,</span> <span class="n">scores</span><span class="o">=</span><span class="n">activityTable</span><span class="p">)</span></code></pre></figure>
 
 <p>Load this assay object into the <em>bioassayR</em> database.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">myAssay</span><span class="p">)</span>
-<span class="n">mydb</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">myAssay</span><span class="p">)</span>
+<span class="n">mydb</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 BioassayDB 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 BioassayDB 
 ## assays:		 1 
 ## sources:	 other 
-## writeable:	yes</code></pre></div>
+## writeable:	yes</code></pre></figure>
 
 <p>Now that these data are loaded, you can use them to perform any of the other analysis examples in this document.</p>
 
 <p>Lastly, for the purposes of this example, disconnect from the example database.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="custom-sql-queries">Custom SQL Queries</h2>
 
@@ -1429,17 +1407,17 @@ We also reccomend the book “Using SQLite” (Kreibich, 2010).</p>
 database from the authors website, the variable <em>sampleDatabasePath</em> can be replaced with the filename of the database you downloaded, if you would like to use
 that instead of the small example version included with this software package.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">extdata_dir</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span>
 <span class="n">sampleDatabasePath</span> <span class="o">&lt;-</span> <span class="n">file.path</span><span class="p">(</span><span class="n">extdata_dir</span><span class="p">,</span> <span class="s2">"sampleDatabase.sqlite"</span><span class="p">)</span>
-<span class="n">pubChemDatabase</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span></code></pre></div>
+<span class="n">pubChemDatabase</span> <span class="o">&lt;-</span> <span class="n">connectBioassayDB</span><span class="p">(</span><span class="n">sampleDatabasePath</span><span class="p">)</span>  </code></pre></figure>
 
 <p>First you will want to see the structure
 of the database as follows:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT * FROM sqlite_master WHERE type='table'"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT * FROM sqlite_master WHERE type='table'"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##    type               name           tbl_name rootpage
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##    type               name           tbl_name rootpage
 ## 1 table           activity           activity        2
 ## 2 table             assays             assays        3
 ## 3 table            domains            domains        4
@@ -1452,13 +1430,13 @@ of the database as follows:</p>
 ## 3                                                CREATE TABLE domains (domain TEXT, ta rget INTEGER)
 ## 4           CREATE TABLE sources (source_id INTEGER PRIMARY KEY ASC, description TEXT, version TEXT)
 ## 5                                  CREATE TABLE targets (aid INTEGER, target TEXT, target_type TEXT)
-## 6                      CREATE TABLE targetTranslations (target TEXT, category TEXT, identifier TEXT)</code></pre></div>
+## 6                      CREATE TABLE targetTranslations (target TEXT, category TEXT, identifier TEXT)</code></pre></figure>
 
 <p>For example, you can find the first 10 assays a given compound has participated in as follows:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT DISTINCT(aid) FROM activity WHERE cid = '2244' LIMIT 10"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT DISTINCT(aid) FROM activity WHERE cid = '2244' LIMIT 10"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##    aid
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##    aid
 ## 1    1
 ## 2  103
 ## 3  105
@@ -1468,28 +1446,28 @@ of the database as follows:</p>
 ## 7  115
 ## 8  119
 ## 9  121
-## 10 123</code></pre></div>
+## 10 123</code></pre></figure>
 
 <p>This example prints the activity scores from a specified assay:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT * FROM activity WHERE aid = '393818'"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT * FROM activity WHERE aid = '393818'"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##      aid      cid       sid activity score
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##      aid      cid       sid activity score
 ## 1 393818     3672 103174500        1    NA
 ## 2 393818     2662 103181002        1    NA
 ## 3 393818 25258347 103594370       NA    NA
 ## 4 393818 25258348 103594371        1    NA
 ## 5 393818 25258349 103594372        1    NA
-## 6 393818 25258350 103594373        1    NA</code></pre></div>
+## 6 393818 25258350 103594373        1    NA</code></pre></figure>
 
 <p>A <em>NATURAL JOIN</em> automatically merges tables which share common rows, making
 it easier to parse data spread across many tables. Here we merge the activity
 table (raw scores), with the assay table (assay annotation details) and the
 protein targets table:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT * FROM activity NATURAL JOIN assays NATURAL JOIN targets WHERE cid = '2244' LIMIT 10"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">queryBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">,</span> <span class="s2">"SELECT * FROM activity NATURAL JOIN assays NATURAL JOIN targets WHERE cid = '2244' LIMIT 10"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##    aid  cid      sid activity score source_id   assay_type organism
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##    aid  cid      sid activity score source_id   assay_type organism
 ## 1  410 2244 11110749        0     0         1 confirmatory     &lt;NA&gt;
 ## 2  411 2244 11110749        0     0         1 confirmatory     &lt;NA&gt;
 ## 3  422 2244 17404602        0    -6         1    screening     &lt;NA&gt;
@@ -1510,11 +1488,11 @@ protein targets table:</p>
 ## 7     &lt;NA&gt; 10092619     protein
 ## 8     &lt;NA&gt; 10092619     protein
 ## 9     &lt;NA&gt; 10092619     protein
-## 10    &lt;NA&gt; 10092619     protein</code></pre></div>
+## 10    &lt;NA&gt; 10092619     protein</code></pre></figure>
 
 <p>Lastly, disconnecting from the database after analysis reduces the chances of data corruption. If you are using a pre-built database in read only mode (as demonstrated in the Prebuilt Database Example section) you can optionally skip this step, as only writable databases are prone to corruption from failure to disconnect.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">pubChemDatabase</span><span class="p">)</span></code></pre></figure>
 
 
 
@@ -1532,7 +1510,7 @@ protein targets table:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 18:25:41 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 18:25:41 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

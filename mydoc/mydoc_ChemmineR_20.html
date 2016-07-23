@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,14 +789,14 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-<p>ChemMine Web Tools is an online service for analyzing and clustering small molecules. It provides numerous cheminformatics tools which can be used directly on the website, or called remotely from within R. When called within R jobs are sent remotely to a queue on a compute cluster at UC Riverside, which is a free service offered to <code>ChemmineR</code> users.
-The website is free and open to all users and is available at <a href="http://chemmine.ucr.edu">http://chemmine.ucr.edu</a>. When new tools are added to the service, they automatically become availiable within <code>ChemmineR</code> without updating your local R package.</p>
+<p>ChemMine Web Tools is an online service for analyzing and clustering small molecules. It provides numerous cheminformatics tools which can be used directly on the website, or called remotely from within R. When called within R jobs are sent remotely to a queue on a compute cluster at UC Riverside, which is a free service offered to <code class="highlighter-rouge">ChemmineR</code> users.
+The website is free and open to all users and is available at <a href="http://chemmine.ucr.edu">http://chemmine.ucr.edu</a>. When new tools are added to the service, they automatically become availiable within <code class="highlighter-rouge">ChemmineR</code> without updating your local R package.</p>
 
 <p>List all available tools:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">listCMTools</span><span class="p">()</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">listCMTools</span><span class="p">()</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##      Category                           Name      Input     Output
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##      Category                           Name      Input     Output
 ## 1      Upload                Upload CSV Data  character data.frame
 ## 2      Upload      Upload Tab Delimited Data  character data.frame
 ## 3  Properties             JoeLib Descriptors     SDFset data.frame
@@ -832,14 +810,14 @@ The website is free and open to all users and is available at <a href="http://ch
 ## 11 Properties           ChemmineR Properties     SDFset data.frame
 ## 12  ChemmineR                  sdf.visualize     SDFset     SDFset
 ## 13     Search                      EI Search     SDFset    integer
-## 14     Search             Fingerprint Search     SDFset    integer</code></pre></div>
+## 14     Search             Fingerprint Search     SDFset    integer</code></pre></figure>
 
 <p>Show options and description for a tool. This also provides an example function call which can be copied
 verbatim, and changed as necessary:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">toolDetails</span><span class="p">(</span><span class="s2">"Fingerprint Search"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">toolDetails</span><span class="p">(</span><span class="s2">"Fingerprint Search"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Category:		Search
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Category:		Search
 ## Name:			Fingerprint Search
 ## Input R Object:		SDFset
 ## Input mime type:	chemical/x-mdl-sdfile
@@ -858,32 +836,32 @@ verbatim, and changed as necessary:</p>
 ## 		SDFset,
 ## 		'Similarity Cutoff'='0.5',
 ## 		'Max Compounds Returned'='10'
-## 	)</code></pre></div>
+## 	)</code></pre></figure>
 
 <h2 id="launch-a-job">Launch a Job</h2>
 
-<p>When a job is launched it returns a job token which refers to the running job on the UC Riverside cluster. You can check the status of a job or obtain the results as follows. If <code>result</code> is called on a job that is still running, it will loop internally until the job is completed, and then return the result.</p>
+<p>When a job is launched it returns a job token which refers to the running job on the UC Riverside cluster. You can check the status of a job or obtain the results as follows. If <code class="highlighter-rouge">result</code> is called on a job that is still running, it will loop internally until the job is completed, and then return the result.</p>
 
-<p>Launch the tool <code>pubchemID2SDF</code> to obtain the structure for PubChem cid 2244:</p>
+<p>Launch the tool <code class="highlighter-rouge">pubchemID2SDF</code> to obtain the structure for PubChem cid 2244:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job1</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"pubchemID2SDF"</span><span class="p">,</span> <span class="m">2244</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job1</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"pubchemID2SDF"</span><span class="p">,</span> <span class="m">2244</span><span class="p">)</span>
 <span class="n">status</span><span class="p">(</span><span class="n">job1</span><span class="p">)</span>
-<span class="n">result1</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">(</span><span class="n">job1</span><span class="p">)</span></code></pre></div>
+<span class="n">result1</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">(</span><span class="n">job1</span><span class="p">)</span></code></pre></figure>
 
 <p>Use the previous result to search PubChem for similar compounds:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job2</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s1">'Fingerprint Search'</span><span class="p">,</span> <span class="n">result1</span><span class="p">,</span> <span class="s1">'Similarity Cutoff'</span><span class="o">=</span><span class="m">0.95</span><span class="p">,</span> <span class="s1">'Max Compounds Returned'</span><span class="o">=</span><span class="m">200</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job2</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s1">'Fingerprint Search'</span><span class="p">,</span> <span class="n">result1</span><span class="p">,</span> <span class="s1">'Similarity Cutoff'</span><span class="o">=</span><span class="m">0.95</span><span class="p">,</span> <span class="s1">'Max Compounds Returned'</span><span class="o">=</span><span class="m">200</span><span class="p">)</span>
 <span class="n">result2</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">(</span><span class="n">job2</span><span class="p">)</span>
 <span class="n">job3</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"pubchemID2SDF"</span><span class="p">,</span> <span class="n">result2</span><span class="p">)</span>
-<span class="n">result3</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">(</span><span class="n">job3</span><span class="p">)</span></code></pre></div>
+<span class="n">result3</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">(</span><span class="n">job3</span><span class="p">)</span></code></pre></figure>
 
 <p>Compute OpenBabel descriptors for these search results:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job4</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"OpenBabel Descriptors"</span><span class="p">,</span> <span class="n">result3</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job4</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"OpenBabel Descriptors"</span><span class="p">,</span> <span class="n">result3</span><span class="p">)</span>
 <span class="n">result4</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">(</span><span class="n">job4</span><span class="p">)</span>
-<span class="n">result4</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span> <span class="err">#</span> <span class="n">show</span> <span class="n">first</span> <span class="m">10</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">result</span></code></pre></div>
+<span class="n">result4</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span> <span class="err">#</span> <span class="n">show</span> <span class="n">first</span> <span class="m">10</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">result</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##         cid abonds atoms bonds dbonds HBA1 HBA2 HBD   logP      MR       MW nF sbonds tbonds  TPSA
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##         cid abonds atoms bonds dbonds HBA1 HBA2 HBD   logP      MR       MW nF sbonds tbonds  TPSA
 ## 1      2244      6    21    21      2   12    4   1 1.3101 44.9003 180.1574  0     13      0 63.60
 ## 2      5161     12    29    30      2   15    5   2 2.3096 66.8248 258.2262  0     16      0 83.83
 ## 3     68484      6    24    24      2   14    4   0 1.3985 49.2205 194.1840  0     16      0 52.60
@@ -893,25 +871,25 @@ verbatim, and changed as necessary:</p>
 ## 7    171511      6    25    23      2   16    5   2 1.2458 47.9481 222.4777  0     15      0 72.83
 ## 8   3053800      6    39    39      2   24    4   1 3.6507 73.7423 264.3169  0     31      0 63.60
 ## 9  71586929      6    38    33      2   29    7   6 1.7922 60.7157 294.2140  0     25      0 91.29
-## 10    78094      6    24    24      2   14    4   1 1.6185 49.8663 194.1840  0     16      0 63.60</code></pre></div>
+## 10    78094      6    24    24      2   14    4   1 1.6185 49.8663 194.1840  0     16      0 63.60</code></pre></figure>
 
 <h2 id="view-job-result-in-browser">View Job Result in Browser</h2>
 
-<p>The function <code>browseJob</code> launches a web browser to view the results of a job online, just as if they
+<p>The function <code class="highlighter-rouge">browseJob</code> launches a web browser to view the results of a job online, just as if they
 had been run from the ChemMine Tools website itself. If you also want the result data within R, you must first call
-the <code>result</code> object from within R before calling <code>browseJob</code>. Once <code>browseJob</code> has been called on a job token,
+the <code class="highlighter-rouge">result</code> object from within R before calling <code class="highlighter-rouge">browseJob</code>. Once <code class="highlighter-rouge">browseJob</code> has been called on a job token,
 the results are no longer accessible within R.</p>
 
-<p>If you have an account on ChemMine Tools and would like to save the web results from your job, you must first login to your account within the default web browser on your system before you launch <code>browseJob</code>. The job will then be assigned automatically to the currently logged in account.</p>
+<p>If you have an account on ChemMine Tools and would like to save the web results from your job, you must first login to your account within the default web browser on your system before you launch <code class="highlighter-rouge">browseJob</code>. The job will then be assigned automatically to the currently logged in account.</p>
 
 <p>View OpenBabel descriptors online:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">browseJob</span><span class="p">(</span><span class="n">job4</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">browseJob</span><span class="p">(</span><span class="n">job4</span><span class="p">)</span></code></pre></figure>
 
 <p>Perform binning clustering and visualize result online:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job5</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"Binning Clustering"</span><span class="p">,</span> <span class="n">result3</span><span class="p">,</span> <span class="s1">'Similarity Cutoff'</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
-<span class="n">browseJob</span><span class="p">(</span><span class="n">job5</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">job5</span> <span class="o">&lt;-</span> <span class="n">launchCMTool</span><span class="p">(</span><span class="s2">"Binning Clustering"</span><span class="p">,</span> <span class="n">result3</span><span class="p">,</span> <span class="s1">'Similarity Cutoff'</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
+<span class="n">browseJob</span><span class="p">(</span><span class="n">job5</span><span class="p">)</span></code></pre></figure>
 
 
 
@@ -929,7 +907,7 @@ the results are no longer accessible within R.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

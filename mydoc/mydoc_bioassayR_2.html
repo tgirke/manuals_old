@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -815,15 +793,15 @@ $('#toc').on('click', 'a', function() {
 
 <p>The R software for running bioassayR can be downloaded from CRAN (<a href="http://cran.at.r-project.org/">http://cran.at.r-project.org/</a>). The <em>bioassayR</em> package can be installed from R using the <em>bioLite</em> install command.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script
-</span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"bioassayR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Installs</span> <span class="n">the</span> <span class="n">package</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script
+</span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"bioassayR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Installs</span> <span class="n">the</span> <span class="n">package</span></code></pre></figure>
 
 <h2 id="loading-the-package-and-documentation">Loading the Package and Documentation</h2>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span> <span class="err">#</span> <span class="n">Loads</span> <span class="n">the</span> <span class="n">package</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span> <span class="err">#</span> <span class="n">Loads</span> <span class="n">the</span> <span class="n">package</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span> <span class="c1"># Lists all functions and classes 
-</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"bioassayR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">this</span> <span class="n">manual</span> <span class="n">from</span> <span class="n">R</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"bioassayR"</span><span class="p">)</span> <span class="c1"># Lists all functions and classes 
+</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"bioassayR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">this</span> <span class="n">manual</span> <span class="n">from</span> <span class="n">R</span></code></pre></figure>
 
 <h2 id="quick-tutorial">Quick Tutorial</h2>
 
@@ -835,22 +813,22 @@ These data were published as assay identifier (aid) 1000 in the NCBI PubChem Bio
 
 <p>First, create a new database. For purposes of this manual a temporary file is used, but you can replace the <em>tempfile</em> function call with a filename of your choice if you wish to save the resulting database for later.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">bioassayR</span><span class="p">)</span>
 <span class="n">myDatabaseFilename</span> <span class="o">&lt;-</span> <span class="n">tempfile</span><span class="p">()</span> 
-<span class="n">mydb</span> <span class="o">&lt;-</span> <span class="n">newBioassayDB</span><span class="p">(</span><span class="n">myDatabaseFilename</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="n">F</span><span class="p">)</span></code></pre></div>
+<span class="n">mydb</span> <span class="o">&lt;-</span> <span class="n">newBioassayDB</span><span class="p">(</span><span class="n">myDatabaseFilename</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="n">F</span><span class="p">)</span></code></pre></figure>
 
 <p>Next, specify the source and version of the data you plan to load. This is a required step, which makes it easier to track the origin of your data later. Feel free to use the current date for a version number, if your data isn’t versioned.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addDataSource</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"PubChem BioAssay"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addDataSource</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"PubChem BioAssay"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">)</span></code></pre></figure>
 
 <p>After adding a data source, create or import a <em>data.frame</em> which contains the activity scores for each of the molecules in your assay. 
 This <em>data.frame</em> must contain three columns which includes a cid (unique compound identifier) for each compound, a binary activity score (1=active, 0=inactive, NA=inconclusive), and a numeric activity score.
 Consult the <em>bioassay</em> man page for more details on formatting this <em>data.frame</em>. The <em>bioassayR</em> package contains an example activity score data frame that can be accessed as follows:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">samplebioassay</span><span class="p">)</span>
-<span class="n">samplebioassay</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">10</span> <span class="n">scores</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">samplebioassay</span><span class="p">)</span>
+<span class="n">samplebioassay</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,]</span> <span class="err">#</span> <span class="n">print</span> <span class="n">the</span> <span class="n">first</span> <span class="m">10</span> <span class="n">scores</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##         cid activity score
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##         cid activity score
 ## 1    730195        0     0
 ## 2  16749973        1    80
 ## 3  16749974        1    80
@@ -860,17 +838,17 @@ Consult the <em>bioassay</em> man page for more details on formatting this <em>d
 ## 7  16749978        1    80
 ## 8  16749979        1    80
 ## 9  16749980        1    80
-## 10 16749981        1    80</code></pre></div>
+## 10 16749981        1    80</code></pre></figure>
 
 <p>All bioactivity data is loaded into the database, or retrieved from the database as an <em>bioassay</em> object which contains details on the assay experimental design, molecular targets, and the activity scores. A bioassay object which incorporates activity scores can be created as follows.
 The source id value must exactly match that loaded earlier by <em>addDataSource</em>. The molecular target(s) for the assay are optional, and an unlimited number can be specified for a single assay as a vector passed to the targets option. The target types field should be a vector of equal length, describing the type of each target in the same order.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssay</span> <span class="o">&lt;-</span> <span class="n">new</span><span class="p">(</span><span class="s2">"bioassay"</span><span class="p">,</span><span class="n">aid</span><span class="o">=</span><span class="s2">"1000"</span><span class="p">,</span> <span class="n">source_id</span><span class="o">=</span><span class="s2">"PubChem BioAssay"</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">myAssay</span> <span class="o">&lt;-</span> <span class="n">new</span><span class="p">(</span><span class="s2">"bioassay"</span><span class="p">,</span><span class="n">aid</span><span class="o">=</span><span class="s2">"1000"</span><span class="p">,</span> <span class="n">source_id</span><span class="o">=</span><span class="s2">"PubChem BioAssay"</span><span class="p">,</span>
     <span class="n">assay_type</span><span class="o">=</span><span class="s2">"confirmatory"</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s2">"unknown"</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">"activity rank"</span><span class="p">,</span> 
     <span class="n">targets</span><span class="o">=</span><span class="s2">"116516899"</span><span class="p">,</span> <span class="n">target_types</span><span class="o">=</span><span class="s2">"protein"</span><span class="p">,</span> <span class="n">scores</span><span class="o">=</span><span class="n">samplebioassay</span><span class="p">)</span>
-<span class="n">myAssay</span></code></pre></div>
+<span class="n">myAssay</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 bioassay 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 bioassay 
 ## aid:		 1000 
 ## source_id:	 PubChem BioAssay 
 ## assay_type:	 confirmatory 
@@ -878,11 +856,11 @@ The source id value must exactly match that loaded earlier by <em>addDataSource<
 ## scoring:	 activity rank 
 ## targets:	 116516899 
 ## target_types:	 protein 
-## total scores:	 57</code></pre></div>
+## total scores:	 57</code></pre></figure>
 
 <p>The <em>bioassay</em> object can be loaded into the database with the <em>loadBioassay</em> function. By repeating this step with different data, a large number of distinct assays can be loaded into the database.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">myAssay</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">myAssay</span><span class="p">)</span></code></pre></figure>
 
 <p>It is reccomended to use NCBI GI numbers as the label for any biomolecule
 assay targets, as this is what is used in the pre-built database also
@@ -895,39 +873,39 @@ can also be used to store annotation data for targets. For example, if you
 have sequence level clustering data on your targets you could store them
 in category “sequenceClustering” and store the cluster number as the identifier.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadIdMapping</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"116516899"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"UniProt"</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="s2">"Q8DR51"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">loadIdMapping</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"116516899"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"UniProt"</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="s2">"Q8DR51"</span><span class="p">)</span></code></pre></figure>
 
 <p>Wait a minute! We accidentally labeled that assay as organism “unknown” when we know that it’s actually a screen against a protein from <em>Streptococcus pneumonia</em>. 
 After loading an assay into the database, you can later retrieve these data with the <em>getAssay</em> function. By combining this with the ability to delete an assay (the <em>dropBioassay</em> function) one can edit the database by (1) pulling an assay out, (2) deleting it from the database, (3) modifying the pulled out object, and (4) reloading the assay. For example, we can update the species annotation for our assay as follows:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">tempAssay</span> <span class="o">&lt;-</span> <span class="n">getAssay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="s2">"1000"</span><span class="p">)</span> <span class="c1"># get assay from database
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">tempAssay</span> <span class="o">&lt;-</span> <span class="n">getAssay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="s2">"1000"</span><span class="p">)</span> <span class="c1"># get assay from database
 </span><span class="n">dropBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="s2">"1000"</span><span class="p">)</span> <span class="c1"># delete assay from database
 </span><span class="n">organism</span><span class="p">(</span><span class="n">tempAssay</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s2">"Streptococcus pneumonia"</span> <span class="c1"># update organism
-</span><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">tempAssay</span><span class="p">)</span></code></pre></div>
+</span><span class="n">loadBioassay</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">tempAssay</span><span class="p">)</span></code></pre></figure>
 
 <p>It is recommended to index your database after loading all of your data. This significantly speeds up access to the database, but can also slow down loading of data if indexing is performed before loading.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addBioassayIndex</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">addBioassayIndex</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## Creating index: note this may take a long time for a large database</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## Creating index: note this may take a long time for a large database</code></pre></figure>
 
 <p>After indexing, you can query the database. Here are some example queries. First view the database summary provided by <em>bioassayR</em>:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mydb</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mydb</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 BioassayDB 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## class:		 BioassayDB 
 ## assays:		 1 
 ## sources:	 PubChem BioAssay 
-## writeable:	yes</code></pre></div>
+## writeable:	yes</code></pre></figure>
 
 <p>Next, you can query the database for active targets for a given compound by cid. In this case, since only one assay has been loaded only a single target can be found. Experiment with loading more assays for a more interesting result!
 When using the pre-built PubChem BioAssay database, these targets are returned
 as NCBI Protein identifiers.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">activeTargets</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="m">16749979</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">activeTargets</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="m">16749979</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##           fraction_active total_screens
-## 116516899               1             1</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##           fraction_active total_screens
+## 116516899               1             1</code></pre></figure>
 
 <p>If target translations were loaded in a previous step, these can be accessed with
 the <em>translateTargetId</em> function as follows. This accepts only a single target,
@@ -938,13 +916,13 @@ when the database contains a large number for some targets.</p>
 <p>Here we request the UniProt identifiers for GI 116516899, as stored earlier with
 the <em>loadIdMapping</em> function.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">translateTargetId</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"116516899"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"UniProt"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">translateTargetId</span><span class="p">(</span><span class="n">mydb</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"116516899"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"UniProt"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "Q8DR51"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "Q8DR51"</code></pre></figure>
 
 <p>Lastly, disconnecting from the database after analysis reduces the chances of data corruption. If you are using a pre-built database in read only mode (as demonstrated in the Prebuilt Database Example section) you can optionally skip this step, as only writable databases are prone to corruption from failure to disconnect.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">disconnectBioassayDB</span><span class="p">(</span><span class="n">mydb</span><span class="p">)</span></code></pre></figure>
 
 
 
@@ -962,7 +940,7 @@ the <em>loadIdMapping</em> function.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 18:25:41 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 18:25:41 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

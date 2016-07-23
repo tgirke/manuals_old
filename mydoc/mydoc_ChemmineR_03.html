@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,12 +789,12 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-<p><code>ChemmineR</code> integrates now a subset of cheminformatics
+<p><code class="highlighter-rouge">ChemmineR</code> integrates now a subset of cheminformatics
 functionalities implemented in the OpenBabel C++ library (Noel M O’Boyle et al., 2008; Y. Cao et al., 2008). These
-utilities can be accessed by installing the <code>ChemmineOB</code>
-package and the OpenBabel software itself. <code>ChemmineR</code>
+utilities can be accessed by installing the <code class="highlighter-rouge">ChemmineOB</code>
+package and the OpenBabel software itself. <code class="highlighter-rouge">ChemmineR</code>
 will automatically detect the availability of
-<code>ChemmineOB</code> and make use of the additional utilities.
+<code class="highlighter-rouge">ChemmineOB</code> and make use of the additional utilities.
 The following lists the functions and methods that make use of
 OpenBabel. References are included to locate the sections in the manual
 where the utility and usage of these functions is described.</p>
@@ -825,80 +803,80 @@ where the utility and usage of these functions is described.</p>
 
 <ul>
   <li>
-    <p><code>smiles2sdf</code>: converts from SMILES to SDF object</p>
+    <p><code class="highlighter-rouge">smiles2sdf</code>: converts from SMILES to SDF object</p>
   </li>
   <li>
-    <p><code>sdf2smiles</code>: converts from SDF to SMILES object</p>
+    <p><code class="highlighter-rouge">sdf2smiles</code>: converts from SDF to SMILES object</p>
   </li>
   <li>
-    <p><code>convertFormat</code>: converts strings between two formats</p>
+    <p><code class="highlighter-rouge">convertFormat</code>: converts strings between two formats</p>
   </li>
   <li>
-    <p><code>convertFormatFile</code>: converts files between two formats. This function can be used to enable ChemmineR to read in any
+    <p><code class="highlighter-rouge">convertFormatFile</code>: converts files between two formats. This function can be used to enable ChemmineR to read in any
 format supported by Open Babel. For example, if you had an SML file you could do:</p>
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">convertFormatFile</span><span class="p">(</span><span class="s2">"SML"</span><span class="p">,</span><span class="s2">"SDF"</span><span class="p">,</span><span class="s2">"mycompound.sml"</span><span class="p">,</span><span class="s2">"mycompound.sdf"</span><span class="p">)</span>
-<span class="n">sdfset</span><span class="o">=</span><span class="n">read.SDFset</span><span class="p">(</span><span class="s2">"mycompound.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">convertFormatFile</span><span class="p">(</span><span class="s2">"SML"</span><span class="p">,</span><span class="s2">"SDF"</span><span class="p">,</span><span class="s2">"mycompound.sml"</span><span class="p">,</span><span class="s2">"mycompound.sdf"</span><span class="p">)</span>
+<span class="n">sdfset</span><span class="o">=</span><span class="n">read.SDFset</span><span class="p">(</span><span class="s2">"mycompound.sdf"</span><span class="p">)</span></code></pre></figure>
 
-<p><code>propOB</code>: generates several compound properties. See the man page for a current list of properties computed.</p>
+<p><code class="highlighter-rouge">propOB</code>: generates several compound properties. See the man page for a current list of properties computed.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">propOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">propOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                          cansmi
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                                                          cansmi
 ## 650001 O=C(Nc1noc(c1)C)CCC(=O)N(c1ccc2c(c1)OCCO2)CC(=O)NC1CCCC1
 ##                                                        cansmiNS    formula  title
 ## 650001 O=C(Nc1noc(c1)C)CCC(=O)N(c1ccc2c(c1)OCCO2)CC(=O)NC1CCCC1 C23H28N4O6 650001
 ##                                                                                                                                                                                    InChI
 ## 650001 InChI=1S/C23H28N4O6/c1-15-12-20(26-33-15)25-21(28)8-9-23(30)27(14-22(29)24-16-4-2-3-5-16)17-6-7-18-19(13-17)32-11-10-31-18/h6-7,12-13,16H,2-5,8-11,14H2,1H3,(H,24,29)(H,25,26,28)
 ##        HBA1 HBA2 HBD   logP       MR       MW nF TPSA
-## 650001   37   10   2 3.0288 119.9234 456.4916  0  123</code></pre></div>
+## 650001   37   10   2 3.0288 119.9234 456.4916  0  123</code></pre></figure>
 
-<p><code>fingerprintOB</code>: generates fingerprints for compounds. The fingerprint name can be anything supported by OpenBabel. See the man page
+<p><code class="highlighter-rouge">fingerprintOB</code>: generates fingerprints for compounds. The fingerprint name can be anything supported by OpenBabel. See the man page
 for a current list.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fingerprintOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span><span class="s2">"FP2"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fingerprintOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span><span class="s2">"FP2"</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of a 1024 bit "FPset" of type "FP2" with 100 molecules</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of a 1024 bit "FPset" of type "FP2" with 100 molecules</code></pre></figure>
 
-<p><code>smartsSearchOB</code>: find matches of SMARTS patterns in compounds</p>
+<p><code class="highlighter-rouge">smartsSearchOB</code>: find matches of SMARTS patterns in compounds</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#count rotable bonds
-</span><span class="n">smartsSearchOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="s2">"[!$(*#*)&amp;!D1]-!@[!$(*#*)&amp;!D1]"</span><span class="p">,</span><span class="n">uniqueMatches</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#count rotable bonds
+</span><span class="n">smartsSearchOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="s2">"[!$(*#*)&amp;!D1]-!@[!$(*#*)&amp;!D1]"</span><span class="p">,</span><span class="n">uniqueMatches</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 650001 650002 650003 650004 650005 
-##     24     20     14     30     10</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 650001 650002 650003 650004 650005 
+##     24     20     14     30     10</code></pre></figure>
 
-<p><code>exactMassOB</code>: Compute the monoisotopic (exact) mass of a set of compounds</p>
+<p><code class="highlighter-rouge">exactMassOB</code>: Compute the monoisotopic (exact) mass of a set of compounds</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">exactMassOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">exactMassOB</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##   650001   650002   650003   650004   650005 
-## 456.2009 357.1801 370.1100 461.1733 318.1943</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##   650001   650002   650003   650004   650005 
+## 456.2009 357.1801 370.1100 461.1733 318.1943</code></pre></figure>
 
-<p><code>regenerateCoords</code>: Re-compute the 2D coordinates of a compound using Open Babel. This can sometimes
-improve the quality of the compounds plot. See also the <code>regenCoords</code> option of the plot function.</p>
+<p><code class="highlighter-rouge">regenerateCoords</code>: Re-compute the 2D coordinates of a compound using Open Babel. This can sometimes
+improve the quality of the compounds plot. See also the <code class="highlighter-rouge">regenCoords</code> option of the plot function.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfset2</span> <span class="o">=</span> <span class="n">regenerateCoords</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfset2</span> <span class="o">=</span> <span class="n">regenerateCoords</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">regenCoords</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+<span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">regenCoords</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></figure>
 
 <p><img src="ChemmineR_files/unnamed-chunk-30-1.png" alt="" /></p>
 
-<p><code>generate3DCoords</code>: Generate 3D coordinates for compounds with only 2D coordinates.</p>
+<p><code class="highlighter-rouge">generate3DCoords</code>: Generate 3D coordinates for compounds with only 2D coordinates.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdf3D</span> <span class="o">=</span> <span class="n">generate3DCoords</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdf3D</span> <span class="o">=</span> <span class="n">generate3DCoords</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></figure>
 
-<p><code>canonicalize</code>: Compute a canonicalized atom numbering. This allows compounds with the same molecular
+<p><code class="highlighter-rouge">canonicalize</code>: Compute a canonicalized atom numbering. This allows compounds with the same molecular
 structure but different atom numberings to be compared properly.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">canonicalSdf</span><span class="o">=</span> <span class="n">canonicalize</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">canonicalSdf</span><span class="o">=</span> <span class="n">canonicalize</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></figure>
 
-<p><code>canonicalNumbering</code>: Return a mapping from the original atom numbering to the 
+<p><code class="highlighter-rouge">canonicalNumbering</code>: Return a mapping from the original atom numbering to the 
 canonical atom number.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mapping</span> <span class="o">=</span> <span class="n">canonicalNumbering</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mapping</span> <span class="o">=</span> <span class="n">canonicalNumbering</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></figure>
 
 
 
@@ -916,7 +894,7 @@ canonical atom number.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,48 +789,48 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-<p>The <code>sdf2smiles</code> and <code>smiles2sdf</code>
+<p>The <code class="highlighter-rouge">sdf2smiles</code> and <code class="highlighter-rouge">smiles2sdf</code>
 functions provide format interconversion between SMILES strings
 (Simplified Molecular Input Line Entry Specification) and
-<code>SDFset</code> containers.</p>
+<code class="highlighter-rouge">SDFset</code> containers.</p>
 
-<p>Convert an <code>SDFset</code> container to a SMILES
-<code>character</code> string:</p>
+<p>Convert an <code class="highlighter-rouge">SDFset</code> container to a SMILES
+<code class="highlighter-rouge">character</code> string:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">);</span>
  <span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">sdfsample</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> 
  <span class="n">smiles</span> <span class="o">&lt;-</span> <span class="n">sdf2smiles</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> 
- <span class="n">smiles</span></code></pre></div>
+ <span class="n">smiles</span> </code></pre></figure>
 
-<p>Convert a SMILES <code>character</code> string to an
-<code>SDFset</code> container:</p>
+<p>Convert a SMILES <code class="highlighter-rouge">character</code> string to an
+<code class="highlighter-rouge">SDFset</code> container:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdf</span> <span class="o">&lt;-</span> <span class="n">smiles2sdf</span><span class="p">(</span><span class="s2">"CC(=O)OC1=CC=CC=C1C(=O)O"</span><span class="p">)</span>
- <span class="n">view</span><span class="p">(</span><span class="n">sdf</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdf</span> <span class="o">&lt;-</span> <span class="n">smiles2sdf</span><span class="p">(</span><span class="s2">"CC(=O)OC1=CC=CC=C1C(=O)O"</span><span class="p">)</span>
+ <span class="n">view</span><span class="p">(</span><span class="n">sdf</span><span class="p">)</span> </code></pre></figure>
 
-<p>When the <code>ChemineOB</code> package is installed these
+<p>When the <code class="highlighter-rouge">ChemineOB</code> package is installed these
 conversions are performed with the OpenBabel Open Source Chemistry
 Toolbox. Otherwise the functions will fall back to using the ChemMine
 Tools web service for this operation. The latter will require internet
 connectivity and is limited to only the first compound given.
-<code>ChemmineOB</code> provides access to the compound format
+<code class="highlighter-rouge">ChemmineOB</code> provides access to the compound format
 conversion functions of OpenBabel. Currently, over 160 formats are
-supported by OpenBabel. The functions <code>convertFormat</code> and
-<code>convertFormatFile</code> can be used to convert files or
+supported by OpenBabel. The functions <code class="highlighter-rouge">convertFormat</code> and
+<code class="highlighter-rouge">convertFormatFile</code> can be used to convert files or
 strings between any two formats supported by OpenBabel. For example, to
 convert a SMILES string to an SDF string, one can use the
-<code>convertFormat</code> function.</p>
+<code class="highlighter-rouge">convertFormat</code> function.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfStr</span> <span class="o">&lt;-</span> <span class="n">convertFormat</span><span class="p">(</span><span class="s2">"SMI"</span><span class="p">,</span><span class="s2">"SDF"</span><span class="p">,</span><span class="s2">"CC(=O)OC1=CC=CC=C1C(=O)O_name"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfStr</span> <span class="o">&lt;-</span> <span class="n">convertFormat</span><span class="p">(</span><span class="s2">"SMI"</span><span class="p">,</span><span class="s2">"SDF"</span><span class="p">,</span><span class="s2">"CC(=O)OC1=CC=CC=C1C(=O)O_name"</span><span class="p">)</span> </code></pre></figure>
 
 <p>This will return the given compound as an SDF formatted string. 2D
 coordinates are also computed and included in the resulting SDF string.</p>
 
 <p>To convert a file with compounds encoded in one format to another
-format, the <code>convertFormatFile</code> function can be used
+format, the <code class="highlighter-rouge">convertFormatFile</code> function can be used
 instead.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">convertFormatFile</span><span class="p">(</span><span class="s2">"SMI"</span><span class="p">,</span><span class="s2">"SDF"</span><span class="p">,</span><span class="s2">"test.smiles"</span><span class="p">,</span><span class="s2">"test.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">convertFormatFile</span><span class="p">(</span><span class="s2">"SMI"</span><span class="p">,</span><span class="s2">"SDF"</span><span class="p">,</span><span class="s2">"test.smiles"</span><span class="p">,</span><span class="s2">"test.sdf"</span><span class="p">)</span> </code></pre></figure>
 
 <p>To see the whole list of file formats supported by OpenBabel, one can
 run from the command-line “obabel -L formats”.</p>
@@ -873,7 +851,7 @@ run from the command-line “obabel -L formats”.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

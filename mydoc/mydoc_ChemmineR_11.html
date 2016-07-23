@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -812,11 +790,11 @@ $('#toc').on('click', 'a', function() {
     
 -->
 <p>Several methods are available to return the different data components of
-<code>SDF/SDFset</code> containers in batches. The following
+<code class="highlighter-rouge">SDF/SDFset</code> containers in batches. The following
 examples list the most important ones. To save space their content is
 not printed in the manual.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Summary view of several molecules 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Summary view of several molecules 
 </span>
  <span class="n">length</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="c1"># Returns number of molecules 
 </span> <span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span> <span class="c1"># Returns single molecule from SDFset as SDF object 
@@ -824,34 +802,34 @@ not printed in the manual.</p>
  <span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]][[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># Returns atom block from first compound as matrix
 </span>
  <span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]][[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> 
- <span class="n">c</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">sdfset</span><span class="p">[</span><span class="m">5</span><span class="o">:</span><span class="m">8</span><span class="p">])</span> <span class="err">#</span> <span class="n">Concatenation</span> <span class="n">of</span> <span class="n">several</span> <span class="n">SDFsets</span></code></pre></div>
+ <span class="n">c</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">sdfset</span><span class="p">[</span><span class="m">5</span><span class="o">:</span><span class="m">8</span><span class="p">])</span> <span class="err">#</span> <span class="n">Concatenation</span> <span class="n">of</span> <span class="n">several</span> <span class="n">SDFsets</span> </code></pre></figure>
 
-<p>The <code>grepSDFset</code> function allows string
+<p>The <code class="highlighter-rouge">grepSDFset</code> function allows string
 matching/searching on the different data components in
-<code>SDFset</code>. By default the function returns a SDF summary
+<code class="highlighter-rouge">SDFset</code>. By default the function returns a SDF summary
 of the matching entries. Alternatively, an index of the matches can be
-returned with the setting <code>mode="index"</code>.</p>
+returned with the setting <code class="highlighter-rouge">mode="index"</code>.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">grepSDFset</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="n">sdfset</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"datablock"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"subset"</span><span class="p">)</span> <span class="err">#</span> <span class="n">To</span> <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">set</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">grepSDFset</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="n">sdfset</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"datablock"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"subset"</span><span class="p">)</span> <span class="err">#</span> <span class="n">To</span> <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">set</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Utilities to maintain unique compound IDs:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Retrieves CMP IDs from Molecule Name field in header block. 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Retrieves CMP IDs from Molecule Name field in header block. 
 </span> <span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Retrieves CMP IDs from ID slot in SDFset. 
 </span> <span class="n">unique_ids</span> <span class="o">&lt;-</span> <span class="n">makeUnique</span><span class="p">(</span><span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> <span class="c1"># Creates unique IDs by appending a counter to duplicates. 
-</span> <span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">unique_ids</span> <span class="err">#</span> <span class="n">Assigns</span> <span class="n">uniquified</span> <span class="n">IDs</span> <span class="n">to</span> <span class="n">ID</span> <span class="n">slot</span></code></pre></div>
+</span> <span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">unique_ids</span> <span class="err">#</span> <span class="n">Assigns</span> <span class="n">uniquified</span> <span class="n">IDs</span> <span class="n">to</span> <span class="n">ID</span> <span class="n">slot</span> </code></pre></figure>
 
 <p>Subsetting by character, index and logical vectors:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="s2">"650012"</span><span class="p">)])</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="s2">"650012"</span><span class="p">)])</span>
  <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">4</span><span class="o">:</span><span class="m">1</span><span class="p">])</span>
  <span class="n">mylog</span> <span class="o">&lt;-</span> <span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span>
- <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="n">mylog</span><span class="p">])</span></code></pre></div>
+ <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="n">mylog</span><span class="p">])</span> </code></pre></figure>
 
-<p>Accessing <code>SDF/SDFset</code> components: header, atom, bond and
+<p>Accessing <code class="highlighter-rouge">SDF/SDFset</code> components: header, atom, bond and
 data blocks:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">atomblock</span><span class="p">(</span><span class="n">sdf</span><span class="p">);</span> <span class="n">sdf</span><span class="p">[[</span><span class="m">2</span><span class="p">]];</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">atomblock</span><span class="p">(</span><span class="n">sdf</span><span class="p">);</span> <span class="n">sdf</span><span class="p">[[</span><span class="m">2</span><span class="p">]];</span>
  <span class="n">sdf</span><span class="p">[[</span><span class="s2">"atomblock"</span><span class="p">]]</span> <span class="c1"># All three methods return the same component
 </span>
  <span class="n">header</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> 
@@ -861,37 +839,37 @@ data blocks:</p>
  <span class="n">header</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
  <span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span> 
  <span class="n">bondblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span> 
- <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span></code></pre></div>
+ <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span> </code></pre></figure>
 
 <p>Replacement Methods:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]][[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">999</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]][[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">999</span> 
  <span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span> 
- <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span></code></pre></div>
+ <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span> </code></pre></figure>
 
 <p>Assign matrix data to data block:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">as.matrix</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,])</span>
- <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">as.matrix</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,])</span>
+ <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> </code></pre></figure>
 
-<p>Class coercions from <code>SDFstr</code> to <code>list</code>,
-<code>SDF</code> and <code>SDFset</code>:</p>
+<p>Class coercions from <code class="highlighter-rouge">SDFstr</code> to <code class="highlighter-rouge">list</code>,
+<code class="highlighter-rouge">SDF</code> and <code class="highlighter-rouge">SDFset</code>:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="s2">"SDF"</span><span class="p">)</span>
- <span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="s2">"SDFset"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="s2">"SDF"</span><span class="p">)</span>
+ <span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span> <span class="s2">"SDFset"</span><span class="p">)</span> </code></pre></figure>
 
-<p>Class coercions from <code>SDF</code> to <code>SDFstr</code>,
-<code>SDFset</code>, list with SDF sub-components:</p>
+<p>Class coercions from <code class="highlighter-rouge">SDF</code> to <code class="highlighter-rouge">SDFstr</code>,
+<code class="highlighter-rouge">SDFset</code>, list with SDF sub-components:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfcomplist</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="p">(</span><span class="n">sdf</span><span class="p">,</span> <span class="s2">"list"</span><span class="p">)</span> <span class="n">sdfcomplist</span> <span class="o">&lt;-</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfcomplist</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="p">(</span><span class="n">sdf</span><span class="p">,</span> <span class="s2">"list"</span><span class="p">)</span> <span class="n">sdfcomplist</span> <span class="o">&lt;-</span>
  <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">);</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfcomplist</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="s2">"SDF"</span><span class="p">)</span> <span class="n">sdflist</span> <span class="o">&lt;-</span>
  <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"SDF"</span><span class="p">);</span> <span class="n">as</span><span class="p">(</span><span class="n">sdflist</span><span class="p">,</span> <span class="s2">"SDFset"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="s2">"SDFstr"</span><span class="p">)</span>
- <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="s2">"SDFset"</span><span class="p">)</span></code></pre></div>
+ <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="s2">"SDFset"</span><span class="p">)</span> </code></pre></figure>
 
-<p>Class coercions from <code>SDFset</code> to lists with components
+<p>Class coercions from <code class="highlighter-rouge">SDFset</code> to lists with components
 consisting of SDF or sub-components:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"SDF"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"SDFstr"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"SDF"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"SDFstr"</span><span class="p">)</span></code></pre></figure>
 
 
 
@@ -909,7 +887,7 @@ consisting of SDF or sub-components:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

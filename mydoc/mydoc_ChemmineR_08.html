@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,7 +789,7 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-<p>The following <code>write.SDFsplit</code> function allows to split
+<p>The following <code class="highlighter-rouge">write.SDFsplit</code> function allows to split
 SD Files into any number of smaller SD Files. This can become important
 when working with very big SD Files. Users should note that this
 function can output many files, thus one should run it in a dedicated
@@ -819,20 +797,20 @@ directory!</p>
 
 <p>Create sample SD File with 100 molecules:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="s2">"test.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="s2">"test.sdf"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Read in sample SD File. Note: reading file into SDFstr is much faster
 than into SDFset:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfstr</span> <span class="o">&lt;-</span> <span class="n">read.SDFstr</span><span class="p">(</span><span class="s2">"test.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfstr</span> <span class="o">&lt;-</span> <span class="n">read.SDFstr</span><span class="p">(</span><span class="s2">"test.sdf"</span><span class="p">)</span> </code></pre></figure>
 
-<p>Run export on <code>SDFstr</code> object:</p>
+<p>Run export on <code class="highlighter-rouge">SDFstr</code> object:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDFsplit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdfstr</span><span class="p">,</span> <span class="n">filetag</span><span class="o">=</span><span class="s2">"myfile"</span><span class="p">,</span> <span class="n">nmol</span><span class="o">=</span><span class="m">10</span><span class="p">)</span> <span class="err">#</span> <span class="s1">'nmol'</span> <span class="n">defines</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">molecules</span> <span class="n">to</span> <span class="n">write</span> <span class="n">to</span> <span class="n">each</span> <span class="n">file</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDFsplit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdfstr</span><span class="p">,</span> <span class="n">filetag</span><span class="o">=</span><span class="s2">"myfile"</span><span class="p">,</span> <span class="n">nmol</span><span class="o">=</span><span class="m">10</span><span class="p">)</span> <span class="err">#</span> <span class="s1">'nmol'</span> <span class="n">defines</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">molecules</span> <span class="n">to</span> <span class="n">write</span> <span class="n">to</span> <span class="n">each</span> <span class="n">file</span> </code></pre></figure>
 
-<p>Run export on <code>SDFset</code> object:</p>
+<p>Run export on <code class="highlighter-rouge">SDFset</code> object:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDFsplit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">filetag</span><span class="o">=</span><span class="s2">"myfile"</span><span class="p">,</span> <span class="n">nmol</span><span class="o">=</span><span class="m">10</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDFsplit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">filetag</span><span class="o">=</span><span class="s2">"myfile"</span><span class="p">,</span> <span class="n">nmol</span><span class="o">=</span><span class="m">10</span><span class="p">)</span> </code></pre></figure>
 
 
 
@@ -850,7 +828,7 @@ than into SDFset:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

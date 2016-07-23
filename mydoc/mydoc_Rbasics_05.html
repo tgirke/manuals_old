@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -818,25 +796,25 @@ $('#toc').on('click', 'a', function() {
     <p><strong>Starting R</strong>:
   The R GUI versions, including RStudio, under Windows and Mac OS X can be
   opened by double-clicking their icons. Alternatively, one can start it by
-  typing <code>R</code> in a terminal (default under Linux).</p>
+  typing <code class="highlighter-rouge">R</code> in a terminal (default under Linux).</p>
   </li>
   <li>
     <p><strong>Startup/Closing Behavior</strong>:
   The R environment is controlled by hidden files in the startup directory:
-  <code>.RData</code>, <code>.Rhistory</code> and <code>.Rprofile</code> (optional).</p>
+  <code class="highlighter-rouge">.RData</code>, <code class="highlighter-rouge">.Rhistory</code> and <code class="highlighter-rouge">.Rprofile</code> (optional).</p>
   </li>
   <li>
     <p><strong>Closing R</strong>:</p>
 
-    <p><code>r
+    <p><code class="highlighter-rouge">r
   q()  
   Save workspace image? [y/n/c]:
  </code></p>
   </li>
   <li>
     <p><strong>Note</strong>:
-  When responding with <code>y</code>, then the entire R workspace will be written to
-  the <code>.RData</code> file which can become very large. Often it is sufficient to just
+  When responding with <code class="highlighter-rouge">y</code>, then the entire R workspace will be written to
+  the <code class="highlighter-rouge">.RData</code> file which can become very large. Often it is sufficient to just
   save an analysis protocol in an R source file. This way one can quickly
   regenerate all data sets and objects.</p>
   </li>
@@ -844,25 +822,25 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="navigating-directories">Navigating directories</h2>
 
-<p>Create an object with the assignment operator <code>&lt;-</code> or <code>=</code></p>
+<p>Create an object with the assignment operator <code class="highlighter-rouge">&lt;-</code> or <code class="highlighter-rouge">=</code></p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">object</span> <span class="o">&lt;-</span> <span class="k">...</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">object</span> <span class="o">&lt;-</span> <span class="k">...</span></code></pre></figure>
 
 <p>List objects in current R session</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">ls</span><span class="p">()</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">ls</span><span class="p">()</span></code></pre></figure>
 
 <p>Return content of current working directory</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">dir</span><span class="p">()</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">dir</span><span class="p">()</span></code></pre></figure>
 
 <p>Return path of current working directory</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">getwd</span><span class="p">()</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">getwd</span><span class="p">()</span></code></pre></figure>
 
 <p>Change current working directory</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">setwd</span><span class="p">(</span><span class="s2">"/home/user"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">setwd</span><span class="p">(</span><span class="s2">"/home/user"</span><span class="p">)</span></code></pre></figure>
 
 
 
@@ -880,7 +858,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Thu Feb 11 21:16:00 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Thu Feb 11 21:16:00 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

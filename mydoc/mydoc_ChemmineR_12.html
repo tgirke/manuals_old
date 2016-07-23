@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -814,61 +792,61 @@ $('#toc').on('click', 'a', function() {
 <p>Several methods and functions are available to compute basic compound
 descriptors, such as molecular formula (MF), molecular weight (MW), and
 frequencies of atoms and functional groups. In many of these functions,
-it is important to set <code>addH=TRUE</code> in order to
+it is important to set <code class="highlighter-rouge">addH=TRUE</code> in order to
 include/add hydrogens that are often not specified in an SD file.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">propma</span> <span class="o">&lt;-</span> <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> 
- <span class="n">boxplot</span><span class="p">(</span><span class="n">propma</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s2">"Atom Frequency"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">propma</span> <span class="o">&lt;-</span> <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> 
+ <span class="n">boxplot</span><span class="p">(</span><span class="n">propma</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s2">"Atom Frequency"</span><span class="p">)</span> </code></pre></figure>
 
 <p><img src="ChemmineR_files/boxplot-1.png" alt="" /></p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">boxplot</span><span class="p">(</span><span class="n">rowSums</span><span class="p">(</span><span class="n">propma</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s2">"All Atom Frequency"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">boxplot</span><span class="p">(</span><span class="n">rowSums</span><span class="p">(</span><span class="n">propma</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s2">"All Atom Frequency"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Data frame provided by library containing atom names, atom symbols,
 standard atomic weights, group and period numbers:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">atomprop</span><span class="p">)</span>
- <span class="n">atomprop</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">atomprop</span><span class="p">)</span>
+ <span class="n">atomprop</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##   Number      Name Symbol Atomic_weight Group Period
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##   Number      Name Symbol Atomic_weight Group Period
 ## 1      1  hydrogen      H      1.007940     1      1
 ## 2      2    helium     He      4.002602    18      1
 ## 3      3   lithium     Li      6.941000     1      2
-## 4      4 beryllium     Be      9.012182     2      2</code></pre></div>
+## 4      4 beryllium     Be      9.012182     2      2</code></pre></figure>
 
 <p>Compute MW and formula:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##     CMP1     CMP2     CMP3     CMP4 
-## 456.4916 357.4069 370.4255 461.5346</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##     CMP1     CMP2     CMP3     CMP4 
+## 456.4916 357.4069 370.4255 461.5346</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##          CMP1          CMP2          CMP3          CMP4 
-##  "C23H28N4O6"  "C18H23N5O3" "C18H18N4O3S" "C21H27N5O5S"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##          CMP1          CMP2          CMP3          CMP4 
+##  "C23H28N4O6"  "C18H23N5O3" "C18H18N4O3S" "C21H27N5O5S"</code></pre></figure>
 
 <p>Enumerate functional groups:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">groups</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">groups</span><span class="o">=</span><span class="s2">"fctgroup"</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"countMA"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">groups</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">groups</span><span class="o">=</span><span class="s2">"fctgroup"</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"countMA"</span><span class="p">)</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##      RNH2 R2NH R3N ROPO3 ROH RCHO RCOR RCOOH RCOOR ROR RCCH RCN
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##      RNH2 R2NH R3N ROPO3 ROH RCHO RCOR RCOOH RCOOR ROR RCCH RCN
 ## CMP1    0    2   1     0   0    0    0     0     0   2    0   0
 ## CMP2    0    2   2     0   1    0    0     0     0   0    0   0
 ## CMP3    0    1   1     0   1    0    1     0     0   0    0   0
-## CMP4    0    1   3     0   0    0    0     0     0   2    0   0</code></pre></div>
+## CMP4    0    1   3     0   0    0    0     0     0   2    0   0</code></pre></figure>
 
 <p>Combine MW, MF, charges, atom counts, functional group counts and ring
 counts in one data frame:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">propma</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">MF</span><span class="o">=</span><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">),</span> <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">),</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">propma</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">MF</span><span class="o">=</span><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">),</span> <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">),</span>
 							 <span class="n">Ncharges</span><span class="o">=</span><span class="n">sapply</span><span class="p">(</span><span class="n">bonds</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"charge"</span><span class="p">),</span> <span class="n">length</span><span class="p">),</span>
 							 <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">addH</span><span class="o">=</span><span class="n">FALSE</span><span class="p">),</span> 
 							 <span class="n">groups</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"countMA"</span><span class="p">),</span> 
 							 <span class="n">rings</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span> <span class="n">arom</span><span class="o">=</span><span class="n">TRUE</span><span class="p">))</span>
- <span class="n">propma</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></div>
+ <span class="n">propma</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##               MF       MW Ncharges  C  H N O S F Cl RNH2 R2NH R3N ROPO3 ROH RCHO RCOR RCOOH RCOOR
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##               MF       MW Ncharges  C  H N O S F Cl RNH2 R2NH R3N ROPO3 ROH RCHO RCOR RCOOH RCOOR
 ## CMP1  C23H28N4O6 456.4916        0 23 28 4 6 0 0  0    0    2   1     0   0    0    0     0     0
 ## CMP2  C18H23N5O3 357.4069        0 18 23 5 3 0 0  0    0    2   2     0   1    0    0     0     0
 ## CMP3 C18H18N4O3S 370.4255        0 18 18 4 3 1 0  0    0    1   1     0   1    0    1     0     0
@@ -877,37 +855,37 @@ counts in one data frame:</p>
 ## CMP1   2    0   0     4        2
 ## CMP2   0    0   0     3        3
 ## CMP3   0    0   0     4        2
-## CMP4   2    0   0     3        3</code></pre></div>
+## CMP4   2    0   0     3        3</code></pre></figure>
 
 <p>The following shows an example for assigning the values stored in a
 matrix (<em>e.g.</em> property descriptors) to the data block components in an
-<code>SDFset</code>. Each matrix row will be assigned to the
-corresponding slot position in the <code>SDFset</code>.</p>
+<code class="highlighter-rouge">SDFset</code>. Each matrix row will be assigned to the
+corresponding slot position in the <code class="highlighter-rouge">SDFset</code>.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">propma</span> <span class="c1"># Works with all SDF components 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">propma</span> <span class="c1"># Works with all SDF components 
 </span> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> 
  <span class="n">test</span> <span class="o">&lt;-</span> <span class="n">apply</span><span class="p">(</span><span class="n">propma</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,],</span> <span class="m">1</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
- <span class="n">data.frame</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">colnames</span><span class="p">(</span><span class="n">propma</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="n">x</span><span class="p">))</span></code></pre></div>
+ <span class="n">data.frame</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">colnames</span><span class="p">(</span><span class="n">propma</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="n">x</span><span class="p">))</span> </code></pre></figure>
 
 <p>The data blocks in SDFs contain often important annotation information
-about compounds. The <code>datablock2ma</code> function returns this
+about compounds. The <code class="highlighter-rouge">datablock2ma</code> function returns this
 information as matrix for all compounds stored in an
-<code>SDFset</code> container. The <code>splitNumChar</code>
+<code class="highlighter-rouge">SDFset</code> container. The <code class="highlighter-rouge">splitNumChar</code>
 function can then be used to organize all numeric columns in a
-<code>numeric matrix</code> and the character columns in a
-<code>character matrix</code> as components of a
-<code>list</code> object.</p>
+<code class="highlighter-rouge">numeric matrix</code> and the character columns in a
+<code class="highlighter-rouge">character matrix</code> as components of a
+<code class="highlighter-rouge">list</code> object.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">datablocktag</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s2">"PUBCHEM_NIST_INCHI"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">datablocktag</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s2">"PUBCHEM_NIST_INCHI"</span><span class="p">)</span>
  <span class="n">datablocktag</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span>
- <span class="n">tag</span><span class="o">=</span><span class="s2">"PUBCHEM_OPENEYE_CAN_SMILES"</span><span class="p">)</span></code></pre></div>
+ <span class="n">tag</span><span class="o">=</span><span class="s2">"PUBCHEM_OPENEYE_CAN_SMILES"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Convert entire data block to matrix:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">blockmatrix</span> <span class="o">&lt;-</span> <span class="n">datablock2ma</span><span class="p">(</span><span class="n">datablocklist</span><span class="o">=</span><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> <span class="c1"># Converts data block to matrix 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">blockmatrix</span> <span class="o">&lt;-</span> <span class="n">datablock2ma</span><span class="p">(</span><span class="n">datablocklist</span><span class="o">=</span><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> <span class="c1"># Converts data block to matrix 
 </span> <span class="n">numchar</span> <span class="o">&lt;-</span> <span class="n">splitNumChar</span><span class="p">(</span><span class="n">blockmatrix</span><span class="o">=</span><span class="n">blockmatrix</span><span class="p">)</span> <span class="c1"># Splits matrix to numeric matrix and character matrix 
 </span> <span class="n">numchar</span><span class="p">[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,];</span> <span class="n">numchar</span><span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span>
- <span class="err">#</span> <span class="n">Splits</span> <span class="n">matrix</span> <span class="n">to</span> <span class="n">numeric</span> <span class="n">matrix</span> <span class="n">and</span> <span class="n">character</span> <span class="n">matrix</span></code></pre></div>
+ <span class="err">#</span> <span class="n">Splits</span> <span class="n">matrix</span> <span class="n">to</span> <span class="n">numeric</span> <span class="n">matrix</span> <span class="n">and</span> <span class="n">character</span> <span class="n">matrix</span> </code></pre></figure>
 
 
 
@@ -925,7 +903,7 @@ function can then be used to organize all numeric columns in a
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

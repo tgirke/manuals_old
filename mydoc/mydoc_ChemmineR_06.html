@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -813,43 +791,43 @@ $('#toc').on('click', 'a', function() {
 -->
 <h2 id="sdf-export">SDF Export</h2>
 
-<p>Write objects of classes <code>SDFset/SDFstr/SDF</code> to SD file:</p>
+<p>Write objects of classes <code class="highlighter-rouge">SDFset/SDFstr/SDF</code> to SD file:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">)</span> </code></pre></figure>
 
-<p>Writing customized <code>SDFset</code> to file containing
-<code>ChemmineR</code> signature, IDs from <code>SDFset</code>
+<p>Writing customized <code class="highlighter-rouge">SDFset</code> to file containing
+<code class="highlighter-rouge">ChemmineR</code> signature, IDs from <code class="highlighter-rouge">SDFset</code>
 and no data block:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span> </code></pre></figure>
 
 <p>Example for injecting a custom matrix/data frame into the data block of
-an <code>SDFset</code> and then writing it to an SD file:</p>
+an <code class="highlighter-rouge">SDFset</code> and then writing it to an SD file:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">props</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">MF</span><span class="o">=</span><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">props</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">MF</span><span class="o">=</span><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> 
  <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">props</span>
- <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></div>
+ <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> </code></pre></figure>
 
-<p>Indirect export via <code>SDFstr</code> object:</p>
+<p>Indirect export via <code class="highlighter-rouge">SDFstr</code> object:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdf2str</span><span class="p">(</span><span class="n">sdf</span><span class="o">=</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="c1"># Uses default components 
-</span> <span class="n">sdf2str</span><span class="p">(</span><span class="n">sdf</span><span class="o">=</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">head</span><span class="o">=</span><span class="n">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">db</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span> <span class="err">#</span> <span class="n">Uses</span> <span class="n">custom</span> <span class="n">components</span> <span class="k">for</span> <span class="n">header</span> <span class="n">and</span> <span class="n">data</span> <span class="n">block</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdf2str</span><span class="p">(</span><span class="n">sdf</span><span class="o">=</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="c1"># Uses default components 
+</span> <span class="n">sdf2str</span><span class="p">(</span><span class="n">sdf</span><span class="o">=</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">head</span><span class="o">=</span><span class="n">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">db</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span> <span class="err">#</span> <span class="n">Uses</span> <span class="n">custom</span> <span class="n">components</span> <span class="k">for</span> <span class="n">header</span> <span class="n">and</span> <span class="n">data</span> <span class="n">block</span> </code></pre></figure>
 
-<p>Write <code>SDF</code>, <code>SDFset</code> or
-<code>SDFstr</code> classes to file:</p>
+<p>Write <code class="highlighter-rouge">SDF</code>, <code class="highlighter-rouge">SDFset</code> or
+<code class="highlighter-rouge">SDFstr</code> classes to file:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span>
  <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">)</span> 
- <span class="n">cat</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)),</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span></code></pre></div>
+ <span class="n">cat</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">as</span><span class="p">(</span><span class="n">sdfstr</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)),</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span> </code></pre></figure>
 
 <h2 id="smiles-export">SMILES Export</h2>
 
-<p>Write objects of class <code>SMIset</code> to SMILES file with and
+<p>Write objects of class <code class="highlighter-rouge">SMIset</code> to SMILES file with and
 without compound identifiers:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">smisample</span><span class="p">);</span> <span class="n">smiset</span> <span class="o">&lt;-</span> <span class="n">smisample</span> <span class="c1"># Sample data set 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">smisample</span><span class="p">);</span> <span class="n">smiset</span> <span class="o">&lt;-</span> <span class="n">smisample</span> <span class="c1"># Sample data set 
 </span>
- <span class="n">write.SMI</span><span class="p">(</span><span class="n">smiset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.smi"</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="n">write.SMI</span><span class="p">(</span><span class="n">smiset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.smi"</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+ <span class="n">write.SMI</span><span class="p">(</span><span class="n">smiset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.smi"</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="n">write.SMI</span><span class="p">(</span><span class="n">smiset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.smi"</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> </code></pre></figure>
 
 
 
@@ -867,7 +845,7 @@ without compound identifiers:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

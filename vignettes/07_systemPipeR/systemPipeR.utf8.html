@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -845,20 +823,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<p><code>
-## Warning: replacing previous import by 'ggplot2::unit' when loading 'systemPipeR'
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Warning: replacing previous import by 'ggplot2::unit' when loading 'systemPipeR'
+</code></pre>
+</div>
 
-<p><code>
-## Warning: replacing previous import by 'ggplot2::arrow' when loading 'systemPipeR'
-</code>
-Note: the most recent version of this tutorial can be found <a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html">here</a> and a short overview slide show <a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html">here</a>.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Warning: replacing previous import by 'ggplot2::arrow' when loading 'systemPipeR'
+</code></pre>
+</div>
+<p>Note: the most recent version of this tutorial can be found <a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html">here</a> and a short overview slide show <a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html">here</a>.</p>
 
 <h1 id="introduction">Introduction</h1>
 
-<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> provides utilities for building and running automated end-to-end analysis workflows for a wide range of next generation sequence (NGS) applications such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq [@Girke2014-oy]. Important features include a uniform workflow interface across different NGS applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters. The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, <em><code>systemPipeR</code></em> can be used with most command-line aligners such as <code>BWA</code> [@Li2013-oy; @Li2009-oc], <code>TopHat2</code> [@Kim2013-vg] and <code>Bowtie2</code> [@Langmead2012-bs], as well as the R-based NGS aligners <a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"><em><code>Rsubread</code></em></a> [@Liao2013-bn] and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code>gsnap (gmapR)</code></em></a> [@Wu2010-iq]. Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM files) and experimental designs is facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area [@Lawrence2013-kt].</p>
+<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code class="highlighter-rouge">systemPipeR</code></em></a> provides utilities for building and running automated end-to-end analysis workflows for a wide range of next generation sequence (NGS) applications such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq [@Girke2014-oy]. Important features include a uniform workflow interface across different NGS applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters. The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, <em><code class="highlighter-rouge">systemPipeR</code></em> can be used with most command-line aligners such as <code class="highlighter-rouge">BWA</code> [@Li2013-oy; @Li2009-oc], <code class="highlighter-rouge">TopHat2</code> [@Kim2013-vg] and <code class="highlighter-rouge">Bowtie2</code> [@Langmead2012-bs], as well as the R-based NGS aligners <a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"><em><code class="highlighter-rouge">Rsubread</code></em></a> [@Liao2013-bn] and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code class="highlighter-rouge">gsnap (gmapR)</code></em></a> [@Wu2010-iq]. Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM files) and experimental designs is facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area [@Lawrence2013-kt].</p>
 
-<p>Motivation and advantages of <em><code>sytemPipeR</code></em> environment:</p>
+<p>Motivation and advantages of <em><code class="highlighter-rouge">sytemPipeR</code></em> environment:</p>
 
 <ol>
   <li>Facilitates design of complex NGS workflows involving multiple R/Bioconductor packages</li>
@@ -870,13 +848,13 @@ Note: the most recent version of this tutorial can be found <a href="https://htm
   <li>Automates generation of analysis reports to improve reproducibility</li>
 </ol>
 
-<p>A central concept for designing workflows within the <em><code>sytemPipeR</code></em> environment is the use of workflow management containers called <em><code>SYSargs</code></em> (see Figure 1). Instances of this S4 object class are constructed by the <em><code>systemArgs</code></em> function from two simple tabular files: a <em><code>targets</code></em> file and a <em><code>param</code></em> file. The latter is optional for workflow steps lacking command-line software. Typically, a <em><code>SYSargs</code></em> instance stores all sample-level inputs as well as the paths to the corresponding outputs generated by command-line- or R-based software generating sample-level output files, such as read preprocessors (trimmed/filtered FASTQ files), aligners (SAM/BAM files), variant callers (VCF/BCF files) or peak callers (BED/WIG files). Each sample level input/outfile operation uses its own <em><code>SYSargs</code></em> instance. The outpaths of <em><code>SYSargs</code></em> usually define the sample inputs for the next <em><code>SYSargs</code></em> instance. This connectivity is established by writing the outpaths with the <em><code>writeTargetsout</code></em> function to a new <em><code>targets</code></em> file that serves as input to the next <em><code>systemArgs</code></em> call. Typically, the user has to provide only the initial <em><code>targets</code></em> file. All downstream <em><code>targets</code></em> files are generated automatically. By chaining several <em><code>SYSargs</code></em> steps together one can construct complex workflows involving many sample-level input/output file operations with any combinaton of command-line or R-based software.</p>
+<p>A central concept for designing workflows within the <em><code class="highlighter-rouge">sytemPipeR</code></em> environment is the use of workflow management containers called <em><code class="highlighter-rouge">SYSargs</code></em> (see Figure 1). Instances of this S4 object class are constructed by the <em><code class="highlighter-rouge">systemArgs</code></em> function from two simple tabular files: a <em><code class="highlighter-rouge">targets</code></em> file and a <em><code class="highlighter-rouge">param</code></em> file. The latter is optional for workflow steps lacking command-line software. Typically, a <em><code class="highlighter-rouge">SYSargs</code></em> instance stores all sample-level inputs as well as the paths to the corresponding outputs generated by command-line- or R-based software generating sample-level output files, such as read preprocessors (trimmed/filtered FASTQ files), aligners (SAM/BAM files), variant callers (VCF/BCF files) or peak callers (BED/WIG files). Each sample level input/outfile operation uses its own <em><code class="highlighter-rouge">SYSargs</code></em> instance. The outpaths of <em><code class="highlighter-rouge">SYSargs</code></em> usually define the sample inputs for the next <em><code class="highlighter-rouge">SYSargs</code></em> instance. This connectivity is established by writing the outpaths with the <em><code class="highlighter-rouge">writeTargetsout</code></em> function to a new <em><code class="highlighter-rouge">targets</code></em> file that serves as input to the next <em><code class="highlighter-rouge">systemArgs</code></em> call. Typically, the user has to provide only the initial <em><code class="highlighter-rouge">targets</code></em> file. All downstream <em><code class="highlighter-rouge">targets</code></em> files are generated automatically. By chaining several <em><code class="highlighter-rouge">SYSargs</code></em> steps together one can construct complex workflows involving many sample-level input/output file operations with any combinaton of command-line or R-based software.</p>
 
 <p><img src="SystemPipeR_Workflow.png" alt="" /></p>
 <div align="center">**Figure 1:** Workflow design structure of *systemPipeR* </div>
 <p>&lt;/br&gt;</p>
 
-<p>The intended way of running <em><code>sytemPipeR</code></em> workflows is via <em><code>*.Rnw</code></em> or <em><code>*.Rmd</code></em> files, which can be executed either line-wise in interactive mode or with a single command from R or the command-line using a <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/Makefile"><em><code>Makefile</code></em></a>. This way comprehensive and reproducible analysis reports in PDF or HTML format can be generated in a fully automated manner by making use of the highly functional reporting utilities available for R. Templates for setting up custom project reports are provided as <em><code>*.Rnw</code></em> files by the helper package <em><code>systemPipeRdata</code></em> and in the vignettes subdirectory of <em><code>systemPipeR</code></em>. The corresponding PDFs of these report templates are available here: <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRNAseq.pdf?raw=true"><em><code>systemPipeRNAseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRIBOseq.pdf?raw=true"><em><code>systemPipeRIBOseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeChIPseq.pdf?raw=true"><em><code>systemPipeChIPseq</code></em></a> and <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeVARseq.pdf?raw=true"><em><code>systemPipeVARseq</code></em></a>. To work with <em><code>*.Rnw</code></em> or <em><code>*.Rmd</code></em> files efficiently, basic knowledge of <a href="https://www.stat.uni-muenchen.de/~leisch/Sweave/"><em><code>Sweave</code></em></a> or <a href="http://yihui.name/knitr/"><em><code>knitr</code></em></a> and <a href="http://www.latex-project.org/"><em><code>Latex</code></em></a> or <a href="http://rmarkdown.rstudio.com/"><em><code>R Markdown v2</code></em></a> is required.</p>
+<p>The intended way of running <em><code class="highlighter-rouge">sytemPipeR</code></em> workflows is via <em><code class="highlighter-rouge">*.Rnw</code></em> or <em><code class="highlighter-rouge">*.Rmd</code></em> files, which can be executed either line-wise in interactive mode or with a single command from R or the command-line using a <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/Makefile"><em><code class="highlighter-rouge">Makefile</code></em></a>. This way comprehensive and reproducible analysis reports in PDF or HTML format can be generated in a fully automated manner by making use of the highly functional reporting utilities available for R. Templates for setting up custom project reports are provided as <em><code class="highlighter-rouge">*.Rnw</code></em> files by the helper package <em><code class="highlighter-rouge">systemPipeRdata</code></em> and in the vignettes subdirectory of <em><code class="highlighter-rouge">systemPipeR</code></em>. The corresponding PDFs of these report templates are available here: <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRNAseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeRNAseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRIBOseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeRIBOseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeChIPseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeChIPseq</code></em></a> and <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeVARseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeVARseq</code></em></a>. To work with <em><code class="highlighter-rouge">*.Rnw</code></em> or <em><code class="highlighter-rouge">*.Rmd</code></em> files efficiently, basic knowledge of <a href="https://www.stat.uni-muenchen.de/~leisch/Sweave/"><em><code class="highlighter-rouge">Sweave</code></em></a> or <a href="http://yihui.name/knitr/"><em><code class="highlighter-rouge">knitr</code></em></a> and <a href="http://www.latex-project.org/"><em><code class="highlighter-rouge">Latex</code></em></a> or <a href="http://rmarkdown.rstudio.com/"><em><code class="highlighter-rouge">R Markdown v2</code></em></a> is required.</p>
 
 <div align="right">[Back to Table of Contents]()</div>
 
@@ -884,34 +862,34 @@ Note: the most recent version of this tutorial can be found <a href="https://htm
 
 <h2 id="installation">Installation</h2>
 
-<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code>systemPipeR</code></em> environment can be installed from R using the <em><code>biocLite</code></em> install command. The associated data package <a href="https://github.com/tgirke/systemPipeRdata"><em><code>systemPipeRdata</code></em></a> can be used to generate <em><code>systemPipeR</code></em> workflow environments with a single command (<a href="#load-sample-data-and-workflow-templates">see below</a>) containing all parameter files and sample data required to quickly test and run workflows.</p>
+<p>The R software for running <a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code class="highlighter-rouge">systemPipeR</code></em></a> can be downloaded from <a href="http://cran.at.r-project.org/"><em>CRAN</em></a>. The <em><code class="highlighter-rouge">systemPipeR</code></em> environment can be installed from R using the <em><code class="highlighter-rouge">biocLite</code></em> install command. The associated data package <a href="https://github.com/tgirke/systemPipeRdata"><em><code class="highlighter-rouge">systemPipeRdata</code></em></a> can be used to generate <em><code class="highlighter-rouge">systemPipeR</code></em> workflow environments with a single command (<a href="#load-sample-data-and-workflow-templates">see below</a>) containing all parameter files and sample data required to quickly test and run workflows.</p>
 
-<p><code>r
-source("http://bioconductor.org/biocLite.R") # Sources the biocLite.R installation script 
-biocLite("systemPipeR") # Installs systemPipeR 
-biocLite("systemPipeRdata") # Installs systemPipeRdata
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script 
+</span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Installs systemPipeR 
+</span><span class="n">biocLite</span><span class="p">(</span><span class="s2">"systemPipeRdata"</span><span class="p">)</span> <span class="c1"># Installs systemPipeRdata
+</span></code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="loading-package-and-documentation">Loading package and documentation</h2>
 
-<p><code>r
-library("systemPipeR") # Loads the package
-library(help="systemPipeR") # Lists package info
-vignette("systemPipeR") # Opens vignette
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Loads the package
+</span><span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Lists package info
+</span><span class="n">vignette</span><span class="p">(</span><span class="s2">"systemPipeR"</span><span class="p">)</span> <span class="c1"># Opens vignette
+</span></code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="load-sample-data-and-workflow-templates">Load sample data and workflow templates</h2>
-<p>The mini sample FASTQ files used by this overview vignette as well as the associated workflow reporting vignettes can be loaded via the <em><code>systemPipeRdata</code></em> package as shown below. The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code>SRP010938</code></a> contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em> [@Howard2013-fq]. To minimize processing time during testing, each FASTQ file has been subsetted to 90,000-100,000 randomly sampled PE reads that map to the first 100,000 nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding reference genome sequence (FASTA) and its GFF annotion files (provided in the same download) have been truncated accordingly. This way the entire test sample data set requires less than 200MB disk storage space. A PE read set has been chosen for this test data set for flexibility, because it can be used for testing both types of analysis routines requiring either SE (single end) reads or PE reads.</p>
+<p>The mini sample FASTQ files used by this overview vignette as well as the associated workflow reporting vignettes can be loaded via the <em><code class="highlighter-rouge">systemPipeRdata</code></em> package as shown below. The chosen data set <a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP010938"><code class="highlighter-rouge">SRP010938</code></a> contains 18 paired-end (PE) read sets from <em>Arabidposis thaliana</em> [@Howard2013-fq]. To minimize processing time during testing, each FASTQ file has been subsetted to 90,000-100,000 randomly sampled PE reads that map to the first 100,000 nucleotides of each chromosome of the <em>A. thalina</em> genome. The corresponding reference genome sequence (FASTA) and its GFF annotion files (provided in the same download) have been truncated accordingly. This way the entire test sample data set requires less than 200MB disk storage space. A PE read set has been chosen for this test data set for flexibility, because it can be used for testing both types of analysis routines requiring either SE (single end) reads or PE reads.</p>
 
 <p>The following loads one of the available NGS workflow templates (here RNA-Seq) into the user’s current working directory. At the moment, the package includes workflow templates for RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq. Templates for additional NGS applications will be provided in the future.</p>
 
-<p><code>r
-library(systemPipeRdata)
-genWorkenvir(workflow="rnaseq")
-setwd("rnaseq")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The working environment of the sample data loaded in previous step contains the following preconfigured directory structure:</p>
 
@@ -956,33 +934,32 @@ Users can change this structure as needed, but need to adjust the code in their 
 <p>The following parameter files are included in each workflow template:</p>
 
 <ol>
-  <li><em><code>targets.txt</code></em>: initial one provided by user; downstream <em><code>targets_*.txt</code></em> files are generated automatically</li>
-  <li><em><code>*.param</code></em>: defines parameter for input/output file operations, <em>e.g.</em> <em><code>trim.param</code></em>, <em><code>bwa.param</code></em>, <em><code>vartools.parm</code></em>, …</li>
-  <li><em><code>*_run.sh</code></em>: optional bash script, <em>e.g.</em>: <em><code>gatk_run.sh</code></em></li>
+  <li><em><code class="highlighter-rouge">targets.txt</code></em>: initial one provided by user; downstream <em><code class="highlighter-rouge">targets_*.txt</code></em> files are generated automatically</li>
+  <li><em><code class="highlighter-rouge">*.param</code></em>: defines parameter for input/output file operations, <em>e.g.</em> <em><code class="highlighter-rouge">trim.param</code></em>, <em><code class="highlighter-rouge">bwa.param</code></em>, <em><code class="highlighter-rouge">vartools.parm</code></em>, …</li>
+  <li><em><code class="highlighter-rouge">*_run.sh</code></em>: optional bash script, <em>e.g.</em>: <em><code class="highlighter-rouge">gatk_run.sh</code></em></li>
   <li>Compute cluster environment (skip on single machine):
     <ul>
-      <li><em><code>.BatchJobs</code></em>: defines type of scheduler for <em><code>BatchJobs</code></em></li>
-      <li><em><code>*.tmpl</code></em>: specifies parameters of scheduler used by a system, <em>e.g.</em> Torque, SGE, StarCluster, Slurm, etc.</li>
+      <li><em><code class="highlighter-rouge">.BatchJobs</code></em>: defines type of scheduler for <em><code class="highlighter-rouge">BatchJobs</code></em></li>
+      <li><em><code class="highlighter-rouge">*.tmpl</code></em>: specifies parameters of scheduler used by a system, <em>e.g.</em> Torque, SGE, StarCluster, Slurm, etc.</li>
     </ul>
   </li>
 </ol>
 
 <div align="right">[Back to Table of Contents]()</div>
 
-<h2 id="structure-of-targets-file">Structure of <em><code>targets</code></em> file</h2>
+<h2 id="structure-of-targets-file">Structure of <em><code class="highlighter-rouge">targets</code></em> file</h2>
 
-<p>The <em><code>targets</code></em> file defines all input files (<em>e.g.</em> FASTQ, BAM, BCF) and sample comparisons of an analysis workflow. The following shows the format of a sample <em><code>targets</code></em> file included in the package. It also can be viewed and downloaded from <em><code>systemPipeR</code></em>’s GitHub repository <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt">here</a>. In a target file with a single type of input files, here FASTQ files of single end (SE) reads, the first three columns are mandatory including their column names, while it is four mandatory columns for FASTQ files of PE reads. All subsequent columns are optional and any number of additional columns can be added as needed.</p>
+<p>The <em><code class="highlighter-rouge">targets</code></em> file defines all input files (<em>e.g.</em> FASTQ, BAM, BCF) and sample comparisons of an analysis workflow. The following shows the format of a sample <em><code class="highlighter-rouge">targets</code></em> file included in the package. It also can be viewed and downloaded from <em><code class="highlighter-rouge">systemPipeR</code></em>’s GitHub repository <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/targets.txt">here</a>. In a target file with a single type of input files, here FASTQ files of single end (SE) reads, the first three columns are mandatory including their column names, while it is four mandatory columns for FASTQ files of PE reads. All subsequent columns are optional and any number of additional columns can be added as needed.</p>
 
-<h3 id="structure-of-targets-file-for-single-end-se-samples">Structure of <em><code>targets</code></em> file for single end (SE) samples</h3>
+<h3 id="structure-of-targets-file-for-single-end-se-samples">Structure of <em><code class="highlighter-rouge">targets</code></em> file for single end (SE) samples</h3>
 
-<p><code>r
-library(systemPipeR)
-targetspath &lt;- system.file("extdata", "targets.txt", package="systemPipeR") 
-read.delim(targetspath, comment.char = "#")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
+<span class="n">targetspath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"targets.txt"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span> 
+<span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-##                    FileName SampleName Factor SampleLong Experiment        Date
+<div class="highlighter-rouge"><pre class="highlight"><code>##                    FileName SampleName Factor SampleLong Experiment        Date
 ## 1  ./data/SRR446027_1.fastq        M1A     M1  Mock.1h.A          1 23-Mar-2012
 ## 2  ./data/SRR446028_1.fastq        M1B     M1  Mock.1h.B          1 23-Mar-2012
 ## 3  ./data/SRR446029_1.fastq        A1A     A1   Avr.1h.A          1 23-Mar-2012
@@ -1001,48 +978,48 @@ read.delim(targetspath, comment.char = "#")
 ## 16 ./data/SRR446042_1.fastq       A12B    A12  Avr.12h.B          1 23-Mar-2012
 ## 17 ./data/SRR446043_1.fastq       V12A    V12  Vir.12h.A          1 23-Mar-2012
 ## 18 ./data/SRR446044_1.fastq       V12B    V12  Vir.12h.B          1 23-Mar-2012
-</code>
-To work with custom data, users need to generate a <em><code>targets</code></em> file containing the paths to their own FASTQ files and then provide under <em><code>targetspath</code></em> the path to the corresponding <em><code>targets</code></em> file.</p>
+</code></pre>
+</div>
+<p>To work with custom data, users need to generate a <em><code class="highlighter-rouge">targets</code></em> file containing the paths to their own FASTQ files and then provide under <em><code class="highlighter-rouge">targetspath</code></em> the path to the corresponding <em><code class="highlighter-rouge">targets</code></em> file.</p>
 
 <div align="right">[Back to Table of Contents]()</div>
 
-<h3 id="structure-of-targets-file-for-paired-end-pe-samples">Structure of <em><code>targets</code></em> file for paired end (PE) samples</h3>
+<h3 id="structure-of-targets-file-for-paired-end-pe-samples">Structure of <em><code class="highlighter-rouge">targets</code></em> file for paired end (PE) samples</h3>
 
-<p><code>r
-targetspath &lt;- system.file("extdata", "targetsPE.txt", package="systemPipeR")
-read.delim(targetspath, comment.char = "#")[1:2,1:6]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">targetspath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"targetsPE.txt"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">]</span>
+</code></pre>
+</div>
 
-<p><code>
-##                  FileName1                FileName2 SampleName Factor SampleLong Experiment
+<div class="highlighter-rouge"><pre class="highlight"><code>##                  FileName1                FileName2 SampleName Factor SampleLong Experiment
 ## 1 ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq        M1A     M1  Mock.1h.A          1
 ## 2 ./data/SRR446028_1.fastq ./data/SRR446028_2.fastq        M1B     M1  Mock.1h.B          1
-</code></p>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="sample-comparisons">Sample comparisons</h3>
-<p>Sample comparisons are defined in the header lines of the <em><code>targets</code></em> file starting with ‘<code># &lt;CMP&gt;</code>’.</p>
+<p>Sample comparisons are defined in the header lines of the <em><code class="highlighter-rouge">targets</code></em> file starting with ‘<code class="highlighter-rouge"># &lt;CMP&gt;</code>’.</p>
 
-<p><code>r
-readLines(targetspath)[1:4]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">readLines</span><span class="p">(</span><span class="n">targetspath</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
+</code></pre>
+</div>
 
-<p><code>
-## [1] "# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)"                                                                              
+<div class="highlighter-rouge"><pre class="highlight"><code>## [1] "# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)"                                                                              
 ## [2] "# The following line(s) allow to specify the contrasts needed for comparative analyses, such as DEG identification. All possible comparisons can be specified with 'CMPset: ALL'."
 ## [3] "# &lt;CMP&gt; CMPset1: M1-A1, M1-V1, A1-V1, M6-A6, M6-V6, A6-V6, M12-A12, M12-V12, A12-V12"                                                                                             
 ## [4] "# &lt;CMP&gt; CMPset2: ALL"
-</code></p>
+</code></pre>
+</div>
 
-<p>The function <em><code>readComp</code></em> imports the comparison information and stores it in a <em><code>list</code></em>. Alternatively, <em><code>readComp</code></em> can obtain the comparison information from the corresponding <em><code>SYSargs</code></em> object (see below). 
+<p>The function <em><code class="highlighter-rouge">readComp</code></em> imports the comparison information and stores it in a <em><code class="highlighter-rouge">list</code></em>. Alternatively, <em><code class="highlighter-rouge">readComp</code></em> can obtain the comparison information from the corresponding <em><code class="highlighter-rouge">SYSargs</code></em> object (see below). 
 Note, these header lines are optional. They are mainly useful for controlling comparative analyses according to certain biological expectations, such as identifying differentially expressed genes in RNA-Seq experiments based on simple pair-wise comparisons.</p>
 
-<p><code>r
-readComp(file=targetspath, format="vector", delim="-")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">readComp</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"vector"</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## $CMPset1
+<div class="highlighter-rouge"><pre class="highlight"><code>## $CMPset1
 ## [1] "M1-A1"   "M1-V1"   "A1-V1"   "M6-A6"   "M6-V6"   "A6-V6"   "M12-A12" "M12-V12" "A12-V12"
 ## 
 ## $CMPset2
@@ -1050,19 +1027,19 @@ readComp(file=targetspath, format="vector", delim="-")
 ## [10] "A1-M6"   "A1-A6"   "A1-V6"   "A1-M12"  "A1-A12"  "A1-V12"  "V1-M6"   "V1-A6"   "V1-V6"  
 ## [19] "V1-M12"  "V1-A12"  "V1-V12"  "M6-A6"   "M6-V6"   "M6-M12"  "M6-A12"  "M6-V12"  "A6-V6"  
 ## [28] "A6-M12"  "A6-A12"  "A6-V12"  "V6-M12"  "V6-A12"  "V6-V12"  "M12-A12" "M12-V12" "A12-V12"
-</code></p>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<h2 id="structure-of-param-file-and-sysargs-container">Structure of <em><code>param</code></em> file and <em><code>SYSargs</code></em> container</h2>
-<p>The <em><code>param</code></em> file defines the parameters of a chosen command-line software. The following shows the format of a sample <em><code>param</code></em> file provided by this package.</p>
+<h2 id="structure-of-param-file-and-sysargs-container">Structure of <em><code class="highlighter-rouge">param</code></em> file and <em><code class="highlighter-rouge">SYSargs</code></em> container</h2>
+<p>The <em><code class="highlighter-rouge">param</code></em> file defines the parameters of a chosen command-line software. The following shows the format of a sample <em><code class="highlighter-rouge">param</code></em> file provided by this package.</p>
 
-<p><code>r
-parampath &lt;- system.file("extdata", "tophat.param", package="systemPipeR")
-read.delim(parampath, comment.char = "#")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">parampath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">read.delim</span><span class="p">(</span><span class="n">parampath</span><span class="p">,</span> <span class="n">comment.char</span> <span class="o">=</span> <span class="s2">"#"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-##      PairSet         Name                                  Value
+<div class="highlighter-rouge"><pre class="highlight"><code>##      PairSet         Name                                  Value
 ## 1    modules         &lt;NA&gt;                          bowtie2/2.2.5
 ## 2    modules         &lt;NA&gt;                          tophat/2.0.14
 ## 3   software         &lt;NA&gt;                                 tophat
@@ -1078,74 +1055,75 @@ read.delim(parampath, comment.char = "#")
 ## 13   infile1         path                                   &lt;NA&gt;
 ## 14   infile2         &lt;NA&gt;                            &lt;FileName2&gt;
 ## 15   infile2         path                                   &lt;NA&gt;
-</code></p>
+</code></pre>
+</div>
 
-<p>The <em><code>systemArgs</code></em> function imports the definitions of both the <em><code>param</code></em> file and the <em><code>targets</code></em> file, and stores all relevant information in a <em><code>SYSargs</code></em> S4 class object. To run the pipeline without command-line software, one can assign <em><code>NULL</code></em> to <em><code>sysma</code></em> instead of a <em><code>param</code></em> file. In addition, one can start the <em><code>systemPipeR</code></em> workflow with pre-generated BAM files by providing a targets file where the <em><code>FileName</code></em> column gives the paths to the BAM files and <em><code>sysma</code></em> is assigned <em><code>NULL</code></em>.</p>
+<p>The <em><code class="highlighter-rouge">systemArgs</code></em> function imports the definitions of both the <em><code class="highlighter-rouge">param</code></em> file and the <em><code class="highlighter-rouge">targets</code></em> file, and stores all relevant information in a <em><code class="highlighter-rouge">SYSargs</code></em> S4 class object. To run the pipeline without command-line software, one can assign <em><code class="highlighter-rouge">NULL</code></em> to <em><code class="highlighter-rouge">sysma</code></em> instead of a <em><code class="highlighter-rouge">param</code></em> file. In addition, one can start the <em><code class="highlighter-rouge">systemPipeR</code></em> workflow with pre-generated BAM files by providing a targets file where the <em><code class="highlighter-rouge">FileName</code></em> column gives the paths to the BAM files and <em><code class="highlighter-rouge">sysma</code></em> is assigned <em><code class="highlighter-rouge">NULL</code></em>.</p>
 
-<p><code>r
-args &lt;- suppressWarnings(systemArgs(sysma=parampath, mytargets=targetspath))
-args
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">suppressWarnings</span><span class="p">(</span><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">))</span>
+<span class="n">args</span>
+</code></pre>
+</div>
 
-<p><code>
-## An instance of 'SYSargs' for running 'tophat' on 18 samples
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## An instance of 'SYSargs' for running 'tophat' on 18 samples
+</code></pre>
+</div>
 
-<p>Several accessor functions are available that are named after the slot names of the <em><code>SYSargs</code></em> object.</p>
+<p>Several accessor functions are available that are named after the slot names of the <em><code class="highlighter-rouge">SYSargs</code></em> object.</p>
 
-<p><code>r
-names(args)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">names</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-##  [1] "targetsin"     "targetsout"    "targetsheader" "modules"       "software"      "cores"        
+<div class="highlighter-rouge"><pre class="highlight"><code>##  [1] "targetsin"     "targetsout"    "targetsheader" "modules"       "software"      "cores"        
 ##  [7] "other"         "reference"     "results"       "infile1"       "infile2"       "outfile1"     
 ## [13] "sysargs"       "outpaths"
-</code></p>
+</code></pre>
+</div>
 
-<p><code>r
-modules(args)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## [1] "bowtie2/2.2.5" "tophat/2.0.14"
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## [1] "bowtie2/2.2.5" "tophat/2.0.14"
+</code></pre>
+</div>
 
-<p><code>r
-cores(args)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">cores</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## [1] 4
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## [1] 4
+</code></pre>
+</div>
 
-<p><code>r
-outpaths(args)[1]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+</code></pre>
+</div>
 
-<p><code>
-##                                                                                                              M1A 
+<div class="highlighter-rouge"><pre class="highlight"><code>##                                                                                                              M1A 
 ## "/home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/results/SRR446027_1.fastq.tophat/accepted_hits.bam"
-</code></p>
+</code></pre>
+</div>
 
-<p><code>r
-sysargs(args)[1]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">sysargs</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+</code></pre>
+</div>
 
-<p><code>
-##                                                                                                                                                                                                                                                                                  M1A 
+<div class="highlighter-rouge"><pre class="highlight"><code>##                                                                                                                                                                                                                                                                                  M1A 
 ## "tophat -p 4 -g 1 --segment-length 25 -i 30 -I 3000 -o /home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/results/SRR446027_1.fastq.tophat /home/tgirke/Dropbox/Websites/manuals/vignettes/systemPipeR/data/tair10.fasta ./data/SRR446027_1.fastq ./data/SRR446027_2.fastq"
-</code></p>
+</code></pre>
+</div>
 
-<p>The content of the <em><code>param</code></em> file can also be returned as JSON object as follows (requires <em><code>rjson</code></em> package).</p>
+<p>The content of the <em><code class="highlighter-rouge">param</code></em> file can also be returned as JSON object as follows (requires <em><code class="highlighter-rouge">rjson</code></em> package).</p>
 
-<p><code>r
-systemArgs(sysma=parampath, mytargets=targetspath, type="json")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="n">parampath</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"json"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## [1] "{\"modules\":{\"n1\":\"\",\"v2\":\"bowtie2/2.2.5\",\"n1\":\"\",\"v2\":\"tophat/2.0.14\"},\"software\":{\"n1\":\"\",\"v1\":\"tophat\"},\"cores\":{\"n1\":\"-p\",\"v1\":\"4\"},\"other\":{\"n1\":\"\",\"v1\":\"-g 1 --segment-length 25 -i 30 -I 3000\"},\"outfile1\":{\"n1\":\"-o\",\"v2\":\"&lt;FileName1&gt;\",\"n3\":\"path\",\"v4\":\"./results/\",\"n5\":\"remove\",\"v1\":\"\",\"n2\":\"append\",\"v3\":\".tophat\",\"n4\":\"outextension\",\"v5\":\".tophat/accepted_hits.bam\"},\"reference\":{\"n1\":\"\",\"v1\":\"./data/tair10.fasta\"},\"infile1\":{\"n1\":\"\",\"v2\":\"&lt;FileName1&gt;\",\"n1\":\"path\",\"v2\":\"\"},\"infile2\":{\"n1\":\"\",\"v2\":\"&lt;FileName2&gt;\",\"n1\":\"path\",\"v2\":\"\"}}"
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## [1] "{\"modules\":{\"n1\":\"\",\"v2\":\"bowtie2/2.2.5\",\"n1\":\"\",\"v2\":\"tophat/2.0.14\"},\"software\":{\"n1\":\"\",\"v1\":\"tophat\"},\"cores\":{\"n1\":\"-p\",\"v1\":\"4\"},\"other\":{\"n1\":\"\",\"v1\":\"-g 1 --segment-length 25 -i 30 -I 3000\"},\"outfile1\":{\"n1\":\"-o\",\"v2\":\"&lt;FileName1&gt;\",\"n3\":\"path\",\"v4\":\"./results/\",\"n5\":\"remove\",\"v1\":\"\",\"n2\":\"append\",\"v3\":\".tophat\",\"n4\":\"outextension\",\"v5\":\".tophat/accepted_hits.bam\"},\"reference\":{\"n1\":\"\",\"v1\":\"./data/tair10.fasta\"},\"infile1\":{\"n1\":\"\",\"v2\":\"&lt;FileName1&gt;\",\"n1\":\"path\",\"v2\":\"\"},\"infile2\":{\"n1\":\"\",\"v2\":\"&lt;FileName2&gt;\",\"n1\":\"path\",\"v2\":\"\"}}"
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h1 id="workflow-overview">Workflow overview</h1>
@@ -1154,71 +1132,71 @@ systemArgs(sysma=parampath, mytargets=targetspath, type="json")
 
 <p>Load packages and generate workflow environment (here for RNA-Seq)</p>
 
-<p><code>r
-library(systemPipeR)
-library(systemPipeRdata)
-genWorkenvir(workflow="rnaseq")
-setwd("rnaseq")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>Construct <em><code>SYSargs</code></em> object from <em><code>param</code></em> and <em><code>targets</code></em> files.</p>
+<p>Construct <em><code class="highlighter-rouge">SYSargs</code></em> object from <em><code class="highlighter-rouge">param</code></em> and <em><code class="highlighter-rouge">targets</code></em> files.</p>
 
-<p><code>r
-args &lt;- systemArgs(sysma="param/trim.param", mytargets="targets.txt")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/trim.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="read-preprocessing">Read Preprocessing</h2>
-<p>The function <em><code>preprocessReads</code></em> allows to apply predefined or custom
+<p>The function <em><code class="highlighter-rouge">preprocessReads</code></em> allows to apply predefined or custom
 read preprocessing functions to all FASTQ files referenced in a
-<em><code>SYSargs</code></em> container, such as quality filtering or adaptor trimming
+<em><code class="highlighter-rouge">SYSargs</code></em> container, such as quality filtering or adaptor trimming
 routines. The paths to the resulting output FASTQ files are stored in the
-<em><code>outpaths</code></em> slot of the <em><code>SYSargs</code></em> object. Internally,
-<em><code>preprocessReads</code></em> uses the <em><code>FastqStreamer</code></em> function from
-the <em><code>ShortRead</code></em> package to stream through large FASTQ files in a
+<em><code class="highlighter-rouge">outpaths</code></em> slot of the <em><code class="highlighter-rouge">SYSargs</code></em> object. Internally,
+<em><code class="highlighter-rouge">preprocessReads</code></em> uses the <em><code class="highlighter-rouge">FastqStreamer</code></em> function from
+the <em><code class="highlighter-rouge">ShortRead</code></em> package to stream through large FASTQ files in a
 memory-efficient manner. The following example performs adaptor trimming with
-the <em><code>trimLRPatterns</code></em> function from the <em><code>Biostrings</code></em> package.
+the <em><code class="highlighter-rouge">trimLRPatterns</code></em> function from the <em><code class="highlighter-rouge">Biostrings</code></em> package.
 After the trimming step a new targets file is generated (here
-<em><code>targets_trim.txt</code></em>) containing the paths to the trimmed FASTQ files.
+<em><code class="highlighter-rouge">targets_trim.txt</code></em>) containing the paths to the trimmed FASTQ files.
 The new targets file can be used for the next workflow step with an updated
-<em><code>SYSargs</code></em> instance, \textit{e.g.} running the NGS alignments using the
+<em><code class="highlighter-rouge">SYSargs</code></em> instance, \textit{e.g.} running the NGS alignments using the
 trimmed FASTQ files.</p>
 
-<p><code>r
-preprocessReads(args=args, Fct="trimLRPatterns(Rpattern='GCCCGGGTAA', subject=fq)", 
-                batchsize=100000, overwrite=TRUE, compress=TRUE)
-writeTargetsout(x=args, file="targets_trim.txt")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">preprocessReads</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">Fct</span><span class="o">=</span><span class="s2">"trimLRPatterns(Rpattern='GCCCGGGTAA', subject=fq)"</span><span class="p">,</span> 
+                <span class="n">batchsize</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">writeTargetsout</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s2">"targets_trim.txt"</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The following example shows how one can design a custom read preprocessing function 
-using utilities provided by the <em><code>ShortRead</code></em> package, and then run it
+using utilities provided by the <em><code class="highlighter-rouge">ShortRead</code></em> package, and then run it
 in batch mode with the <em>‘preprocessReads’</em> function (here on paired-end reads).</p>
 
-<p><code>r
-args &lt;- systemArgs(sysma="param/trimPE.param", mytargets="targetsPE.txt")
-filterFct &lt;- function(fq, cutoff=20, Nexceptions=0) {
-    qcount &lt;- rowSums(as(quality(fq), "matrix") &lt;= cutoff)
-    fq[qcount &lt;= Nexceptions] # Retains reads where Phred scores are &gt;= cutoff with N exceptions
-}
-preprocessReads(args=args, Fct="filterFct(fq, cutoff=20, Nexceptions=0)", batchsize=100000)
-writeTargetsout(x=args, file="targets_PEtrim.txt")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/trimPE.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targetsPE.txt"</span><span class="p">)</span>
+<span class="n">filterFct</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">fq</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> <span class="n">Nexceptions</span><span class="o">=</span><span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">qcount</span> <span class="o">&lt;-</span> <span class="n">rowSums</span><span class="p">(</span><span class="n">as</span><span class="p">(</span><span class="n">quality</span><span class="p">(</span><span class="n">fq</span><span class="p">),</span> <span class="s2">"matrix"</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">cutoff</span><span class="p">)</span>
+    <span class="n">fq</span><span class="p">[</span><span class="n">qcount</span> <span class="o">&lt;=</span> <span class="n">Nexceptions</span><span class="p">]</span> <span class="c1"># Retains reads where Phred scores are &gt;= cutoff with N exceptions
+</span><span class="p">}</span>
+<span class="n">preprocessReads</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">Fct</span><span class="o">=</span><span class="s2">"filterFct(fq, cutoff=20, Nexceptions=0)"</span><span class="p">,</span> <span class="n">batchsize</span><span class="o">=</span><span class="m">100000</span><span class="p">)</span>
+<span class="n">writeTargetsout</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s2">"targets_PEtrim.txt"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="fastq-quality-report">FASTQ quality report</h2>
-<p>The following <em><code>seeFastq</code></em> and <em><code>seeFastqPlot</code></em> functions generate and plot a series of
+<p>The following <em><code class="highlighter-rouge">seeFastq</code></em> and <em><code class="highlighter-rouge">seeFastqPlot</code></em> functions generate and plot a series of
 useful quality statistics for a set of FASTQ files including per cycle quality
 box plots, base proportions, base-level quality trends, relative k-mer
 diversity, length and occurrence distribution of reads, number of reads above
 quality cutoffs and mean quality distribution.</p>
 
-<p><code>r
-fqlist &lt;- seeFastq(fastq=infile1(args), batchsize=10000, klength=8)
-pdf("./results/fastqReport.pdf", height=18, width=4*length(fqlist))
-seeFastqPlot(fqlist)
-dev.off()
-</code>
-<img src="fastqReport.png" alt="" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">fqlist</span> <span class="o">&lt;-</span> <span class="n">seeFastq</span><span class="p">(</span><span class="n">fastq</span><span class="o">=</span><span class="n">infile1</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">batchsize</span><span class="o">=</span><span class="m">10000</span><span class="p">,</span> <span class="n">klength</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="n">pdf</span><span class="p">(</span><span class="s2">"./results/fastqReport.pdf"</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">18</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">4</span><span class="o">*</span><span class="n">length</span><span class="p">(</span><span class="n">fqlist</span><span class="p">))</span>
+<span class="n">seeFastqPlot</span><span class="p">(</span><span class="n">fqlist</span><span class="p">)</span>
+<span class="n">dev.off</span><span class="p">()</span>
+</code></pre>
+</div>
+<p><img src="fastqReport.png" alt="" /></p>
 <div align="center">**Figure 2:** FASTQ quality report </div>
 <p>&lt;/br&gt;</p>
 
@@ -1226,324 +1204,323 @@ dev.off()
 
 <p>Parallelization of QC report on single machine with multiple cores</p>
 
-<p><code>r
-args &lt;- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
-f &lt;- function(x) seeFastq(fastq=infile1(args)[x], batchsize=100000, klength=8)
-fqlist &lt;- bplapply(seq(along=args), f, BPPARAM = MulticoreParam(workers=8))
-seeFastqPlot(unlist(fqlist, recursive=FALSE))
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">seeFastq</span><span class="p">(</span><span class="n">fastq</span><span class="o">=</span><span class="n">infile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">x</span><span class="p">],</span> <span class="n">batchsize</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span> <span class="n">klength</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="n">fqlist</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">args</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">BPPARAM</span> <span class="o">=</span> <span class="n">MulticoreParam</span><span class="p">(</span><span class="n">workers</span><span class="o">=</span><span class="m">8</span><span class="p">))</span>
+<span class="n">seeFastqPlot</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">fqlist</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="n">FALSE</span><span class="p">))</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <p>Parallelization of QC report via scheduler (<em>e.g.</em> Torque) across several compute nodes</p>
 
-<p><code>r
-library(BiocParallel); library(BatchJobs)
-f &lt;- function(x) {
-    library(systemPipeR)
-    args &lt;- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
-    seeFastq(fastq=infile1(args)[x], batchsize=100000, klength=8)
-}
-funs &lt;- makeClusterFunctionsTorque("torque.tmpl")
-param &lt;- BatchJobsParam(length(args), resources=list(walltime="20:00:00", nodes="1:ppn=1", memory="6gb"), cluster.functions=funs)
-register(param)
-fqlist &lt;- bplapply(seq(along=args), f)
-seeFastqPlot(unlist(fqlist, recursive=FALSE))
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BatchJobs</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+    <span class="n">seeFastq</span><span class="p">(</span><span class="n">fastq</span><span class="o">=</span><span class="n">infile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">x</span><span class="p">],</span> <span class="n">batchsize</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span> <span class="n">klength</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">funs</span> <span class="o">&lt;-</span> <span class="n">makeClusterFunctionsTorque</span><span class="p">(</span><span class="s2">"torque.tmpl"</span><span class="p">)</span>
+<span class="n">param</span> <span class="o">&lt;-</span> <span class="n">BatchJobsParam</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">resources</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">walltime</span><span class="o">=</span><span class="s2">"20:00:00"</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="s2">"1:ppn=1"</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s2">"6gb"</span><span class="p">),</span> <span class="n">cluster.functions</span><span class="o">=</span><span class="n">funs</span><span class="p">)</span>
+<span class="n">register</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<span class="n">fqlist</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">args</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">seeFastqPlot</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">fqlist</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="n">FALSE</span><span class="p">))</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<h2 id="alignment-with-tophat2">Alignment with <em><code>Tophat2</code></em></h2>
-<p>Build <em><code>Bowtie2</code></em> index.</p>
+<h2 id="alignment-with-tophat2">Alignment with <em><code class="highlighter-rouge">Tophat2</code></em></h2>
+<p>Build <em><code class="highlighter-rouge">Bowtie2</code></em> index.</p>
 
-<p><code>r
-args &lt;- systemArgs(sysma="param/tophat.param", mytargets="targets.txt")
-moduleload(modules(args)) # Skip if module system is not available
-system("bowtie2-build ./data/tair10.fasta ./data/tair10.fasta")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">moduleload</span><span class="p">(</span><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">))</span> <span class="c1"># Skip if module system is not available
+</span><span class="n">system</span><span class="p">(</span><span class="s2">"bowtie2-build ./data/tair10.fasta ./data/tair10.fasta"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>Execute <em><code>SYSargs</code></em> on a single machine without submitting to a queuing system of a compute cluster. This way the input FASTQ files will be processed sequentially. If available, multiple CPU cores can be used for processing each file. The number of CPU cores (here 4) to use for each process is defined in the <em><code>*.param</code></em> file. With <em><code>cores(args)</code></em> one can return this value from the <em><code>SYSargs</code></em> object. Note, if a module system is not installed or used, then the corresponding <em><code>*.param</code></em> file needs to be edited accordingly by either providing an empty field in the line(s) starting with <em><code>module</code></em> or by deleting these lines.</p>
+<p>Execute <em><code class="highlighter-rouge">SYSargs</code></em> on a single machine without submitting to a queuing system of a compute cluster. This way the input FASTQ files will be processed sequentially. If available, multiple CPU cores can be used for processing each file. The number of CPU cores (here 4) to use for each process is defined in the <em><code class="highlighter-rouge">*.param</code></em> file. With <em><code class="highlighter-rouge">cores(args)</code></em> one can return this value from the <em><code class="highlighter-rouge">SYSargs</code></em> object. Note, if a module system is not installed or used, then the corresponding <em><code class="highlighter-rouge">*.param</code></em> file needs to be edited accordingly by either providing an empty field in the line(s) starting with <em><code class="highlighter-rouge">module</code></em> or by deleting these lines.</p>
 
-<p><code>r
-bampaths &lt;- runCommandline(args=args)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">bampaths</span> <span class="o">&lt;-</span> <span class="n">runCommandline</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>Alternatively, the computation can be greatly accelerated by processing many files in parallel using several compute nodes of a cluster, where a scheduling/queuing system is used for load balancing. To avoid over-subscription of CPU cores on the compute nodes, the value from <em><code>cores(args)</code></em> is passed on to the submission command, here <em><code>nodes</code></em> in the <em><code>resources</code></em> list object. The number of independent parallel cluster processes is defined under the <em><code>Njobs</code></em> argument. The following example will run 18 processes in parallel using for each 4 CPU cores. If the resources available on a cluster allow to run all 18 processes at the same time then the shown sample submission will utilize in total 72 CPU cores. Note, <em><code>clusterRun</code></em> can be used with most queueing systems as it is based on utilities from the <em><code>BatchJobs</code></em> package which supports the use of template files (<em><code>*.tmpl</code></em>) for defining the run parameters of different schedulers. To run the following code, one needs to have both a conf file (see <em><code>.BatchJob</code></em> samples <a href="https://code.google.com/p/batchjobs/wiki/DortmundUsage">here</a>) and a template file (see <em><code>*.tmpl</code></em> samples <a href="https://github.com/tudo-r/BatchJobs/tree/master/examples">here</a>) for the queueing available on a system. The following example uses the sample conf and template files for the Torque scheduler provided by this package.</p>
+<p>Alternatively, the computation can be greatly accelerated by processing many files in parallel using several compute nodes of a cluster, where a scheduling/queuing system is used for load balancing. To avoid over-subscription of CPU cores on the compute nodes, the value from <em><code class="highlighter-rouge">cores(args)</code></em> is passed on to the submission command, here <em><code class="highlighter-rouge">nodes</code></em> in the <em><code class="highlighter-rouge">resources</code></em> list object. The number of independent parallel cluster processes is defined under the <em><code class="highlighter-rouge">Njobs</code></em> argument. The following example will run 18 processes in parallel using for each 4 CPU cores. If the resources available on a cluster allow to run all 18 processes at the same time then the shown sample submission will utilize in total 72 CPU cores. Note, <em><code class="highlighter-rouge">clusterRun</code></em> can be used with most queueing systems as it is based on utilities from the <em><code class="highlighter-rouge">BatchJobs</code></em> package which supports the use of template files (<em><code class="highlighter-rouge">*.tmpl</code></em>) for defining the run parameters of different schedulers. To run the following code, one needs to have both a conf file (see <em><code class="highlighter-rouge">.BatchJob</code></em> samples <a href="https://code.google.com/p/batchjobs/wiki/DortmundUsage">here</a>) and a template file (see <em><code class="highlighter-rouge">*.tmpl</code></em> samples <a href="https://github.com/tudo-r/BatchJobs/tree/master/examples">here</a>) for the queueing available on a system. The following example uses the sample conf and template files for the Torque scheduler provided by this package.</p>
 
-<p><code>r
-resources &lt;- list(walltime="20:00:00", nodes=paste0("1:ppn=", cores(args)), memory="10gb")
-reg &lt;- clusterRun(args, conffile=".BatchJobs.R", template="torque.tmpl", Njobs=18, runid="01", 
-                  resourceList=resources)
-waitForJobs(reg)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">resources</span> <span class="o">&lt;-</span> <span class="n">list</span><span class="p">(</span><span class="n">walltime</span><span class="o">=</span><span class="s2">"20:00:00"</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"1:ppn="</span><span class="p">,</span> <span class="n">cores</span><span class="p">(</span><span class="n">args</span><span class="p">)),</span> <span class="n">memory</span><span class="o">=</span><span class="s2">"10gb"</span><span class="p">)</span>
+<span class="n">reg</span> <span class="o">&lt;-</span> <span class="n">clusterRun</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">conffile</span><span class="o">=</span><span class="s2">".BatchJobs.R"</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">"torque.tmpl"</span><span class="p">,</span> <span class="n">Njobs</span><span class="o">=</span><span class="m">18</span><span class="p">,</span> <span class="n">runid</span><span class="o">=</span><span class="s2">"01"</span><span class="p">,</span> 
+                  <span class="n">resourceList</span><span class="o">=</span><span class="n">resources</span><span class="p">)</span>
+<span class="n">waitForJobs</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>Useful commands for monitoring progress of submitted jobs</p>
 
-<p><code>r
-showStatus(reg)
-file.exists(outpaths(args))
-sapply(1:length(args), function(x) loadResult(reg, x)) # Works after job completion
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">showStatus</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+<span class="n">file.exists</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+<span class="n">sapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">loadResult</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="c1"># Works after job completion
+</span></code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="read-and-alignment-count-stats">Read and alignment count stats</h2>
 <p>Generate table of read and alignment counts for all samples.</p>
 
-<p><code>r
-read_statsDF &lt;- alignStats(args) 
-write.table(read_statsDF, "results/alignStats.xls", row.names=FALSE, quote=FALSE, sep="\t")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">read_statsDF</span> <span class="o">&lt;-</span> <span class="n">alignStats</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> 
+<span class="n">write.table</span><span class="p">(</span><span class="n">read_statsDF</span><span class="p">,</span> <span class="s2">"results/alignStats.xls"</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>The following shows the first four lines of the sample alignment stats file provided by the <em><code>systemPipeR</code></em> package. For simplicity the number of PE reads is multiplied here by 2 to approximate proper alignment frequencies where each read in a pair is counted.</p>
+<p>The following shows the first four lines of the sample alignment stats file provided by the <em><code class="highlighter-rouge">systemPipeR</code></em> package. For simplicity the number of PE reads is multiplied here by 2 to approximate proper alignment frequencies where each read in a pair is counted.</p>
 
-<p><code>r
-read.table(system.file("extdata", "alignStats.xls", package="systemPipeR"), header=TRUE)[1:4,]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">read.table</span><span class="p">(</span><span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"alignStats.xls"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span>
+</code></pre>
+</div>
 
-<p><code>
-##   FileName Nreads2x Nalign Perc_Aligned Nalign_Primary Perc_Aligned_Primary
+<div class="highlighter-rouge"><pre class="highlight"><code>##   FileName Nreads2x Nalign Perc_Aligned Nalign_Primary Perc_Aligned_Primary
 ## 1      M1A   192918 177961     92.24697         177961             92.24697
 ## 2      M1B   197484 159378     80.70426         159378             80.70426
 ## 3      A1A   189870 176055     92.72397         176055             92.72397
 ## 4      A1B   188854 147768     78.24457         147768             78.24457
-</code></p>
+</code></pre>
+</div>
 
 <p>Parallelization of read/alignment stats on single machine with multiple cores</p>
 
-<p><code>r
-f &lt;- function(x) alignStats(args[x])
-read_statsList &lt;- bplapply(seq(along=args), f, BPPARAM = MulticoreParam(workers=8))
-read_statsDF &lt;- do.call("rbind", read_statsList)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">f</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">alignStats</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<span class="n">read_statsList</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">args</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">BPPARAM</span> <span class="o">=</span> <span class="n">MulticoreParam</span><span class="p">(</span><span class="n">workers</span><span class="o">=</span><span class="m">8</span><span class="p">))</span>
+<span class="n">read_statsDF</span> <span class="o">&lt;-</span> <span class="n">do.call</span><span class="p">(</span><span class="s2">"rbind"</span><span class="p">,</span> <span class="n">read_statsList</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>Parallelization of read/alignment stats via scheduler (<em>e.g.</em> Torque) across several compute nodes</p>
 
-<p><code>r
-library(BiocParallel); library(BatchJobs)
-f &lt;- function(x) {
-    library(systemPipeR)
-    args &lt;- systemArgs(sysma="tophat.param", mytargets="targets.txt")
-    alignStats(args[x])
-}
-funs &lt;- makeClusterFunctionsTorque("torque.tmpl")
-param &lt;- BatchJobsParam(length(args), resources=list(walltime="20:00:00", nodes="1:ppn=1", memory="6gb"), cluster.functions=funs)
-register(param)
-read_statsList &lt;- bplapply(seq(along=args), f)
-read_statsDF &lt;- do.call("rbind", read_statsList)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BatchJobs</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+    <span class="n">alignStats</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="n">funs</span> <span class="o">&lt;-</span> <span class="n">makeClusterFunctionsTorque</span><span class="p">(</span><span class="s2">"torque.tmpl"</span><span class="p">)</span>
+<span class="n">param</span> <span class="o">&lt;-</span> <span class="n">BatchJobsParam</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">resources</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">walltime</span><span class="o">=</span><span class="s2">"20:00:00"</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="s2">"1:ppn=1"</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s2">"6gb"</span><span class="p">),</span> <span class="n">cluster.functions</span><span class="o">=</span><span class="n">funs</span><span class="p">)</span>
+<span class="n">register</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<span class="n">read_statsList</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">args</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">read_statsDF</span> <span class="o">&lt;-</span> <span class="n">do.call</span><span class="p">(</span><span class="s2">"rbind"</span><span class="p">,</span> <span class="n">read_statsList</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="create-symbolic-links-for-viewing-bam-files-in-igv">Create symbolic links for viewing BAM files in IGV</h2>
-<p>The genome browser IGV supports reading of indexed/sorted BAM files via web URLs. This way it can be avoided to create unnecessary copies of these large files. To enable this approach, an HTML directory with http access needs to be available in the user account (<em>e.g.</em> <em><code>home/publichtml</code></em>) of a system. If this is not the case then the BAM files need to be moved or copied to the system where IGV runs. In the following, <em><code>htmldir</code></em> defines the path to the HTML directory with http access where the symbolic links to the BAM files will be stored. The corresponding URLs will be written to a text file specified under the <code>_urlfile</code>_ argument.</p>
+<p>The genome browser IGV supports reading of indexed/sorted BAM files via web URLs. This way it can be avoided to create unnecessary copies of these large files. To enable this approach, an HTML directory with http access needs to be available in the user account (<em>e.g.</em> <em><code class="highlighter-rouge">home/publichtml</code></em>) of a system. If this is not the case then the BAM files need to be moved or copied to the system where IGV runs. In the following, <em><code class="highlighter-rouge">htmldir</code></em> defines the path to the HTML directory with http access where the symbolic links to the BAM files will be stored. The corresponding URLs will be written to a text file specified under the <code class="highlighter-rouge">_urlfile</code>_ argument.</p>
 
-<p><code>r
-symLink2bam(sysargs=args, htmldir=c("~/.html/", "somedir/"), 
-            urlbase="http://myserver.edu/~username/", 
-        urlfile="IGVurl.txt")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">symLink2bam</span><span class="p">(</span><span class="n">sysargs</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">htmldir</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"~/.html/"</span><span class="p">,</span> <span class="s2">"somedir/"</span><span class="p">),</span> 
+            <span class="n">urlbase</span><span class="o">=</span><span class="s2">"http://myserver.edu/~username/"</span><span class="p">,</span> 
+        <span class="n">urlfile</span><span class="o">=</span><span class="s2">"IGVurl.txt"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="alternative-ngs-aligners">Alternative NGS Aligners</h2>
 
-<h3 id="alignment-with-bowtie2-eg-for-mirna-profiling">Alignment with <em><code>Bowtie2</code></em> (<em>e.g.</em> for miRNA profiling)</h3>
-<p>The following example runs <em><code>Bowtie2</code></em> as a single process without submitting it to a cluster.</p>
+<h3 id="alignment-with-bowtie2-eg-for-mirna-profiling">Alignment with <em><code class="highlighter-rouge">Bowtie2</code></em> (<em>e.g.</em> for miRNA profiling)</h3>
+<p>The following example runs <em><code class="highlighter-rouge">Bowtie2</code></em> as a single process without submitting it to a cluster.</p>
 
-<p><code>r
-args &lt;- systemArgs(sysma="bowtieSE.param", mytargets="targets.txt")
-moduleload(modules(args)) # Skip if module system is not available
-bampaths &lt;- runCommandline(args=args)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"bowtieSE.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">moduleload</span><span class="p">(</span><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">))</span> <span class="c1"># Skip if module system is not available
+</span><span class="n">bampaths</span> <span class="o">&lt;-</span> <span class="n">runCommandline</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>Alternatively, submit the job to compute nodes.</p>
 
-<p><code>r
-resources &lt;- list(walltime="20:00:00", nodes=paste0("1:ppn=", cores(args)), memory="10gb")
-reg &lt;- clusterRun(args, conffile=".BatchJobs.R", template="torque.tmpl", Njobs=18, runid="01", 
-                  resourceList=resources)
-waitForJobs(reg)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">resources</span> <span class="o">&lt;-</span> <span class="n">list</span><span class="p">(</span><span class="n">walltime</span><span class="o">=</span><span class="s2">"20:00:00"</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"1:ppn="</span><span class="p">,</span> <span class="n">cores</span><span class="p">(</span><span class="n">args</span><span class="p">)),</span> <span class="n">memory</span><span class="o">=</span><span class="s2">"10gb"</span><span class="p">)</span>
+<span class="n">reg</span> <span class="o">&lt;-</span> <span class="n">clusterRun</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">conffile</span><span class="o">=</span><span class="s2">".BatchJobs.R"</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s2">"torque.tmpl"</span><span class="p">,</span> <span class="n">Njobs</span><span class="o">=</span><span class="m">18</span><span class="p">,</span> <span class="n">runid</span><span class="o">=</span><span class="s2">"01"</span><span class="p">,</span> 
+                  <span class="n">resourceList</span><span class="o">=</span><span class="n">resources</span><span class="p">)</span>
+<span class="n">waitForJobs</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<h3 id="alignment-with-bwa-mem-eg-for-var-seq">Alignment with <em><code>BWA-MEM</code></em> (<em>e.g.</em> for VAR-Seq)</h3>
+<h3 id="alignment-with-bwa-mem-eg-for-var-seq">Alignment with <em><code class="highlighter-rouge">BWA-MEM</code></em> (<em>e.g.</em> for VAR-Seq)</h3>
 <p>The following example runs BWA-MEM as a single process without submitting it to a cluster.</p>
 
-<p><code>r
-args &lt;- systemArgs(sysma="param/bwa.param", mytargets="targets.txt")
-moduleload(modules(args)) # Skip if module system is not available
-system("bwa index -a bwtsw ./data/tair10.fasta") # Indexes reference genome
-bampaths &lt;- runCommandline(args=args[1:2])
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/bwa.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">moduleload</span><span class="p">(</span><span class="n">modules</span><span class="p">(</span><span class="n">args</span><span class="p">))</span> <span class="c1"># Skip if module system is not available
+</span><span class="n">system</span><span class="p">(</span><span class="s2">"bwa index -a bwtsw ./data/tair10.fasta"</span><span class="p">)</span> <span class="c1"># Indexes reference genome
+</span><span class="n">bampaths</span> <span class="o">&lt;-</span> <span class="n">runCommandline</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">])</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<h3 id="alignment-with-rsubread-eg-for-rna-seq">Alignment with <em><code>Rsubread</code></em> (<em>e.g.</em> for RNA-Seq)</h3>
+<h3 id="alignment-with-rsubread-eg-for-rna-seq">Alignment with <em><code class="highlighter-rouge">Rsubread</code></em> (<em>e.g.</em> for RNA-Seq)</h3>
 <p>The following example shows how one can use within the \Rpackage{systemPipeR} environment the R-based 
 aligner \Rpackage{Rsubread} or other R-based functions that read from input files and write to output files.</p>
 
-<p><code>r
-library(Rsubread)
-args &lt;- systemArgs(sysma="param/rsubread.param", mytargets="targets.txt")
-buildindex(basename=reference(args), reference=reference(args)) # Build indexed reference genome
-align(index=reference(args), readfile1=infile1(args)[1:4], input_format="FASTQ", 
-      output_file=outfile1(args)[1:4], output_format="SAM", nthreads=8, indels=1, TH1=2)
-for(i in seq(along=outfile1(args))) asBam(file=outfile1(args)[i], destination=gsub(".sam", "", outfile1(args)[i]), overwrite=TRUE, indexDestination=TRUE)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rsubread</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/rsubread.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+<span class="n">buildindex</span><span class="p">(</span><span class="n">basename</span><span class="o">=</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">reference</span><span class="o">=</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">))</span> <span class="c1"># Build indexed reference genome
+</span><span class="n">align</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">readfile1</span><span class="o">=</span><span class="n">infile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">input_format</span><span class="o">=</span><span class="s2">"FASTQ"</span><span class="p">,</span> 
+      <span class="n">output_file</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">"SAM"</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="m">8</span><span class="p">,</span> <span class="n">indels</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">TH1</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)))</span> <span class="n">asBam</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">i</span><span class="p">],</span> <span class="n">destination</span><span class="o">=</span><span class="n">gsub</span><span class="p">(</span><span class="s2">".sam"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">i</span><span class="p">]),</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">indexDestination</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<h3 id="alignment-with-gsnap-eg-for-var-seq-and-rna-seq">Alignment with <em><code>gsnap</code></em> (<em>e.g.</em> for VAR-Seq and RNA-Seq)</h3>
-<p>Another R-based short read aligner is <em><code>gsnap</code></em> from the <em><code>gmapR</code></em> package [@Wu2010-iq]. 
+<h3 id="alignment-with-gsnap-eg-for-var-seq-and-rna-seq">Alignment with <em><code class="highlighter-rouge">gsnap</code></em> (<em>e.g.</em> for VAR-Seq and RNA-Seq)</h3>
+<p>Another R-based short read aligner is <em><code class="highlighter-rouge">gsnap</code></em> from the <em><code class="highlighter-rouge">gmapR</code></em> package [@Wu2010-iq]. 
 The code sample below introduces how to run this aligner on multiple nodes of a compute cluster.</p>
 
-<p><code>r
-library(gmapR); library(BiocParallel); library(BatchJobs)
-args &lt;- systemArgs(sysma="param/gsnap.param", mytargets="targetsPE.txt")
-gmapGenome &lt;- GmapGenome(reference(args), directory="data", name="gmap_tair10chr/", create=TRUE)
-f &lt;- function(x) {
-    library(gmapR); library(systemPipeR)
-    args &lt;- systemArgs(sysma="gsnap.param", mytargets="targetsPE.txt")
-    gmapGenome &lt;- GmapGenome(reference(args), directory="data", name="gmap_tair10chr/", create=FALSE)
-    p &lt;- GsnapParam(genome=gmapGenome, unique_only=TRUE, molecule="DNA", max_mismatches=3)
-    o &lt;- gsnap(input_a=infile1(args)[x], input_b=infile2(args)[x], params=p, output=outfile1(args)[x])
-}
-funs &lt;- makeClusterFunctionsTorque("torque.tmpl")
-param &lt;- BatchJobsParam(length(args), resources=list(walltime="20:00:00", nodes="1:ppn=1", memory="6gb"), cluster.functions=funs)
-register(param)
-d &lt;- bplapply(seq(along=args), f)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">gmapR</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BatchJobs</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"param/gsnap.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targetsPE.txt"</span><span class="p">)</span>
+<span class="n">gmapGenome</span> <span class="o">&lt;-</span> <span class="n">GmapGenome</span><span class="p">(</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">directory</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"gmap_tair10chr/"</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">library</span><span class="p">(</span><span class="n">gmapR</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"gsnap.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targetsPE.txt"</span><span class="p">)</span>
+    <span class="n">gmapGenome</span> <span class="o">&lt;-</span> <span class="n">GmapGenome</span><span class="p">(</span><span class="n">reference</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">directory</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"gmap_tair10chr/"</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">&lt;-</span> <span class="n">GsnapParam</span><span class="p">(</span><span class="n">genome</span><span class="o">=</span><span class="n">gmapGenome</span><span class="p">,</span> <span class="n">unique_only</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="s2">"DNA"</span><span class="p">,</span> <span class="n">max_mismatches</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+    <span class="n">o</span> <span class="o">&lt;-</span> <span class="n">gsnap</span><span class="p">(</span><span class="n">input_a</span><span class="o">=</span><span class="n">infile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">x</span><span class="p">],</span> <span class="n">input_b</span><span class="o">=</span><span class="n">infile2</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">x</span><span class="p">],</span> <span class="n">params</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">outfile1</span><span class="p">(</span><span class="n">args</span><span class="p">)[</span><span class="n">x</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="n">funs</span> <span class="o">&lt;-</span> <span class="n">makeClusterFunctionsTorque</span><span class="p">(</span><span class="s2">"torque.tmpl"</span><span class="p">)</span>
+<span class="n">param</span> <span class="o">&lt;-</span> <span class="n">BatchJobsParam</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">resources</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">walltime</span><span class="o">=</span><span class="s2">"20:00:00"</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="s2">"1:ppn=1"</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s2">"6gb"</span><span class="p">),</span> <span class="n">cluster.functions</span><span class="o">=</span><span class="n">funs</span><span class="p">)</span>
+<span class="n">register</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">args</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="read-counting-for-mrna-profiling-experiments">Read counting for mRNA profiling experiments</h2>
-<p>Create <em><code>txdb</code></em> (needs to be done only once)</p>
+<p>Create <em><code class="highlighter-rouge">txdb</code></em> (needs to be done only once)</p>
 
-<p><code>r
-library(GenomicFeatures)
-txdb &lt;- makeTxDbFromGFF(file="data/tair10.gff", format="gff", dataSource="TAIR", organism="A. thaliana")
-saveDb(txdb, file="./data/tair10.sqlite")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">GenomicFeatures</span><span class="p">)</span>
+<span class="n">txdb</span> <span class="o">&lt;-</span> <span class="n">makeTxDbFromGFF</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"data/tair10.gff"</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"gff"</span><span class="p">,</span> <span class="n">dataSource</span><span class="o">=</span><span class="s2">"TAIR"</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s2">"A. thaliana"</span><span class="p">)</span>
+<span class="n">saveDb</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s2">"./data/tair10.sqlite"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<p>The following performs read counting with <em><code>summarizeOverlaps</code></em> in parallel mode with multiple cores.</p>
+<p>The following performs read counting with <em><code class="highlighter-rouge">summarizeOverlaps</code></em> in parallel mode with multiple cores.</p>
 
-<p><code>r
-library(BiocParallel)
-txdb &lt;- loadDb("./data/tair10.sqlite")
-eByg &lt;- exonsBy(txdb, by="gene")
-bfl &lt;- BamFileList(outpaths(args), yieldSize=50000, index=character())
-multicoreParam &lt;- MulticoreParam(workers=4); register(multicoreParam); registered()
-counteByg &lt;- bplapply(bfl, function(x) summarizeOverlaps(eByg, x, mode="Union", ignore.strand=TRUE, inter.feature=TRUE, singleEnd=TRUE)) # Note: for strand-specific RNA-Seq set 'ignore.strand=FALSE' and for PE data set 'singleEnd=FALSE'
-countDFeByg &lt;- sapply(seq(along=counteByg), function(x) assays(counteByg[[x]])$counts)
-rownames(countDFeByg) &lt;- names(rowRanges(counteByg[[1]])); colnames(countDFeByg) &lt;- names(bfl)
-rpkmDFeByg &lt;- apply(countDFeByg, 2, function(x) returnRPKM(counts=x, ranges=eByg))
-write.table(countDFeByg, "results/countDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
-write.table(rpkmDFeByg, "results/rpkmDFeByg.xls", col.names=NA, quote=FALSE, sep="\t")
-</code>
-Please note, in addition to read counts this step generates RPKM normalized expression values. For most statistical differential expression or abundance analysis methods, such as <em><code>edgeR</code></em> or <em><code>DESeq2</code></em>, the raw count values should be used as input. The usage of RPKM values should be restricted to specialty applications required by some users, <em>e.g.</em> manually comparing the expression levels of different genes or features.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">)</span>
+<span class="n">txdb</span> <span class="o">&lt;-</span> <span class="n">loadDb</span><span class="p">(</span><span class="s2">"./data/tair10.sqlite"</span><span class="p">)</span>
+<span class="n">eByg</span> <span class="o">&lt;-</span> <span class="n">exonsBy</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"gene"</span><span class="p">)</span>
+<span class="n">bfl</span> <span class="o">&lt;-</span> <span class="n">BamFileList</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">yieldSize</span><span class="o">=</span><span class="m">50000</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">character</span><span class="p">())</span>
+<span class="n">multicoreParam</span> <span class="o">&lt;-</span> <span class="n">MulticoreParam</span><span class="p">(</span><span class="n">workers</span><span class="o">=</span><span class="m">4</span><span class="p">);</span> <span class="n">register</span><span class="p">(</span><span class="n">multicoreParam</span><span class="p">);</span> <span class="n">registered</span><span class="p">()</span>
+<span class="n">counteByg</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">bfl</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">summarizeOverlaps</span><span class="p">(</span><span class="n">eByg</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"Union"</span><span class="p">,</span> <span class="n">ignore.strand</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">inter.feature</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">singleEnd</span><span class="o">=</span><span class="n">TRUE</span><span class="p">))</span> <span class="c1"># Note: for strand-specific RNA-Seq set 'ignore.strand=FALSE' and for PE data set 'singleEnd=FALSE'
+</span><span class="n">countDFeByg</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">counteByg</span><span class="p">),</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">assays</span><span class="p">(</span><span class="n">counteByg</span><span class="p">[[</span><span class="n">x</span><span class="p">]])</span><span class="o">$</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">rownames</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">rowRanges</span><span class="p">(</span><span class="n">counteByg</span><span class="p">[[</span><span class="m">1</span><span class="p">]]));</span> <span class="n">colnames</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">bfl</span><span class="p">)</span>
+<span class="n">rpkmDFeByg</span> <span class="o">&lt;-</span> <span class="n">apply</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">returnRPKM</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">ranges</span><span class="o">=</span><span class="n">eByg</span><span class="p">))</span>
+<span class="n">write.table</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">,</span> <span class="s2">"results/countDFeByg.xls"</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">NA</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
+<span class="n">write.table</span><span class="p">(</span><span class="n">rpkmDFeByg</span><span class="p">,</span> <span class="s2">"results/rpkmDFeByg.xls"</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">NA</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
+</code></pre>
+</div>
+<p>Please note, in addition to read counts this step generates RPKM normalized expression values. For most statistical differential expression or abundance analysis methods, such as <em><code class="highlighter-rouge">edgeR</code></em> or <em><code class="highlighter-rouge">DESeq2</code></em>, the raw count values should be used as input. The usage of RPKM values should be restricted to specialty applications required by some users, <em>e.g.</em> manually comparing the expression levels of different genes or features.</p>
 
 <div align="right">[Back to Table of Contents]()</div>
 
-<p>Read counting with <em><code>summarizeOverlaps</code></em> using multiple nodes of a cluster</p>
+<p>Read counting with <em><code class="highlighter-rouge">summarizeOverlaps</code></em> using multiple nodes of a cluster</p>
 
-<p><code>r
-library(BiocParallel)
-f &lt;- function(x) {
-    library(systemPipeR); library(BiocParallel); library(GenomicFeatures)
-    txdb &lt;- loadDb("./data/tair10.sqlite")
-    eByg &lt;- exonsBy(txdb, by="gene")
-    args &lt;- systemArgs(sysma="tophat.param", mytargets="targets.txt")
-    bfl &lt;- BamFileList(outpaths(args), yieldSize=50000, index=character())
-    summarizeOverlaps(eByg, bfl[x], mode="Union", ignore.strand=TRUE, inter.feature=TRUE, singleEnd=TRUE)
-}
-funs &lt;- makeClusterFunctionsTorque("torque.tmpl")
-param &lt;- BatchJobsParam(length(args), resources=list(walltime="20:00:00", nodes="1:ppn=1", memory="6gb"), cluster.functions=funs)
-register(param)
-counteByg &lt;- bplapply(seq(along=args), f) 
-countDFeByg &lt;- sapply(seq(along=counteByg), function(x) assays(counteByg[[x]])$counts)
-rownames(countDFeByg) &lt;- names(rowRanges(counteByg[[1]])); colnames(countDFeByg) &lt;- names(outpaths(args))
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">library</span><span class="p">(</span><span class="n">systemPipeR</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">BiocParallel</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">GenomicFeatures</span><span class="p">)</span>
+    <span class="n">txdb</span> <span class="o">&lt;-</span> <span class="n">loadDb</span><span class="p">(</span><span class="s2">"./data/tair10.sqlite"</span><span class="p">)</span>
+    <span class="n">eByg</span> <span class="o">&lt;-</span> <span class="n">exonsBy</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"gene"</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">&lt;-</span> <span class="n">systemArgs</span><span class="p">(</span><span class="n">sysma</span><span class="o">=</span><span class="s2">"tophat.param"</span><span class="p">,</span> <span class="n">mytargets</span><span class="o">=</span><span class="s2">"targets.txt"</span><span class="p">)</span>
+    <span class="n">bfl</span> <span class="o">&lt;-</span> <span class="n">BamFileList</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">yieldSize</span><span class="o">=</span><span class="m">50000</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">character</span><span class="p">())</span>
+    <span class="n">summarizeOverlaps</span><span class="p">(</span><span class="n">eByg</span><span class="p">,</span> <span class="n">bfl</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"Union"</span><span class="p">,</span> <span class="n">ignore.strand</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">inter.feature</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">singleEnd</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">funs</span> <span class="o">&lt;-</span> <span class="n">makeClusterFunctionsTorque</span><span class="p">(</span><span class="s2">"torque.tmpl"</span><span class="p">)</span>
+<span class="n">param</span> <span class="o">&lt;-</span> <span class="n">BatchJobsParam</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">resources</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="n">walltime</span><span class="o">=</span><span class="s2">"20:00:00"</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="s2">"1:ppn=1"</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s2">"6gb"</span><span class="p">),</span> <span class="n">cluster.functions</span><span class="o">=</span><span class="n">funs</span><span class="p">)</span>
+<span class="n">register</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<span class="n">counteByg</span> <span class="o">&lt;-</span> <span class="n">bplapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">args</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span> 
+<span class="n">countDFeByg</span> <span class="o">&lt;-</span> <span class="n">sapply</span><span class="p">(</span><span class="n">seq</span><span class="p">(</span><span class="n">along</span><span class="o">=</span><span class="n">counteByg</span><span class="p">),</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">assays</span><span class="p">(</span><span class="n">counteByg</span><span class="p">[[</span><span class="n">x</span><span class="p">]])</span><span class="o">$</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">rownames</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">rowRanges</span><span class="p">(</span><span class="n">counteByg</span><span class="p">[[</span><span class="m">1</span><span class="p">]]));</span> <span class="n">colnames</span><span class="p">(</span><span class="n">countDFeByg</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">outpaths</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="read-counting-for-mirna-profiling-experiments">Read counting for miRNA profiling experiments</h2>
 <p>Download miRNA genes from miRBase</p>
 
-<p><code>r
-system("wget ftp://mirbase.org/pub/mirbase/19/genomes/My_species.gff3 -P ./data/")
-gff &lt;- import.gff("./data/My_species.gff3")
-gff &lt;- split(gff, elementMetadata(gff)$ID)
-bams &lt;- names(bampaths); names(bams) &lt;- targets$SampleName
-bfl &lt;- BamFileList(bams, yieldSize=50000, index=character())
-countDFmiR &lt;- summarizeOverlaps(gff, bfl, mode="Union", ignore.strand=FALSE, inter.feature=FALSE) # Note: inter.feature=FALSE important since pre and mature miRNA ranges overlap
-rpkmDFmiR &lt;- apply(countDFmiR, 2, function(x) returnRPKM(counts=x, gffsub=gff))
-write.table(assays(countDFmiR)$counts, "results/countDFmiR.xls", col.names=NA, quote=FALSE, sep="\t")
-write.table(rpkmDFmiR, "results/rpkmDFmiR.xls", col.names=NA, quote=FALSE, sep="\t")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">system</span><span class="p">(</span><span class="s2">"wget ftp://mirbase.org/pub/mirbase/19/genomes/My_species.gff3 -P ./data/"</span><span class="p">)</span>
+<span class="n">gff</span> <span class="o">&lt;-</span> <span class="n">import.gff</span><span class="p">(</span><span class="s2">"./data/My_species.gff3"</span><span class="p">)</span>
+<span class="n">gff</span> <span class="o">&lt;-</span> <span class="n">split</span><span class="p">(</span><span class="n">gff</span><span class="p">,</span> <span class="n">elementMetadata</span><span class="p">(</span><span class="n">gff</span><span class="p">)</span><span class="o">$</span><span class="n">ID</span><span class="p">)</span>
+<span class="n">bams</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">(</span><span class="n">bampaths</span><span class="p">);</span> <span class="n">names</span><span class="p">(</span><span class="n">bams</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">targets</span><span class="o">$</span><span class="n">SampleName</span>
+<span class="n">bfl</span> <span class="o">&lt;-</span> <span class="n">BamFileList</span><span class="p">(</span><span class="n">bams</span><span class="p">,</span> <span class="n">yieldSize</span><span class="o">=</span><span class="m">50000</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">character</span><span class="p">())</span>
+<span class="n">countDFmiR</span> <span class="o">&lt;-</span> <span class="n">summarizeOverlaps</span><span class="p">(</span><span class="n">gff</span><span class="p">,</span> <span class="n">bfl</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"Union"</span><span class="p">,</span> <span class="n">ignore.strand</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">inter.feature</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="c1"># Note: inter.feature=FALSE important since pre and mature miRNA ranges overlap
+</span><span class="n">rpkmDFmiR</span> <span class="o">&lt;-</span> <span class="n">apply</span><span class="p">(</span><span class="n">countDFmiR</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">returnRPKM</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">gffsub</span><span class="o">=</span><span class="n">gff</span><span class="p">))</span>
+<span class="n">write.table</span><span class="p">(</span><span class="n">assays</span><span class="p">(</span><span class="n">countDFmiR</span><span class="p">)</span><span class="o">$</span><span class="n">counts</span><span class="p">,</span> <span class="s2">"results/countDFmiR.xls"</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">NA</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
+<span class="n">write.table</span><span class="p">(</span><span class="n">rpkmDFmiR</span><span class="p">,</span> <span class="s2">"results/rpkmDFmiR.xls"</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">NA</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="correlation-analysis-of-samples">Correlation analysis of samples</h2>
-<p>The following computes the sample-wise Spearman correlation coefficients from the <em><code>rlog</code></em> (regularized-logarithm) transformed expression values generated with the <em><code>DESeq2</code></em> package. After transformation to a distance matrix, hierarchical clustering is performed with the <em><code>hclust</code></em> function and the result is plotted as a dendrogram (<a href="./results/sample_tree.pdf">sample_tree.pdf</a>).</p>
+<p>The following computes the sample-wise Spearman correlation coefficients from the <em><code class="highlighter-rouge">rlog</code></em> (regularized-logarithm) transformed expression values generated with the <em><code class="highlighter-rouge">DESeq2</code></em> package. After transformation to a distance matrix, hierarchical clustering is performed with the <em><code class="highlighter-rouge">hclust</code></em> function and the result is plotted as a dendrogram (<a href="./results/sample_tree.pdf">sample_tree.pdf</a>).</p>
 
-<p><code>r
-library(DESeq2, warn.conflicts=FALSE, quietly=TRUE); library(ape, warn.conflicts=FALSE)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">DESeq2</span><span class="p">,</span> <span class="n">warn.conflicts</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">quietly</span><span class="o">=</span><span class="n">TRUE</span><span class="p">);</span> <span class="n">library</span><span class="p">(</span><span class="n">ape</span><span class="p">,</span> <span class="n">warn.conflicts</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## Warning: replacing previous import by 'ggplot2::Position' when loading 'DESeq2'
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Warning: replacing previous import by 'ggplot2::Position' when loading 'DESeq2'
+</code></pre>
+</div>
 
-<p><code>
-## Warning: replacing previous import by 'ggplot2::unit' when loading 'Hmisc'
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Warning: replacing previous import by 'ggplot2::unit' when loading 'Hmisc'
+</code></pre>
+</div>
 
-<p><code>
-## Warning: replacing previous import by 'ggplot2::arrow' when loading 'Hmisc'
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Warning: replacing previous import by 'ggplot2::arrow' when loading 'Hmisc'
+</code></pre>
+</div>
 
-<p><code>
-## Warning: replacing previous import by 'scales::alpha' when loading 'Hmisc'
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Warning: replacing previous import by 'scales::alpha' when loading 'Hmisc'
+</code></pre>
+</div>
 
-<p><code>r
-countDFpath &lt;- system.file("extdata", "countDFeByg.xls", package="systemPipeR")
-countDF &lt;- as.matrix(read.table(countDFpath))
-colData &lt;- data.frame(row.names=targetsin(args)$SampleName, condition=targetsin(args)$Factor)
-dds &lt;- DESeqDataSetFromMatrix(countData = countDF, colData = colData, design = ~ condition)
-d &lt;- cor(assay(rlog(dds)), method="spearman")
-hc &lt;- hclust(dist(1-d))
-plot.phylo(as.phylo(hc), type="p", edge.col=4, edge.width=3, show.node.label=TRUE, no.margin=TRUE)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">countDFpath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"countDFeByg.xls"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">countDF</span> <span class="o">&lt;-</span> <span class="n">as.matrix</span><span class="p">(</span><span class="n">read.table</span><span class="p">(</span><span class="n">countDFpath</span><span class="p">))</span>
+<span class="n">colData</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">row.names</span><span class="o">=</span><span class="n">targetsin</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">$</span><span class="n">SampleName</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">targetsin</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">$</span><span class="n">Factor</span><span class="p">)</span>
+<span class="n">dds</span> <span class="o">&lt;-</span> <span class="n">DESeqDataSetFromMatrix</span><span class="p">(</span><span class="n">countData</span> <span class="o">=</span> <span class="n">countDF</span><span class="p">,</span> <span class="n">colData</span> <span class="o">=</span> <span class="n">colData</span><span class="p">,</span> <span class="n">design</span> <span class="o">=</span> <span class="o">~</span> <span class="n">condition</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">&lt;-</span> <span class="n">cor</span><span class="p">(</span><span class="n">assay</span><span class="p">(</span><span class="n">rlog</span><span class="p">(</span><span class="n">dds</span><span class="p">)),</span> <span class="n">method</span><span class="o">=</span><span class="s2">"spearman"</span><span class="p">)</span>
+<span class="n">hc</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">dist</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+<span class="n">plot.phylo</span><span class="p">(</span><span class="n">as.phylo</span><span class="p">(</span><span class="n">hc</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s2">"p"</span><span class="p">,</span> <span class="n">edge.col</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">edge.width</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">show.node.label</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">no.margin</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p><img src="systemPipeR_files/figure-html/sample_tree_rlog-1.png" alt="" />\</p>
 
 <div align="center">**Figure 3:** Correlation dendrogram of samples for _`rlog`_ values. </div>
 <p>&lt;/br&gt;</p>
 
-<p>Alternatively, the clustering can be performed with <em><code>RPKM</code></em> normalized expression values. In combination with Spearman correlation the results of the two clustering methods are often relatively similar.</p>
+<p>Alternatively, the clustering can be performed with <em><code class="highlighter-rouge">RPKM</code></em> normalized expression values. In combination with Spearman correlation the results of the two clustering methods are often relatively similar.</p>
 
-<p><code>r
-rpkmDFeBygpath &lt;- system.file("extdata", "rpkmDFeByg.xls", package="systemPipeR")
-rpkmDFeByg &lt;- read.table(rpkmDFeBygpath, check.names=FALSE)
-rpkmDFeByg &lt;- rpkmDFeByg[rowMeans(rpkmDFeByg) &gt; 50,]
-d &lt;- cor(rpkmDFeByg, method="spearman")
-hc &lt;- hclust(as.dist(1-d))
-plot.phylo(as.phylo(hc), type="p", edge.col="blue", edge.width=2, show.node.label=TRUE, no.margin=TRUE)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">rpkmDFeBygpath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"rpkmDFeByg.xls"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">rpkmDFeByg</span> <span class="o">&lt;-</span> <span class="n">read.table</span><span class="p">(</span><span class="n">rpkmDFeBygpath</span><span class="p">,</span> <span class="n">check.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+<span class="n">rpkmDFeByg</span> <span class="o">&lt;-</span> <span class="n">rpkmDFeByg</span><span class="p">[</span><span class="n">rowMeans</span><span class="p">(</span><span class="n">rpkmDFeByg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">50</span><span class="p">,]</span>
+<span class="n">d</span> <span class="o">&lt;-</span> <span class="n">cor</span><span class="p">(</span><span class="n">rpkmDFeByg</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"spearman"</span><span class="p">)</span>
+<span class="n">hc</span> <span class="o">&lt;-</span> <span class="n">hclust</span><span class="p">(</span><span class="n">as.dist</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+<span class="n">plot.phylo</span><span class="p">(</span><span class="n">as.phylo</span><span class="p">(</span><span class="n">hc</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s2">"p"</span><span class="p">,</span> <span class="n">edge.col</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">edge.width</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">show.node.label</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">no.margin</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <div align="right">[Back to Table of Contents]()</div>
 
-<h2 id="deg-analysis-with-edger">DEG analysis with <em><code>edgeR</code></em></h2>
-<p>The following <em><code>run_edgeR</code></em> function is a convenience wrapper for
+<h2 id="deg-analysis-with-edger">DEG analysis with <em><code class="highlighter-rouge">edgeR</code></em></h2>
+<p>The following <em><code class="highlighter-rouge">run_edgeR</code></em> function is a convenience wrapper for
 identifying differentially expressed genes (DEGs) in batch mode with
-<em><code>edgeR</code></em>’s GML method [@Robinson2010-uk] for any number of
-pairwise sample comparisons specified under the <em><code>cmp</code></em> argument. Users
+<em><code class="highlighter-rouge">edgeR</code></em>’s GML method [@Robinson2010-uk] for any number of
+pairwise sample comparisons specified under the <em><code class="highlighter-rouge">cmp</code></em> argument. Users
 are strongly encouraged to consult the 
-<a href="\href{http://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf"><em><code>edgeR</code></em></a> vignette 
-for more detailed information on this topic and how to properly run <em><code>edgeR</code></em> 
+<a href="\href{http://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf"><em><code class="highlighter-rouge">edgeR</code></em></a> vignette 
+for more detailed information on this topic and how to properly run <em><code class="highlighter-rouge">edgeR</code></em> 
 on data sets with more complex experimental designs.</p>
 
-<p><code>r
-targets &lt;- read.delim(targetspath, comment="#")
-cmp &lt;- readComp(file=targetspath, format="matrix", delim="-")
-cmp[[1]]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">targets</span> <span class="o">&lt;-</span> <span class="n">read.delim</span><span class="p">(</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">"#"</span><span class="p">)</span>
+<span class="n">cmp</span> <span class="o">&lt;-</span> <span class="n">readComp</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">targetspath</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">"matrix"</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
+<span class="n">cmp</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+</code></pre>
+</div>
 
-<p><code>
-##       [,1]  [,2] 
+<div class="highlighter-rouge"><pre class="highlight"><code>##       [,1]  [,2] 
 ##  [1,] "M1"  "A1" 
 ##  [2,] "M1"  "V1" 
 ##  [3,] "A1"  "V1" 
@@ -1553,67 +1530,68 @@ cmp[[1]]
 ##  [7,] "M12" "A12"
 ##  [8,] "M12" "V12"
 ##  [9,] "A12" "V12"
-</code></p>
+</code></pre>
+</div>
 
-<p><code>r
-countDFeBygpath &lt;- system.file("extdata", "countDFeByg.xls", package="systemPipeR")
-countDFeByg &lt;- read.delim(countDFeBygpath, row.names=1)
-edgeDF &lt;- run_edgeR(countDF=countDFeByg, targets=targets, cmp=cmp[[1]], independent=FALSE, mdsplot="")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">countDFeBygpath</span> <span class="o">&lt;-</span> <span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span> <span class="s2">"countDFeByg.xls"</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">"systemPipeR"</span><span class="p">)</span>
+<span class="n">countDFeByg</span> <span class="o">&lt;-</span> <span class="n">read.delim</span><span class="p">(</span><span class="n">countDFeBygpath</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="n">edgeDF</span> <span class="o">&lt;-</span> <span class="n">run_edgeR</span><span class="p">(</span><span class="n">countDF</span><span class="o">=</span><span class="n">countDFeByg</span><span class="p">,</span> <span class="n">targets</span><span class="o">=</span><span class="n">targets</span><span class="p">,</span> <span class="n">cmp</span><span class="o">=</span><span class="n">cmp</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">independent</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">mdsplot</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## Disp = 0.20653 , BCV = 0.4545
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## Disp = 0.20653 , BCV = 0.4545
+</code></pre>
+</div>
 
-<p>Filter and plot DEG results for up and down regulated genes. Because of the small size of the toy data set used by this vignette, the <em>FDR</em> value has been set to a relatively high threshold (here 10%). More commonly used <em>FDR</em> cutoffs are 1% or 5%. The definition of ‘<em>up</em>’ and ‘<em>down</em>’ is given in the corresponding help file. To open it, type <em><code>?filterDEGs</code></em> in the R console.</p>
+<p>Filter and plot DEG results for up and down regulated genes. Because of the small size of the toy data set used by this vignette, the <em>FDR</em> value has been set to a relatively high threshold (here 10%). More commonly used <em>FDR</em> cutoffs are 1% or 5%. The definition of ‘<em>up</em>’ and ‘<em>down</em>’ is given in the corresponding help file. To open it, type <em><code class="highlighter-rouge">?filterDEGs</code></em> in the R console.</p>
 
-<p><code>r
-DEG_list &lt;- filterDEGs(degDF=edgeDF, filter=c(Fold=2, FDR=10))
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">DEG_list</span> <span class="o">&lt;-</span> <span class="n">filterDEGs</span><span class="p">(</span><span class="n">degDF</span><span class="o">=</span><span class="n">edgeDF</span><span class="p">,</span> <span class="n">filter</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="n">Fold</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">FDR</span><span class="o">=</span><span class="m">10</span><span class="p">))</span>
+</code></pre>
+</div>
 
 <p><img src="systemPipeR_files/figure-html/edger_deg_counts-1.png" alt="" />\</p>
 <div align="center">**Figure 4:** Up and down regulated DEGs identified by _`edgeR`_. </div>
 <p>&lt;/br&gt;</p>
 
-<p><code>r
-names(DEG_list)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">names</span><span class="p">(</span><span class="n">DEG_list</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code>
-## [1] "UporDown" "Up"       "Down"     "Summary"
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>## [1] "UporDown" "Up"       "Down"     "Summary"
+</code></pre>
+</div>
 
-<p><code>r
-DEG_list$Summary[1:4,]
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">DEG_list</span><span class="o">$</span><span class="n">Summary</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span>
+</code></pre>
+</div>
 
-<p><code>
-##       Comparisons Counts_Up_or_Down Counts_Up Counts_Down
+<div class="highlighter-rouge"><pre class="highlight"><code>##       Comparisons Counts_Up_or_Down Counts_Up Counts_Down
 ## M1-A1       M1-A1                 0         0           0
 ## M1-V1       M1-V1                 1         1           0
 ## A1-V1       A1-V1                 1         1           0
 ## M6-A6       M6-A6                 0         0           0
-</code></p>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
-<h2 id="deg-analysis-with-deseq2">DEG analysis with <em><code>DESeq2</code></em></h2>
-<p>The following <em><code>run_DESeq2</code></em> function is a convenience wrapper for
-identifying DEGs in batch mode with <em><code>DESeq2</code></em> [@Love2014-sh] for any number of
-pairwise sample comparisons specified under the <em><code>cmp</code></em> argument. Users
+<h2 id="deg-analysis-with-deseq2">DEG analysis with <em><code class="highlighter-rouge">DESeq2</code></em></h2>
+<p>The following <em><code class="highlighter-rouge">run_DESeq2</code></em> function is a convenience wrapper for
+identifying DEGs in batch mode with <em><code class="highlighter-rouge">DESeq2</code></em> [@Love2014-sh] for any number of
+pairwise sample comparisons specified under the <em><code class="highlighter-rouge">cmp</code></em> argument. Users
 are strongly encouraged to consult the 
-<a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf"><em><code>DESeq2</code></em></a> vignette
-for more detailed information on this topic and how to properly run <em><code>DESeq2</code></em> 
+<a href="http://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf"><em><code class="highlighter-rouge">DESeq2</code></em></a> vignette
+for more detailed information on this topic and how to properly run <em><code class="highlighter-rouge">DESeq2</code></em> 
 on data sets with more complex experimental designs.</p>
 
-<p><code>r
-degseqDF &lt;- run_DESeq2(countDF=countDFeByg, targets=targets, cmp=cmp[[1]], independent=FALSE)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">degseqDF</span> <span class="o">&lt;-</span> <span class="n">run_DESeq2</span><span class="p">(</span><span class="n">countDF</span><span class="o">=</span><span class="n">countDFeByg</span><span class="p">,</span> <span class="n">targets</span><span class="o">=</span><span class="n">targets</span><span class="p">,</span> <span class="n">cmp</span><span class="o">=</span><span class="n">cmp</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span> <span class="n">independent</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>Filter and plot DEG results for up and down regulated genes.</p>
 
-<p><code>r
-DEG_list2 &lt;- filterDEGs(degDF=degseqDF, filter=c(Fold=2, FDR=10))
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">DEG_list2</span> <span class="o">&lt;-</span> <span class="n">filterDEGs</span><span class="p">(</span><span class="n">degDF</span><span class="o">=</span><span class="n">degseqDF</span><span class="p">,</span> <span class="n">filter</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="n">Fold</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">FDR</span><span class="o">=</span><span class="m">10</span><span class="p">))</span>
+</code></pre>
+</div>
 
 <p><img src="systemPipeR_files/figure-html/deseq2_deg_counts-1.png" alt="" />\</p>
 <div align="center">**Figure 5:** Up and down regulated DEGs identified by _`DESeq2`_. </div>
@@ -1622,13 +1600,13 @@ DEG_list2 &lt;- filterDEGs(degDF=degseqDF, filter=c(Fold=2, FDR=10))
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="venn-diagrams">Venn Diagrams</h2>
-<p>The function <em><code>overLapper</code></em> can compute Venn intersects for large numbers of sample sets (up to 20 or more) and <em><code>vennPlot</code></em> can plot 2-5 way Venn diagrams. A useful feature is the possiblity to combine the counts from several Venn comparisons with the same number of sample sets in a single Venn diagram (here for 4 up and down DEG sets).</p>
+<p>The function <em><code class="highlighter-rouge">overLapper</code></em> can compute Venn intersects for large numbers of sample sets (up to 20 or more) and <em><code class="highlighter-rouge">vennPlot</code></em> can plot 2-5 way Venn diagrams. A useful feature is the possiblity to combine the counts from several Venn comparisons with the same number of sample sets in a single Venn diagram (here for 4 up and down DEG sets).</p>
 
-<p><code>r
-vennsetup &lt;- overLapper(DEG_list$Up[6:9], type="vennsets")
-vennsetdown &lt;- overLapper(DEG_list$Down[6:9], type="vennsets")
-vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("blue", "red"))
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">vennsetup</span> <span class="o">&lt;-</span> <span class="n">overLapper</span><span class="p">(</span><span class="n">DEG_list</span><span class="o">$</span><span class="n">Up</span><span class="p">[</span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"vennsets"</span><span class="p">)</span>
+<span class="n">vennsetdown</span> <span class="o">&lt;-</span> <span class="n">overLapper</span><span class="p">(</span><span class="n">DEG_list</span><span class="o">$</span><span class="n">Down</span><span class="p">[</span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"vennsets"</span><span class="p">)</span>
+<span class="n">vennPlot</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">vennsetup</span><span class="p">,</span> <span class="n">vennsetdown</span><span class="p">),</span> <span class="n">mymain</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">mysub</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">colmode</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">ccol</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"blue"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">))</span>
+</code></pre>
+</div>
 
 <p><img src="systemPipeR_files/figure-html/vennplot-1.png" alt="" />\</p>
 <div align="center">**Figure 6:** Venn Diagram for 4 Up and Down DEG Sets. </div>
@@ -1638,70 +1616,70 @@ vennPlot(list(vennsetup, vennsetdown), mymain="", mysub="", colmode=2, ccol=c("b
 
 <h2 id="go-term-enrichment-analysis-of-degs">GO term enrichment analysis of DEGs</h2>
 <p>### Obtain gene-to-GO mappings
-The following shows how to obtain gene-to-GO mappings from <em><code>biomaRt</code></em> (here for <em>A. thaliana</em>) and how to organize them for the downstream GO term enrichment analysis. Alternatively, the gene-to-GO mappings can be obtained for many organisms from Bioconductor’s  <em><code>*.db</code></em> genome annotation packages or GO annotation files provided by various genome databases. For each annotation this relatively slow preprocessing step needs to be performed only once. Subsequently, the preprocessed data can be loaded with the <em><code>load</code></em> function as shown in the next subsection.</p>
+The following shows how to obtain gene-to-GO mappings from <em><code class="highlighter-rouge">biomaRt</code></em> (here for <em>A. thaliana</em>) and how to organize them for the downstream GO term enrichment analysis. Alternatively, the gene-to-GO mappings can be obtained for many organisms from Bioconductor’s  <em><code class="highlighter-rouge">*.db</code></em> genome annotation packages or GO annotation files provided by various genome databases. For each annotation this relatively slow preprocessing step needs to be performed only once. Subsequently, the preprocessed data can be loaded with the <em><code class="highlighter-rouge">load</code></em> function as shown in the next subsection.</p>
 
-<p><code>r
-library("biomaRt")
-listMarts() # To choose BioMart database
-m &lt;- useMart("ENSEMBL_MART_PLANT"); listDatasets(m) 
-m &lt;- useMart("ENSEMBL_MART_PLANT", dataset="athaliana_eg_gene")
-listAttributes(m) # Choose data types you want to download
-go &lt;- getBM(attributes=c("go_accession", "tair_locus", "go_namespace_1003"), mart=m)
-go &lt;- go[go[,3]!="",]; go[,3] &lt;- as.character(go[,3])
-dir.create("./data/GO")
-write.table(go, "data/GO/GOannotationsBiomart_mod.txt", quote=FALSE, row.names=FALSE, col.names=FALSE, sep="\t")
-catdb &lt;- makeCATdb(myfile="data/GO/GOannotationsBiomart_mod.txt", lib=NULL, org="", colno=c(1,2,3), idconv=NULL)
-save(catdb, file="data/GO/catdb.RData") 
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"biomaRt"</span><span class="p">)</span>
+<span class="n">listMarts</span><span class="p">()</span> <span class="c1"># To choose BioMart database
+</span><span class="n">m</span> <span class="o">&lt;-</span> <span class="n">useMart</span><span class="p">(</span><span class="s2">"ENSEMBL_MART_PLANT"</span><span class="p">);</span> <span class="n">listDatasets</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> 
+<span class="n">m</span> <span class="o">&lt;-</span> <span class="n">useMart</span><span class="p">(</span><span class="s2">"ENSEMBL_MART_PLANT"</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">"athaliana_eg_gene"</span><span class="p">)</span>
+<span class="n">listAttributes</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1"># Choose data types you want to download
+</span><span class="n">go</span> <span class="o">&lt;-</span> <span class="n">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"go_accession"</span><span class="p">,</span> <span class="s2">"tair_locus"</span><span class="p">,</span> <span class="s2">"go_namespace_1003"</span><span class="p">),</span> <span class="n">mart</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+<span class="n">go</span> <span class="o">&lt;-</span> <span class="n">go</span><span class="p">[</span><span class="n">go</span><span class="p">[,</span><span class="m">3</span><span class="p">]</span><span class="o">!=</span><span class="s2">""</span><span class="p">,];</span> <span class="n">go</span><span class="p">[,</span><span class="m">3</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">as.character</span><span class="p">(</span><span class="n">go</span><span class="p">[,</span><span class="m">3</span><span class="p">])</span>
+<span class="n">dir.create</span><span class="p">(</span><span class="s2">"./data/GO"</span><span class="p">)</span>
+<span class="n">write.table</span><span class="p">(</span><span class="n">go</span><span class="p">,</span> <span class="s2">"data/GO/GOannotationsBiomart_mod.txt"</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">col.names</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span>
+<span class="n">catdb</span> <span class="o">&lt;-</span> <span class="n">makeCATdb</span><span class="p">(</span><span class="n">myfile</span><span class="o">=</span><span class="s2">"data/GO/GOannotationsBiomart_mod.txt"</span><span class="p">,</span> <span class="n">lib</span><span class="o">=</span><span class="n">NULL</span><span class="p">,</span> <span class="n">org</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">colno</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> <span class="n">idconv</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span>
+<span class="n">save</span><span class="p">(</span><span class="n">catdb</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s2">"data/GO/catdb.RData"</span><span class="p">)</span> 
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="batch-go-term-enrichment-analysis">Batch GO term enrichment analysis</h3>
-<p>Apply the enrichment analysis to the DEG sets obtained in the above differential expression analysis. Note, in the following example the <em>FDR</em> filter is set here to an unreasonably high value, simply because of the small size of the toy data set used in this vignette. Batch enrichment analysis of many gene sets is performed with the <em><code>GOCluster_Report</code></em> function. When <em><code>method="all"</code></em>, it returns all GO terms passing the p-value cutoff specified under the <em><code>cutoff</code></em> arguments. When <em><code>method="slim"</code></em>, it returns only the GO terms specified under the <em><code>myslimv</code></em> argument. The given example shows how one can obtain such a GO slim vector from BioMart for a specific organism.</p>
+<p>Apply the enrichment analysis to the DEG sets obtained in the above differential expression analysis. Note, in the following example the <em>FDR</em> filter is set here to an unreasonably high value, simply because of the small size of the toy data set used in this vignette. Batch enrichment analysis of many gene sets is performed with the <em><code class="highlighter-rouge">GOCluster_Report</code></em> function. When <em><code class="highlighter-rouge">method="all"</code></em>, it returns all GO terms passing the p-value cutoff specified under the <em><code class="highlighter-rouge">cutoff</code></em> arguments. When <em><code class="highlighter-rouge">method="slim"</code></em>, it returns only the GO terms specified under the <em><code class="highlighter-rouge">myslimv</code></em> argument. The given example shows how one can obtain such a GO slim vector from BioMart for a specific organism.</p>
 
-<p><code>r
-load("data/GO/catdb.RData")
-DEG_list &lt;- filterDEGs(degDF=edgeDF, filter=c(Fold=2, FDR=50), plot=FALSE)
-up_down &lt;- DEG_list$UporDown; names(up_down) &lt;- paste(names(up_down), "_up_down", sep="")
-up &lt;- DEG_list$Up; names(up) &lt;- paste(names(up), "_up", sep="")
-down &lt;- DEG_list$Down; names(down) &lt;- paste(names(down), "_down", sep="")
-DEGlist &lt;- c(up_down, up, down)
-DEGlist &lt;- DEGlist[sapply(DEGlist, length) &gt; 0]
-BatchResult &lt;- GOCluster_Report(catdb=catdb, setlist=DEGlist, method="all", id_type="gene", CLSZ=2, cutoff=0.9, gocats=c("MF", "BP", "CC"), recordSpecGO=NULL)
-library("biomaRt"); m &lt;- useMart("ENSEMBL_MART_PLANT", dataset="athaliana_eg_gene")
-goslimvec &lt;- as.character(getBM(attributes=c("goslim_goa_accession"), mart=m)[,1])
-BatchResultslim &lt;- GOCluster_Report(catdb=catdb, setlist=DEGlist, method="slim", id_type="gene", myslimv=goslimvec, CLSZ=10, cutoff=0.01, gocats=c("MF", "BP", "CC"), recordSpecGO=NULL)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">load</span><span class="p">(</span><span class="s2">"data/GO/catdb.RData"</span><span class="p">)</span>
+<span class="n">DEG_list</span> <span class="o">&lt;-</span> <span class="n">filterDEGs</span><span class="p">(</span><span class="n">degDF</span><span class="o">=</span><span class="n">edgeDF</span><span class="p">,</span> <span class="n">filter</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="n">Fold</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">FDR</span><span class="o">=</span><span class="m">50</span><span class="p">),</span> <span class="n">plot</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+<span class="n">up_down</span> <span class="o">&lt;-</span> <span class="n">DEG_list</span><span class="o">$</span><span class="n">UporDown</span><span class="p">;</span> <span class="n">names</span><span class="p">(</span><span class="n">up_down</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">paste</span><span class="p">(</span><span class="n">names</span><span class="p">(</span><span class="n">up_down</span><span class="p">),</span> <span class="s2">"_up_down"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">up</span> <span class="o">&lt;-</span> <span class="n">DEG_list</span><span class="o">$</span><span class="n">Up</span><span class="p">;</span> <span class="n">names</span><span class="p">(</span><span class="n">up</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">paste</span><span class="p">(</span><span class="n">names</span><span class="p">(</span><span class="n">up</span><span class="p">),</span> <span class="s2">"_up"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">down</span> <span class="o">&lt;-</span> <span class="n">DEG_list</span><span class="o">$</span><span class="n">Down</span><span class="p">;</span> <span class="n">names</span><span class="p">(</span><span class="n">down</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">paste</span><span class="p">(</span><span class="n">names</span><span class="p">(</span><span class="n">down</span><span class="p">),</span> <span class="s2">"_down"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">DEGlist</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="n">up_down</span><span class="p">,</span> <span class="n">up</span><span class="p">,</span> <span class="n">down</span><span class="p">)</span>
+<span class="n">DEGlist</span> <span class="o">&lt;-</span> <span class="n">DEGlist</span><span class="p">[</span><span class="n">sapply</span><span class="p">(</span><span class="n">DEGlist</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">]</span>
+<span class="n">BatchResult</span> <span class="o">&lt;-</span> <span class="n">GOCluster_Report</span><span class="p">(</span><span class="n">catdb</span><span class="o">=</span><span class="n">catdb</span><span class="p">,</span> <span class="n">setlist</span><span class="o">=</span><span class="n">DEGlist</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"all"</span><span class="p">,</span> <span class="n">id_type</span><span class="o">=</span><span class="s2">"gene"</span><span class="p">,</span> <span class="n">CLSZ</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="m">0.9</span><span class="p">,</span> <span class="n">gocats</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"MF"</span><span class="p">,</span> <span class="s2">"BP"</span><span class="p">,</span> <span class="s2">"CC"</span><span class="p">),</span> <span class="n">recordSpecGO</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">"biomaRt"</span><span class="p">);</span> <span class="n">m</span> <span class="o">&lt;-</span> <span class="n">useMart</span><span class="p">(</span><span class="s2">"ENSEMBL_MART_PLANT"</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">"athaliana_eg_gene"</span><span class="p">)</span>
+<span class="n">goslimvec</span> <span class="o">&lt;-</span> <span class="n">as.character</span><span class="p">(</span><span class="n">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"goslim_goa_accession"</span><span class="p">),</span> <span class="n">mart</span><span class="o">=</span><span class="n">m</span><span class="p">)[,</span><span class="m">1</span><span class="p">])</span>
+<span class="n">BatchResultslim</span> <span class="o">&lt;-</span> <span class="n">GOCluster_Report</span><span class="p">(</span><span class="n">catdb</span><span class="o">=</span><span class="n">catdb</span><span class="p">,</span> <span class="n">setlist</span><span class="o">=</span><span class="n">DEGlist</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"slim"</span><span class="p">,</span> <span class="n">id_type</span><span class="o">=</span><span class="s2">"gene"</span><span class="p">,</span> <span class="n">myslimv</span><span class="o">=</span><span class="n">goslimvec</span><span class="p">,</span> <span class="n">CLSZ</span><span class="o">=</span><span class="m">10</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span> <span class="n">gocats</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"MF"</span><span class="p">,</span> <span class="s2">"BP"</span><span class="p">,</span> <span class="s2">"CC"</span><span class="p">),</span> <span class="n">recordSpecGO</span><span class="o">=</span><span class="n">NULL</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="plot-batch-go-term-results">Plot batch GO term results</h3>
-<p>The <em><code>data.frame</code></em> generated by <em><code>GOCluster_Report</code></em> can be plotted with the <em><code>goBarplot</code></em> function. Because of the variable size of the sample sets, it may not always be desirable to show the results from different DEG sets in the same bar plot. Plotting single sample sets is achieved by subsetting the input data frame as shown in the first line of the following example.</p>
+<p>The <em><code class="highlighter-rouge">data.frame</code></em> generated by <em><code class="highlighter-rouge">GOCluster_Report</code></em> can be plotted with the <em><code class="highlighter-rouge">goBarplot</code></em> function. Because of the variable size of the sample sets, it may not always be desirable to show the results from different DEG sets in the same bar plot. Plotting single sample sets is achieved by subsetting the input data frame as shown in the first line of the following example.</p>
 
-<p><code>r
-gos &lt;- BatchResultslim[grep("M6-V6_up_down", BatchResultslim$CLID), ]
-gos &lt;- BatchResultslim
-pdf("GOslimbarplotMF.pdf", height=8, width=10); goBarplot(gos, gocat="MF"); dev.off()
-goBarplot(gos, gocat="BP")
-goBarplot(gos, gocat="CC")
-</code>
-<img src="GOslimbarplotMF.png" alt="" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">gos</span> <span class="o">&lt;-</span> <span class="n">BatchResultslim</span><span class="p">[</span><span class="n">grep</span><span class="p">(</span><span class="s2">"M6-V6_up_down"</span><span class="p">,</span> <span class="n">BatchResultslim</span><span class="o">$</span><span class="n">CLID</span><span class="p">),</span> <span class="p">]</span>
+<span class="n">gos</span> <span class="o">&lt;-</span> <span class="n">BatchResultslim</span>
+<span class="n">pdf</span><span class="p">(</span><span class="s2">"GOslimbarplotMF.pdf"</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">8</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">10</span><span class="p">);</span> <span class="n">goBarplot</span><span class="p">(</span><span class="n">gos</span><span class="p">,</span> <span class="n">gocat</span><span class="o">=</span><span class="s2">"MF"</span><span class="p">);</span> <span class="n">dev.off</span><span class="p">()</span>
+<span class="n">goBarplot</span><span class="p">(</span><span class="n">gos</span><span class="p">,</span> <span class="n">gocat</span><span class="o">=</span><span class="s2">"BP"</span><span class="p">)</span>
+<span class="n">goBarplot</span><span class="p">(</span><span class="n">gos</span><span class="p">,</span> <span class="n">gocat</span><span class="o">=</span><span class="s2">"CC"</span><span class="p">)</span>
+</code></pre>
+</div>
+<p><img src="GOslimbarplotMF.png" alt="" /></p>
 <div align="center">**Figure 7:** GO Slim Barplot for MF Ontology.</div>
 <p>&lt;/br&gt;</p>
 
 <div align="right">[Back to Table of Contents]()</div>
 
 <h2 id="clustering-and-heat-maps">Clustering and heat maps</h2>
-<p>The following example performs hierarchical clustering on the <em><code>rlog</code></em> transformed expression matrix subsetted by the DEGs identified in the 
+<p>The following example performs hierarchical clustering on the <em><code class="highlighter-rouge">rlog</code></em> transformed expression matrix subsetted by the DEGs identified in the 
 above differential expression analysis. It uses a Pearson correlation-based distance measure and complete linkage for cluster joining.</p>
 
-<p><code>r
-library(pheatmap)
-geneids &lt;- unique(as.character(unlist(DEG_list[[1]])))
-y &lt;- assay(rlog(dds))[geneids, ]
-pdf("heatmap1.pdf")
-pheatmap(y, scale="row", clustering_distance_rows="correlation", clustering_distance_cols="correlation")
-dev.off()
-</code>
-<img src="heatmap1.png" alt="" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
+<span class="n">geneids</span> <span class="o">&lt;-</span> <span class="n">unique</span><span class="p">(</span><span class="n">as.character</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">DEG_list</span><span class="p">[[</span><span class="m">1</span><span class="p">]])))</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="n">assay</span><span class="p">(</span><span class="n">rlog</span><span class="p">(</span><span class="n">dds</span><span class="p">))[</span><span class="n">geneids</span><span class="p">,</span> <span class="p">]</span>
+<span class="n">pdf</span><span class="p">(</span><span class="s2">"heatmap1.pdf"</span><span class="p">)</span>
+<span class="n">pheatmap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">"row"</span><span class="p">,</span> <span class="n">clustering_distance_rows</span><span class="o">=</span><span class="s2">"correlation"</span><span class="p">,</span> <span class="n">clustering_distance_cols</span><span class="o">=</span><span class="s2">"correlation"</span><span class="p">)</span>
+<span class="n">dev.off</span><span class="p">()</span>
+</code></pre>
+</div>
+<p><img src="heatmap1.png" alt="" /></p>
 <div align="center">**Figure 8:** Heat map with hierarchical clustering dendrograms of DEGs.</div>
 <p>&lt;/br&gt;</p>
 
@@ -1713,15 +1691,15 @@ dev.off()
 
 <p>Load the RNA-Seq sample workflow into your current working directory.</p>
 
-<p><code>r
-library(systemPipeRdata)
-genWorkenvir(workflow="rnaseq")
-setwd("rnaseq")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"rnaseq"</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"rnaseq"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="run-workflow">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code>systemPipeRNAseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>rnaseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rnw</code></em> template file from within R interactively.</p>
+<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeRNAseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/rnaseq/systemPipeRNAseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">rnaseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
 
 <p>Workflow includes following steps:</p>
 
@@ -1732,7 +1710,7 @@ setwd("rnaseq")
       <li>FASTQ quality report</li>
     </ul>
   </li>
-  <li>Alignments: <em><code>Tophat2</code></em> (or any other RNA-Seq aligner)</li>
+  <li>Alignments: <em><code class="highlighter-rouge">Tophat2</code></em> (or any other RNA-Seq aligner)</li>
   <li>Alignment stats</li>
   <li>Read counting</li>
   <li>Sample-wise correlation analysis</li>
@@ -1747,15 +1725,15 @@ setwd("rnaseq")
 
 <p>Load the ChIP-Seq sample workflow into your current working directory.</p>
 
-<p><code>r
-library(systemPipeRdata)
-genWorkenvir(workflow="chipseq")
-setwd("chipseq")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"chipseq"</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"chipseq"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="run-workflow-1">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code>systemPipeChIPseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>chipseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rnw</code></em> template file from within R interactively.</p>
+<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeChIPseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/chipseq/systemPipeChIPseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">chipseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
 
 <p>Workflow includes following steps:</p>
 
@@ -1766,9 +1744,9 @@ setwd("chipseq")
       <li>FASTQ quality report</li>
     </ul>
   </li>
-  <li>Alignments: <em><code>Bowtie2</code></em> or <em><code>rsubread</code></em></li>
+  <li>Alignments: <em><code class="highlighter-rouge">Bowtie2</code></em> or <em><code class="highlighter-rouge">rsubread</code></em></li>
   <li>Alignment stats</li>
-  <li>Peak calling: <em><code>MACS2</code></em>, <em><code>BayesPeak</code></em></li>
+  <li>Peak calling: <em><code class="highlighter-rouge">MACS2</code></em>, <em><code class="highlighter-rouge">BayesPeak</code></em></li>
   <li>Peak annotation with genomic context</li>
   <li>Differential binding analysis</li>
   <li>GO term enrichment analysis</li>
@@ -1783,15 +1761,15 @@ setwd("chipseq")
 
 <p>Load the VAR-Seq sample workflow into your current working directory.</p>
 
-<p><code>r
-library(systemPipeRdata)
-genWorkenvir(workflow="varseq")
-setwd("varseq")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"varseq"</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"varseq"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="run-workflow-2">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code>systemPipeVARseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>varseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rnw</code></em> template file from within R interactively.</p>
+<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeVARseq_single</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">varseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
 
 <p>Workflow includes following steps:</p>
 
@@ -1802,10 +1780,10 @@ setwd("varseq")
       <li>FASTQ quality report</li>
     </ul>
   </li>
-  <li>Alignments: <em><code>gsnap</code></em>, <em><code>bwa</code></em></li>
-  <li>Variant calling: <em><code>VariantTools</code></em>, <em><code>GATK</code></em>, <em><code>BCFtools</code></em></li>
-  <li>Variant filtering: <em><code>VariantTools</code></em> and <em><code>VariantAnnotation</code></em></li>
-  <li>Variant annotation: <em><code>VariantAnnotation</code></em></li>
+  <li>Alignments: <em><code class="highlighter-rouge">gsnap</code></em>, <em><code class="highlighter-rouge">bwa</code></em></li>
+  <li>Variant calling: <em><code class="highlighter-rouge">VariantTools</code></em>, <em><code class="highlighter-rouge">GATK</code></em>, <em><code class="highlighter-rouge">BCFtools</code></em></li>
+  <li>Variant filtering: <em><code class="highlighter-rouge">VariantTools</code></em> and <em><code class="highlighter-rouge">VariantAnnotation</code></em></li>
+  <li>Variant annotation: <em><code class="highlighter-rouge">VariantAnnotation</code></em></li>
   <li>Combine results from many samples</li>
   <li>Summary statistics of samples</li>
 </ol>
@@ -1813,7 +1791,7 @@ setwd("varseq")
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="var-seq-workflow-for-computer-cluster">VAR-Seq workflow for computer cluster</h3>
-<p>The workflow template provided for this step is called <em><code>systemPipeVARseq.Rnw</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.Rnw">Rnw</a>).
+<p>The workflow template provided for this step is called <em><code class="highlighter-rouge">systemPipeVARseq.Rnw</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/varseq/systemPipeVARseq.Rnw">Rnw</a>).
 It runs the above VAR-Seq workflow in parallel on multiple computer nodes of an HPC system using Torque as scheduler.</p>
 
 <div align="right">[Back to Table of Contents]()</div>
@@ -1822,15 +1800,15 @@ It runs the above VAR-Seq workflow in parallel on multiple computer nodes of an 
 
 <p>Load the Ribo-Seq sample workflow into your current working directory.</p>
 
-<p><code>r
-library(systemPipeRdata)
-genWorkenvir(workflow="riboseq")
-setwd("riboseq")
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">systemPipeRdata</span><span class="p">)</span>
+<span class="n">genWorkenvir</span><span class="p">(</span><span class="n">workflow</span><span class="o">=</span><span class="s2">"riboseq"</span><span class="p">)</span>
+<span class="n">setwd</span><span class="p">(</span><span class="s2">"riboseq"</span><span class="p">)</span>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h3 id="run-workflow-3">Run workflow</h3>
-<p>Next, run the chosen sample workflow <em><code>systemPipeRIBOseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/riboseq/systemPipeRIBOseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/ribseq/systemPipeRIBOseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code>make -B</code></em> within the <em><code>ribseq</code></em> directory. Alternatively, one can run the code from the provided <em><code>*.Rnw</code></em> template file from within R interactively.</p>
+<p>Next, run the chosen sample workflow <em><code class="highlighter-rouge">systemPipeRIBOseq</code></em> (<a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/riboseq/systemPipeRIBOseq.pdf?raw=true">PDF</a>, <a href="https://github.com/tgirke/systemPipeRdata/blob/master/inst/extdata/workflows/ribseq/systemPipeRIBOseq_single.Rnw">Rnw</a>) by executing from the command-line <em><code class="highlighter-rouge">make -B</code></em> within the <em><code class="highlighter-rouge">ribseq</code></em> directory. Alternatively, one can run the code from the provided <em><code class="highlighter-rouge">*.Rnw</code></em> template file from within R interactively.</p>
 
 <p>Workflow includes following steps:</p>
 
@@ -1841,7 +1819,7 @@ setwd("riboseq")
       <li>FASTQ quality report</li>
     </ul>
   </li>
-  <li>Alignments: <em><code>Tophat2</code></em> (or any other RNA-Seq aligner)</li>
+  <li>Alignments: <em><code class="highlighter-rouge">Tophat2</code></em> (or any other RNA-Seq aligner)</li>
   <li>Alignment stats</li>
   <li>Compute read distribution across genomic features</li>
   <li>Adding custom features to workflow (e.g. uORFs)</li>
@@ -1858,12 +1836,11 @@ setwd("riboseq")
 
 <h1 id="version-information">Version information</h1>
 
-<p><code>r
-sessionInfo()
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">sessionInfo</span><span class="p">()</span>
+</code></pre>
+</div>
 
-<p><code>
-## R version 3.2.3 (2015-12-10)
+<div class="highlighter-rouge"><pre class="highlight"><code>## R version 3.2.3 (2015-12-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.3 LTS
 ## 
@@ -1905,7 +1882,8 @@ sessionInfo()
 ## [61] gridExtra_2.0.0        knitr_1.12             rtracklayer_1.30.1     Hmisc_3.17-0          
 ## [65] futile.options_1.0.0   stringi_1.0-1          BatchJobs_1.6          geneplotter_1.48.0    
 ## [69] rpart_4.1-10           acepack_1.3-3.3
-</code></p>
+</code></pre>
+</div>
 <div align="right">[Back to Table of Contents]()</div>
 
 <h1 id="references">References</h1>
@@ -1925,7 +1903,7 @@ sessionInfo()
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
- Site last generated: Mar 8, 2016 <br />
+ Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

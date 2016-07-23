@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -816,16 +794,16 @@ $('#toc').on('click', 'a', function() {
 <p>Last update: 06 March, 2016</p>
 
 <p>Alternative formats of this tutorial:
-<a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html"><code>.Rmd HTML</code></a>,
-<a href="https://raw.githubusercontent.com/tgirke/manuals/master/vignettes/07_systemPipeR/systemPipeR.Rmd"><code>.Rmd</code></a>,
-<a href="https://raw.githubusercontent.com/tgirke/manuals/master/vignettes/07_systemPipeR/systemPipeR.R"><code>.R</code></a>,
-<a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html"><code>HTML Slides</code></a></p>
+<a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeR.html"><code class="highlighter-rouge">.Rmd HTML</code></a>,
+<a href="https://raw.githubusercontent.com/tgirke/manuals/master/vignettes/07_systemPipeR/systemPipeR.Rmd"><code class="highlighter-rouge">.Rmd</code></a>,
+<a href="https://raw.githubusercontent.com/tgirke/manuals/master/vignettes/07_systemPipeR/systemPipeR.R"><code class="highlighter-rouge">.R</code></a>,
+<a href="https://htmlpreview.github.io/?https://github.com/tgirke/systemPipeR/master/inst/extdata/slides/systemPipeRslides.html"><code class="highlighter-rouge">HTML Slides</code></a></p>
 
 <h2 id="introduction">Introduction</h2>
 
-<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code>systemPipeR</code></em></a> provides utilities for building and running automated end-to-end analysis workflows for a wide range of next generation sequence (NGS) applications such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (Girke , 2014). Important features include a uniform workflow interface across different NGS applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters. The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, <em><code>systemPipeR</code></em> can be used with most command-line aligners such as <code>BWA</code> (Li , 2013; Li et al., 2009), <code>TopHat2</code> (Kim et al., 2013) and <code>Bowtie2</code> (Langmead et al., 2012), as well as the R-based NGS aligners <a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"><em><code>Rsubread</code></em></a> (Liao et al., 2013) and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code>gsnap (gmapR)</code></em></a> (Wu et al., 2010). Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM files) and experimental designs is facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area (Lawrence et al., 2013).</p>
+<p><a href="http://www.bioconductor.org/packages/devel/bioc/html/systemPipeR.html"><em><code class="highlighter-rouge">systemPipeR</code></em></a> provides utilities for building and running automated end-to-end analysis workflows for a wide range of next generation sequence (NGS) applications such as RNA-Seq, ChIP-Seq, VAR-Seq and Ribo-Seq (Girke , 2014). Important features include a uniform workflow interface across different NGS applications, automated report generation, and support for running both R and command-line software, such as NGS aligners or peak/variant callers, on local computers or compute clusters. The latter supports interactive job submissions and batch submissions to queuing systems of clusters. For instance, <em><code class="highlighter-rouge">systemPipeR</code></em> can be used with most command-line aligners such as <code class="highlighter-rouge">BWA</code> (Li , 2013; Li et al., 2009), <code class="highlighter-rouge">TopHat2</code> (Kim et al., 2013) and <code class="highlighter-rouge">Bowtie2</code> (Langmead et al., 2012), as well as the R-based NGS aligners <a href="http://www.bioconductor.org/packages/devel/bioc/html/Rsubread.html"><em><code class="highlighter-rouge">Rsubread</code></em></a> (Liao et al., 2013) and <a href="http://www.bioconductor.org/packages/devel/bioc/html/gmapR.html"><em><code class="highlighter-rouge">gsnap (gmapR)</code></em></a> (Wu et al., 2010). Efficient handling of complex sample sets (<em>e.g.</em> FASTQ/BAM files) and experimental designs is facilitated by a well-defined sample annotation infrastructure which improves reproducibility and user-friendliness of many typical analysis workflows in the NGS area (Lawrence et al., 2013).</p>
 
-<p>Motivation and advantages of <em><code>sytemPipeR</code></em> environment:</p>
+<p>Motivation and advantages of <em><code class="highlighter-rouge">sytemPipeR</code></em> environment:</p>
 
 <ol>
   <li>Facilitates design of complex NGS workflows involving multiple R/Bioconductor packages</li>
@@ -837,12 +815,12 @@ $('#toc').on('click', 'a', function() {
   <li>Automates generation of analysis reports to improve reproducibility</li>
 </ol>
 
-<p>A central concept for designing workflows within the <em><code>sytemPipeR</code></em> environment is the use of workflow management containers called <em><code>SYSargs</code></em> (see Figure 1). Instances of this S4 object class are constructed by the <em><code>systemArgs</code></em> function from two simple tabular files: a <em><code>targets</code></em> file and a <em><code>param</code></em> file. The latter is optional for workflow steps lacking command-line software. Typically, a <em><code>SYSargs</code></em> instance stores all sample-level inputs as well as the paths to the corresponding outputs generated by command-line- or R-based software generating sample-level output files, such as read preprocessors (trimmed/filtered FASTQ files), aligners (SAM/BAM files), variant callers (VCF/BCF files) or peak callers (BED/WIG files). Each sample level input/outfile operation uses its own <em><code>SYSargs</code></em> instance. The outpaths of <em><code>SYSargs</code></em> usually define the sample inputs for the next <em><code>SYSargs</code></em> instance. This connectivity is established by writing the outpaths with the <em><code>writeTargetsout</code></em> function to a new <em><code>targets</code></em> file that serves as input to the next <em><code>systemArgs</code></em> call. Typically, the user has to provide only the initial <em><code>targets</code></em> file. All downstream <em><code>targets</code></em> files are generated automatically. By chaining several <em><code>SYSargs</code></em> steps together one can construct complex workflows involving many sample-level input/output file operations with any combinaton of command-line or R-based software.</p>
+<p>A central concept for designing workflows within the <em><code class="highlighter-rouge">sytemPipeR</code></em> environment is the use of workflow management containers called <em><code class="highlighter-rouge">SYSargs</code></em> (see Figure 1). Instances of this S4 object class are constructed by the <em><code class="highlighter-rouge">systemArgs</code></em> function from two simple tabular files: a <em><code class="highlighter-rouge">targets</code></em> file and a <em><code class="highlighter-rouge">param</code></em> file. The latter is optional for workflow steps lacking command-line software. Typically, a <em><code class="highlighter-rouge">SYSargs</code></em> instance stores all sample-level inputs as well as the paths to the corresponding outputs generated by command-line- or R-based software generating sample-level output files, such as read preprocessors (trimmed/filtered FASTQ files), aligners (SAM/BAM files), variant callers (VCF/BCF files) or peak callers (BED/WIG files). Each sample level input/outfile operation uses its own <em><code class="highlighter-rouge">SYSargs</code></em> instance. The outpaths of <em><code class="highlighter-rouge">SYSargs</code></em> usually define the sample inputs for the next <em><code class="highlighter-rouge">SYSargs</code></em> instance. This connectivity is established by writing the outpaths with the <em><code class="highlighter-rouge">writeTargetsout</code></em> function to a new <em><code class="highlighter-rouge">targets</code></em> file that serves as input to the next <em><code class="highlighter-rouge">systemArgs</code></em> call. Typically, the user has to provide only the initial <em><code class="highlighter-rouge">targets</code></em> file. All downstream <em><code class="highlighter-rouge">targets</code></em> files are generated automatically. By chaining several <em><code class="highlighter-rouge">SYSargs</code></em> steps together one can construct complex workflows involving many sample-level input/output file operations with any combinaton of command-line or R-based software.</p>
 
 <p><img src="systemPipeR_files/SystemPipeR_Workflow.png" alt="" /></p>
 <div align="center">**Figure 1:** Workflow design structure of *systemPipeR* </div>
 
-<p>The intended way of running <em><code>sytemPipeR</code></em> workflows is via <em><code>*.Rnw</code></em> or <em><code>*.Rmd</code></em> files, which can be executed either line-wise in interactive mode or with a single command from R or the command-line using a <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/Makefile"><em><code>Makefile</code></em></a>. This way comprehensive and reproducible analysis reports in PDF or HTML format can be generated in a fully automated manner by making use of the highly functional reporting utilities available for R. Templates for setting up custom project reports are provided as <em><code>*.Rnw</code></em> files by the helper package <em><code>systemPipeRdata</code></em> and in the vignettes subdirectory of <em><code>systemPipeR</code></em>. The corresponding PDFs of these report templates are available here: <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRNAseq.pdf?raw=true"><em><code>systemPipeRNAseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRIBOseq.pdf?raw=true"><em><code>systemPipeRIBOseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeChIPseq.pdf?raw=true"><em><code>systemPipeChIPseq</code></em></a> and <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeVARseq.pdf?raw=true"><em><code>systemPipeVARseq</code></em></a>. To work with <em><code>*.Rnw</code></em> or <em><code>*.Rmd</code></em> files efficiently, basic knowledge of <a href="https://www.stat.uni-muenchen.de/~leisch/Sweave/"><em><code>Sweave</code></em></a> or <a href="http://yihui.name/knitr/"><em><code>knitr</code></em></a> and <a href="http://www.latex-project.org/"><em><code>Latex</code></em></a> or <a href="http://rmarkdown.rstudio.com/"><em><code>R Markdown v2</code></em></a> is required.</p>
+<p>The intended way of running <em><code class="highlighter-rouge">sytemPipeR</code></em> workflows is via <em><code class="highlighter-rouge">*.Rnw</code></em> or <em><code class="highlighter-rouge">*.Rmd</code></em> files, which can be executed either line-wise in interactive mode or with a single command from R or the command-line using a <a href="https://github.com/tgirke/systemPipeR/blob/master/inst/extdata/Makefile"><em><code class="highlighter-rouge">Makefile</code></em></a>. This way comprehensive and reproducible analysis reports in PDF or HTML format can be generated in a fully automated manner by making use of the highly functional reporting utilities available for R. Templates for setting up custom project reports are provided as <em><code class="highlighter-rouge">*.Rnw</code></em> files by the helper package <em><code class="highlighter-rouge">systemPipeRdata</code></em> and in the vignettes subdirectory of <em><code class="highlighter-rouge">systemPipeR</code></em>. The corresponding PDFs of these report templates are available here: <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRNAseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeRNAseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeRIBOseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeRIBOseq</code></em></a>, <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeChIPseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeChIPseq</code></em></a> and <a href="https://github.com/tgirke/systemPipeR/blob/master/vignettes/systemPipeVARseq.pdf?raw=true"><em><code class="highlighter-rouge">systemPipeVARseq</code></em></a>. To work with <em><code class="highlighter-rouge">*.Rnw</code></em> or <em><code class="highlighter-rouge">*.Rmd</code></em> files efficiently, basic knowledge of <a href="https://www.stat.uni-muenchen.de/~leisch/Sweave/"><em><code class="highlighter-rouge">Sweave</code></em></a> or <a href="http://yihui.name/knitr/"><em><code class="highlighter-rouge">knitr</code></em></a> and <a href="http://www.latex-project.org/"><em><code class="highlighter-rouge">Latex</code></em></a> or <a href="http://rmarkdown.rstudio.com/"><em><code class="highlighter-rouge">R Markdown v2</code></em></a> is required.</p>
 
 
 
@@ -860,7 +838,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 18:04:22 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 18:04:22 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -815,39 +793,39 @@ $('#toc').on('click', 'a', function() {
 
 <p>The R software for running ChemmineR can be downloaded from CRAN
 (<a href="http://cran.at.r-project.org/">http://cran.at.r-project.org/</a>). The ChemmineR package can be
-installed from R using the <code>bioLite</code> install command.</p>
+installed from R using the <code class="highlighter-rouge">bioLite</code> install command.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script. 
-</span> <span class="n">biocLite</span><span class="p">(</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Installs</span> <span class="n">the</span> <span class="n">package.</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">source</span><span class="p">(</span><span class="s2">"http://bioconductor.org/biocLite.R"</span><span class="p">)</span> <span class="c1"># Sources the biocLite.R installation script. 
+</span> <span class="n">biocLite</span><span class="p">(</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Installs</span> <span class="n">the</span> <span class="n">package.</span> </code></pre></figure>
 
 <h2 id="loading-the-package-and-documentation">Loading the Package and Documentation</h2>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Loads</span> <span class="n">the</span> <span class="n">package</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">library</span><span class="p">(</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Loads</span> <span class="n">the</span> <span class="n">package</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="c1"># Lists all functions and classes 
-</span> <span class="n">vignette</span><span class="p">(</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">this</span> <span class="n">PDF</span> <span class="n">manual</span> <span class="n">from</span> <span class="n">R</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="c1"># Lists all functions and classes 
+</span> <span class="n">vignette</span><span class="p">(</span><span class="s2">"ChemmineR"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Opens</span> <span class="n">this</span> <span class="n">PDF</span> <span class="n">manual</span> <span class="n">from</span> <span class="n">R</span> </code></pre></figure>
 
 <h2 id="five-minute-tutorial">Five Minute Tutorial</h2>
 
 <p>The following code gives an overview of the most important
-functionalities provided by <code>ChemmineR</code>. Copy and paste
+functionalities provided by <code class="highlighter-rouge">ChemmineR</code>. Copy and paste
 of the commands into the R console will demonstrate their utilities.</p>
 
-<p>Create Instances of <code>SDFset</code> class:</p>
+<p>Create Instances of <code class="highlighter-rouge">SDFset</code> class:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">)</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">)</span> 
  <span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">sdfsample</span>
- <span class="n">sdfset</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">summary</span> <span class="n">of</span> <span class="n">SDFset</span></code></pre></div>
+ <span class="n">sdfset</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">summary</span> <span class="n">of</span> <span class="n">SDFset</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of "SDFset" with 100 molecules</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of "SDFset" with 100 molecules</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> <span class="err">#</span> <span class="n">Subsetting</span> <span class="n">of</span> <span class="n">object</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> <span class="err">#</span> <span class="n">Subsetting</span> <span class="n">of</span> <span class="n">object</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of "SDFset" with 4 molecules</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of "SDFset" with 4 molecules</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">summarized</span> <span class="n">content</span> <span class="n">of</span> <span class="n">one</span> <span class="n">SDF</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">summarized</span> <span class="n">content</span> <span class="n">of</span> <span class="n">one</span> <span class="n">SDF</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of "SDF"
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## An instance of "SDF"
 ## 
 ## &lt;&lt;header&gt;&gt;
 ##                             Molecule_Name                                    Source 
@@ -875,156 +853,156 @@ of the commands into the R console will demonstrate their utilities.</p>
 ##           PUBCHEM_COMPOUND_CID PUBCHEM_COMPOUND_CANONICALIZED      PUBCHEM_CACTVS_COMPLEXITY 
 ##                       "650001"                            "1"                          "700" 
 ##  PUBCHEM_CACTVS_HBOND_ACCEPTOR                                
-##                            "7"                          "..."</code></pre></div>
+##                            "7"                          "..."</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Returns summarized content of many SDFs, not printed here 
-</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">complete</span> <span class="n">content</span> <span class="n">of</span> <span class="n">many</span> <span class="n">SDFs</span><span class="p">,</span> <span class="n">not</span> <span class="n">printed</span> <span class="n">here</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">view</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="c1"># Returns summarized content of many SDFs, not printed here 
+</span> <span class="n">as</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="s2">"list"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">complete</span> <span class="n">content</span> <span class="n">of</span> <span class="n">many</span> <span class="n">SDFs</span><span class="p">,</span> <span class="n">not</span> <span class="n">printed</span> <span class="n">here</span> </code></pre></figure>
 
-<p>An <code>SDFset</code> is created during the import of an SD file:</p>
+<p>An <code class="highlighter-rouge">SDFset</code> is created during the import of an SD file:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">read.SDFset</span><span class="p">(</span><span class="s2">"http://faculty.ucr.edu/ tgirke/Documents/R_BioCond/Samples/sdfsample.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">read.SDFset</span><span class="p">(</span><span class="s2">"http://faculty.ucr.edu/ tgirke/Documents/R_BioCond/Samples/sdfsample.sdf"</span><span class="p">)</span> </code></pre></figure>
 
-<p>Miscellaneous accessor methods for <code>SDFset</code> container:</p>
+<p>Miscellaneous accessor methods for <code class="highlighter-rouge">SDFset</code> container:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">header</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">header</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">header</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">header</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                             Molecule_Name                                    Source 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                             Molecule_Name                                    Source 
 ##                                  "650001"                  "  -OEChem-07071010512D" 
 ##                                   Comment                               Counts_Line 
-##                                        "" " 61 64  0     0  0  0  0  0  0999 V2000"</code></pre></div>
+##                                        "" " 61 64  0     0  0  0  0  0  0999 V2000"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">atomblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##          C1     C2 C3 C5 C6 C7 C8 C9 C10 C11 C12 C13 C14 C15 C16
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##          C1     C2 C3 C5 C6 C7 C8 C9 C10 C11 C12 C13 C14 C15 C16
 ## O_1  7.0468 0.0839  0  0  0  0  0  0   0   0   0   0   0   0   0
 ## O_2 12.2708 1.0492  0  0  0  0  0  0   0   0   0   0   0   0   0
 ## O_3 12.2708 3.1186  0  0  0  0  0  0   0   0   0   0   0   0   0
-## O_4  7.9128 2.5839  0  0  0  0  0  0   0   0   0   0   0   0   0</code></pre></div>
+## O_4  7.9128 2.5839  0  0  0  0  0  0   0   0   0   0   0   0   0</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bondblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bondblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">bondblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">bondblock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##   C1 C2 C3 C4 C5 C6 C7
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##   C1 C2 C3 C4 C5 C6 C7
 ## 1  1 16  2  0  0  0  0
 ## 2  2 23  1  0  0  0  0
 ## 3  2 27  1  0  0  0  0
-## 4  3 25  1  0  0  0  0</code></pre></div>
+## 4  3 25  1  0  0  0  0</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[[</span><span class="m">1</span><span class="p">]])[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##           PUBCHEM_COMPOUND_CID PUBCHEM_COMPOUND_CANONICALIZED      PUBCHEM_CACTVS_COMPLEXITY 
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##           PUBCHEM_COMPOUND_CID PUBCHEM_COMPOUND_CANONICALIZED      PUBCHEM_CACTVS_COMPLEXITY 
 ##                       "650001"                            "1"                          "700" 
 ##  PUBCHEM_CACTVS_HBOND_ACCEPTOR 
-##                            "7"</code></pre></div>
+##                            "7"</code></pre></figure>
 
 <p>Assigning compound IDs and keeping them unique:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">IDs</span> <span class="n">from</span> <span class="n">SDFset</span> <span class="n">object</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">IDs</span> <span class="n">from</span> <span class="n">SDFset</span> <span class="n">object</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "CMP1" "CMP2" "CMP3" "CMP4"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "CMP1" "CMP2" "CMP3" "CMP4"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">IDs</span> <span class="n">from</span> <span class="n">SD</span> <span class="n">file</span> <span class="n">header</span> <span class="n">block</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">IDs</span> <span class="n">from</span> <span class="n">SD</span> <span class="n">file</span> <span class="n">header</span> <span class="n">block</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "650001" "650002" "650003" "650004"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "650001" "650002" "650003" "650004"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">unique_ids</span> <span class="o">&lt;-</span> <span class="n">makeUnique</span><span class="p">(</span><span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">unique_ids</span> <span class="o">&lt;-</span> <span class="n">makeUnique</span><span class="p">(</span><span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "No duplicates detected!"</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## [1] "No duplicates detected!"</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">unique_ids</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">cid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">unique_ids</span> </code></pre></figure>
 
-<p>Converting the data blocks in an <code>SDFset</code> to a matrix:</p>
+<p>Converting the data blocks in an <code class="highlighter-rouge">SDFset</code> to a matrix:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">blockmatrix</span> <span class="o">&lt;-</span> <span class="n">datablock2ma</span><span class="p">(</span><span class="n">datablocklist</span><span class="o">=</span><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> <span class="c1"># Converts data block to matrix 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">blockmatrix</span> <span class="o">&lt;-</span> <span class="n">datablock2ma</span><span class="p">(</span><span class="n">datablocklist</span><span class="o">=</span><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span> <span class="c1"># Converts data block to matrix 
 </span> <span class="n">numchar</span> <span class="o">&lt;-</span> <span class="n">splitNumChar</span><span class="p">(</span><span class="n">blockmatrix</span><span class="o">=</span><span class="n">blockmatrix</span><span class="p">)</span> <span class="c1"># Splits to numeric and character matrix 
-</span> <span class="n">numchar</span><span class="p">[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]</span> <span class="err">#</span> <span class="n">Slice</span> <span class="n">of</span> <span class="n">numeric</span> <span class="n">matrix</span></code></pre></div>
+</span> <span class="n">numchar</span><span class="p">[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]</span> <span class="err">#</span> <span class="n">Slice</span> <span class="n">of</span> <span class="n">numeric</span> <span class="n">matrix</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##        PUBCHEM_COMPOUND_CID PUBCHEM_COMPOUND_CANONICALIZED
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##        PUBCHEM_COMPOUND_CID PUBCHEM_COMPOUND_CANONICALIZED
 ## 650001               650001                              1
-## 650002               650002                              1</code></pre></div>
+## 650002               650002                              1</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">numchar</span><span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">10</span><span class="o">:</span><span class="m">11</span><span class="p">]</span> <span class="err">#</span> <span class="n">Slice</span> <span class="n">of</span> <span class="n">character</span> <span class="n">matrix</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">numchar</span><span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">10</span><span class="o">:</span><span class="m">11</span><span class="p">]</span> <span class="err">#</span> <span class="n">Slice</span> <span class="n">of</span> <span class="n">character</span> <span class="n">matrix</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##        PUBCHEM_MOLECULAR_FORMULA PUBCHEM_OPENEYE_CAN_SMILES                                     
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##        PUBCHEM_MOLECULAR_FORMULA PUBCHEM_OPENEYE_CAN_SMILES                                     
 ## 650001 "C23H28N4O6"              "CC1=CC(=NO1)NC(=O)CCC(=O)N(CC(=O)NC2CCCC2)C3=CC4=C(C=C3)OCCO4"
-## 650002 "C18H23N5O3"              "CN1C2=C(C(=O)NC1=O)N(C(=N2)NCCCO)CCCC3=CC=CC=C3"</code></pre></div>
+## 650002 "C18H23N5O3"              "CN1C2=C(C(=O)NC1=O)N(C(=N2)NCCCO)CCCC3=CC=CC=C3"</code></pre></figure>
 
 <p>Compute atom frequency matrix, molecular weight and formula:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">propma</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">MF</span><span class="o">=</span><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span>
- <span class="n">propma</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">propma</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">MF</span><span class="o">=</span><span class="n">MF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">atomcountMA</span><span class="p">(</span><span class="n">sdfset</span><span class="p">))</span>
+ <span class="n">propma</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="p">]</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##                 MF       MW  C  H N O S F Cl
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##                 MF       MW  C  H N O S F Cl
 ## 650001  C23H28N4O6 456.4916 23 28 4 6 0 0  0
 ## 650002  C18H23N5O3 357.4069 18 23 5 3 0 0  0
 ## 650003 C18H18N4O3S 370.4255 18 18 4 3 1 0  0
-## 650004 C21H27N5O5S 461.5346 21 27 5 5 1 0  0</code></pre></div>
+## 650004 C21H27N5O5S 461.5346 21 27 5 5 1 0  0</code></pre></figure>
 
 <p>Assign matrix data to data block:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">propma</span> 
- <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">propma</span> 
+ <span class="n">datablock</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">])</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## $`650001`
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## $`650001`
 ##           MF           MW            C            H            N            O            S 
 ## "C23H28N4O6"   "456.4916"         "23"         "28"          "4"          "6"          "0" 
 ##            F           Cl 
-##          "0"          "0"</code></pre></div>
+##          "0"          "0"</code></pre></figure>
 
-<p>String searching in <code>SDFset</code>:</p>
+<p>String searching in <code class="highlighter-rouge">SDFset</code>:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">grepSDFset</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="n">sdfset</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"datablock"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"subset"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">summary</span> <span class="n">view</span> <span class="n">of</span> <span class="n">matches.</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here.</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">grepSDFset</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="n">sdfset</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"datablock"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"subset"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Returns</span> <span class="n">summary</span> <span class="n">view</span> <span class="n">of</span> <span class="n">matches.</span> <span class="n">Not</span> <span class="n">printed</span> <span class="n">here.</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">grepSDFset</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="n">sdfset</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"datablock"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">grepSDFset</span><span class="p">(</span><span class="s2">"650001"</span><span class="p">,</span> <span class="n">sdfset</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">"datablock"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 1 1 1 1 1 1 1 1 1 
-## 1 2 3 4 5 6 7 8 9</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 1 1 1 1 1 1 1 1 1 
+## 1 2 3 4 5 6 7 8 9</code></pre></figure>
 
 <p>Export SDFset to SD file:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> </code></pre></figure>
 
 <p>Plot molecule structure of one or many SDFs:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="err">#</span> <span class="n">Plots</span> <span class="n">structures</span> <span class="n">to</span> <span class="n">R</span> <span class="n">graphics</span> <span class="n">device</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="err">#</span> <span class="n">Plots</span> <span class="n">structures</span> <span class="n">to</span> <span class="n">R</span> <span class="n">graphics</span> <span class="n">device</span> </code></pre></figure>
 
 <p><img src="ChemmineR_files/plotstruct-1.png" alt="" /></p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdf.visualize</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Compound</span> <span class="n">viewing</span> <span class="k">in</span> <span class="n">web</span> <span class="n">browser</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdf.visualize</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> <span class="err">#</span> <span class="n">Compound</span> <span class="n">viewing</span> <span class="k">in</span> <span class="n">web</span> <span class="n">browser</span> </code></pre></figure>
 
 <p><img src="ChemmineR_files/visualizescreenshot-small.png" alt="Figure: Visualization webpage created by calling`sdf.visualize`." /></p>
 
 <p>Structure similarity searching and clustering:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">apset</span> <span class="o">&lt;-</span> <span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="err">#</span> <span class="n">Generate</span> <span class="n">atom</span> <span class="n">pair</span> <span class="n">descriptor</span> <span class="n">database</span> <span class="k">for</span> <span class="n">searching</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">apset</span> <span class="o">&lt;-</span> <span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> <span class="err">#</span> <span class="n">Generate</span> <span class="n">atom</span> <span class="n">pair</span> <span class="n">descriptor</span> <span class="n">database</span> <span class="k">for</span> <span class="n">searching</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">apset</span><span class="p">)</span> <span class="c1"># Load sample apset data provided by library. 
-</span> <span class="n">cmp.search</span><span class="p">(</span><span class="n">apset</span><span class="p">,</span> <span class="n">apset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">cutoff</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="err">#</span> <span class="n">Search</span> <span class="n">apset</span> <span class="n">database</span> <span class="n">with</span> <span class="n">single</span> <span class="n">compound.</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">apset</span><span class="p">)</span> <span class="c1"># Load sample apset data provided by library. 
+</span> <span class="n">cmp.search</span><span class="p">(</span><span class="n">apset</span><span class="p">,</span> <span class="n">apset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">cutoff</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="err">#</span> <span class="n">Search</span> <span class="n">apset</span> <span class="n">database</span> <span class="n">with</span> <span class="n">single</span> <span class="n">compound.</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##   index    cid    scores
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##   index    cid    scores
 ## 1     1 650001 1.0000000
 ## 2    96 650102 0.3516643
 ## 3    67 650072 0.3117569
 ## 4    88 650094 0.3094629
-## 5    15 650015 0.3010753</code></pre></div>
+## 5    15 650015 0.3010753</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">cmp.cluster</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">apset</span><span class="p">,</span> <span class="n">cutoff</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="m">0.65</span><span class="p">,</span> <span class="m">0.5</span><span class="p">),</span> <span class="n">quiet</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> <span class="err">#</span> <span class="n">Binning</span> <span class="n">clustering</span> <span class="n">using</span> <span class="n">variable</span> <span class="n">similarity</span> <span class="n">cutoffs.</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">cmp.cluster</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">apset</span><span class="p">,</span> <span class="n">cutoff</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="m">0.65</span><span class="p">,</span> <span class="m">0.5</span><span class="p">),</span> <span class="n">quiet</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,]</span> <span class="err">#</span> <span class="n">Binning</span> <span class="n">clustering</span> <span class="n">using</span> <span class="n">variable</span> <span class="n">similarity</span> <span class="n">cutoffs.</span> </code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">## 
-## sorting result...</code></pre></div>
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">## 
+## sorting result...</code></pre></figure>
 
-<div class="highlight"><pre><code class="language-txt" data-lang="txt">##       ids CLSZ_0.65 CLID_0.65 CLSZ_0.5 CLID_0.5
+<figure class="highlight"><pre><code class="language-txt" data-lang="txt">##       ids CLSZ_0.65 CLID_0.65 CLSZ_0.5 CLID_0.5
 ## 48 650049         2        48        2       48
 ## 49 650050         2        48        2       48
 ## 54 650059         2        54        2       54
-## 55 650060         2        54        2       54</code></pre></div>
+## 55 650060         2        54        2       54</code></pre></figure>
 
 
 
@@ -1042,7 +1020,7 @@ of the commands into the R console will demonstrate their utilities.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

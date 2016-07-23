@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,70 +789,70 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/tgirke/manuals/tree/master/mydoc/" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
 -->
-<p>The <code>sdfStream</code> function allows to stream through SD
+<p>The <code class="highlighter-rouge">sdfStream</code> function allows to stream through SD
 Files with millions of molecules without consuming much memory. During
 this process any set of descriptors, supported by
-<code>ChemmineR</code>, can be computed (<em>e.g.</em> atom pairs,
+<code class="highlighter-rouge">ChemmineR</code>, can be computed (<em>e.g.</em> atom pairs,
 molecular properties, etc.), as long as they can be returned in tabular
 format. In addition to descriptor values, the function returns a line
 index that gives the start and end positions of each molecule in the
 source SD File. This line index can be used by the downstream
-<code>read.SDFindex</code> function to retrieve specific molecules
+<code class="highlighter-rouge">read.SDFindex</code> function to retrieve specific molecules
 of interest from the source SD File without reading the entire file into
 R. The following outlines the typical workflow of this streaming
-functionality in <code>ChemmineR</code>.</p>
+functionality in <code class="highlighter-rouge">ChemmineR</code>.</p>
 
 <p>Create sample SD File with 100 molecules:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="s2">"test.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">write.SDF</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="s2">"test.sdf"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Define descriptor set in a simple function:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">desc</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">desc</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">sdfset</span><span class="p">)</span> 
  <span class="n">cbind</span><span class="p">(</span><span class="n">SDFID</span><span class="o">=</span><span class="n">sdfid</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> 
 	<span class="c1"># datablock2ma(datablocklist=datablock(sdfset)), 
 </span>	 <span class="n">MW</span><span class="o">=</span><span class="n">MW</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span>
 	<span class="n">groups</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">APFP</span><span class="o">=</span><span class="n">desc2fp</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">),</span> <span class="n">descnames</span><span class="o">=</span><span class="m">1024</span><span class="p">,</span>
 	<span class="n">type</span><span class="o">=</span><span class="s2">"character"</span><span class="p">),</span> <span class="n">AP</span><span class="o">=</span><span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"character"</span><span class="p">),</span> <span class="n">rings</span><span class="p">(</span><span class="n">sdfset</span><span class="p">,</span>
-	<span class="n">type</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">arom</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="p">)</span></code></pre></div>
+	<span class="n">type</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">arom</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span> <span class="p">)</span>  </code></pre></figure>
 
-<p>Run <code>sdfStream</code> with <code>desc</code> function and
-write results to a file called <code>matrix.xls</code>:</p>
+<p>Run <code class="highlighter-rouge">sdfStream</code> with <code class="highlighter-rouge">desc</code> function and
+write results to a file called <code class="highlighter-rouge">matrix.xls</code>:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfStream</span><span class="p">(</span><span class="n">input</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">fct</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">Nlines</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span> <span class="err">#</span> <span class="s1">'Nlines'</span><span class="o">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">read</span> <span class="n">from</span> <span class="n">input</span> <span class="n">SD</span> <span class="n">File</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfStream</span><span class="p">(</span><span class="n">input</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">fct</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">Nlines</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span> <span class="err">#</span> <span class="s1">'Nlines'</span><span class="o">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">read</span> <span class="n">from</span> <span class="n">input</span> <span class="n">SD</span> <span class="n">File</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span> </code></pre></figure>
 
 <p>One can also start reading from a specific line number in the SD file.
 The following example starts at line number 950. This is useful for
-restarting and debugging the process. With <code>append=TRUE</code>
+restarting and debugging the process. With <code class="highlighter-rouge">append=TRUE</code>
 the result can be appended to an existing file.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdfStream</span><span class="p">(</span><span class="n">input</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"matrix2.xls"</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">fct</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">Nlines</span><span class="o">=</span><span class="m">1000</span><span class="p">,</span> <span class="n">startline</span><span class="o">=</span><span class="m">950</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdfStream</span><span class="p">(</span><span class="n">input</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"matrix2.xls"</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">fct</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">Nlines</span><span class="o">=</span><span class="m">1000</span><span class="p">,</span> <span class="n">startline</span><span class="o">=</span><span class="m">950</span><span class="p">)</span> </code></pre></figure>
 
 <p>Select molecules meeting certain property criteria from SD File using
-line index generated by previous <code>sdfStream</code> step:</p>
+line index generated by previous <code class="highlighter-rouge">sdfStream</code> step:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">indexDF</span> <span class="o">&lt;-</span> <span class="n">read.delim</span><span class="p">(</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">)[,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">indexDF</span> <span class="o">&lt;-</span> <span class="n">read.delim</span><span class="p">(</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">)[,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span> 
  <span class="n">indexDFsub</span> <span class="o">&lt;-</span> <span class="n">indexDF</span><span class="p">[</span><span class="n">indexDF</span><span class="o">$</span><span class="n">MW</span> <span class="o">&lt;</span> <span class="m">400</span><span class="p">,</span> <span class="p">]</span> <span class="c1"># Selects molecules with MW &lt; 400 
-</span> <span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">read.SDFindex</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">indexDFsub</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"SDFset"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Collects</span> <span class="n">results</span> <span class="k">in</span> <span class="s1">'SDFset'</span> <span class="n">container</span></code></pre></div>
+</span> <span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">read.SDFindex</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">indexDFsub</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"SDFset"</span><span class="p">)</span> <span class="err">#</span> <span class="n">Collects</span> <span class="n">results</span> <span class="k">in</span> <span class="s1">'SDFset'</span> <span class="n">container</span> </code></pre></figure>
 
 <p>Write results directly to SD file without storing larger numbers of
 molecules in memory:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">read.SDFindex</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">indexDFsub</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"file"</span><span class="p">,</span>
- <span class="n">outfile</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">read.SDFindex</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"test.sdf"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">indexDFsub</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"file"</span><span class="p">,</span>
+ <span class="n">outfile</span><span class="o">=</span><span class="s2">"sub.sdf"</span><span class="p">)</span> </code></pre></figure>
 
-<p>Read AP/APFP strings from file into <code>APset</code> or
-<code>FP</code> object:</p>
+<p>Read AP/APFP strings from file into <code class="highlighter-rouge">APset</code> or
+<code class="highlighter-rouge">FP</code> object:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">apset</span> <span class="o">&lt;-</span> <span class="n">read.AP</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"ap"</span><span class="p">,</span> <span class="n">colid</span><span class="o">=</span><span class="s2">"AP"</span><span class="p">)</span> 
- <span class="n">apfp</span> <span class="o">&lt;-</span> <span class="n">read.AP</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"fp"</span><span class="p">,</span> <span class="n">colid</span><span class="o">=</span><span class="s2">"APFP"</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">apset</span> <span class="o">&lt;-</span> <span class="n">read.AP</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"ap"</span><span class="p">,</span> <span class="n">colid</span><span class="o">=</span><span class="s2">"AP"</span><span class="p">)</span> 
+ <span class="n">apfp</span> <span class="o">&lt;-</span> <span class="n">read.AP</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"matrix.xls"</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"fp"</span><span class="p">,</span> <span class="n">colid</span><span class="o">=</span><span class="s2">"APFP"</span><span class="p">)</span> </code></pre></figure>
 
 <p>Alternatively, one can provide the AP/APFP strings in a named character
 vector:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">apset</span> <span class="o">&lt;-</span> <span class="n">read.AP</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"character"</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s2">"ap"</span><span class="p">)</span> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">apset</span> <span class="o">&lt;-</span> <span class="n">read.AP</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">],</span> <span class="n">type</span><span class="o">=</span><span class="s2">"character"</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s2">"ap"</span><span class="p">)</span> 
  <span class="n">fpchar</span> <span class="o">&lt;-</span> <span class="n">desc2fp</span><span class="p">(</span><span class="n">sdf2ap</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">]),</span> <span class="n">descnames</span><span class="o">=</span><span class="m">1024</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s2">"character"</span><span class="p">)</span>
- <span class="n">fpset</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="p">(</span><span class="n">fpchar</span><span class="p">,</span> <span class="s2">"FPset"</span><span class="p">)</span></code></pre></div>
+ <span class="n">fpset</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="p">(</span><span class="n">fpchar</span><span class="p">,</span> <span class="s2">"FPset"</span><span class="p">)</span> </code></pre></figure>
 
 
 
@@ -892,7 +870,7 @@ vector:</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>

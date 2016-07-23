@@ -77,16 +77,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
                 
                 
                 
@@ -161,8 +151,6 @@
                 <!-- special insertion -->
 
                
-                
-                
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
@@ -255,16 +243,6 @@ window.location.href = uri;
 
 
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -818,36 +796,36 @@ package recently. This function uses the native R graphics device for
 generating compound depictions. At this point this function is still in
 an experimental developmental stage but should become stable soon.</p>
 
-<p>If you have <code>ChemmineOB</code> available you can use the <code>regenCoords</code>
+<p>If you have <code class="highlighter-rouge">ChemmineOB</code> available you can use the <code class="highlighter-rouge">regenCoords</code>
 option to have OpenBabel regenerate the coordinates for the compound.
 This can sometimes produce better looking plots.</p>
 
 <p>Plot compound Structures with R’s graphics device:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">data</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">)</span>
  <span class="n">sdfset</span> <span class="o">&lt;-</span> <span class="n">sdfsample</span>
- <span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">regenCoords</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="err">#</span> <span class="s1">'print=TRUE'</span> <span class="n">returns</span> <span class="n">SDF</span> <span class="n">summaries</span></code></pre></div>
+ <span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">regenCoords</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span><span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> <span class="err">#</span> <span class="s1">'print=TRUE'</span> <span class="n">returns</span> <span class="n">SDF</span> <span class="n">summaries</span></code></pre></figure>
 
 <p><img src="ChemmineR_files/plotstruct2-1.png" alt="" /></p>
 
 <p>Customized plots:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">griddim</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">),</span> <span class="n">print_cid</span><span class="o">=</span><span class="n">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> 
-		<span class="n">noHbonds</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">griddim</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">),</span> <span class="n">print_cid</span><span class="o">=</span><span class="n">letters</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> 
+		<span class="n">noHbonds</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> </code></pre></figure>
 
 <p>In the following plot, the atom block position numbers in the SDF are
-printed next to the atom symbols (<code>atomnum = TRUE</code>). For
+printed next to the atom symbols (<code class="highlighter-rouge">atomnum = TRUE</code>). For
 more details, consult help documentation with
-<code>?plotStruc</code> or <code>?plot</code>.</p>
+<code class="highlighter-rouge">?plotStruc</code> or <code class="highlighter-rouge">?plot</code>.</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="s2">"CMP1"</span><span class="p">],</span> <span class="n">atomnum</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">noHbonds</span><span class="o">=</span><span class="n">F</span> <span class="p">,</span> <span class="n">no_print_atoms</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
-	  	<span class="n">atomcex</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span> <span class="n">sub</span><span class="o">=</span><span class="n">paste</span><span class="p">(</span><span class="s2">"MW:"</span><span class="p">,</span> <span class="n">MW</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">[</span><span class="s2">"CMP1"</span><span class="p">])),</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="s2">"CMP1"</span><span class="p">],</span> <span class="n">atomnum</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">noHbonds</span><span class="o">=</span><span class="n">F</span> <span class="p">,</span> <span class="n">no_print_atoms</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+	  	<span class="n">atomcex</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span> <span class="n">sub</span><span class="o">=</span><span class="n">paste</span><span class="p">(</span><span class="s2">"MW:"</span><span class="p">,</span> <span class="n">MW</span><span class="p">(</span><span class="n">sdfsample</span><span class="p">[</span><span class="s2">"CMP1"</span><span class="p">])),</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span> </code></pre></figure>
 
 <p><img src="ChemmineR_files/plotstruct3-1.png" alt="" /></p>
 
 <p>Substructure highlighting by atom numbers:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">colbonds</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="m">22</span><span class="p">,</span><span class="m">26</span><span class="p">,</span><span class="m">25</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">28</span><span class="p">,</span><span class="m">27</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">18</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">19</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">24</span><span class="p">))</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">plot</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">print</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">colbonds</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="m">22</span><span class="p">,</span><span class="m">26</span><span class="p">,</span><span class="m">25</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">28</span><span class="p">,</span><span class="m">27</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">18</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">19</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">24</span><span class="p">))</span> </code></pre></figure>
 
 <p><img src="ChemmineR_files/plotstruct4-1.png" alt="" /></p>
 
@@ -858,7 +836,7 @@ browser using the online ChemMine Tools service.</p>
 
 <p>Plot structures using web service ChemMine Tools:</p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sdf.visualize</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"> <span class="n">sdf.visualize</span><span class="p">(</span><span class="n">sdfset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span> </code></pre></figure>
 
 <p><img src="ChemmineR_files/visualizescreenshot-small.png" alt="Figure: Visualization webpage created by calling `sdf.visualize`." /></p>
 
@@ -878,7 +856,7 @@ browser using the online ChemMine Tools service.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2016 UC Riverside. All rights reserved. <br />
-<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Mar 8, 2016 <br />
+<p>Page last updated:</span> Sun Mar  6 19:34:18 2016<br/> Site last generated: Jul 23, 2016 <br />
 <p><img src="../common_images/company_logo.png/></p>
                 </div>
             </div>
