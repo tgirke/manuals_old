@@ -135,6 +135,24 @@ Run steps (2)-(6) with one command using the `render()` function and the `md2jek
 echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle Rbasics.Rmd; Rscript ../md2jekyll.R Rbasics.knit.md 3
 {% endhighlight %}
 
+## Usage of custom domain
+
++ Register a domain name with a provider such as [GoogleDomains](https://domains.google) or [GoDaddy](https://www.godaddy.com). 
++ Next, configure the domain settings on your provider's website to point to GitHub pages. Sample instructions for GoogleDomains and GitHub pages are given on [Curtis Larson's Blog](http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/). Note, if you run a web site under the `gh-pages` branch of a GitHub project repository then you will still just use `tgirke.github.io.` under the CNAME entry without appending the name of the project repository. Also adding a dot at the end of this entry is important. The table below is an example how the settings would look like under the `DNS` tab on GoogleDomains:
+
+
+    |Name   |Type     | TTL | Data              |
+    |-------------------------------------------|
+    |   @   |    A    | 1h  | 192.30.252.153    |
+    |       |         |     | 192.30.252.154    |
+    |  www  |  CNAME  | 1h  | tgirke.github.io. |
+    |-------------------------------------------|
+
+
++ Subsequently, add the domain name (_e.g._ `plantsecretome.org`) to the CNAME file in the `gh-pages` branch of your GitHub project repository. 
++ Very important, check whether the `_config.yml` file of your Jekyll site contains a line starting with `baseurl: "..."`. If so remove
+   this line or the page will not properly render on GitHub. 
+
 ## Useful utilities
 
 ### Site-wide configurations
