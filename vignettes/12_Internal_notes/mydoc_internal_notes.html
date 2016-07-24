@@ -917,7 +917,7 @@ lines in <code class="highlighter-rouge">./css/theme-blue.css</code>. This task 
 <ul>
   <li>Register a domain name with a provider such as <a href="https://domains.google">GoogleDomains</a> or <a href="https://www.godaddy.com">GoDaddy</a>.</li>
   <li>
-    <p>Next, configure the domain settings on your provider’s website to point to GitHub pages. Sample instructions for GoogleDomains and GitHub pages are given on <a href="http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/">Curtis Larson’s Blog</a>. Note, if you run a web site under the <code class="highlighter-rouge">gh-pages</code> branch of a GitHub project repository then you will still just use <code class="highlighter-rouge">tgirke.github.io.</code> under the CNAME entry (see table below) without appending the name of the project repository. Also adding a dot at the end of this entry is important. The table below is an example how the settings would look like under the <code class="highlighter-rouge">DNS</code> tab on GoogleDomains. The two IP addresses in the first two lines of the table should be the same for all sites hosted on GitHub.</p>
+    <p>Next, configure the domain settings on your provider’s website to point to GitHub pages. Sample instructions for GoogleDomains and GitHub pages are given on <a href="http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/">Curtis Larson’s Blog</a>. Note, if you run a web site under the <code class="highlighter-rouge">gh-pages</code> branch of a GitHub project repository then you will still just use <code class="highlighter-rouge">username.github.io.</code> under the CNAME entry (see table below) without appending the name of the project repository. Also adding a dot at the end of this entry is important. The table below is an example how the settings would look like under the <code class="highlighter-rouge">DNS</code> tab on GoogleDomains. The two IP addresses in the first two lines of the table should be the same for all sites hosted on GitHub.</p>
 
     <table>
       <thead>
@@ -945,12 +945,12 @@ lines in <code class="highlighter-rouge">./css/theme-blue.css</code>. This task 
           <td>www</td>
           <td>CNAME</td>
           <td>1h</td>
-          <td>tgirke.github.io.</td>
+          <td>username.github.io.</td>
         </tr>
       </tbody>
     </table>
   </li>
-  <li>Subsequently, add the domain name (<em>e.g.</em> <code class="highlighter-rouge">plantsecretome.org</code>) associated with this entry to the CNAME file in the <code class="highlighter-rouge">gh-pages</code> branch of your GitHub project repository.</li>
+  <li>Subsequently, add the domain name (<em>e.g.</em> <code class="highlighter-rouge">mydomain.org</code>) associated with this entry to the CNAME file in the <code class="highlighter-rouge">gh-pages</code> branch of your GitHub project repository.</li>
   <li>Very important, if you experience any rendering problems on GitHub, check whether the <code class="highlighter-rouge">_config.yml</code> file of your Jekyll site contains a line starting with <code class="highlighter-rouge">baseurl: "..."</code>. If so remove this line or the page will not render properly on GitHub.</li>
 </ul>
 
