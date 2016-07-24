@@ -152,6 +152,16 @@ echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle 
 + Subsequently, add the domain name (_e.g._ `plantsecretome.org`) associated with this entry to the CNAME file in the `gh-pages` branch of your GitHub project repository. 
 + Very important, if you experience any rendering problems on GitHub, check whether the `_config.yml` file of your Jekyll site contains a line starting with `baseurl: "..."`. If so remove this line or the page will not render properly on GitHub. 
 
+## Favicon icon
+
+A favicon is an icon displayed in the web site tabs of a browsser or next to the site name in a 
+bookmark list. The source image can be generted with most graphics programs (_e.g._ in SVG 
+format in Inkscape). To generate the final favicon, the image needs to be exported in bitmap format
+(_e.g._ PNG format) to a file. Subsequently, this file is converted to the final `favicon.ico` file 
+using one the many favicon generation tools such as [FavIcon Generator](http://tools.dynamicdrive.com/favicon). 
+The `favicon.ico` file is then placed into the `images` directory of the Jekyll Doc Theme. 
+
+
 ## Useful utilities
 
 ### Site-wide configurations
