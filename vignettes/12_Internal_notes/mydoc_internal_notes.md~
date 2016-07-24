@@ -138,18 +138,18 @@ echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle 
 ## Usage of custom domain
 
 + Register a domain name with a provider such as [GoogleDomains](https://domains.google) or [GoDaddy](https://www.godaddy.com). 
-+ Next, configure the domain settings on your provider's website to point to GitHub pages. Sample instructions for GoogleDomains and GitHub pages are given on [Curtis Larson's Blog](http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/). Note, if you run a web site under the `gh-pages` branch of a GitHub project repository then you will still just use `tgirke.github.io.` under the CNAME entry (see table below) without appending the name of the project repository. Also adding a dot at the end of this entry is important. The table below is an example how the settings would look like under the `DNS` tab on GoogleDomains. The two IP addresses in the first two lines of the table should be the same for all sites hosted on GitHub.
++ Next, configure the domain settings on your provider's website to point to GitHub pages. Sample instructions for GoogleDomains and GitHub pages are given on [Curtis Larson's Blog](http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/). Note, if you run a web site under the `gh-pages` branch of a GitHub project repository then you will still just use `username.github.io.` under the CNAME entry (see table below) without appending the name of the project repository. Also adding a dot at the end of this entry is important. The table below is an example how the settings would look like under the `DNS` tab on GoogleDomains. The two IP addresses in the first two lines of the table should be the same for all sites hosted on GitHub.
 
 
-    |Name   |Type     | TTL | Data              |
-    |-------------------------------------------|
-    |   @   |    A    | 1h  | 192.30.252.153    |
-    |       |         |     | 192.30.252.154    |
-    |  www  |  CNAME  | 1h  | tgirke.github.io. |
-    |-------------------------------------------|
+    |Name   |Type     | TTL | Data                |
+    |---------------------------------------------|
+    |   @   |    A    | 1h  | 192.30.252.153      |
+    |       |         |     | 192.30.252.154      |
+    |  www  |  CNAME  | 1h  | username.github.io. |
+    |---------------------------------------------|
 
 
-+ Subsequently, add the domain name (_e.g._ `plantsecretome.org`) associated with this entry to the CNAME file in the `gh-pages` branch of your GitHub project repository. 
++ Subsequently, add the domain name (_e.g._ `mydomain.org`) associated with this entry to the CNAME file in the `gh-pages` branch of your GitHub project repository. 
 + Very important, if you experience any rendering problems on GitHub, check whether the `_config.yml` file of your Jekyll site contains a line starting with `baseurl: "..."`. If so remove this line or the page will not render properly on GitHub. 
 
 ## Favicon icon
@@ -158,7 +158,7 @@ A favicon is an icon displayed in the web site tabs of a browser or next to the 
 bookmark list. The source image can be generted with most graphics programs (_e.g._ in SVG 
 format in Inkscape). To generate the final favicon, the image needs to be exported in bitmap format
 (_e.g._ PNG format) to a file. Subsequently, this file is converted to the final `favicon.ico` file 
-using one the many favicon generation tools such as [FavIcon Generator](http://tools.dynamicdrive.com/favicon). 
+using one of the many favicon generation tools such as [FavIcon Generator](http://tools.dynamicdrive.com/favicon). 
 The `favicon.ico` file is then placed into the `images` directory of the Jekyll Doc Theme. 
 
 
