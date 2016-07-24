@@ -154,11 +154,11 @@ echo "rmarkdown::render('Rbasics.Rmd', clean=FALSE)" | R --slave; R CMD Stangle 
 
 ## Favicon icon
 
-A favicon is an icon displayed in the web site tabs of a browsser or next to the site name in a 
+A favicon is an icon displayed in the web site tabs of a browser or next to the site name in a 
 bookmark list. The source image can be generted with most graphics programs (_e.g._ in SVG 
 format in Inkscape). To generate the final favicon, the image needs to be exported in bitmap format
 (_e.g._ PNG format) to a file. Subsequently, this file is converted to the final `favicon.ico` file 
-using one the many favicon generation tools such as [FavIcon Generator](http://tools.dynamicdrive.com/favicon). 
+using one of the many favicon generation tools such as [FavIcon Generator](http://tools.dynamicdrive.com/favicon). 
 The `favicon.ico` file is then placed into the `images` directory of the Jekyll Doc Theme. 
 
 
